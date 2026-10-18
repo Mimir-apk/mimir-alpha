@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mimir-rewrite hardcoded UI text ratchet (localization step 0).
+"""Mimir Alpha hardcoded UI text ratchet (localization step 0).
 
 Flags new hardcoded `Text("...")` in feature modules. Nearly all on-screen text is still a Kotlin literal, so this gate cannot
 ban them; it counts them and refuses to let the count rise. Steps 1-9 extract a screen at a time and lower the

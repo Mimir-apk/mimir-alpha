@@ -28,7 +28,7 @@ import kotlin.math.sqrt
 import kotlin.random.Random
 
 /**
- * MIMIR-REWRITE :core-ui — AUTHORED SCENES, v2 (2026-09-01). NOT YET WIRED.
+ * Mimir Alpha :core-ui — AUTHORED SCENES, v2 (2026-09-01). NOT YET WIRED.
  *
  * The nine scene painters in [MimirAtmosphere] are soft radial washes: change the hue and every
  * identity paints the same shape. The policy (2026-09-01) is one AUTHORED SCENE PER

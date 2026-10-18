@@ -71,7 +71,7 @@ import com.gruning.mimir.rewrite.core.ui.mimirFocusTileRing
 import com.gruning.mimir.rewrite.core.ui.rememberMimirFocusSettleGlint
 
 /**
- * MIMIR-REWRITE :feature-library — the shelf HERO PLATFORM TILE.
+ * Mimir Alpha :feature-library — the shelf HERO PLATFORM TILE.
  *
  * The signature of the console coverflow (VISUAL PARITY SPEC §2/§3/§4): ONE tile per platform that is
  * dim, small, and desaturated at rest and blooms into a big lit hero when focused — a per-theme radial

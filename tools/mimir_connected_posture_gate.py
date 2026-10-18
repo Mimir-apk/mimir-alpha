@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mimir-rewrite connected-art + SteamGridDB POSTURE GATE (R2).
+"""Mimir Alpha connected-art + SteamGridDB POSTURE GATE (R2).
 
 Behavioral enforcement for audited egress chokepoints, dual-gate ownership, disjoint host suffix
 authority, evidence binding, vendor containment, and cleartext bans. Kotlin-aware via the shared

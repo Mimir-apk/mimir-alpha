@@ -1,6 +1,6 @@
-// MIMIR-REWRITE :core-input — the controller input + focus AUTHORITY.
+// Mimir Alpha :core-input — the controller input + focus AUTHORITY.
 //
-// This is the rewrite's structural answer to the current product's single hardest lesson:
+// A single focus authority reconciles the handheld input paths:
 // on a handheld, THREE input worlds fight over one gamepad — (1) the platform's own directional
 // focus engine (the WebView's native DOM-focus nav in the old product), (2) dual-source
 // KEY|KEYBOARD button events that duplicate/corrupt every press, and (3) the app's own logical

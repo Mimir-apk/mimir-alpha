@@ -1,7 +1,7 @@
 package com.gruning.mimir.rewrite.core.ui
 
 /**
- * MIMIR-REWRITE :core-ui — the shipping Norse theme identities.
+ * Mimir Alpha :core-ui — the shipping Norse theme identities.
  *
  * Each id is a distinct visual personality carried over from the shipping product's ratified theme
  * system . The internal id is STABLE — it is the persisted

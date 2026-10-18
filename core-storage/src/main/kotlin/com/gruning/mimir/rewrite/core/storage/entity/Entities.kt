@@ -5,7 +5,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 
 /**
- * Room entities for the Mimir-rewrite local store. Each row is a flat, indexable projection of a
+ * Room entities for the Mimir Alpha local store. Each row is a flat, indexable projection of a
  * core-model type — the typed truth lives in :core-model; these are the persistence shape. Mappers in
  * `com.gruning.mimir.rewrite.core.storage.mapper` convert between them. Nothing here touches the
  * network; this is a pure local SQLite schema (posture manifest).

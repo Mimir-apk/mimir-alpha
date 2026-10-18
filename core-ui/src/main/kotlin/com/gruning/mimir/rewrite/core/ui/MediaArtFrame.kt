@@ -161,7 +161,7 @@ fun MimirArtFailureLog(failed: Boolean, model: Any?) {
 fun mimirArtPlateVisible(hasArtSource: Boolean): Boolean = !hasArtSource
 
 /**
- * MIMIR-REWRITE :core-ui — the ONE box-art component.
+ * Mimir Alpha :core-ui — the ONE box-art component.
  *
  * A 3:4 box-art shell (the focused ROM hero is a 3D media shell) with the
  * signature GOLD hairline. This REPLACES the holding-frame duplication that had started across surfaces

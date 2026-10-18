@@ -64,9 +64,9 @@ import com.gruning.mimir.rewrite.core.ui.theme.MimirSpacing
 import com.gruning.mimir.rewrite.core.ui.theme.MimirType
 
 /**
- * "Bring over from Mimir" (M10) — the rewrite's IMPORT half. The user picks the migration bundle the
+ * "Bring over from Mimir" (M10) — Mimir Alpha's IMPORT half. The user picks the migration bundle the
  * shipping app exported (a plain JSON file in shared storage) and this re-applies their favorites / hidden
- * / per-game emulator / theme markers onto games the rewrite ALREADY scanned. It never re-scans, never
+ * / per-game emulator / theme markers onto games Mimir Alpha ALREADY scanned. It never re-scans, never
  * touches shipping data, and honestly reports what it couldn't find (and that SAF folder grants must be
  * re-picked — those can't transfer between apps).
  *

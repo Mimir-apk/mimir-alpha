@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /**
- * MIMIR-REWRITE :core-ui — the non-color design tokens + the focus-ring modifier.
+ * Mimir Alpha :core-ui — the non-color design tokens + the focus-ring modifier.
  *
  *
  * Elevated + generalized from the ratified feature-settings/theme tokens (which stay the baseline).

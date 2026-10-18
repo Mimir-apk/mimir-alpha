@@ -129,7 +129,7 @@ class MimirKeyboardFieldOps(
 )
 
 /**
- * MIMIR-REWRITE :core-ui — THE in-app keyboard. The rewrite's first (and only) text-input mechanism.
+ * Mimir Alpha :core-ui — the in-app text-input keyboard.
  *
  * Touch drives typing; an optional [controller] lets the host wire D-pad focus through [FocusAuthority]
  * without coupling core-ui to core-input. When [controller] is null, behavior matches the touch-only path.

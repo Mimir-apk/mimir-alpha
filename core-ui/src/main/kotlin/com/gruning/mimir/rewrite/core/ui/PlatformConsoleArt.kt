@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentHashMap
 import org.json.JSONObject
 
 /**
- * MIMIR-REWRITE :core-ui — per-platform CONSOLE line-art.
+ * Mimir Alpha :core-ui — per-platform CONSOLE line-art.
  *
  * The signature element of the shelf hero: the focused platform tile shows its CONSOLE drawn as
  * line-art (an N64 with a cart-slot lid, a DS clamshell, a PS1 disc drive, a PSP, ...), NOT a text label
@@ -83,7 +83,7 @@ private const val IconLineScale = 0.9f
  * Case-insensitive; a handful of common aliases fold onto the canonical 16 ids. Unknown → [drawGenericConsole].
  *
  * PUBLIC so a caller (e.g. a Browse card, the companion Now-Playing) can reuse the exact same silhouette set
- * without going through the composable. Covers the rewrite's 15 shelf platforms + `megadrive`↔`genesis`.
+ * without going through the composable. Covers Mimir Alpha's 15 shelf platforms + `megadrive`↔`genesis`.
  */
 fun platformConsoleArtist(platformIdValue: String): DrawScope.(tint: Color, strokeAuthorWidth: Float) -> Unit =
     ARTISTS[normalizePlatformArtId(platformIdValue)] ?: DrawScope::drawGenericConsole

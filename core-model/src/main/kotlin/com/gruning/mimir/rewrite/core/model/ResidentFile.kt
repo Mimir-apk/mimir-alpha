@@ -53,7 +53,7 @@ enum class IdentitySource {
 }
 
 /**
- * The resolved identity of a game group. The rewrite keeps the *evidence* around so the UI and gates
+ * The resolved identity of a game group. Mimir Alpha keeps the *evidence* around so the UI and gates
  * can be honest about WHY two files collapsed (or didn't).
  *
  * @property gameId stable group id (see [GameId]).

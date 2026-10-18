@@ -1,1 +1,1 @@
-# MIMIR-REWRITE :feature-settings — no consumer proguard rules needed.
+# Mimir Alpha :feature-settings — no consumer proguard rules needed.

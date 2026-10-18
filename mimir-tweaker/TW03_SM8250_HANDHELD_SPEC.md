@@ -69,7 +69,7 @@ Lab-only Binder API v3 methods (append-only):
 
 ## Mimir integration
 
-Mimir rewrite binds to `com.gruning.mimir.tweaker/.MimirTweakerService` using the
+Mimir Alpha binds to `com.gruning.mimir.tweaker/.MimirTweakerService` using the
 `contract` AAR. Both APKs must share a signing certificate (`CONTROL_TWEAKER` is
 signature-protected). On game launch Mimir calls `applyProfile`; on return to Mimir it
 calls `restore()`.

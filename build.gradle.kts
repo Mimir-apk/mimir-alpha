@@ -1,4 +1,4 @@
-// MIMIR-REWRITE — root build.
+// Mimir Alpha — root build.
 // Declares all plugins with `apply false` so each module applies what it needs.
 // Versions come exclusively from gradle/libs.versions.toml.
 

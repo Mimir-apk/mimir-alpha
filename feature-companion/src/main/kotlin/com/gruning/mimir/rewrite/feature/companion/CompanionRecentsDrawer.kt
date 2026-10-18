@@ -86,7 +86,7 @@ internal const val CompanionTabIconDp = 54f
 internal const val CompanionTabIconTag = "companion-tab-icon"
 
 /**
- * MIMIR-REWRITE :feature-companion — the companion app drawer (shipping favorite-app surface).
+ * Mimir Alpha :feature-companion — the companion app drawer (shipping favorite-app surface).
  *
  * Distinct from the display-only [CompanionSurface] mirror: this is the ONE interactive companion surface,
  * so it lives in its OWN file (the mirror remains action-free in `CompanionSurface`; interactive commands live here). It is opened by the

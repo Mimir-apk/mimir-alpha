@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE :core-files — vendored file-manager engine manifest.
-     Posture (MIMIR_REWRITE_POSTURE_MANIFEST): NO android.permission.INTERNET. Vendored
+<!-- Mimir Alpha :core-files — vendored file-manager engine manifest.
+     Posture: NO android.permission.INTERNET. Vendored
      network/cloud call sites were stripped during vendoring (see NOTICE and each source file's
      header comment), not merely disabled. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" />

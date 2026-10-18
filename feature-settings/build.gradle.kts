@@ -1,11 +1,8 @@
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.testing.Test
 
-// MIMIR-REWRITE :feature-settings — the first REAL Compose surface.
-//
-// Chosen as the lowest-risk migration target because it is a static, data-light IA screen with no
-// hot render path (unlike the shelf), so it is where the rewrite's Compose design-token system and
-// the D-pad focus authority get proven before anything performance-sensitive is built.
+// Mimir Alpha :feature-settings — settings screens.
+// Uses the shared theme tokens and focus authority.
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)

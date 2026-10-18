@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-metadata — the metadata subsystem.
+// Mimir Alpha :core-metadata — the metadata subsystem.
 //
 // Identity + presentation metadata (canonical title, box art, description) from layered sources:
 //  - OFFLINE (this slice): the bundled TitleCatalog (via core-resolver's CanonicalTitleSource) and,

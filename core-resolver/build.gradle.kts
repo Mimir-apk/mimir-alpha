@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-resolver — recognition + dedup pipeline.
+// Mimir Alpha :core-resolver — recognition + dedup pipeline.
 //
 // Android library (it will grow SAF/content-resolver reads for hashing/serial extraction, hence
 // Android not pure-JVM). The FOUNDATION slice authored here is deliberately platform-independent:

@@ -65,7 +65,7 @@ private const val AmbientBreathHalfPeriodMs = 3400
 private const val AmbientIdleTimeoutMs = 14_000L
 
 /**
- * MIMIR-REWRITE :core-ui — the shelf ATMOSPHERE.
+ * Mimir Alpha :core-ui — the shelf ATMOSPHERE.
  *
  * The console "lit room" behind the coverflow. Each theme owns a scene and a surface texture; Default's
  * architectural lattice, Freyr's weave, Surtr's forged striations, Mani's starlight, Hel's engulfing shadow, the Void,
@@ -105,7 +105,7 @@ private const val StarfieldSeed = 0x50FA_11L
 /** Ambient wash radius as a fraction of the field width (a broad top-centre glow, not a spotlight). */
 private const val AmbientRadiusFraction = 0.62f
 // The ambient "breath" (Void watching-eyes / Dread wound) is a Compose-WIN divergence — but the shipping shelf is
-// DEAD-STILL when idle (measured: baseline motion ~0 vs the rewrite's ~0.4 with breath on), which reads as
+// DEAD-STILL when idle (measured: baseline motion ~0 vs Mimir Alpha's ~0.4 with breath on), which reads as
 // restlessness against strict parity. Default OFF for the parity certification; flip to true to restore the motif.
 private const val AmbientBreathEnabled = false
 
@@ -1244,7 +1244,7 @@ private fun DrawScope.drawVoidEye(
 ) {
     val center = Offset(size.width * centerX, size.height * centerY)
     // match shipping's void-eyes exactly — ONE small soft dot per eye (a bright core fading to
-    // 0.16 at 52% and transparent by 72% of a ~4-5px radius), NOT the 3-layer halo the rewrite drew (that big
+    // 0.16 at 52% and transparent by 72% of a ~4-5px radius), NOT the 3-layer halo Mimir Alpha drew (that big
     // outer glow at 3× read as prominent "orbs", not tiny eyes peeking through the footer void). radiusSeed is the
     // CSS px radius directly, so the eye is genuinely small — a distant glint on the near-black creep, not a lamp.
     val r = radiusSeed.dp.toPx().coerceAtLeast(1f)

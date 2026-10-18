@@ -1,4 +1,4 @@
-# MIMIR-REWRITE — single version catalog.
+# Mimir Alpha — single version catalog.
 # THE one source of truth for every dependency version. Pinned to real,
 # mutually-consistent versions so provisioning is ONE deterministic offline fetch.
 #

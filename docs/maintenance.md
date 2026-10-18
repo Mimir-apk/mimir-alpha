@@ -2,6 +2,12 @@
 
 For installation and personal builds, start with [BUILDING.md](../BUILDING.md). This page is for contributors changing module boundaries, build policy or application lifecycle code.
 
+## Product name and stable identifiers
+
+The product is **Mimir Alpha**. Older names in package namespaces, database filenames and preference
+keys are compatibility identifiers, not the product name or an author credit. They remain stable so
+updates keep the installed app, library and settings. Changing them requires an explicit migration.
+
 ## Current boundaries
 
 The app owns production composition and repository injection. `LibraryInjection` binds the Library to the Room-backed `LibraryStore`; fake repositories are for tests and previews. Features consume domain and shared UI contracts rather than another feature's implementation.

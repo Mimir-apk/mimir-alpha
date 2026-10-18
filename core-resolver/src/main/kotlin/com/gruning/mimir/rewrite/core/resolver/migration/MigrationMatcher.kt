@@ -18,7 +18,7 @@ sealed interface MatchOutcome {
 }
 
 /**
- * Re-attaches a [MigrationGameRecord] from a migration bundle to a game the rewrite has ALREADY scanned.
+ * Re-attaches a [MigrationGameRecord] from a migration bundle to a game Mimir Alpha has ALREADY scanned.
  *
  * The join is deliberately NOT a fragile path/opaque-key compare. Instead it runs the record's identity
  * evidence back through the ONE [GameIdentityBuilder] — the same mint point the live scan used — so the
@@ -34,7 +34,7 @@ sealed interface MatchOutcome {
  *
  * @param identityBuilder the id mint point. Defaults to the offline-catalog builder; the app may inject the
  *   same composed builder its scan used to maximize the match rate.
- * @param gameExists probe: does the rewrite library already contain this `gameId`? (backed by
+ * @param gameExists probe: does Mimir Alpha library already contain this `gameId`? (backed by
  *   `GameDao.membersOfGame(...).isNotEmpty()` at the app layer; a set in tests).
  */
 class MigrationMatcher(

@@ -1,4 +1,4 @@
-// MIMIR-REWRITE — authoritative root project registry.
+// Mimir Alpha — authoritative root project registry.
 // Project registrations below are the module inventory.
 
 pluginManagement {
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
     // The single version catalog lives at gradle/libs.versions.toml and is auto-loaded as `libs`.
 }
 
-rootProject.name = "Mimir-rewrite"
+rootProject.name = "Mimir-Alpha"
 
 include(":app")
 
@@ -44,7 +44,7 @@ include(":core-audio")         // UI sound engine, Phase 1 self-contained
 include(":core-tweaker-client") // Binder client for the isolated Mimir Tweaker APK
 include(":mimir-tweaker-contract")
 
-// The AIDL is shared from ONE source (the isolated Tweaker tree) instead of copied into the rewrite.
+// The AIDL is shared from ONE source (the isolated Tweaker tree) instead of copied into Mimir Alpha.
 project(":mimir-tweaker-contract").projectDir = file("mimir-tweaker/contract")
 
 // ── Domain, storage, resolver, launch, metadata, and platform modules ─────────

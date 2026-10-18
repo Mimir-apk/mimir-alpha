@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 /**
- * MIMIR-REWRITE :core-ui — the device-free review surface for the STAVE icon set and the v2 scenes.
+ * Mimir Alpha :core-ui — the device-free review surface for the STAVE icon set and the v2 scenes.
  *
  * Open this file in Android Studio and use the split/design pane. Every preview here renders in the
  * IDE with no emulator and no device, which is the point: the set and the nine scenes can be judged

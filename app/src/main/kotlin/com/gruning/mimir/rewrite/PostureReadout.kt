@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
  * The live, evidence-grounded posture facts shown on the Diagnostics screen. Rather than hardcode a
  * label, we READ the app's actually-declared permissions from the [PackageManager] at runtime.
  *
- * The rewrite is OFFLINE-FIRST: it runs fully without a network, and `INTERNET` is scoped to explicit
+ * Mimir Alpha is OFFLINE-FIRST: it runs fully without a network, and `INTERNET` is scoped to explicit
  * connected metadata/media actions, never scan, launch, game content, BIOS, or firmware. The historical
  * implicit DAT refresh is revoked at startup; its remaining proof hook is debug-only. M-button permissions
  * are local device controls for the floating overlay, foreground-return evidence, and tracked-task

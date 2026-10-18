@@ -158,7 +158,7 @@ import androidx.compose.ui.unit.dp
 import kotlin.math.min
 
 /**
- * MIMIR-REWRITE :core-ui — the STAVE icon set, Compose face. GENERATED, do not hand-edit.
+ * Mimir Alpha :core-ui — the STAVE icon set, Compose face. GENERATED, do not hand-edit.
  *
  * Source of truth: `tools/mimir-icon-set/icons.json`. Regenerate both faces after any edit:
  *   python3 tools/mimir-icon-set/generate_compose.py      → this file

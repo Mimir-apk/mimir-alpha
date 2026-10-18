@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 import java.util.Locale
 
 /**
- * MIMIR-REWRITE :core-ui — the PLATFORM SHELFMARK.
+ * Mimir Alpha :core-ui — the PLATFORM SHELFMARK.
  *
  * WHAT THIS IS. A library does not identify a book by reprinting the publisher's logo on the spine — it
  * applies its OWN shelfmark: a small struck plate carrying a call number. That is exactly this component, and

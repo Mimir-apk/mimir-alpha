@@ -1,7 +1,7 @@
 package com.gruning.mimir.rewrite.feature.library
 
 /**
- * MIMIR-REWRITE :feature-library — the focused-row VISUAL-SETTLEMENT contract.
+ * Mimir Alpha :feature-library — the focused-row VISUAL-SETTLEMENT contract.
  *
  * THE BUG THIS EXISTS TO KILL. The previous rule asked only whether the focused index fell between
  * `visibleItemsInfo.first().index` and `.last().index`. But `visibleItemsInfo` includes **partially**

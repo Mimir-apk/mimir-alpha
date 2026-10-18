@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# POSIX Gradle launcher for Mimir-rewrite quality gates.
+# POSIX Gradle launcher for Mimir Alpha quality gates.
 # Resolution: MIMIR_GRADLE → GRADLE → PATH gradle (exact 8.9) → warmed unpacked wrapper dist.
 # Never executes ./gradlew.
 

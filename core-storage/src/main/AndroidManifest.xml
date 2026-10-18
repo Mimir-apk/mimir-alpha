@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE :core-storage — library manifest.
-     Posture (MIMIR_REWRITE_POSTURE_MANIFEST): NO android.permission.INTERNET. Pure local SQLite. -->
+<!-- Mimir Alpha :core-storage — library manifest.
+     Posture: NO android.permission.INTERNET. Pure local SQLite. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" />

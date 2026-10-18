@@ -33,12 +33,12 @@ import com.gruning.mimir.rewrite.core.storage.entity.TitleMetadataCacheEntity
 import com.gruning.mimir.rewrite.core.storage.entity.TitleOverrideEntity
 
 /**
- * The Mimir-rewrite local database. A single local SQLite file — NO network, NO cloud sync in the
+ * The Mimir Alpha local database. A single local SQLite file — NO network, NO cloud sync in the
  * foundation (posture manifest). Schema is exported to `core-storage/schemas` (KSP arg) so every
  * migration is auditable.
  *
- * The recommended on-disk name is `mimir-rewrite.db` (distinct from the shipping product's catalog
- * sqlite so the side-by-side install never collides). The database *builder* (context, name,
+ * The stable on-disk name is `mimir-rewrite.db`, retained for existing installations.
+ * The database *builder* (context, name,
  * migrations) is left to the app/DI layer — this module only declares the schema so it stays free of
  * an Android `Context` dependency at the type level.
  */

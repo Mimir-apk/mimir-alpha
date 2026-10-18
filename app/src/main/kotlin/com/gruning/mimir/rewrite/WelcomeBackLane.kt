@@ -55,7 +55,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeoutOrNull
 
 /**
- * MIMIR-REWRITE — the cold-start "Welcome back" lane.
+ * Mimir Alpha — the cold-start "Welcome back" lane.
  *
  * A return visit opens on a brief branded beat instead of a cold shelf: the greeting, the themed
  * Eoksadberg line, and "Refreshing your library…" hold the screen while the home composes and warms

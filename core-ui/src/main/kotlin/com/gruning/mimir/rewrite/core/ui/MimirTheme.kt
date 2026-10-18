@@ -9,7 +9,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.text.font.FontFamily
 
 /**
- * MIMIR-REWRITE :core-ui — THE theme entry point.
+ * Mimir Alpha :core-ui — THE theme entry point.
  *
  * One call the whole app wraps its content in. It:
  *  1. resolves the [MimirThemePalette] for [themeId],

@@ -1,4 +1,4 @@
-# Mimir
+# Mimir Alpha
 
 Mimir is a game launcher for Android handhelds. Choose your game folders, browse your library with
 a controller or touch, and launch games in the emulators you have installed. It can also be your

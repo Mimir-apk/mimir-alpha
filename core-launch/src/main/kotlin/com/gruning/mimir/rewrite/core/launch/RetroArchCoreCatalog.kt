@@ -252,7 +252,7 @@ internal object RetroArchCoreCatalog {
         ),
         PlatformId("snk_neo_geo_cd") to shipping("snk_neo_geo_cd", Core("neocd", "NeoCD")),
 
-        // These four are the rewrite's later mapped completion rows. They retain their proven primary
+        // These four are Mimir Alpha's later mapped completion rows. They retain their proven primary
         // artifacts even though the frozen shipping 49-platform registry did not carry registrations.
         PlatformId("commodore_cd32") to extension(Core("puae", "PUAE")),
         PlatformId("nintendo_family_computer_disk_system") to extension(Core("nestopia", "Nestopia")),

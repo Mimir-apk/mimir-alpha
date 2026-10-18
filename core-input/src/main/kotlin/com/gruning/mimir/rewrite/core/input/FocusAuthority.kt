@@ -48,7 +48,7 @@ data class FocusState(
  *
  * Mimir owns focus on every surface through exactly one authority. In the old product this was
  * CSS `.is-focused` managed by JS, forever
- * fighting the WebView's own native DOM-focus nav. In the rewrite there is no second focus engine to
+ * fighting the WebView's own native DOM-focus nav. In Mimir Alpha there is no second focus engine to
  * fight: this authority is the only thing that decides what's focused, the platform is never asked to
  * move focus directionally, and [InputAuthority] guarantees directional input is never passed through
  * to a platform focus engine (rule 4 of its contract).

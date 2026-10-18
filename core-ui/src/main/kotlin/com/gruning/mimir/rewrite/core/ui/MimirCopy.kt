@@ -1,7 +1,7 @@
 package com.gruning.mimir.rewrite.core.ui
 
 /**
- * MIMIR-REWRITE :core-ui — the CANON user-facing vocabulary (shared terms + cross-surface string
+ * Mimir Alpha :core-ui — the CANON user-facing vocabulary (shared terms + cross-surface string
  * contracts). One home so a shared rename lands everywhere at once and surfaces can't drift apart
  *.
  *

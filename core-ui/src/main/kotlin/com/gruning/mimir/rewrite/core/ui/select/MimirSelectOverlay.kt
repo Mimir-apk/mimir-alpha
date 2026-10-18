@@ -93,7 +93,7 @@ import com.gruning.mimir.rewrite.core.ui.theme.MimirSpacing
 import com.gruning.mimir.rewrite.core.ui.theme.MimirType
 
 /**
- * MIMIR-REWRITE — the ONE reusable "Choose an option" overlay (shipping `.select-overlay` / `.select-dialog`).
+ * Mimir Alpha — the ONE reusable "Choose an option" overlay (shipping `.select-overlay` / `.select-dialog`).
  * Ports the shipping select model 1:1: a dim-scrim modal with a title + `n / N` counter, a scrollable column of
  * single-line options (the current one bold + ✓, the focused one a themed fill + ring + a left accent bar with
  * NO scale — the shipping "focus is a cheap colour cross-fade, never a heave" rule), optional gold group headers,

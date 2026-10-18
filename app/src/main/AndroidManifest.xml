@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE — posture: offline-first. Network is limited to explicit connected metadata/media actions;
+<!-- Mimir Alpha — posture: offline-first. Network is limited to explicit connected metadata/media actions;
      scan and launch never use it, and Mimir never acquires game content, BIOS, or firmware. -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"

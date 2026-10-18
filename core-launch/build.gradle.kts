@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-launch — launch readiness + dispatch policy.
+// Mimir Alpha :core-launch — launch readiness + dispatch policy.
 //
 // Android library (it will hold the real launch-intent dispatch + package-installed checks). The
 // FOUNDATION slice authored here is the readiness ENGINE: pure functions from (game, installed

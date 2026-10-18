@@ -1,4 +1,4 @@
-# Line-ending policy for Mimir-rewrite.
+# Line-ending policy for Mimir Alpha.
 #
 # Why this file exists, concretely: several gates compare committed artifacts BYTE FOR BYTE.
 # `:core-platform:platformSupportGate` runs tools/platform-registry/verify-platform-registry.mjs,

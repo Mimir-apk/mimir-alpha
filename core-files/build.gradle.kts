@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-files — vendored file-manager engine (SysAdminDoc/FileExplorer, MIT).
+// Mimir Alpha :core-files — vendored file-manager engine (SysAdminDoc/FileExplorer, MIT).
 //
 // Android library, not pure kotlin("jvm") like :core-model — forced by `android.net.Uri` in
 // FileItem.kt, the one Android-SDK dependency in the vendored `core/model` slice. Uri comes from

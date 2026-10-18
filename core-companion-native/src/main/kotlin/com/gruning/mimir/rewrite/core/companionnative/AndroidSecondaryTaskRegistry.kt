@@ -42,7 +42,7 @@ internal class SecondaryDisplayAvailabilityObserver(
  *
  * Important truth boundary: Android does not expose a reliable third-party "all recent apps per display"
  * API without special appops/OEM hooks. This registry therefore tracks apps Mimir launches/moves and labels
- * the state honestly. That is enough for the rewrite FE drawer to expose its launch/swap request path without
+ * the state honestly. That is enough for Mimir Alpha FE drawer to expose its launch/swap request path without
  * hallucinating OS-global recents.
  */
 class AndroidSecondaryTaskRegistry(

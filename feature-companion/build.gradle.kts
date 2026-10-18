@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :feature-companion — the dual-screen companion.
+// Mimir Alpha :feature-companion — the dual-screen companion.
 // Renders the CompanionPayload read-model (Now-Playing / library mirror / idle) — display-only.
 plugins {
     alias(libs.plugins.android.library)

@@ -19,7 +19,7 @@ enum class BiosPresence {
 /**
  * A BIOS/firmware file a platform (or a specific emulator) needs to run, plus whether it is present.
  *
- * The rewrite models BIOS as first-class truth because it drives [LaunchReadiness.NeedsBios] and the
+ * Mimir Alpha models BIOS as first-class truth because it drives [LaunchReadiness.NeedsBios] and the
  * "BIOS is placed when required" honesty the console posture demands. It NEVER points the user at a
  * download — Mimir does no BIOS sourcing (posture manifest); it only reports presence and, at most,
  * tells the user which file to place where.

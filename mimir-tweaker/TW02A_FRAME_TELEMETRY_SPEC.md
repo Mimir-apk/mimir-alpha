@@ -94,4 +94,4 @@ PPSSPP. Both reports remained `OBSERVED`; hardware writes, rollback drills, rebo
 active-gameplay variability, and repeated runs remain owed. See
 the historical frame-observation report, which is not distributed with this source.
 
-Mimir-rewrite remains side-by-side and is not a replacement candidate yet.
+Mimir Alpha is an early public release; the historical observations above do not establish release readiness.

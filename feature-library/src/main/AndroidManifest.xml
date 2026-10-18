@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE :feature-library — posture: NO permissions. A pure Compose UI surface; the SAF grant
+<!-- Mimir Alpha :feature-library — posture: NO permissions. A pure Compose UI surface; the SAF grant
      + rescan is fired from :app (which owns the ActivityResult contract), never from this library. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mimir-rewrite UI invariants gate (F1 focus + P1 feature hex + R1 regex brackets
+"""Mimir Alpha UI invariants gate (F1 focus + P1 feature hex + R1 regex brackets
 + D1/D2/D3 must-consume).
 
 Kotlin-aware lexer strips comments and emits exact-length views:

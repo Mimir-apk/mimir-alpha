@@ -50,7 +50,7 @@ import com.gruning.mimir.rewrite.core.ui.theme.MimirSpacing
 import com.gruning.mimir.rewrite.core.ui.theme.MimirType
 
 /**
- * MIMIR-REWRITE :feature-library — the shelf CHROME (Lane L6).
+ * Mimir Alpha :feature-library — the shelf CHROME (Lane L6).
  *
  * The console frame ABOVE and BELOW the coverflow: the identity header (rune badge + `MIMIR` wordmark +
  * `ᛗᛁᛗᛁᚱ · THE WELL OF MEMORY` sub-eyebrow + the right-side `N platforms · M games · HH:MM` stat line), a
@@ -391,7 +391,7 @@ fun ShelfModeStrip(
     ) {
         // ── Mode tabs ──
         // LIB-02b: the shipping rail is FREE TEXT tabs — the active mode wears a
-        // subtle accent chip, the others are muted text — NOT a bordered segmented box. The rewrite had wrapped
+        // subtle accent chip, the others are muted text — NOT a bordered segmented box. Mimir Alpha had wrapped
         // them in a surfaceRaised container that deviated from that layout; this restores the loose tabs.
         Row(
             modifier = Modifier.defaultMinSize(minHeight = 36.dp),

@@ -60,7 +60,7 @@ import com.gruning.mimir.rewrite.core.ui.theme.MimirType
 
 /**
  * BROWSE — the RECOVER surface for games the user hid. It is deliberately NOT
- * a placement queue, a duplicate shelf, a Settings replacement, or a file organizer. The rewrite indexes
+ * a placement queue, a duplicate shelf, a Settings replacement, or a file organizer. Mimir Alpha indexes
  * in place , so there is no "unplaced inbox" concept — a placed game
  * lives only on the shelf/gamelist; a HIDDEN game lives only here until restored.
  *

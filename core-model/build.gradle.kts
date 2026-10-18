@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-model — pure Kotlin/JVM domain types.
+// Mimir Alpha :core-model — pure Kotlin/JVM domain types.
 //
 // This module is intentionally NOT an Android module. Per the architecture map it is a
 // plain `kotlin("jvm")` library so the domain truth models are JVM-unit-testable with zero

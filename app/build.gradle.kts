@@ -88,7 +88,7 @@ android {
     }
 
     // Shared across development machines so a tester's device accepts debug builds made on any Mac.
-    // The rewrite app and the Tweaker MUST stay on one key: CONTROL_TWEAKER is protectionLevel
+    // Mimir Alpha app and the Tweaker MUST stay on one key: CONTROL_TWEAKER is protectionLevel
     // "signature", and DirectBootKeyAuthority checks the caller's certificate at runtime. Not a
     // release key — passwords are documented in debug/README.md by design.
     // CI runners and fresh worktrees may not have the shared file; the fallback preserves AGP's

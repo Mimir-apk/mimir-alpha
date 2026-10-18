@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.first
 
 /**
  * Config backup — the EXPORT half of the M10 migration bundle (the IMPORT half is [MigrationImportOverlay]
- * + `core.resolver.migration`). Reads the rewrite's CURRENT local state and produces a
+ * + `core.resolver.migration`). Reads Mimir Alpha's CURRENT local state and produces a
  * [MigrationBundleV1] — the SAME plain-JSON contract the shipping app writes — which the user saves via SAF
  * and can re-import here or on another device. Metadata only (favorites/hidden/overrides/theme markers +
  * source-folder HINTS); never ROM bytes, BIOS, or anything network-touching. Posture-clean: inspectable,

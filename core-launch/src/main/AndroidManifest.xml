@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE :core-launch — library manifest. Posture: NO INTERNET; NO QUERY_ALL_PACKAGES.
+<!-- Mimir Alpha :core-launch — library manifest. Posture: NO INTERNET; NO QUERY_ALL_PACKAGES.
      Emulator-installed checks use scoped <queries> declared by the app, not broad visibility. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Required by IntentLaunchDispatcher's best-effort cleanup of the prior emulator process. -->

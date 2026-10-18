@@ -73,7 +73,7 @@ import com.gruning.mimir.rewrite.core.ui.MimirTypeStep
 import com.gruning.mimir.rewrite.core.ui.theme.MimirType
 
 /**
- * MIMIR-REWRITE — THE theme picker: a full-screen 3×3 wall of nine live book previews, each painted ENTIRELY
+ * Mimir Alpha — THE theme picker: a full-screen 3×3 wall of nine live book previews, each painted ENTIRELY
  * in its OWN [MimirThemePalette]. Every preview combines the authored scene texture, dark hero-cover volume,
  * invariant Mannaz book mark, per-theme corner signature, counter-hue, label, and mood tag. All nine identities
  * can be compared side-by-side without collapsing into recolored generic cards. Shared verbatim by first-run

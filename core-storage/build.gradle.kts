@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-storage — Room persistence.
+// Mimir Alpha :core-storage — Room persistence.
 //
 // Android library. Owns the SQLite schema (entities/DAOs/@Database) + mappers to/from core-model.
 // KSP runs the Room compiler. No INTERNET, no network — pure local persistence (posture manifest).

@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 /**
- * MIMIR-REWRITE :core-ui — the reviewable design-system gallery.
+ * Mimir Alpha :core-ui — the reviewable design-system gallery.
  *
  * A device-free way to review the whole system: all shipping theme palettes as swatch cards (accent, surface
  * ramp, semantic-success, signature background), plus the [MediaArtFrame] with + without art, focused +

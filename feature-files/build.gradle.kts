@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :feature-files — the face of the vendored file-manager engine (slice 5).
+// Mimir Alpha :feature-files — the face of the vendored file-manager engine (slice 5).
 //
 // This is the Compose surface for :core-files :
 // a controller-first directory browser for a handheld held at arm's length. The engine

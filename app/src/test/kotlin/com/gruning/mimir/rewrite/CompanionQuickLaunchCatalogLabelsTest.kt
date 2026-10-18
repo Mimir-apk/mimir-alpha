@@ -7,7 +7,7 @@ import org.junit.Test
 
 /**
  * Round-5 triage 7a: the Bottom Quick Launch picker drew two tiles reading "Azahar" (walkthrough 253,
- * AYN Thor). The seed labels below are the rewrite registry's; the installed labels are what
+ * AYN Thor). The seed labels below are Mimir Alpha registry's; the installed labels are what
  * `aapt2 dump badging` reported for the APKs pulled from that Thor (`io.github.lime3ds.android` ->
  * "AzaharPlus", `org.azahar_emu.azahar` -> "Azahar"). Variants come from the real registry, through the
  * same lookup `CompanionQuickLaunchCatalog.refresh` passes.

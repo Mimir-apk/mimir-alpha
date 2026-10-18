@@ -202,7 +202,7 @@ import com.gruning.mimir.rewrite.core.ui.mimirSheetSpec
 import com.gruning.mimir.rewrite.core.ui.holdMimirInputUntilShown
 
 /**
- * MIMIR-REWRITE — the first-run ONBOARDING flow (C4).
+ * Mimir Alpha — the first-run ONBOARDING flow (C4).
  *
  * ONE [MimirDestination.ONBOARDING] destination hosting an internal step machine, entered on a genuine first
  * run ([OnboardingStore.isFirstRun]) and exited via [OnboardingStore.markComplete] → the shelf. It is a HARD

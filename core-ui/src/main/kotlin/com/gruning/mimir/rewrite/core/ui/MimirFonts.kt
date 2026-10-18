@@ -5,7 +5,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 
 /**
- * MIMIR-REWRITE :core-ui — THE product typeface.
+ * Mimir Alpha :core-ui — THE product typeface.
  *
  * the product standardizes on **IBM Plex Sans**, with **IBM Plex Mono** as the
  * companion face for fixed-width readouts. Before bundling these fonts the app shipped no font asset at all and

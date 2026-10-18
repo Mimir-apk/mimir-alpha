@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MIMIR-REWRITE :feature-files — the face of the vendored file-manager engine.
-     Posture (MIMIR_REWRITE_POSTURE_MANIFEST): NO android.permission.INTERNET. This module renders
+<!-- Mimir Alpha :feature-files — the face of the vendored file-manager engine.
+     Posture: NO android.permission.INTERNET. This module renders
      :core-files listings and reports intents (choose / extract) to its caller; it performs no I/O
      and no network access of its own. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" />

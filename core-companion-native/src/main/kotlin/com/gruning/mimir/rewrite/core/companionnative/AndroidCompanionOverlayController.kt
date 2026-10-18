@@ -515,7 +515,7 @@ internal fun planCompanionOverlayThemeChange(
 }
 
 /**
- * Real Android overlay controller for the rewrite companion. The button/menu are native Views in a
+ * Real Android overlay controller for Mimir Alpha companion. The button/menu are native Views in a
  * TYPE_APPLICATION_OVERLAY window created from the secondary-display context, so they can z-order over a
  * foreign foreground app on display 2. The button and the edge catcher remain touch-only and not focusable, and so does
  * the secondary menu until the pad owns it. While the PRIMARY_SINGLE quick menu is visibly open, that one window temporarily

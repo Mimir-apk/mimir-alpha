@@ -48,7 +48,7 @@ android {
         buildConfigField("String", "FAMILY_CATALOG_PUBLIC_KEY_BASE64", familyCatalogPublicKeyBase64.asBuildConfigString())
     }
 
-    // Same shared debug key as the rewrite app. CONTROL_TWEAKER is protectionLevel "signature" and
+    // Same shared debug key as Mimir Alpha app. CONTROL_TWEAKER is protectionLevel "signature" and
     // DirectBootKeyAuthority verifies the caller's certificate, so the two APKs must never drift
     // onto different keys. This is a separate Gradle build, so the path is relative to mimir-tweaker/.
     signingConfigs {
@@ -68,7 +68,7 @@ android {
             buildConfigField("String", "FAMILY_CATALOG_URL", familyCatalogUrl("staging").asBuildConfigString())
         }
         // beta: release code that is not debuggable and
-        // not profileable, signed with the same shared certificate as the debug build so the rewrite app's
+        // not profileable, signed with the same shared certificate as the debug build so Mimir Alpha app's
         // CONTROL_TWEAKER signature permission still pairs. `release` itself stays unsigned. Same application
         // id and version as every other build. Only the production flavour is built (see androidComponents
         // below). Nothing here touches admission, signature gating or capability checks.

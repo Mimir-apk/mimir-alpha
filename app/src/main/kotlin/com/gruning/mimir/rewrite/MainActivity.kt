@@ -100,7 +100,7 @@ internal const val WelcomeHoldBackstopMarginMs = 500L
 internal const val WelcomeHoldBackstopMs = WelcomeHoldMaxMs + WelcomeHoldBackstopMarginMs
 
 /**
- * MIMIR-REWRITE — the side-by-side Compose app entry point.
+ * Mimir Alpha — the Compose app entry point.
  *
  * Hosts the Compose shell ([MimirApp]): provides the single
  * [com.gruning.mimir.rewrite.core.input.FocusAuthority] for the window and opens on the Library shelf

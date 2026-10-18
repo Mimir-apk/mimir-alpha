@@ -3,7 +3,7 @@ package com.gruning.mimir.rewrite
 import androidx.compose.runtime.MutableState
 
 /**
- * The rewrite's navigation destinations. Kept as a tiny enum + state-based switch (not
+ * Mimir Alpha's navigation destinations. Kept as a tiny enum + state-based switch (not
  * navigation-compose) on purpose: a NavHost adds a second back-stack / focus-owning system, and this
  * slice's whole thesis is ONE focus authority. When the destination count grows we lift this to
  * navigation-compose behind the same [com.gruning.mimir.rewrite.core.input.FocusAuthority].

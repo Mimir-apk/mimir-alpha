@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-ui — the shared design system (Designer lane).
+// Mimir Alpha :core-ui — the shared design system (Designer lane).
 // The 9 Norse themes as Compose ColorSchemes, elevated tokens, media-art component, motion.
 // Shared UI and picker input contracts; no app or feature dependencies.
 plugins {

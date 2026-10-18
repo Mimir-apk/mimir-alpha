@@ -1,6 +1,6 @@
-// MIMIR-REWRITE :feature-browse — Browse. The corrected product meaning: the recover surface for
+// Mimir Alpha :feature-browse — Browse. The corrected product meaning: the recover surface for
 // HIDDEN games (hidden games are recoverable without file deletion) — NOT a placement
-// queue, duplicate shelf, or file organizer. The rewrite indexes in place, so there is no "unplaced inbox".
+// queue, duplicate shelf, or file organizer. Mimir Alpha indexes in place, so there is no "unplaced inbox".
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)

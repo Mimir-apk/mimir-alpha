@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Mimir-rewrite offline quality gate ladder.
+# Mimir Alpha offline quality gate ladder.
 # Default: cached Gradle runs. --forced: --no-build-cache --rerun-tasks. --full: extra module tests.
 # Emits exactly one terminal verdict; summaries precede PASS.
 

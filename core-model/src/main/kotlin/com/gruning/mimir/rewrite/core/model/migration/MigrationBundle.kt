@@ -7,14 +7,14 @@ import kotlinx.serialization.json.Json
 /**
  * MIGRATION BUNDLE v1 — the portable, cross-app "bring over from Mimir" contract.
  *
- * The rewrite is side-by-side and CANNOT read the shipping app's private sandbox (the shipping app's data must remain untouched). So user state moves through
- * ONE plain-JSON file the shipping app writes into SHARED storage (`…/Mimir/…`), which the rewrite reads
- * via SAF. Metadata only — favorites/hidden/overrides/theme markers, never ROM bytes, BIOS, firmware, or
+ * Mimir Alpha cannot read a legacy app's private sandbox. Legacy user state moves through a
+ * plain-JSON export in shared storage, which Mimir Alpha reads via SAF.
+ * Metadata only — favorites/hidden/overrides/theme markers, never ROM bytes, BIOS, firmware, or
  * anything network-touching. The file is inspectable by design (no encryption) — same honest posture as
  * the rest of Mimir.
  *
  * **This is a WIRE CONTRACT.** Fields are JS-friendly primitives (platformId/emulatorId are raw strings,
- * not the internal value classes) so the shipping WebView app can emit it with plain `JSON.stringify`.
+ * not the internal value classes) so the legacy WebView app can emit it with plain `JSON.stringify`.
  * The importer converts to typed ids. Forward-compatible: unknown fields are ignored on read, every record
  * array is optional/defaulted, and additive changes stay within [CURRENT_BUNDLE_VERSION]; a breaking change
  * bumps the version and the reader rejects it (see [MigrationBundleCodec]).
@@ -55,7 +55,7 @@ data class MigrationTheme(val themeId: String)
 
 /**
  * A library source folder — HINT ONLY. OS-scoped SAF `content://` tree grants are non-transferable across
- * packages, so the rewrite records these for the user to RE-PICK, never auto-grants them.
+ * packages, so Mimir Alpha records these for the user to RE-PICK, never auto-grants them.
  */
 @kotlinx.serialization.Serializable
 data class MigrationSourceRoot(
@@ -66,11 +66,11 @@ data class MigrationSourceRoot(
 
 /**
  * The join-key-bearing unit. Carries the strongest identity EVIDENCE the shipping app has per game so the
- * importer can re-derive the rewrite's `gameId` through the one `GameIdentityBuilder` (hash → serial →
+ * importer can re-derive Mimir Alpha's `gameId` through the one `GameIdentityBuilder` (hash → serial →
  * catalog → filename). The human-readable [title]/[platformLabel] are for the "not found" report ONLY —
  * they are never matched on.
  *
- * @property platformId the rewrite platform key (e.g. "dreamcast").
+ * @property platformId Mimir Alpha platform key (e.g. "dreamcast").
  * @property fileName original file name including extension.
  * @property sizeBytes byte size if known (0 if unknown) — part of the stable key.
  * @property relativePath path relative to the library root, if known.

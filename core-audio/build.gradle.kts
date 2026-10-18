@@ -1,4 +1,4 @@
-// MIMIR-REWRITE :core-audio — UI sound engine.
+// Mimir Alpha :core-audio — UI sound engine.
 //
 // Android library (needs Context/AudioManager/SoundPool — not pure-JVM like core-model). Phase 1 is
 // a leaf module: zero dependency on core-model/core-ui/etc., so it builds and unit-tests in complete

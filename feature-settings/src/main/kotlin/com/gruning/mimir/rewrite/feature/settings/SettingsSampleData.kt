@@ -34,7 +34,7 @@ object SettingsSample {
     /**
      * The 8 named Norse themes plus the base Default . Only
      * the user-facing LABEL lives here — internal theme ids are the shipping product's concern, not the
-     * rewrite settings surface's. Order matches the shipping picker.
+     * Mimir Alpha settings surface's. Order matches the shipping picker.
      */
     val themes: List<String> = listOf(
         "Default",   // base gold (Golden Hall)

@@ -100,7 +100,7 @@ private fun MigrationGameRecord.displayTitle(): String =
 /**
  * Applies a migration bundle onto the ALREADY-SCANNED rewrite library. The contract is "re-apply my markers
  * onto games I already have" — it never builds the library, never re-scans, and never fails on a per-record
- * miss (a game the rewrite doesn't have is reported, not an error). Idempotent/additive: the write seams are
+ * miss (a game Mimir Alpha doesn't have is reported, not an error). Idempotent/additive: the write seams are
  * upserts, so re-importing is safe.
  *
  * SAF source-folder grants CANNOT be transferred across packages, so [ImportPlan.sourceRootHints] are surfaced
@@ -112,7 +112,7 @@ class MigrationImporter(private val matcher: MigrationMatcher) {
      * Compute the exact plan without writing.
      * @param isKnownTheme is this `themeId` a real `MimirThemeId.storageKey`? (app supplies; core-resolver
      *   can't see core-ui). Unknown themes are ignored + reported rather than silently forced to DEFAULT.
-     * @param isEmulatorRecognized is [emulatorId] a candidate the rewrite knows for this matched game?
+     * @param isEmulatorRecognized is [emulatorId] a candidate Mimir Alpha knows for this matched game?
      *   (app supplies via the launch pipeline: does the game's Open-With list contain it?). Unrecognized →
      *   skipped, never a dangling override.
      */
