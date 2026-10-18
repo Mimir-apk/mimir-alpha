@@ -1,0 +1,1123 @@
+{
+  "schemaVersion": "mimirShippingCatalogRelations.v1",
+  "sourceCatalogSha256": "f2ea34810476db28d1583b84869ea6ef89c67fac66b61bee28a7568fbb16ad56",
+  "canonicalIds": [
+    "1292_advanced_programmable_video_system",
+    "3ds",
+    "acorn_archimedes",
+    "acorn_atom",
+    "acorn_bbc_micro",
+    "acorn_risc_pc",
+    "act_apricot_pc_xi",
+    "amazon_fire_tv",
+    "amazon_luna",
+    "amstrad_cpc",
+    "amstrad_gx4000",
+    "apf_imagination_machine",
+    "apf_mp_1000",
+    "apple_bandai_pippin",
+    "apple_i",
+    "apple_ii",
+    "apple_iie",
+    "apple_iigs",
+    "apple_macintosh",
+    "arcade",
+    "arduboy_inc_arduboy",
+    "atari_2600",
+    "atari_5200",
+    "atari_7800",
+    "atari_8_bit_family",
+    "atari_jaguar",
+    "atari_jaguar_cd",
+    "atari_lynx",
+    "atari_pong",
+    "atari_st",
+    "atari_vcs",
+    "atari_xegs",
+    "atomiswave",
+    "bally_astrocade",
+    "bandai_design_master_denshi_mangajuku",
+    "bandai_gundam_rx_78",
+    "bandai_playdia",
+    "bandai_super_vision_8000",
+    "bandai_terebikko",
+    "bandai_wonderswan",
+    "bandai_wonderswan_color",
+    "bbc_bridge_companion",
+    "benesse_pocket_challenge_v2",
+    "benesse_pocket_challenge_w",
+    "bit_corporation_gamate",
+    "capcom_cp_system_i",
+    "capcom_cp_system_ii",
+    "capcom_cp_system_iii",
+    "casio_loopy",
+    "casio_pv_1000",
+    "chip_8",
+    "coleco_colecovision",
+    "coleco_colecovision_adam",
+    "coleco_telstar_6030",
+    "coleco_telstar_6040",
+    "coleco_telstar_6045",
+    "coleco_telstar_6065",
+    "coleco_telstar_6071",
+    "coleco_telstar_6135",
+    "commodore_128",
+    "commodore_64",
+    "commodore_amiga",
+    "commodore_cd32",
+    "commodore_cdtv",
+    "commodore_pet",
+    "commodore_plus_4",
+    "commodore_vic_20",
+    "connor_videosmarts",
+    "digital_media_cartridge_firecore",
+    "dos",
+    "dreamcast",
+    "ds",
+    "emerson_arcadia_2001",
+    "entex_adventure_vision",
+    "entex_select_a_game",
+    "epoch_cassette_vision",
+    "epoch_game_pocket_computer",
+    "epoch_super_cassette_vision",
+    "epoch_tv_tennis_electrotennis",
+    "fairchild_channel_f",
+    "fujitsu_fm_7",
+    "fujitsu_fm_towns",
+    "fukutake_publishing_studybox",
+    "funtech_super_acan",
+    "gakken_compact_vision_tv_boy",
+    "gamecube",
+    "gamepark_caanoo",
+    "gamepark_gp2x",
+    "gamepark_gp32",
+    "gb",
+    "gba",
+    "gbc",
+    "gce_vectrex",
+    "genesis",
+    "google_nexus_player",
+    "google_stadia",
+    "handheld_electronic_game",
+    "hartung_game_master",
+    "hitachi_s1",
+    "infocom_z_machine",
+    "intellivision_amico",
+    "interton_vc_4000",
+    "interton_video_2000",
+    "ique_ique",
+    "konami_picno",
+    "leapfrog_explorer",
+    "leapfrog_leappad",
+    "leapfrog_leapster_learning_game_system",
+    "leapfrog_my_first_leappad",
+    "ljn_video_art",
+    "lowres_nx",
+    "lutro",
+    "luxor_abc_800",
+    "magnavox_odyssey",
+    "magnavox_odyssey2",
+    "mattel_hyperscan",
+    "mattel_intellivision",
+    "microsoft_msx",
+    "microsoft_msx2",
+    "microsoft_xbox_one",
+    "microsoft_xbox_series_x",
+    "microw8",
+    "milton_bradley_microvision",
+    "n64",
+    "nec_pc_98",
+    "nec_pc_engine_cd_turbografx_cd",
+    "nec_pc_engine_supergrafx",
+    "nec_pc_engine_turbografx_16",
+    "nec_pc_fx",
+    "nes",
+    "nichibutsu_my_vision",
+    "nintendo_color_tv_game_ctg_15v",
+    "nintendo_color_tv_game_ctg_6",
+    "nintendo_color_tv_game_ctg_bk6",
+    "nintendo_color_tv_game_ctg_cr112",
+    "nintendo_color_tv_game_ctg_hc10",
+    "nintendo_family_computer_disk_system",
+    "nintendo_nintendo_64dd",
+    "nintendo_nintendo_dsi",
+    "nintendo_pokemon_mini",
+    "nintendo_satellaview",
+    "nintendo_sufami_turbo",
+    "nintendo_virtual_boy",
+    "nintendo_wii",
+    "nintendo_wii_u",
+    "nokia_n_gage",
+    "nvidia_shield_portable",
+    "nvidia_shield_tv",
+    "ouya_ouya",
+    "palmtex_super_micro",
+    "panic_playdate",
+    "pc_50x_palladium_tele_cassetten_game_825_530",
+    "pc_50x_palladium_tele_cassetten_game_825_581",
+    "pc_50x_shg_black_point_fs_1003",
+    "philips_cd_i",
+    "philips_tele_game",
+    "philips_videopac",
+    "pioneer_laseractive",
+    "playjam_game_stick",
+    "ps1",
+    "ps2",
+    "ps3",
+    "psp",
+    "rca_studio_ii",
+    "rpg_maker",
+    "saturn",
+    "scummvm",
+    "sega_32x",
+    "sega_beena",
+    "sega_chihiro",
+    "sega_game_gear",
+    "sega_master_system_mark_iii",
+    "sega_mega_cd_sega_cd",
+    "sega_naomi",
+    "sega_naomi_2",
+    "sega_pico",
+    "sega_sg_1000",
+    "sega_video_driver",
+    "sharp_x1",
+    "sharp_x68000",
+    "sinclair_zx_81",
+    "sinclair_zx_spectrum",
+    "snes",
+    "snk_neo_geo",
+    "snk_neo_geo_cd",
+    "snk_neo_geo_pocket",
+    "snk_neo_geo_pocket_color",
+    "sony_playstation_4",
+    "sony_playstation_5",
+    "sony_playstation_vita",
+    "spectravideo_sv",
+    "ssd_xavixport",
+    "switch",
+    "takara_video_challenger",
+    "tandy_video_information_system",
+    "tapwave_zodiac",
+    "the_3do_company_3do",
+    "thomson_moto",
+    "tic_80",
+    "tiger_game_com",
+    "tiger_gizmondo",
+    "tiger_r_zone",
+    "tomy_tutor",
+    "umtech_videobrain",
+    "unisonic_champion_2711",
+    "uzebox",
+    "valve_steam_deck",
+    "valve_steam_link",
+    "view_master_interactive_vision",
+    "vircon32",
+    "vm_labs_nuon",
+    "vtech_3d_gamate",
+    "vtech_creativision",
+    "vtech_socrates",
+    "vtech_v_flash",
+    "vtech_v_smile",
+    "wasm_4",
+    "watara_supervision",
+    "welback_mega_duck",
+    "worlds_of_wonder_action_max",
+    "xbox",
+    "xbox360",
+    "yamaha_copera",
+    "zapit_game_wave",
+    "zeebo_zeebo"
+  ],
+  "variantLinks": [
+    {
+      "catalogId": "acorn_atom_tapes",
+      "platformId": "acorn_atom",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "amazon_fire_tv_2nd_gen",
+      "platformId": "amazon_fire_tv",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "amazon_fire_tv_3rd_gen",
+      "platformId": "amazon_fire_tv",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "amazon_fire_tv_cube",
+      "platformId": "amazon_fire_tv",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "apple_i_tapes",
+      "platformId": "apple_i",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "apple_ii_plus",
+      "platformId": "apple_ii",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "apple_macintosh_beta",
+      "platformId": "apple_macintosh",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_637_75000",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_cx2600a",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_cx2600jr",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_cx2700",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_flashback",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_2600_flashback_2",
+      "platformId": "atari_2600",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_lynx_pag_0401",
+      "platformId": "atari_lynx",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_pong_c_140",
+      "platformId": "atari_pong",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_pong_c_200",
+      "platformId": "atari_pong",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "atari_st_tapes",
+      "platformId": "atari_st",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "bally_astrocade_tapes",
+      "platformId": "bally_astrocade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "bandai_wonderswan_color_wsc_001",
+      "platformId": "bandai_wonderswan_color",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "commodore_64_64c",
+      "platformId": "commodore_64",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "commodore_64_games_system",
+      "platformId": "commodore_64",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "commodore_64_pp",
+      "platformId": "commodore_64",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "commodore_64_tapes",
+      "platformId": "commodore_64",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "digital_media_cartridge_firecore_portable_2",
+      "platformId": "digital_media_cartridge_firecore",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "epoch_cassette_vision_jr",
+      "platformId": "epoch_cassette_vision",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "fairchild_channel_f_system_ii",
+      "platformId": "fairchild_channel_f",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "fbneo_arcade_games",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "fujitsu_fm_7_tapes",
+      "platformId": "fujitsu_fm_7",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "fujitsu_fm_towns_marty",
+      "platformId": "fujitsu_fm_towns",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "gamepark_gp2x_digital",
+      "platformId": "gamepark_gp2x",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "gamepark_gp2x_f200",
+      "platformId": "gamepark_gp2x",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "gamepark_gp2x_wiz",
+      "platformId": "gamepark_gp2x",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "hbmame",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "leapfrog_leapster_learning_game_system_1",
+      "platformId": "leapfrog_leapster_learning_game_system",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_100",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_200",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_2000",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_2001",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_2100",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_300",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_3000",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_400",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_4000",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "magnavox_odyssey_500",
+      "platformId": "magnavox_odyssey",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "mame_2000",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mame_2003",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mame_2003_plus",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mame_2010",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mame_2015",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mame_2016",
+      "platformId": "arcade",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "mattel_hyperscan_alt",
+      "platformId": "mattel_hyperscan",
+      "relation": "PRESENTATION_ALIAS"
+    },
+    {
+      "catalogId": "mattel_intellivision_49_75011",
+      "platformId": "mattel_intellivision",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "mattel_intellivision_5872",
+      "platformId": "mattel_intellivision",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "microsoft_xbox_360_digital",
+      "platformId": "xbox360",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "microsoft_xbox_360_e",
+      "platformId": "xbox360",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "microsoft_xbox_360_s",
+      "platformId": "xbox360",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "microsoft_xbox_one_s",
+      "platformId": "microsoft_xbox_one",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "microsoft_xbox_one_x_k",
+      "platformId": "microsoft_xbox_one",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_cd_turbografx_cd_cdr_30_j",
+      "platformId": "nec_pc_engine_cd_turbografx_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_cd_turbografx_cd_hes_cdr_01_u",
+      "platformId": "nec_pc_engine_cd_turbografx_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_cd_turbografx_cd_hes_duo_01_u",
+      "platformId": "nec_pc_engine_cd_turbografx_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_cd_turbografx_cd_pi_cd1_j",
+      "platformId": "nec_pc_engine_cd_turbografx_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_hes_exp_01_u",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_hes_tgx_01_u",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_pi_tg2_j",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_pi_tg3_j",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_pi_tg7_j",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nec_pc_engine_turbografx_16_pi_tg9_j",
+      "platformId": "nec_pc_engine_turbografx_16",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "neo_geo",
+      "platformId": "snk_neo_geo",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_e_reader",
+      "platformId": "gba",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_family_computer_disk_system_an500",
+      "platformId": "nintendo_family_computer_disk_system",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_family_computer_disk_system_an505",
+      "platformId": "nintendo_family_computer_disk_system",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_family_computer_disk_system_hvc_101",
+      "platformId": "nintendo_family_computer_disk_system",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_game_boy_advance_ags_001",
+      "platformId": "gba",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_game_boy_advance_e_reader",
+      "platformId": "gba",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_game_boy_advance_oxy_001",
+      "platformId": "gba",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_game_boy_mgb_001",
+      "platformId": "gb",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_gamecube_sl_gc10",
+      "platformId": "gamecube",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_new_nintendo_3ds",
+      "platformId": "3ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_new_nintendo_3ds_jan_001",
+      "platformId": "3ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_new_nintendo_3ds_ktr_001",
+      "platformId": "3ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_3ds_ctr_001",
+      "platformId": "3ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_3ds_digital",
+      "platformId": "3ds",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_3ds_ftr_001",
+      "platformId": "3ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_ds_decrypted",
+      "platformId": "ds",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_ds_download_play",
+      "platformId": "ds",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_ds_ntr_001",
+      "platformId": "ds",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_dsi_decrypted",
+      "platformId": "nintendo_nintendo_dsi",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_dsi_dlc",
+      "platformId": "nintendo_nintendo_dsi",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_dsi_twl_001",
+      "platformId": "nintendo_nintendo_dsi",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_entertainment_system_hvc_001",
+      "platformId": "nes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_entertainment_system_hvc_101",
+      "platformId": "nes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_nintendo_entertainment_system_nes_101",
+      "platformId": "nes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_sufami_turbo_shvc_101",
+      "platformId": "nintendo_sufami_turbo",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_sufami_turbo_sns_001",
+      "platformId": "nintendo_sufami_turbo",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_sufami_turbo_sns_101",
+      "platformId": "nintendo_sufami_turbo",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_super_nintendo_entertainment_system_shvc_101",
+      "platformId": "snes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_super_nintendo_entertainment_system_sns_001",
+      "platformId": "snes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_super_nintendo_entertainment_system_sns_101",
+      "platformId": "snes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_super_nintendo_entertainment_system_snsp_001",
+      "platformId": "snes",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_switch_hac_001",
+      "platformId": "switch",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_switch_hac_007",
+      "platformId": "switch",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_switch_hdh_001",
+      "platformId": "switch",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_wii_digital",
+      "platformId": "nintendo_wii",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "nintendo_wii_rvl_201",
+      "platformId": "nintendo_wii",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nokia_n_gage_qd",
+      "platformId": "nokia_n_gage",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "nvidia_shield_tv_p3430",
+      "platformId": "nvidia_shield_tv",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "philips_tele_game_es_2203",
+      "platformId": "philips_tele_game",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_32x_mk_1601_84000_u",
+      "platformId": "sega_32x",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_32x_neptune_u",
+      "platformId": "sega_32x",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_dreamcast_visual_memory_unit",
+      "platformId": "dreamcast",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sega_master_system_mark_iii_mk_3006",
+      "platformId": "sega_master_system_mark_iii",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_master_system_mark_iii_sg_1000m3_j",
+      "platformId": "sega_master_system_mark_iii",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_csd_gm1_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_haa_2502_2912_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_haa_2510_2910_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_haa_2510_2912_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_mk_1601_1690_u",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_mk_1601_4102_u",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_mk_1631_4102_u",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_rg_m1_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_cd_sega_cd_rg_m2_j",
+      "platformId": "sega_mega_cd_sega_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_fb3680",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_haa_2502_j",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_haa_2510_j",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_hmj_0300_j",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_kr",
+      "platformId": "genesis",
+      "relation": "REGIONAL_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_mk_1461_u",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_mk_1631_u",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_mega_drive_genesis_mk_6100_u",
+      "platformId": "genesis",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_saturn_hst_3200_j",
+      "platformId": "saturn",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_saturn_mmp_1000nv",
+      "platformId": "saturn",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_saturn_mmp_1000nv_nx_4yd",
+      "platformId": "saturn",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_saturn_pluto_u",
+      "platformId": "saturn",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sega_sg_1000_ii",
+      "platformId": "sega_sg_1000",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sinclair_zx_spectrum_3",
+      "platformId": "sinclair_zx_spectrum",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "snk_neo_geo_cd_tray",
+      "platformId": "snk_neo_geo_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "snk_neo_geo_cdz",
+      "platformId": "snk_neo_geo_cd",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "snk_neo_geo_mini",
+      "platformId": "snk_neo_geo",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "snk_neo_geo_x",
+      "platformId": "snk_neo_geo",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_2_psx_5000",
+      "platformId": "ps2",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_2_scph_10000",
+      "platformId": "ps2",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_2_scph_70000",
+      "platformId": "ps2",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_2_scph_90000",
+      "platformId": "ps2",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_cech_2000",
+      "platformId": "ps3",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_cech_4000",
+      "platformId": "ps3",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_cecha00_kt",
+      "platformId": "ps3",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_dlc",
+      "platformId": "ps3",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_downloadable",
+      "platformId": "ps3",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_3_psn",
+      "platformId": "ps3",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_4_cuh_2000",
+      "platformId": "sony_playstation_4",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_4_cuh_7000",
+      "platformId": "sony_playstation_4",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_5_cfi_2000",
+      "platformId": "sony_playstation_5",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_pocketstation",
+      "platformId": "ps1",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_dlc",
+      "platformId": "psp",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_psn",
+      "platformId": "psp",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_psp_e1000",
+      "platformId": "psp",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_psp_n1000",
+      "platformId": "psp",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_psx2psp",
+      "platformId": "ps1",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_umd_music",
+      "platformId": "psp",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_portable_umd_video",
+      "platformId": "psp",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_scph_100",
+      "platformId": "ps1",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_scph_100_131",
+      "platformId": "ps1",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_scph_100_131_flat",
+      "platformId": "ps1",
+      "relation": "PRESENTATION_ALIAS"
+    },
+    {
+      "catalogId": "sony_playstation_vita_pch_2000",
+      "platformId": "sony_playstation_vita",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "sony_playstation_vita_vte_1000",
+      "platformId": "sony_playstation_vita",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "spectravideo_sv_328",
+      "platformId": "spectravideo_sv",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "the_3do_company_3do_fz_10",
+      "platformId": "the_3do_company_3do",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "the_3do_company_3do_gdo_101",
+      "platformId": "the_3do_company_3do",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "the_3do_company_3do_gdo_203p",
+      "platformId": "the_3do_company_3do",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "the_3do_company_3do_imp_21j",
+      "platformId": "the_3do_company_3do",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "thomson_moto_cartridge",
+      "platformId": "thomson_moto",
+      "relation": "CONTENT_VARIANT"
+    },
+    {
+      "catalogId": "thomson_moto_to8d",
+      "platformId": "thomson_moto",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "tiger_r_zone_datazone",
+      "platformId": "tiger_r_zone",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "tiger_r_zone_superscreen",
+      "platformId": "tiger_r_zone",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "tiger_r_zone_xpg",
+      "platformId": "tiger_r_zone",
+      "relation": "HARDWARE_VARIANT"
+    },
+    {
+      "catalogId": "vtech_socrates_alt",
+      "platformId": "vtech_socrates",
+      "relation": "PRESENTATION_ALIAS"
+    },
+    {
+      "catalogId": "watara_supervision_original",
+      "platformId": "watara_supervision",
+      "relation": "HARDWARE_VARIANT"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "behaviorPosture": "BEHAVIOR_DARK",
+  "certifications": [],
+  "compatibilityFloor": "pk00-source-only.v1",
+  "generatedBy": "tools/platform-registry/generate-platform-registry.mjs",
+  "idMapVersion": "mimirPlatformIdMap.v1",
+  "lockedInputSetSha256": "97f39e7ed118723f94ca66fb1be83465705118db6dd4585f57942560b2c7571c",
+  "registryPayloadSha256": "0ff580177caf5592686a9d406cc9f5b3cebe3ee6d73f81abb09db8001a047ddf",
+  "registryRevision": "pk00-b34752d0290e-985b39fabddf",
+  "registrySchemaVersion": "mimirPlatformRegistry.v2",
+  "registrySemanticOutputSha256": "e03bfd69ab9a86f426115a0a0cb6d66feb3ff7c1e54776c6d627b4e6f9b6be89",
+  "revocations": [],
+  "schemaVersion": "mimirPlatformCertification.v1",
+  "sourceSetSha256": "567bea49645fae7e7b686a2072624206f64aa515d4ff3c64faadca809bda913f"
+}

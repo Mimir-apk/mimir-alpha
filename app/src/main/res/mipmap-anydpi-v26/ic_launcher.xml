@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mimir launcher icon (API 26+ adaptive). Foreground = the gold ᛗ Mannaz rune (the current brand mark
+     from thor-torrent-shop/index.html #mimirMark); background = the dark Mimir panel. Replaces the stale
+     cyan-gem/eye drawable. One descriptor covers every density (vector). -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>

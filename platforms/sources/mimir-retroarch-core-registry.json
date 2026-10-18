@@ -1,0 +1,417 @@
+{
+  "schemaVersion": "mimirRetroarchCoreRegistry.v1",
+  "localOnly": true,
+  "generatedBy": "mimirbridge-literals-2026-07-04",
+  "platforms": {
+    "arcade": {
+      "label": "Arcade",
+      "recommendedCore": "fbneo",
+      "cores": [
+        { "stem": "fbneo", "label": "FBNeo" },
+        { "stem": "mame", "label": "MAME" },
+        { "stem": "mame2003_plus", "label": "MAME 2003-Plus" },
+        { "stem": "mame2010", "label": "MAME 2010" },
+        { "stem": "mame2003", "label": "MAME 2003" },
+        { "stem": "mame2000", "label": "MAME 2000" },
+        { "stem": "mame2015", "label": "Mame2015" },
+        { "stem": "mame2016", "label": "Mame2016" },
+        { "stem": "fbalpha2012", "label": "FB Alpha 2012" },
+        { "stem": "hbmame", "label": "Hbmame" }
+      ]
+    },
+    "dreamcast": {
+      "label": "Dreamcast",
+      "recommendedCore": "flycast",
+      "cores": [
+        { "stem": "flycast", "label": "Flycast" }
+      ]
+    },
+    "gb": {
+      "label": "Game Boy",
+      "recommendedCore": "gambatte",
+      "cores": [
+        { "stem": "gambatte", "label": "Gambatte" },
+        { "stem": "sameboy", "label": "SameBoy" },
+        { "stem": "gearboy", "label": "Gearboy" },
+        { "stem": "tgbdual", "label": "TGB Dual" },
+        { "stem": "mgba", "label": "mGBA" },
+        { "stem": "doublecherrygb", "label": "DoubleCherryGB" }
+      ]
+    },
+    "gbc": {
+      "label": "Game Boy Color",
+      "recommendedCore": "gambatte",
+      "cores": [
+        { "stem": "gambatte", "label": "Gambatte" },
+        { "stem": "sameboy", "label": "SameBoy" },
+        { "stem": "gearboy", "label": "Gearboy" },
+        { "stem": "tgbdual", "label": "TGB Dual" },
+        { "stem": "mesen-s", "label": "Mesen-S" },
+        { "stem": "doublecherrygb", "label": "DoubleCherryGB" }
+      ]
+    },
+    "genesis": {
+      "label": "Genesis",
+      "recommendedCore": "genesis_plus_gx_wide",
+      "cores": [
+        { "stem": "genesis_plus_gx_wide", "label": "Genesis Plus GX Wide" },
+        { "stem": "genesis_plus_gx", "label": "Genesis Plus GX" },
+        { "stem": "picodrive", "label": "PicoDrive" }
+      ]
+    },
+    "nes": {
+      "label": "NES",
+      "recommendedCore": "nestopia",
+      "cores": [
+        { "stem": "nestopia", "label": "Nestopia" },
+        { "stem": "mesen", "label": "Mesen" },
+        { "stem": "fceumm", "label": "FCEUmm" },
+        { "stem": "quicknes", "label": "QuickNES" }
+      ]
+    },
+    "snes": {
+      "label": "SNES",
+      "recommendedCore": "snes9x",
+      "cores": [
+        { "stem": "snes9x", "label": "Snes9x" },
+        { "stem": "snes9x2010", "label": "Snes9x 2010" },
+        { "stem": "snes9x2005", "label": "Snes9x2005" },
+        { "stem": "snes9x2005_plus", "label": "Snes9x2005 Plus" },
+        { "stem": "bsnes", "label": "Bsnes" },
+        { "stem": "mesen-s", "label": "Mesen-S" },
+        { "stem": "mednafen_supafaust", "label": "Mednafen Supafaust" }
+      ]
+    },
+    "n64": {
+      "label": "Nintendo 64",
+      "recommendedCore": "mupen64plus_next_gles3",
+      "cores": [
+        { "stem": "mupen64plus_next_gles3", "label": "Mupen64Plus-Next GLES3" },
+        { "stem": "mupen64plus_next_gles2", "label": "Mupen64Plus-Next GLES2" },
+        { "stem": "parallel_n64", "label": "ParaLLEl N64" }
+      ]
+    },
+    "gba": {
+      "label": "GBA",
+      "recommendedCore": "mgba",
+      "cores": [
+        { "stem": "mgba", "label": "mGBA" },
+        { "stem": "gpsp", "label": "gpSP" },
+        { "stem": "vba_next", "label": "VBA Next" },
+        { "stem": "vbam", "label": "VBA-M" },
+        { "stem": "mednafen_gba", "label": "Mednafen GBA" },
+        { "stem": "meteor", "label": "Meteor" },
+        { "stem": "skyemu", "label": "SkyEmu" }
+      ]
+    },
+    "ps1": {
+      "label": "PlayStation",
+      "recommendedCore": "pcsx_rearmed",
+      "cores": [
+        { "stem": "pcsx_rearmed", "label": "PCSX ReARMed" },
+        { "stem": "swanstation", "label": "SwanStation" },
+        { "stem": "mednafen_psx_hw", "label": "Beetle PSX HW" },
+        { "stem": "mednafen_psx", "label": "Beetle PSX" }
+      ]
+    },
+    "saturn": {
+      "label": "Saturn",
+      "recommendedCore": "beetle_saturn",
+      "cores": [
+        { "stem": "beetle_saturn", "label": "Beetle Saturn" },
+        { "stem": "kronos", "label": "Kronos" },
+        { "stem": "yabause", "label": "Yabause" }
+      ]
+    },
+    "sega_master_system_mark_iii": {
+      "label": "Master System",
+      "recommendedCore": "genesis_plus_gx",
+      "cores": [
+        { "stem": "genesis_plus_gx", "label": "Genesis Plus GX" },
+        { "stem": "gearsystem", "label": "Gearsystem" },
+        { "stem": "picodrive", "label": "PicoDrive" }
+      ]
+    },
+    "sega_game_gear": {
+      "label": "Game Gear",
+      "recommendedCore": "genesis_plus_gx",
+      "cores": [
+        { "stem": "genesis_plus_gx", "label": "Genesis Plus GX" },
+        { "stem": "gearsystem", "label": "Gearsystem" }
+      ]
+    },
+    "sega_sg_1000": {
+      "label": "SG-1000",
+      "recommendedCore": "genesis_plus_gx",
+      "cores": [
+        { "stem": "genesis_plus_gx", "label": "Genesis Plus GX" },
+        { "stem": "gearsystem", "label": "Gearsystem" },
+        { "stem": "bluemsx", "label": "Bluemsx" }
+      ]
+    },
+    "sega_mega_cd_sega_cd": {
+      "label": "Sega CD",
+      "recommendedCore": "genesis_plus_gx",
+      "cores": [
+        { "stem": "genesis_plus_gx", "label": "Genesis Plus GX" },
+        { "stem": "picodrive", "label": "PicoDrive" }
+      ]
+    },
+    "sega_32x": {
+      "label": "Sega 32X",
+      "recommendedCore": "picodrive",
+      "cores": [
+        { "stem": "picodrive", "label": "PicoDrive" }
+      ]
+    },
+    "nec_pc_engine_turbografx_16": {
+      "label": "PC Engine / TurboGrafx-16",
+      "recommendedCore": "mednafen_pce_fast",
+      "cores": [
+        { "stem": "mednafen_pce_fast", "label": "Mednafen Pce Fast" },
+        { "stem": "mednafen_pce", "label": "Mednafen Pce" }
+      ]
+    },
+    "nec_pc_engine_cd_turbografx_cd": {
+      "label": "PC Engine CD",
+      "recommendedCore": "mednafen_pce_fast",
+      "cores": [
+        { "stem": "mednafen_pce_fast", "label": "Mednafen Pce Fast" },
+        { "stem": "mednafen_pce", "label": "Mednafen Pce" }
+      ]
+    },
+    "nec_pc_engine_supergrafx": {
+      "label": "SuperGrafx",
+      "recommendedCore": "mednafen_supergrafx",
+      "cores": [
+        { "stem": "mednafen_supergrafx", "label": "Mednafen Supergrafx" },
+        { "stem": "mednafen_pce", "label": "Mednafen Pce" }
+      ]
+    },
+    "nec_pc_fx": {
+      "label": "PC-FX",
+      "recommendedCore": "mednafen_pcfx",
+      "cores": [
+        { "stem": "mednafen_pcfx", "label": "Mednafen Pcfx" }
+      ]
+    },
+    "bandai_wonderswan": {
+      "label": "WonderSwan",
+      "recommendedCore": "mednafen_wswan",
+      "cores": [
+        { "stem": "mednafen_wswan", "label": "Mednafen Wswan" }
+      ]
+    },
+    "bandai_wonderswan_color": {
+      "label": "WonderSwan Color",
+      "recommendedCore": "mednafen_wswan",
+      "cores": [
+        { "stem": "mednafen_wswan", "label": "Mednafen Wswan" }
+      ]
+    },
+    "snk_neo_geo_pocket": {
+      "label": "Neo Geo Pocket",
+      "recommendedCore": "mednafen_ngp",
+      "cores": [
+        { "stem": "mednafen_ngp", "label": "Mednafen Ngp" },
+        { "stem": "race", "label": "Race" }
+      ]
+    },
+    "snk_neo_geo_pocket_color": {
+      "label": "Neo Geo Pocket Color",
+      "recommendedCore": "mednafen_ngp",
+      "cores": [
+        { "stem": "mednafen_ngp", "label": "Mednafen Ngp" },
+        { "stem": "race", "label": "Race" }
+      ]
+    },
+    "nintendo_virtual_boy": {
+      "label": "Virtual Boy",
+      "recommendedCore": "mednafen_vb",
+      "cores": [
+        { "stem": "mednafen_vb", "label": "Mednafen Vb" }
+      ]
+    },
+    "nintendo_pokemon_mini": {
+      "label": "Pokemon Mini",
+      "recommendedCore": "pokemini",
+      "cores": [
+        { "stem": "pokemini", "label": "Pokemini" }
+      ]
+    },
+    "atari_2600": {
+      "label": "Atari 2600",
+      "recommendedCore": "stella",
+      "cores": [
+        { "stem": "stella", "label": "Stella" },
+        { "stem": "stella2014", "label": "Stella2014" }
+      ]
+    },
+    "atari_5200": {
+      "label": "Atari 5200",
+      "recommendedCore": "a5200",
+      "cores": [
+        { "stem": "a5200", "label": "A5200" },
+        { "stem": "atari800", "label": "Atari800" }
+      ]
+    },
+    "atari_7800": {
+      "label": "Atari 7800",
+      "recommendedCore": "prosystem",
+      "cores": [
+        { "stem": "prosystem", "label": "Prosystem" }
+      ]
+    },
+    "atari_lynx": {
+      "label": "Atari Lynx",
+      "recommendedCore": "mednafen_lynx",
+      "cores": [
+        { "stem": "mednafen_lynx", "label": "Mednafen Lynx" },
+        { "stem": "handy", "label": "Handy" }
+      ]
+    },
+    "atari_jaguar": {
+      "label": "Atari Jaguar",
+      "recommendedCore": "virtualjaguar",
+      "cores": [
+        { "stem": "virtualjaguar", "label": "Virtualjaguar" }
+      ]
+    },
+    "coleco_colecovision": {
+      "label": "ColecoVision",
+      "recommendedCore": "gearcoleco",
+      "cores": [
+        { "stem": "gearcoleco", "label": "Gearcoleco" },
+        { "stem": "bluemsx", "label": "Bluemsx" },
+        { "stem": "fbneo", "label": "FBNeo" }
+      ]
+    },
+    "mattel_intellivision": {
+      "label": "Intellivision",
+      "recommendedCore": "freeintv",
+      "cores": [
+        { "stem": "freeintv", "label": "Freeintv" }
+      ]
+    },
+    "gce_vectrex": {
+      "label": "Vectrex",
+      "recommendedCore": "vecx",
+      "cores": [
+        { "stem": "vecx", "label": "Vecx" }
+      ]
+    },
+    "the_3do_company_3do": {
+      "label": "3DO",
+      "recommendedCore": "opera",
+      "cores": [
+        { "stem": "opera", "label": "Opera" }
+      ]
+    },
+    "commodore_64": {
+      "label": "Commodore 64",
+      "recommendedCore": "vice_x64",
+      "cores": [
+        { "stem": "vice_x64", "label": "Vice X64" },
+        { "stem": "vice_x64sc", "label": "Vice X64sc" }
+      ]
+    },
+    "commodore_vic_20": {
+      "label": "VIC-20",
+      "recommendedCore": "vice_xvic",
+      "cores": [
+        { "stem": "vice_xvic", "label": "Vice Xvic" }
+      ]
+    },
+    "sinclair_zx_spectrum": {
+      "label": "ZX Spectrum",
+      "recommendedCore": "fuse",
+      "cores": [
+        { "stem": "fuse", "label": "Fuse" }
+      ]
+    },
+    "microsoft_msx": {
+      "label": "MSX",
+      "recommendedCore": "bluemsx",
+      "cores": [
+        { "stem": "bluemsx", "label": "Bluemsx" },
+        { "stem": "fmsx", "label": "Fmsx" }
+      ]
+    },
+    "microsoft_msx2": {
+      "label": "MSX2",
+      "recommendedCore": "bluemsx",
+      "cores": [
+        { "stem": "bluemsx", "label": "Bluemsx" },
+        { "stem": "fmsx", "label": "Fmsx" }
+      ]
+    },
+    "amstrad_cpc": {
+      "label": "Amstrad CPC",
+      "recommendedCore": "cap32",
+      "cores": [
+        { "stem": "cap32", "label": "Cap32" },
+        { "stem": "crocods", "label": "Crocods" }
+      ]
+    },
+    "commodore_amiga": {
+      "label": "Amiga",
+      "recommendedCore": "puae",
+      "cores": [
+        { "stem": "puae", "label": "Puae" },
+        { "stem": "puae2021", "label": "Puae2021" }
+      ]
+    },
+    "scummvm": {
+      "label": "ScummVM",
+      "recommendedCore": "scummvm",
+      "cores": [
+        { "stem": "scummvm", "label": "Scummvm" }
+      ]
+    },
+    "dos": {
+      "label": "DOS",
+      "recommendedCore": "dosbox_pure",
+      "cores": [
+        { "stem": "dosbox_pure", "label": "Dosbox Pure" },
+        { "stem": "dosbox_core", "label": "Dosbox Core" }
+      ]
+    },
+    "tic_80": {
+      "label": "TIC-80",
+      "recommendedCore": "tic80",
+      "cores": [
+        { "stem": "tic80", "label": "Tic80" }
+      ]
+    },
+    "neo_geo": {
+      "label": "Neo Geo",
+      "recommendedCore": "fbneo",
+      "cores": [
+        { "stem": "fbneo", "label": "FBNeo" },
+        { "stem": "mame2003_plus", "label": "MAME 2003-Plus" }
+      ]
+    },
+    "snk_neo_geo": {
+      "label": "Neo Geo",
+      "recommendedCore": "fbneo",
+      "cores": [
+        { "stem": "fbneo", "label": "FBNeo" },
+        { "stem": "mame2003_plus", "label": "MAME 2003-Plus" }
+      ]
+    },
+    "snk_neo_geo_cd": {
+      "label": "Neo Geo CD",
+      "recommendedCore": "neocd",
+      "cores": [
+        { "stem": "neocd", "label": "Neocd" }
+      ]
+    },
+    "atari_8_bit_family": {
+      "label": "Atari 8-bit",
+      "recommendedCore": "atari800",
+      "cores": [
+        { "stem": "atari800", "label": "Atari800" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The app window theme: stock NoActionBar plus a branded dark cold-start window. The Welcome-back
+         lane (WelcomeBackLane.kt) takes over at first composition; this only covers the frames before it. -->
+    <style name="Mimir.App" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/mimir_cold_window</item>
+    </style>
+
+    <!-- The Bottom's restore guard (CompanionReturnActivity): a focused, opaque window that stands in until the
+         exact render acknowledgment. A 2026-09-11 device measurement found an 84 ms app-icon starting window inside
+         every reclaim's 108-294 ms of black. The windowDisablePreview opt-out below was ignored on the Thor, where
+         Mimir is the HOME app (recording 2026-09-11: the icon still showed), so launchRestoreGuard's launch
+         options also request a solid-colour splash on API 33+. Same cold ground as Mimir.App otherwise. -->
+    <style name="Mimir.ReturnGuard" parent="Mimir.App">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Mimir.PrimaryTransfer" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

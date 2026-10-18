@@ -1,0 +1,212 @@
+{
+  "$id": "https://mimir.local/schema/mimir-platform-certification.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "behaviorPosture": {
+      "enum": [
+        "BEHAVIOR_DARK",
+        "ACTIVE"
+      ],
+      "type": "string"
+    },
+    "certifications": {
+      "items": {
+        "$ref": "#/$defs/certification"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "compatibilityFloor": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "generatedBy": {
+      "const": "tools/platform-registry/generate-platform-registry.mjs"
+    },
+    "idMapVersion": {
+      "const": "mimirPlatformIdMap.v1"
+    },
+    "lockedInputSetSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "registryPayloadSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "registryRevision": {
+      "$ref": "#/$defs/registryRevision"
+    },
+    "registrySemanticOutputSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "registrySchemaVersion": {
+      "const": "mimirPlatformRegistry.v2"
+    },
+    "revocations": {
+      "items": {
+        "$ref": "#/$defs/revocation"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": {
+      "const": "mimirPlatformCertification.v1"
+    },
+    "sourceSetSha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "required": [
+    "behaviorPosture",
+    "certifications",
+    "compatibilityFloor",
+    "generatedBy",
+    "idMapVersion",
+    "lockedInputSetSha256",
+    "registryPayloadSha256",
+    "registryRevision",
+    "registrySemanticOutputSha256",
+    "registrySchemaVersion",
+    "revocations",
+    "schemaVersion",
+    "sourceSetSha256"
+  ],
+  "title": "Mimir platform certification ledger v1",
+  "type": "object",
+  "$defs": {
+    "certification": {
+      "additionalProperties": false,
+      "properties": {
+        "contractVersion": {
+          "enum": [
+            "MANAGE_PLATFORM_V1",
+            "PLAY_PLATFORM_V1"
+          ],
+          "type": "string"
+        },
+        "deviceEvidence": {
+          "items": {
+            "$ref": "#/$defs/evidenceRef"
+          },
+          "type": "array"
+        },
+        "engineVersions": {
+          "additionalProperties": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "fixtureEvidence": {
+          "items": {
+            "$ref": "#/$defs/evidenceRef"
+          },
+          "type": "array"
+        },
+        "labsNotAfter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicClass": {
+          "enum": [
+            "LIBRARY_ONLY",
+            "EMULATOR_HANDOFF",
+            "DIRECT_PLAY"
+          ],
+          "type": "string"
+        },
+        "reviewAfter": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "runtimeEnvelopeKey": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "sliceDigest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "supportSliceId": {
+          "$ref": "#/$defs/scopedId"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "deviceEvidence",
+        "engineVersions",
+        "fixtureEvidence",
+        "labsNotAfter",
+        "publicClass",
+        "reviewAfter",
+        "runtimeEnvelopeKey",
+        "sliceDigest",
+        "supportSliceId"
+      ],
+      "type": "object"
+    },
+    "evidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "id": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "kind": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "digest",
+        "id",
+        "kind",
+        "uri"
+      ],
+      "type": "object"
+    },
+    "registryRevision": {
+      "pattern": "^pk00-[0-9a-f]{12}-[0-9a-f]{12}$",
+      "type": "string"
+    },
+    "revocation": {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "revokedAt": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "supportSliceId": {
+          "$ref": "#/$defs/scopedId"
+        }
+      },
+      "required": [
+        "reason",
+        "revokedAt",
+        "supportSliceId"
+      ],
+      "type": "object"
+    },
+    "scopedId": {
+      "pattern": "^[a-z0-9][a-z0-9-]*:[A-Za-z0-9._:+-]+$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mimir M-rune (Mannaz) - the canonical #mimirMark geometry (two staves bound by a
+     crossed middle, satin-gold, rounded caps), cropped TIGHT into its own 40x40 viewport with no adaptive-icon safe-zone
+     padding. Used by the companion exit overlay so the mark renders crisp + well-framed at the overlay size instead of
+     the small/clipped look of @drawable/ic_launcher_foreground (which centres the rune in a 108dp mask safe zone).
+     Source paths run x=20..44, y=20..50; a group translate (-12,-15) centres the rune ink in the 40x40 box. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+    <group
+        android:translateX="-12"
+        android:translateY="-15">
+        <path
+            android:strokeWidth="4"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M20,20 V50 M44,20 V50">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="20" android:startY="20"
+                    android:endX="44" android:endY="50">
+                    <item android:offset="0" android:color="#FFFFDA64"/>
+                    <item android:offset="0.5" android:color="#FFD4AF69"/>
+                    <item android:offset="1" android:color="#FF8B6F47"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:strokeWidth="3.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M20,20 L44,36 M44,20 L20,36">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="20" android:startY="20"
+                    android:endX="44" android:endY="50">
+                    <item android:offset="0" android:color="#FFFFDA64"/>
+                    <item android:offset="0.5" android:color="#FFD4AF69"/>
+                    <item android:offset="1" android:color="#FF8B6F47"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</vector>

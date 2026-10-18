@@ -1,0 +1,2 @@
+rule	path	anchor	exact_match	reason	approver	date
+P1	feature-companion/src/main/kotlin/com/gruning/mimir/rewrite/feature/companion/CompanionSurface.kt	PREVIEW_BG	0xFF080D12	@Preview-only background never runtime palette source	product-owner	2026-07-24

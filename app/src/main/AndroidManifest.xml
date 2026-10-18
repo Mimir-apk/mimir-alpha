@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MIMIR-REWRITE — posture: offline-first. Network is limited to explicit connected metadata/media actions;
+     scan and launch never use it, and Mimir never acquires game content, BIOS, or firmware. -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Controller-first handheld/TV posture: touch and Leanback APIs are supported but never required. -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+
+    <!-- Explicit connected metadata/media only. The historical implicit DAT refresh is revoked at startup. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Floating M-button overlay; appop must be granted on-device after install -r. -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- User-enabled special-use overlays only; neither service owns background controller input. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Your music : plays everywhere, so with Mimir in the background a mediaPlayback foreground service
+         keeps it going (MimirMusicService: Media3 player + MediaSession + media notification). WAKE_LOCK lets a Bluetooth/media-key play
+         with the screen off keep the CPU up for the player. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Lets those two services' notices reach the shade on Android 13+. Asked at most
+         once, when a background feature is first turned on (MimirNotificationPermissionAsk); both services run
+         whatever the answer. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Best-effort native companion Close All for packages Mimir launched/moved. -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Public STREAM_MUSIC control for Control Dock › Utility; normal permission, no DND/ringer access. -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="com.gruning.mimir.tweaker.permission.CONTROL_TWEAKER" />
+    <!-- Future OS-global foreground/recents truth; appop-gated and not required for launched-by-Mimir sessions. -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- User-granted special access only. Brightness Settings.System writes remain gated by canWrite(). -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- All-files access is asked once at onboarding (ACCESS step). The primary lane for
+         saving media_art covers/clips beside ROMs — SAF tree grants stay as the fallback when the user
+         declines. Sideload posture: user toggles it in system settings, never self-granted. -->
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!--
+      Scoped package visibility (Android 11+ / API 30). The launch pipeline detects which emulators
+      are installed via PackageManager; on API 30+ a package is invisible unless declared here, so
+      getPackageInfo would throw NameNotFoundException for an emulator that IS installed. We declare
+      EXACTLY the seed emulator packages (EmulatorSeedRegistry) — NOT QUERY_ALL_PACKAGES (posture law:
+      honest, minimal visibility). Keep this list in sync with EmulatorSeedRegistry.SEEDS.
+    -->
+    <queries>
+        <package android:name="com.gruning.mimir.tweaker" />
+        <!-- Exact vendor settings packages gate observed handheld-only display/light contracts. -->
+        <package android:name="com.odin.settings" />
+        <package android:name="com.rp.settings" />
+        <package android:name="com.retroarch" />
+        <package android:name="com.retroarch.aarch64" />
+        <package android:name="com.retroarch.ra32" />
+        <package android:name="org.dolphinemu.dolphinemu" />
+        <package android:name="org.mm.jr" />
+        <package android:name="org.dolphinemu.mmjr" />
+        <package android:name="info.cemu.cemu" />
+        <package android:name="com.github.stenzek.duckstation" />
+        <package android:name="com.epsxe.ePSXe" />
+        <package android:name="com.emulator.fpse64" />
+        <package android:name="com.emulator.fpse" />
+        <package android:name="org.ppsspp.ppsspp" />
+        <package android:name="org.ppsspp.ppssppgold" />
+        <package android:name="me.magnum.melonds" />
+        <package android:name="me.magnum.melonds.nightly" />
+        <package android:name="me.magnum.melondualds" />
+        <package android:name="com.dsemu.drastic" />
+        <package android:name="com.hydra.noods" />
+        <package android:name="com.sky.SkyEmu" />
+        <package android:name="xyz.aethersx2.android" />
+        <package android:name="xyz.aethersx2.cturnip" />
+        <package android:name="com.armsx2" />
+        <package android:name="come.nanodata.armsx2" />
+        <package android:name="com.izzy2lost.psx2" />
+        <package android:name="com.virtualapplications.play" />
+        <package android:name="com.sbro.emucorex" />
+        <package android:name="com.flycast.emulator" />
+        <package android:name="io.recompiled.redream" />
+        <package android:name="org.mupen64plusae.v3.fzurita" />
+        <package android:name="org.mupen64plusae.v3.fzurita.pro" />
+        <package android:name="org.mupen64plusae.v3.alpha" />
+        <package android:name="com.explusalpha.Snes9xPlus" />
+        <package android:name="dev.eden.eden_emulator" />
+        <package android:name="dev.eden.eden_emulator.nightly" />
+        <package android:name="com.miHoYo.Yuanshen.nightly" />
+        <package android:name="dev.legacy.eden_emulator" />
+        <package android:name="dev.legacy.eden_emulator.nightly" />
+        <package android:name="org.citron.citron_emu" />
+        <package android:name="org.citron.emu" />
+        <package android:name="org.kenjinx.android" />
+        <package android:name="skyline.emu" />
+        <package android:name="org.sudachi.sudachi_emu.ea" />
+        <package android:name="aenu.aps3e" />
+        <package android:name="net.rpcsx" />
+        <package android:name="com.armsx3" />
+        <package android:name="emu.x360.mobile" />
+        <package android:name="emu.x360mobile.com" />
+        <package android:name="xendroid.compose" />
+        <package android:name="jp.xenia.emulator" />
+        <package android:name="com.izzy2lost.x1box" />
+        <package android:name="org.vita3k.emulator" />
+        <package android:name="org.citra.citra_emu" />
+        <package android:name="org.citra.citra_emu.canary" />
+        <package android:name="org.citra.emu" />
+        <package android:name="io.github.lime3ds.android" />
+        <package android:name="org.azahar_emu.azahar" />
+        <package android:name="io.github.azaharplus.android" />
+        <package android:name="io.github.mandarine3ds.mandarine" />
+        <package android:name="com.panda3ds.pandroid" />
+        <package android:name="org.devmiyax.yabasanshioro2" />
+        <package android:name="org.devmiyax.yabasanshioro2.pro" />
+        <package android:name="com.seleuco.mame4d2024" />
+        <package android:name="com.seleuco.mame4droid" />
+        <package android:name="com.explusalpha.A2600Emu" />
+        <package android:name="com.explusalpha.C64Emu" />
+        <package android:name="com.explusalpha.GbaEmu" />
+        <package android:name="com.explusalpha.GbcEmu" />
+        <package android:name="com.explusalpha.LynxEmu" />
+        <package android:name="com.explusalpha.MdEmu" />
+        <package android:name="com.explusalpha.MsxEmu" />
+        <package android:name="com.explusalpha.NeoEmu" />
+        <package android:name="com.explusalpha.NesEmu" />
+        <package android:name="com.explusalpha.NgpEmu" />
+        <package android:name="com.explusalpha.PceEmu" />
+        <package android:name="com.explusalpha.SaturnEmu" />
+        <package android:name="com.explusalpha.SwanEmu" />
+        <!-- GameNative (R-2b, PC Games): required for PackageManager visibility on Android 11+ scoped
+             package visibility; without this line the seed in EmulatorSeedRegistry is silently inert
+             even when GameNative IS installed. Mechanically enforced by ManifestQueryCoverageTest and
+             PlatformSourceCapabilityGateTest.assertScopedPackageQueries. -->
+        <package android:name="app.gamenative" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!--
+          Home/launcher shells (adversarial review, 2026-07-10). A LAUNCHER-category query does NOT match a
+          home activity (CATEGORY_HOME / SECONDARY_HOME), so without these the monitor's launcher resolution
+          returned nothing under Android 11 scoped visibility and the reclaim-loop guard fell back to a
+          hardcoded list. Still minimal + honest visibility — never QUERY_ALL_PACKAGES.
+        -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.SECONDARY_HOME" />
+        </intent>
+    </queries>
+
+    <!-- Frontend identity — shipping parity (thor-shop manifest): the "Mimir" label, the gold ᛗ Mannaz
+         adaptive icon + leanback banner, appCategory=game/isGame so OEM shells and game spaces file it
+         with games, and the HOME filter below so the handheld can boot straight into Mimir. -->
+    <application
+        android:name=".MimirApplication"
+        android:allowBackup="false"
+        android:appCategory="game"
+        android:banner="@drawable/mimir_banner"
+        android:icon="@mipmap/ic_launcher"
+        android:isGame="true"
+        android:label="Mimir"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Mimir.App">
+        <meta-data
+            android:name="com.gruning.mimir.rewrite.TWEAKER_REQUIRED_API_VERSION"
+            android:value="${mimirTweakerRequiredApiVersion}" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="fullUser"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|density|fontScale|uiMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+            <!-- Selectable as the device HOME (frontend posture) — never self-elevating; the user picks
+                 the default launcher in system settings. singleTask: with a HOME-capable
+                 activity, singleTop allowed a home-stack instance AND a normal-launch instance to coexist
+                 (seen live on the Thor: two monitors doubling return events, two companion controllers
+                 fighting the reclaim ledger, a shelf-fresh duplicate breaking launch-return). One instance,
+                 ever — every start routes to it via onNewIntent, the launcher-standard shape. -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--
+          Policy 2026-08-31. Mimir was the default launcher but declared no SECONDARY_HOME, so
+          launcher3's SecondaryDisplayLauncher owned display 4 and took it back on every restart and on
+          every touch the Presentation did not consume. This claims it instead. Kept OFF MainActivity
+          deliberately: a second home category on that activity re-opens the two-instance bug singleTask
+          exists to prevent (see its comment above). No UI, no state, no coordinator — a floor, not a
+          surface.
+
+          **launchMode MUST be singleTop — never singleTask or singleInstance (fixed 2026-09-06).**
+          Android's RootWindowContainer.canStartHomeOnDisplayArea refuses a home on any non-default
+          display when its launch mode is singleTask or singleInstance ("Can't launch home on secondary
+          displays if it requested to be single instance"), and falls back to config_secondaryHomePackage
+          = launcher3. The first declaration here was singleInstance and the second singleTask — the two
+          values that check rejects — on the belief that the system launcher declares singleTask. It does
+          not: the Thor's Launcher3QuickStepEX6.apk declares SecondaryDisplayLauncher launchMode=1 =
+          singleTop. That is why this floor never auto-started for a week while an explicit `am start` onto
+          display 4 worked (an explicit start skips that check). `noHistory` stays out: home is the thing still
+          there when everything else leaves. Pinned by CompanionSecondaryHomeManifestTest.
+
+          configChanges (added 2026-09-06, measured): on some wakes the Thor pushes a transient 320 -> 369 dpi
+          config on display 4 ten milliseconds apart. Without this set the floor was relaunched for it (twice
+          on a lid wake) and WindowManager froze display 4 for ~400 ms. It is the same set MainActivity
+          declares, and MainActivity did not relaunch. The floor has no UI, so there is nothing to re-inflate.
+          locale|layoutDirection (localization step 0, 2026-10-17): from API 33 a change of Mimir's language goes
+          through LocaleManager, which relaunches every window that does not handle locale itself; the floor
+          handles it so that change never relaunches display 4 either.
+
+          taskAffinity (N1, Thor 2026-09-11): the floor's own, never the package default MainActivity keeps. In
+          Android 13, adding a task to recents hides a non-empty task of a compatible type and windowing mode with
+          the same affinity (RecentTasks.removeForAddTask), and a home activity going idle removes each hidden task
+          with no visible activity (removeUnreachableHiddenTasks). Both home tasks shared the default, so a SWAP to
+          Main, or a reclaim with a game on Main, destroyed MainActivity. Pinned by
+          CompanionSecondaryHomeManifestTest.
+        -->
+        <activity
+            android:name=".CompanionSecondaryHomeActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|density|uiMode|locale|layoutDirection"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="Mimir"
+            android:launchMode="singleTop"
+            android:resumeWhilePausing="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:taskAffinity="${applicationId}.secondaryhome"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SECONDARY_HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CompanionReturnActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="Mimir return"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Mimir.ReturnGuard" />
+        <activity
+            android:name=".PrimaryTransferActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="Mimir primary transfer"
+            android:theme="@style/Mimir.PrimaryTransfer" />
+        <!--
+          Mimir's own keyboard, offered to the system as an input method.
+
+          MimirKeyboard becomes a real IME rather than typing at other apps
+          through a privileged shell. `BIND_INPUT_METHOD` is a SYSTEM-held permission — declaring it
+          means only the system may bind this service, which is what makes an IME safe to expose. It is
+          exported because the framework has to reach it; that is the contract, not a widening.
+        -->
+        <service
+            android:name=".MimirInputMethodService"
+            android:label="@string/mimir_ime_label"
+            android:exported="true"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/mimir_input_method" />
+        </service>
+
+        <!-- D34b: the keyboard trackpad's Accessibility service. Gestures only: canPerformGestures, no
+             canRetrieveWindowContent, no event types (res/xml/mimir_trackpad_service.xml). The player turns it on in
+             Android's Accessibility settings; there is no privileged-bridge route. -->
+        <service
+            android:name=".MimirTrackpadAccessibilityService"
+            android:label="@string/mimir_trackpad_service_label"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/mimir_trackpad_service" />
+        </service>
+
+        <service
+            android:name=".MButtonKeepAliveService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:stopWithTask="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the user-enabled floating M button responsive over other apps." />
+        </service>
+        <!-- Your music outside Mimir: a Media3 MediaSessionService that owns Your music's ExoPlayer, the media session and the
+             notification. Not exported: the action filter is what Media3 asks of a session service, and nothing outside this
+             package can bind it. See MimirMusicService. -->
+        <service
+            android:name="com.gruning.mimir.rewrite.core.audio.MimirMusicService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".PerformanceOverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:stopWithTask="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Shows user-enabled read-only performance telemetry over a Mimir-launched game." />
+        </service>
+        <service
+            android:name=".CompanionMediaNotificationListenerService"
+            android:label="Mimir media controls"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!--
+          Launch FileProvider. The file-path launch form (IntentLaunchDispatcher) hands the emulator a
+          ROM by content:// URI + a read grant instead of a raw file:// URI (blocked by StrictMode on
+          targetSdk ≥ 24). Authority MUST match the dispatcher's `${'$'}{packageName}.launchfiles`.
+          Not exported; access is only via per-launch FLAG_GRANT_READ_URI_PERMISSION.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.launchfiles"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/mimir_launch_file_paths" />
+        </provider>
+
+    </application>
+</manifest>

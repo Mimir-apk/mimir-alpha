@@ -1,0 +1,140 @@
+# MIMIR-REWRITE — single version catalog.
+# THE one source of truth for every dependency version. Pinned to real,
+# mutually-consistent versions so provisioning is ONE deterministic offline fetch.
+#
+# BUILD REALITY (M1 gate): this machine's gradle cache has ONLY AGP 8.7.3 +
+# kotlin-stdlib 1.9.20. The Kotlin Gradle plugin, Compose compiler plugin,
+# Compose BOM, Room, and AndroidX are NOT cached. Offline sync/build WILL FAIL on
+# dependency resolution — that is EXPECTED and is the M1 dependency-provisioning
+# gate. See MIMIR_ENGINEER_B_M1_HANDBACK.md for the exact artifact list.
+#
+# Version rationale:
+#  - AGP 8.7.3 is the ONLY AGP in this machine's cache and matches the current product.
+#  - Kotlin 2.0.21 pairs with the standalone Compose Compiler Gradle plugin
+#    (org.jetbrains.kotlin.plugin.compose) introduced in Kotlin 2.0 — no more
+#    kotlinCompilerExtensionVersion pinning.
+#  - Compose BOM 2024.09.03 is Kotlin-2.0-compatible.
+#  - Room 2.6.1 is the current stable KSP-friendly line.
+#  - KSP 2.0.21-1.0.28 must match the Kotlin version exactly (KSP is Kotlin-versioned).
+
+[versions]
+# Build plugins
+agp = "8.7.3"
+kotlin = "2.0.21"
+ksp = "2.0.21-1.0.28"
+
+# AndroidX core / lifecycle / activity
+androidxCore = "1.13.1"
+androidxActivity = "1.9.3"          # activity-compose
+androidxLifecycle = "2.8.7"         # lifecycle-runtime-ktx + lifecycle-viewmodel-compose
+androidxNavigationCompose = "2.8.4"
+androidxWork = "2.9.1"              # work-runtime-ktx (durable background enrichment)
+androidxProfileinstaller = "1.3.1"  # R01 S2: already transitive at 1.3.1 (cache-safe); pinned first-party for baseline-prof.txt
+
+# Compose
+composeBom = "2024.09.03"
+composeRuntimeTracing = "1.7.1"     # PERF-G: composition tracing (debug-only) — pairs with compose 1.7.x
+tracingPerfetto = "1.0.0"           # PERF-G: perfetto track_event bridge (debug-only)
+
+# Room
+room = "2.6.1"
+
+# Coroutines
+coroutines = "1.9.0"
+
+# Serialization (cross-process payloads). Plugin version tracks Kotlin.
+serialization = "1.7.3"
+
+# Media/art
+coil = "2.7.0"
+
+# Archive handling (core-files ArchiveHelper).
+# zip4j and commons-compress are Apache-2.0, verified from each artifact's own embedded/POM licence
+# text. junrar and sevenzipjbinding are deliberately absent from this catalog -- see
+# ArchiveHelper.kt's header comment. xz (0BSD, verified from its own POM) was added after empirical proof (a real JUnit run, not a
+# reading) that commons-compress's `sevenz.Coders` class touches `org.tukaani.xz.FilterOptions` in
+# its own static initializer for ANY SevenZFile/SevenZOutputFile use -- so 7z (covered
+# by the ported ArchiveHelperExtractionTest suite) does not merely omit an
+# edge case without it, it throws NoClassDefFoundError and cannot function at all. Matches
+# upstream's own core/data/build.gradle.kts, which declares `implementation(libs.xz)` unconditionally
+# (not merely as an optional extra). zstd-jni is NOT added: nothing kept exercises `.zst`, and
+# ArchiveHelper.kt's refusal branch for it already fails honestly -- see ArchiveHelper.kt's header.
+zip4j = "2.11.6"
+commonsCompress = "1.28.0"
+xz = "1.10"
+
+# Media3 (Your music's player + MediaSessionService). 1.9.4 is the newest stable whose AARs need compileSdk <= 35 (1.10.0+ need 36), AGP floor 1.0.0,
+# and whose kotlin-stdlib pull is 2.0.20 -- readable by the Kotlin 2.0.21 compiler. Do not raise it without raising compileSdk.
+media3 = "1.9.4"
+# media3-common (a runtime dependency of media3) brings guava, which swaps listenablefuture 1.0 for the empty 9999.0 stub: :app then loses the
+# ListenableFuture WorkManager exposes. Guava itself is already in the runtime graph at media3's version, so declaring it adds no bytes.
+guavaAndroid = "33.3.1-android"
+
+# Test
+junit = "4.13.2"
+sqliteJdbc = "3.41.2.2"
+androidxJunit = "1.2.1"
+espresso = "3.6.1"
+
+[libraries]
+# --- AndroidX foundation ---
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
+androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "androidxProfileinstaller" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigationCompose" }
+
+# --- Compose (versions come from the BOM) ---
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-runtime-tracing = { group = "androidx.compose.runtime", name = "runtime-tracing", version.ref = "composeRuntimeTracing" }
+androidx-tracing-perfetto = { group = "androidx.tracing", name = "tracing-perfetto", version.ref = "tracingPerfetto" }
+androidx-tracing-perfetto-binary = { group = "androidx.tracing", name = "tracing-perfetto-binary", version.ref = "tracingPerfetto" }
+
+# --- Room ---
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+
+# --- Coroutines ---
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# --- Serialization (cross-process payloads) ---
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+
+# --- Media ---
+media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
+media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+guava = { group = "com.google.guava", name = "guava", version.ref = "guavaAndroid" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+# --- Archive handling (core-files ArchiveHelper; zip + 7z/tar/gzip/bzip2/xz only -- see NOTICE) ---
+zip4j = { group = "net.lingala.zip4j", name = "zip4j", version.ref = "zip4j" }
+commons-compress = { group = "org.apache.commons", name = "commons-compress", version.ref = "commonsCompress" }
+tukaani-xz = { group = "org.tukaani", name = "xz", version.ref = "xz" }
+
+# --- Test ---
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqliteJdbc" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

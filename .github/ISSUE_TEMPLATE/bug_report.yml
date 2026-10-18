@@ -1,0 +1,60 @@
+name: Bug report
+description: Something in Mimir or the Mimir Tweaker does not work as it should.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check docs/known-issues.md in the repository first. Report security problems privately through
+        the Security tab, not here. One problem per report.
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Make and model.
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Mimir version
+      description: Settings › About › Version.
+    validations:
+      required: true
+  - type: input
+    id: tweaker
+    attributes:
+      label: Mimir Tweaker version
+      description: Leave empty if it is not installed. Android Settings › Apps shows it.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you did, in order.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: Say how often it happens. A screenshot or short video helps.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Optional. Remove account names, emails and passwords first.
+      render: shell

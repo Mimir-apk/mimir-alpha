@@ -1,0 +1,17 @@
+# R01 S2 (adversarial review SPINE-4): app-code baseline profile.
+#
+# Release APKs already carry AGP's auto-merged LIBRARY baseline rules (Compose/androidx — verified in the
+# merged art profile) and androidx.profileinstaller (now a first-party dependency). What was MISSING was any
+# rule for Mimir's own code: the merged release profile had ZERO com/gruning entries, so the whole cold spine
+# (MainActivity, coordinators, every feature composable) ran JIT-cold on first execution.
+#
+# These wildcard rules AOT-compile ALL app-module + feature/core-module code on release installs. Deliberate
+# choice over a sampled/macrobenchmark profile: the app's own dex is small (odex growth is trivial on a
+# console device), it is deterministic across code shifts, and the build machine is offline-pinned (no
+# baselineprofile plugin artifacts in the gradle cache). Device-sampled profiles stay the better tool for
+# LIBRARY code — which AGP already merges.
+#
+# Verified mechanism on Thor (debug workflow can't package this file — AGP compiles it for non-debuggable
+# variants only): forced `pm compile -m speed` approximates it.
+HSPLcom/gruning/mimir/rewrite/**;->**(**)**
+Lcom/gruning/mimir/rewrite/**

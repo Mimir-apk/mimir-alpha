@@ -1,0 +1,10 @@
+# Hardcoded UI text ratchet. module<TAB>count of string-literal Text(...) calls in src/main.
+# A module's count may fall, never rise. Regenerate with tools/mimir_hardcoded_text_gate.py --update-baseline.
+module	count
+app	69
+core-ui	14
+feature-browse	6
+feature-companion	23
+feature-files	0
+feature-library	13
+feature-settings	39

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Settings > Appearance > Language. The two language names are not resources: each is shown in its own language. -->
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_supporting">The language Mimir’s menus use. Automatic follows your device.</string>
+    <string name="settings_language_automatic">Automatic</string>
+
+    <!-- Theme gallery, shared by first-run setup and Settings > Appearance. Theme names are proper names and stay as they are. -->
+    <string name="settings_theme_gallery_footer">A Select · B %1$s</string>
+    <string name="settings_theme_gallery_mood_default">Well · gold</string>
+    <string name="settings_theme_gallery_mood_freyr">Hall · gold</string>
+    <string name="settings_theme_gallery_mood_surtr">Ember · iron</string>
+    <string name="settings_theme_gallery_mood_mani">Moon · star</string>
+    <string name="settings_theme_gallery_mood_hel">Dread · blood</string>
+    <string name="settings_theme_gallery_mood_niflheim">Ice · mist</string>
+    <string name="settings_theme_gallery_mood_yggdrasil">Root · bronze</string>
+    <string name="settings_theme_gallery_mood_folkvangr">Ash · bone</string>
+    <string name="settings_theme_gallery_mood_baldr">Sky · sun</string>
+
+    <!-- Settings > About > Credits & licenses. GPL-3.0 section 5(d): copyright, no warranty, license, source. The GNU General Public License is
+         written out: a word of three capitals fails the sentence-case test, and "GPL" is one. -->
+    <string name="settings_about_legal_eyebrow">License</string>
+    <string name="settings_about_legal_copyright" translatable="false">Copyright (C) 2026 Mimir-apk</string>
+    <string name="settings_about_legal_free_software">Mimir is free software under the GNU General Public License, version 3 or later. It comes with absolutely no warranty. You are welcome to redistribute it under the conditions of that license.</string>
+    <string name="settings_about_legal_source">Source code: %1$s</string>
+    <string name="settings_about_credits_supporting">License, source code and acknowledgements.</string>
+    <string name="settings_about_legal_source_title">Source code</string>
+    <string name="settings_about_legal_source_supporting">Open the project page in your browser.</string>
+    <string name="settings_about_legal_visit">Visit</string>
+    <string name="settings_about_legal_open">Open</string>
+    <string name="settings_about_legal_close">Close</string>
+    <string name="settings_about_legal_notices_title">Read the notices</string>
+    <string name="settings_about_legal_notices_supporting">Code, data and art from other projects, with where each comes from and its terms.</string>
+    <string name="settings_about_legal_license_title">Read the license</string>
+    <string name="settings_about_legal_license_supporting">The full text of the GNU General Public License, version 3.</string>
+    <string name="settings_about_legal_loading">Loading…</string>
+    <string name="settings_about_legal_unavailable">This text could not be read.</string>
+</resources>

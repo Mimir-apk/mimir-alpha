@@ -1,0 +1,1050 @@
+{
+  "$id": "https://mimir.local/schema/mimir-platform-registry.v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "behaviorPosture": {
+      "const": "BEHAVIOR_DARK"
+    },
+    "collections": {
+      "$ref": "#/$defs/collections"
+    },
+    "compatibilityFloor": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "counts": {
+      "$ref": "#/$defs/counts"
+    },
+    "digests": {
+      "$ref": "#/$defs/digests"
+    },
+    "generatedBy": {
+      "const": "tools/platform-registry/generate-platform-registry.mjs"
+    },
+    "idMapVersion": {
+      "const": "mimirPlatformIdMap.v1"
+    },
+    "registryRevision": {
+      "$ref": "#/$defs/registryRevision"
+    },
+    "schemaVersion": {
+      "const": "mimirPlatformRegistry.v2"
+    },
+    "sourceProvenance": {
+      "$ref": "#/$defs/sourceProvenance"
+    }
+  },
+  "required": [
+    "behaviorPosture",
+    "collections",
+    "compatibilityFloor",
+    "counts",
+    "digests",
+    "generatedBy",
+    "idMapVersion",
+    "registryRevision",
+    "schemaVersion",
+    "sourceProvenance"
+  ],
+  "title": "Mimir canonical platform registry v2",
+  "type": "object",
+  "$defs": {
+    "alias": {
+      "additionalProperties": false,
+      "properties": {
+        "idMapVersion": {
+          "const": "mimirPlatformIdMap.v1"
+        },
+        "namespace": {
+          "enum": [
+            "mimir-native",
+            "rewrite-v1",
+            "shipping-catalog",
+            "shipping-runtime"
+          ],
+          "type": "string"
+        },
+        "normalizedValue": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "targetId": {
+          "$ref": "#/$defs/platformId"
+        }
+      },
+      "required": [
+        "idMapVersion",
+        "namespace",
+        "normalizedValue",
+        "targetId"
+      ],
+      "type": "object"
+    },
+    "catalogEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "display": {
+          "$ref": "#/$defs/display"
+        },
+        "externalId": {
+          "$ref": "#/$defs/externalId"
+        },
+        "folderContract": {
+          "$ref": "#/$defs/folderContract"
+        },
+        "id": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "importBindingId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "launchConfidenceObservation": {
+          "enum": [
+            "core-generic",
+            "experimental-open-only",
+            "untested",
+            "verified"
+          ],
+          "type": "string"
+        },
+        "legacyRetroArchLabelObservations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "platformId": {
+          "$ref": "#/$defs/platformId"
+        },
+        "relation": {
+          "$ref": "#/$defs/relation"
+        },
+        "relationEvidence": {
+          "$ref": "#/$defs/relationEvidence"
+        },
+        "retroArchRegistrationIds": {
+          "items": {
+            "$ref": "#/$defs/scopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "searchTokens": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "sourceOrdinal": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "standaloneTargetObservationIds": {
+          "items": {
+            "$ref": "#/$defs/scopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "visualAssetId": {
+          "$ref": "#/$defs/scopedId"
+        }
+      },
+      "required": [
+        "display",
+        "externalId",
+        "folderContract",
+        "id",
+        "importBindingId",
+        "launchConfidenceObservation",
+        "legacyRetroArchLabelObservations",
+        "platformId",
+        "relation",
+        "relationEvidence",
+        "retroArchRegistrationIds",
+        "searchTokens",
+        "sourceOrdinal",
+        "standaloneTargetObservationIds",
+        "visualAssetId"
+      ],
+      "type": "object"
+    },
+    "catalogRelationFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalSourceIconFile": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "catalogEntryId": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "id": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "platformId": {
+          "$ref": "#/$defs/platformId"
+        },
+        "relation": {
+          "enum": [
+            "CONTENT_VARIANT",
+            "HARDWARE_VARIANT",
+            "PRESENTATION_ALIAS",
+            "REGIONAL_VARIANT",
+            "SOFTWARE_FAMILY"
+          ],
+          "type": "string"
+        },
+        "sourceIconFile": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "canonicalSourceIconFile",
+        "catalogEntryId",
+        "id",
+        "platformId",
+        "relation",
+        "sourceIconFile"
+      ],
+      "type": "object"
+    },
+    "collections": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntries": {
+          "items": {
+            "$ref": "#/$defs/catalogEntry"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "catalogRelationFixtures": {
+          "items": {
+            "$ref": "#/$defs/catalogRelationFixture"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "contentProfiles": {
+          "items": {
+            "$ref": "#/$defs/contentProfile"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "emulatorFamilies": {
+          "items": {
+            "$ref": "#/$defs/emulatorFamily"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "firmwarePolicies": {
+          "items": {
+            "$ref": "#/$defs/firmwarePolicy"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "importBindings": {
+          "items": {
+            "$ref": "#/$defs/importBinding"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "launchRoutes": {
+          "items": {
+            "$ref": "#/$defs/launchRoute"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "parityFixtures": {
+          "items": {
+            "$ref": "#/$defs/parityFixture"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "platforms": {
+          "items": {
+            "$ref": "#/$defs/platform"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "recognitionStates": {
+          "items": {
+            "$ref": "#/$defs/recognitionState"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "retroArchRegistrations": {
+          "items": {
+            "$ref": "#/$defs/retroArchRegistration"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "shippingRuntimeSystems": {
+          "items": {
+            "$ref": "#/$defs/shippingRuntimeSystem"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "standaloneTargetObservations": {
+          "items": {
+            "$ref": "#/$defs/standaloneTargetObservation"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supportSlices": {
+          "items": {
+            "$ref": "#/$defs/supportSlice"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "visualAssets": {
+          "items": {
+            "$ref": "#/$defs/visualAsset"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "catalogEntries",
+        "catalogRelationFixtures",
+        "contentProfiles",
+        "emulatorFamilies",
+        "firmwarePolicies",
+        "importBindings",
+        "launchRoutes",
+        "parityFixtures",
+        "platforms",
+        "recognitionStates",
+        "retroArchRegistrations",
+        "shippingRuntimeSystems",
+        "standaloneTargetObservations",
+        "supportSlices",
+        "visualAssets"
+      ],
+      "type": "object"
+    },
+    "contentContract": {
+      "additionalProperties": false,
+      "properties": {
+        "baseGameExtensions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "conditionalContent": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "hiddenContentKinds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "schemaVersion": {
+          "const": "mimirPlatformContentRules.v1"
+        },
+        "sidecarRules": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "supportExtensions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supportFolders": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supportReasons": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "truth": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "baseGameExtensions",
+        "conditionalContent",
+        "hiddenContentKinds",
+        "schemaVersion",
+        "sidecarRules",
+        "supportExtensions",
+        "supportFolders",
+        "supportReasons",
+        "truth"
+      ],
+      "type": "object"
+    },
+    "contentProfile": {
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "properties": {
+            "contentContract": {
+              "$ref": "#/$defs/contentContract"
+            },
+            "discoveryStatus": {
+              "const": "BOUND"
+            }
+          },
+          "required": [
+            "contentContract",
+            "discoveryStatus"
+          ]
+        },
+        {
+          "properties": {
+            "contentContract": {
+              "type": "null"
+            },
+            "discoveryStatus": {
+              "const": "GAP"
+            }
+          },
+          "required": [
+            "contentContract",
+            "discoveryStatus"
+          ]
+        }
+      ],
+      "properties": {
+        "contentContract": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/contentContract"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "discoveryStatus": {
+          "enum": [
+            "BOUND",
+            "GAP"
+          ],
+          "type": "string"
+        },
+        "externalId": {
+          "$ref": "#/$defs/externalId"
+        },
+        "id": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "platformId": {
+          "$ref": "#/$defs/platformId"
+        }
+      },
+      "required": [
+        "contentContract",
+        "discoveryStatus",
+        "externalId",
+        "id",
+        "platformId"
+      ],
+      "type": "object"
+    },
+    "counts": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntries": { "const": 403 },
+        "catalogRelationFixtures": { "const": 178 },
+        "contentProfiles": { "const": 117 },
+        "emulatorFamilies": { "const": 0 },
+        "firmwarePolicies": { "const": 0 },
+        "importBindings": { "const": 107 },
+        "launchRoutes": { "const": 0 },
+        "parityFixtures": { "const": 1 },
+        "platforms": { "const": 226 },
+        "recognitionStates": { "const": 1 },
+        "retroArchCoreRegistrations": { "const": 116 },
+        "retroArchRegistrations": { "const": 49 },
+        "shippingRuntimeSystems": { "const": 21 },
+        "standaloneTargetObservations": { "const": 44 },
+        "supportSlices": { "const": 0 },
+        "visualAssets": { "const": 403 }
+      },
+      "required": [
+        "catalogEntries",
+        "catalogRelationFixtures",
+        "contentProfiles",
+        "emulatorFamilies",
+        "firmwarePolicies",
+        "importBindings",
+        "launchRoutes",
+        "parityFixtures",
+        "platforms",
+        "recognitionStates",
+        "retroArchCoreRegistrations",
+        "retroArchRegistrations",
+        "shippingRuntimeSystems",
+        "standaloneTargetObservations",
+        "supportSlices",
+        "visualAssets"
+      ],
+      "type": "object"
+    },
+    "digests": {
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "const": "SHA-256"
+        },
+        "canonicalization": {
+          "const": "mimir-canonical-json-v1"
+        },
+        "collections": {
+          "additionalProperties": {
+            "$ref": "#/$defs/sha256"
+          },
+          "type": "object"
+        },
+        "registryPayloadSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "algorithm",
+        "canonicalization",
+        "collections",
+        "registryPayloadSha256"
+      ],
+      "type": "object"
+    },
+    "display": {
+      "additionalProperties": false,
+      "properties": {
+        "displayName": { "minLength": 1, "type": "string" },
+        "manufacturer": { "minLength": 1, "type": "string" },
+        "shortName": { "minLength": 1, "type": "string" },
+        "type": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "displayName",
+        "manufacturer",
+        "shortName",
+        "type"
+      ],
+      "type": "object"
+    },
+    "emulatorFamily": {
+      "additionalProperties": true,
+      "properties": {
+        "id": { "$ref": "#/$defs/scopedId" }
+      },
+      "required": ["id"],
+      "type": "object"
+    },
+    "externalId": {
+      "additionalProperties": false,
+      "properties": {
+        "namespace": { "minLength": 1, "type": "string" },
+        "value": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "namespace",
+        "value"
+      ],
+      "type": "object"
+    },
+    "firmwarePolicy": {
+      "additionalProperties": true,
+      "properties": {
+        "id": { "$ref": "#/$defs/scopedId" },
+        "platformId": { "$ref": "#/$defs/platformId" }
+      },
+      "required": [
+        "id",
+        "platformId"
+      ],
+      "type": "object"
+    },
+    "folderContract": {
+      "additionalProperties": false,
+      "properties": {
+        "aliases": {
+          "items": { "type": "string" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "canonicalFolder": { "minLength": 1, "type": "string" },
+        "caseSensitive": { "type": "boolean" },
+        "flatDumpPolicy": { "minLength": 1, "type": "string" },
+        "platformId": { "minLength": 1, "type": "string" },
+        "schemaVersion": { "const": "mimirPlatformFolderContract.v1" },
+        "truth": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "aliases",
+        "canonicalFolder",
+        "caseSensitive",
+        "flatDumpPolicy",
+        "platformId",
+        "schemaVersion",
+        "truth"
+      ],
+      "type": "object"
+    },
+    "importBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryId": {
+          "oneOf": [
+            { "$ref": "#/$defs/scopedId" },
+            { "type": "null" }
+          ]
+        },
+        "contentProfileId": { "$ref": "#/$defs/scopedId" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "platformId": { "$ref": "#/$defs/platformId" },
+        "sourceExternalId": { "$ref": "#/$defs/externalId" }
+      },
+      "required": [
+        "catalogEntryId",
+        "contentProfileId",
+        "id",
+        "platformId",
+        "sourceExternalId"
+      ],
+      "type": "object"
+    },
+    "interpretationInput": {
+      "additionalProperties": false,
+      "properties": {
+        "id": { "minLength": 1, "type": "string" },
+        "path": { "minLength": 1, "type": "string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "required": [
+        "id",
+        "path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "launchRoute": {
+      "additionalProperties": true,
+      "properties": {
+        "id": { "$ref": "#/$defs/scopedId" },
+        "kind": {
+          "enum": [
+            "EMULATOR_HANDOFF",
+            "RETROARCH",
+            "STANDALONE"
+          ],
+          "type": "string"
+        },
+        "packageVariantIds": {
+          "items": { "$ref": "#/$defs/scopedId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "platformId": { "$ref": "#/$defs/platformId" },
+        "precedence": { "type": "integer" }
+      },
+      "required": [
+        "id",
+        "kind",
+        "packageVariantIds",
+        "platformId",
+        "precedence"
+      ],
+      "type": "object"
+    },
+    "parityFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalResolution": {
+          "additionalProperties": false,
+          "properties": {
+            "alias": { "$ref": "#/$defs/externalId" },
+            "targetPlatformId": { "const": "nintendo_wii" }
+          },
+          "required": [
+            "alias",
+            "targetPlatformId"
+          ],
+          "type": "object"
+        },
+        "expectedRuntimeIds": {
+          "items": { "$ref": "#/$defs/platformId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "extraCatalogDefaultIds": {
+          "items": { "$ref": "#/$defs/platformId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "id": { "const": "shipping-catalog-default-active-wii-drift" },
+        "missingCatalogDefaultIds": {
+          "items": { "$ref": "#/$defs/platformId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "observedCatalogDefaultIds": {
+          "items": { "$ref": "#/$defs/platformId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "status": { "const": "RESOLVED_BY_SCOPED_ALIAS" }
+      },
+      "required": [
+        "canonicalResolution",
+        "expectedRuntimeIds",
+        "extraCatalogDefaultIds",
+        "id",
+        "missingCatalogDefaultIds",
+        "observedCatalogDefaultIds",
+        "status"
+      ],
+      "type": "object"
+    },
+    "platform": {
+      "additionalProperties": false,
+      "properties": {
+        "aliases": {
+          "items": { "$ref": "#/$defs/alias" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "contentProfileIds": {
+          "items": { "$ref": "#/$defs/scopedId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "definitionStatus": { "const": "PROVISIONAL_SOURCE_ONLY" },
+        "display": { "$ref": "#/$defs/display" },
+        "folder": { "$ref": "#/$defs/folderContract" },
+        "id": { "$ref": "#/$defs/platformId" },
+        "identity": {
+          "items": { "type": "object" },
+          "type": "array"
+        },
+        "launchRouteIds": {
+          "items": { "$ref": "#/$defs/scopedId" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "presentation": {
+          "$ref": "#/$defs/presentation"
+        }
+      },
+      "required": [
+        "aliases",
+        "contentProfileIds",
+        "definitionStatus",
+        "display",
+        "folder",
+        "id",
+        "identity",
+        "launchRouteIds",
+        "presentation"
+      ],
+      "type": "object"
+    },
+    "platformId": {
+      "pattern": "^[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "presentation": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryIds": {
+          "items": { "$ref": "#/$defs/scopedId" },
+          "minItems": 0,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "visualAssetKeys": {
+          "items": { "$ref": "#/$defs/scopedId" },
+          "minItems": 0,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "catalogEntryIds",
+        "visualAssetKeys"
+      ],
+      "type": "object"
+    },
+    "recognitionState": {
+      "additionalProperties": false,
+      "properties": {
+        "folder": { "minLength": 1, "type": "string" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "value": { "const": "unknown" }
+      },
+      "required": [
+        "folder",
+        "id",
+        "value"
+      ],
+      "type": "object"
+    },
+    "registryRevision": {
+      "pattern": "^pk00-[0-9a-f]{12}-[0-9a-f]{12}$",
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "CANONICAL",
+        "CONTENT_VARIANT",
+        "HARDWARE_VARIANT",
+        "PRESENTATION_ALIAS",
+        "REGIONAL_VARIANT",
+        "SOFTWARE_FAMILY"
+      ],
+      "type": "string"
+    },
+    "relationEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalSourceIconFile": { "minLength": 1, "type": "string" },
+        "classificationFixture": { "minLength": 1, "type": "string" },
+        "classificationFixtureSha256": { "$ref": "#/$defs/sha256" },
+        "sourceIconFile": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "canonicalSourceIconFile",
+        "classificationFixture",
+        "classificationFixtureSha256",
+        "sourceIconFile"
+      ],
+      "type": "object"
+    },
+    "retroArchCoreRegistration": {
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/scopedId" },
+        "isRecommended": { "type": "boolean" },
+        "label": { "minLength": 1, "type": "string" },
+        "sourceOrdinal": { "minimum": 0, "type": "integer" },
+        "stem": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "id",
+        "isRecommended",
+        "label",
+        "sourceOrdinal",
+        "stem"
+      ],
+      "type": "object"
+    },
+    "retroArchRegistration": {
+      "additionalProperties": false,
+      "properties": {
+        "contentProfileId": { "$ref": "#/$defs/scopedId" },
+        "coreRegistrations": {
+          "items": { "$ref": "#/$defs/retroArchCoreRegistration" },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "externalId": { "$ref": "#/$defs/externalId" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "label": { "minLength": 1, "type": "string" },
+        "platformId": { "$ref": "#/$defs/platformId" },
+        "recommendedCore": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "contentProfileId",
+        "coreRegistrations",
+        "externalId",
+        "id",
+        "label",
+        "platformId",
+        "recommendedCore"
+      ],
+      "type": "object"
+    },
+    "scopedId": {
+      "pattern": "^[a-z0-9][a-z0-9-]*:[A-Za-z0-9._:+-]+$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "shippingRuntimeSystem": {
+      "additionalProperties": false,
+      "properties": {
+        "extensions": {
+          "items": { "type": "string" },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "externalId": { "$ref": "#/$defs/externalId" },
+        "folder": { "minLength": 1, "type": "string" },
+        "folderAliases": {
+          "items": { "type": "string" },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "label": { "minLength": 1, "type": "string" },
+        "platformId": { "$ref": "#/$defs/platformId" },
+        "sourceOrdinal": { "minimum": 0, "type": "integer" }
+      },
+      "required": [
+        "extensions",
+        "externalId",
+        "folder",
+        "folderAliases",
+        "id",
+        "label",
+        "platformId",
+        "sourceOrdinal"
+      ],
+      "type": "object"
+    },
+    "sourceDigest": {
+      "additionalProperties": false,
+      "properties": {
+        "id": { "minLength": 1, "type": "string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "required": [
+        "id",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "sourceProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "generatorSemanticsVersion": {
+          "const": "mimirPlatformRegistryGeneratorSemantics.v3"
+        },
+        "interpretationInputs": {
+          "items": { "$ref": "#/$defs/interpretationInput" },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "lockedInputSetSha256": { "$ref": "#/$defs/sha256" },
+        "semanticOutputSha256": { "$ref": "#/$defs/sha256" },
+        "sourceSetSha256": { "$ref": "#/$defs/sha256" },
+        "sources": {
+          "items": { "$ref": "#/$defs/sourceDigest" },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "generatorSemanticsVersion",
+        "interpretationInputs",
+        "lockedInputSetSha256",
+        "semanticOutputSha256",
+        "sourceSetSha256",
+        "sources"
+      ],
+      "type": "object"
+    },
+    "standaloneTargetObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryId": { "$ref": "#/$defs/scopedId" },
+        "dispatchContract": { "type": "null" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "label": { "minLength": 1, "type": "string" },
+        "observationOnly": { "const": true },
+        "packageName": { "minLength": 1, "type": "string" },
+        "platformId": { "$ref": "#/$defs/platformId" },
+        "sourceOrdinal": { "minimum": 0, "type": "integer" },
+        "sourceStatus": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "catalogEntryId",
+        "dispatchContract",
+        "id",
+        "label",
+        "observationOnly",
+        "packageName",
+        "platformId",
+        "sourceOrdinal",
+        "sourceStatus"
+      ],
+      "type": "object"
+    },
+    "supportSlice": {
+      "additionalProperties": true,
+      "properties": {
+        "contentProfileId": { "$ref": "#/$defs/scopedId" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "kind": {
+          "enum": ["MANAGE", "PLAY"],
+          "type": "string"
+        },
+        "platformId": { "$ref": "#/$defs/platformId" }
+      },
+      "required": [
+        "contentProfileId",
+        "id",
+        "kind",
+        "platformId"
+      ],
+      "type": "object"
+    },
+    "visualAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "assetLicenseRef": { "minLength": 1, "type": "string" },
+        "catalogEntryId": { "$ref": "#/$defs/scopedId" },
+        "id": { "$ref": "#/$defs/scopedId" },
+        "relativePath": { "minLength": 1, "type": "string" },
+        "sourceFile": { "minLength": 1, "type": "string" }
+      },
+      "required": [
+        "assetLicenseRef",
+        "catalogEntryId",
+        "id",
+        "relativePath",
+        "sourceFile"
+      ],
+      "type": "object"
+    }
+  }
+}

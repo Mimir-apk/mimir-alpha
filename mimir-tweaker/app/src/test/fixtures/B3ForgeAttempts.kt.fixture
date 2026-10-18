@@ -1,0 +1,49 @@
+// This file is intentionally not part of the test source set. The checked-in runner copies it
+// into the normal test package and requires compilation to fail under Gradle's friend path.
+package com.gruning.mimir.tweaker
+
+import com.gruning.mimir.tweaker.mgde.MgdeObservedSource
+import com.gruning.mimir.tweaker.mgde.MgdeV2Record
+
+@Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")
+private fun forbiddenB3Forgery(available: DirectBootKeyAuthorityTruth.Available) {
+    // B3_NEGATIVE:AVAILABLE_CTOR
+    // Available must be non-data and privately constructed.
+    val direct = DirectBootKeyAuthorityTruth.Available(error("signer"), error("key"), "id", "cert")
+    // B3_NEGATIVE:AVAILABLE_COPY_COMPONENT
+    val copied = available.copy()
+    val component = available.component1()
+    // B3_NEGATIVE:AVAILABLE_SUBCLASS
+    class ForgedAvailable : DirectBootKeyAuthorityTruth.Available(error("signer"), error("key"), "id", "cert")
+    // B3_NEGATIVE:CAPABILITY_CTOR_AND_SOURCE
+    val capability = DirectBootKeyAuthorityTruth.Available.Capability()
+    // B3_NEGATIVE:INJECTABLE_AUTHORITY_CTOR
+    val authority = DirectBootKeyAuthority(error("metadata"), error("certificate"), error("keystore"), error("generator"))
+    // Private minter / removed legacy factory / no raw authority fields.
+    // B3_NEGATIVE:PRIVATE_MINTER
+    val minter = DirectBootKeyAuthorityTruth.Available.Minter
+    // B3_NEGATIVE:OLD_ENVELOPE_FROM
+    val legacy = PinnedRestoreGuardianVerifier.from(available)
+    // B3_NEGATIVE:OLD_JOURNAL_FROM
+    val legacyJournal = PinnedTransactionJournalVerifier.from(available)
+    // B3_NEGATIVE:RAW_AVAILABLE_FIELDS
+    val signer = available.signer
+    val publicKey = available.publicKey
+    // Removed B3 retyping API and fabricated opaque operation constructor.
+    // B3_NEGATIVE:REMOVED_SIGN_BOUND
+    val retyped = AuthenticatedTransactionJournalCodec.signBound(ByteArray(1), "id", error("signer"))
+    // B3_NEGATIVE:FABRICATED_ENVELOPE_VERIFIER
+    val verifier = PinnedRestoreGuardianVerifier(error("key"), "cert", DirectBootKeyAuthorityTruth.Available.Capability())
+    // B3_NEGATIVE:FABRICATED_JOURNAL_VERIFIER
+    val journal = PinnedTransactionJournalVerifier("id", error("key"), "cert", DirectBootKeyAuthorityTruth.Available.Capability())
+    // Truth is sealed and cannot admit a caller-supplied success subtype.
+    // B3_NEGATIVE:SEALED_TRUTH_SUBCLASS
+    class ForgedTruth : DirectBootKeyAuthorityTruth
+    // MGDE admission has no constructible record/source/capability surface.
+    // B3_NEGATIVE:FORGED_MGDE_RECORD
+    val forgedRecord = MgdeV2Record(ByteArray(1), ByteArray(1), error("envelope"))
+    // B3_NEGATIVE:FORGED_MGDE_SOURCE
+    val forgedSource = com.gruning.mimir.tweaker.mgde.AttestedMgdePresent("0000000000000000", byteArrayOf(1))
+    // B3_NEGATIVE:FORGED_MGDE_SOURCE_SUBCLASS
+    class ForgedMgdeSource : MgdeObservedSource
+}

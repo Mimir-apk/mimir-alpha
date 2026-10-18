@@ -1,0 +1,40 @@
+{
+  "id": "qualcomm-cq8725s",
+  "label": "Qualcomm CQ8725S (draft)",
+  "treatment": "general-live-opp",
+  "match": {
+    "soc": ["CQ8725S"],
+    "platform": ["sun"]
+  },
+  "cpu": {
+    "kind": "anchor",
+    "profiles": {
+      "quiet": {
+        "little": [1785600, 3532800],
+        "prime": [2246400, 4320000]
+      },
+      "balanced": {
+        "little": [1996800, 3532800],
+        "prime": [2438400, 4320000]
+      },
+      "performance": {
+        "little": [1996800, 3532800],
+        "prime": [3072000, 4320000]
+      }
+    }
+  },
+  "gpu": {
+    "kind": "transposed",
+    "anchorLevels": 14,
+    "capped": {
+      "quiet": 5
+    },
+    "uncapped": ["balanced", "performance"]
+  },
+  "vendorMode": {
+    "quiet": 0,
+    "balanced": 1,
+    "performance": 2
+  },
+  "transports": ["cpu-scaling-max", "cpu-msm-performance-qos", "gpu-kgsl-max-pwrlevel", "vendor-performance-mode"]
+}

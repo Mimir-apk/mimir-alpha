@@ -1,0 +1,306 @@
+{
+  "$id": "https://mimir.local/schema/mimir-platform-sources-lock.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "digestAlgorithm": {
+      "const": "SHA-256"
+    },
+    "digestCanonicalization": {
+      "const": "mimir-canonical-json-v1"
+    },
+    "generatedBy": {
+      "const": "tools/platform-registry/generate-platform-registry.mjs"
+    },
+    "generatorSemanticsVersion": {
+      "const": "mimirPlatformRegistryGeneratorSemantics.v3"
+    },
+    "importProvenance": {
+      "$ref": "#/$defs/importProvenance"
+    },
+    "interpretationInputs": {
+      "items": {
+        "$ref": "#/$defs/interpretationInput"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "nativeSources": {
+      "items": {
+        "$ref": "#/$defs/localSource"
+      },
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": {
+      "const": "mimirPlatformSourcesLock.v1"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/localSource"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "upstreamAssets": {
+      "items": {
+        "$ref": "#/$defs/upstreamAsset"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "digestAlgorithm",
+    "digestCanonicalization",
+    "generatedBy",
+    "generatorSemanticsVersion",
+    "importProvenance",
+    "interpretationInputs",
+    "nativeSources",
+    "schemaVersion",
+    "sources",
+    "upstreamAssets"
+  ],
+  "title": "Mimir platform source lock v1",
+  "type": "object",
+  "$defs": {
+    "importProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "interpretationInputs": {
+          "items": {
+            "$ref": "#/$defs/interpretationInput"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "lockedInputSetSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "repository": {
+          "$ref": "#/$defs/repository"
+        },
+        "sourceSetSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "interpretationInputs",
+        "lockedInputSetSha256",
+        "repository",
+        "sourceSetSha256",
+        "sources"
+      ],
+      "type": "object"
+    },
+    "localSource": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "license": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "bytes",
+        "id",
+        "license",
+        "path",
+        "roles",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "interpretationInput": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "bytes",
+        "id",
+        "path",
+        "roles",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "repository": {
+      "additionalProperties": false,
+      "properties": {
+        "pathHint": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "pathHint",
+        "revision",
+        "url"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "license": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "repositoryRevision": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "bytes",
+        "id",
+        "license",
+        "path",
+        "repositoryRevision",
+        "roles",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "upstreamAsset": {
+      "additionalProperties": false,
+      "properties": {
+        "license": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "noticePath": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "license",
+        "name",
+        "noticePath",
+        "path",
+        "revision",
+        "url"
+      ],
+      "type": "object"
+    }
+  }
+}

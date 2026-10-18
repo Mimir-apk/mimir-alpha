@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The Mimir button (ᛗ) and its menu. Names: companion_<surface>_<purpose>. A row's title is drawn as written on its coin; its subtitle and title are spoken together. -->
+    <string name="companion_button_description_primary">Botón de Mimir</string>
+    <string name="companion_button_description_secondary">Botón de Mimir de la pantalla inferior</string>
+
+    <!-- The menu's header: drawn as written. The rune is the brand mark and MIMIR the wordmark (caps); the description is what is spoken. -->
+    <string name="companion_menu_title_primary">ᛗ · Mimir</string>
+    <string name="companion_menu_title_secondary">ᛗ · Pantalla inferior</string>
+    <string name="companion_menu_title_primary_description">Mimir</string>
+    <string name="companion_menu_title_secondary_description">Pantalla inferior</string>
+
+    <string name="companion_menu_tabs">Pestañas</string>
+    <string name="companion_menu_tabs_system_subtitle">Apps recientes de Android</string>
+    <string name="companion_menu_tabs_secondary_subtitle">Abrir apps</string>
+    <string name="companion_menu_quick_launch">Acceso rápido</string>
+    <string name="companion_menu_quick_launch_subtitle">Abrir desde cualquier lugar</string>
+    <string name="companion_menu_quick_launch_secondary_subtitle">Se abre en la pantalla inferior</string>
+    <string name="companion_menu_utility">Utilidades</string>
+    <string name="companion_menu_utility_subtitle">Brillo y controles del dispositivo</string>
+    <string name="companion_menu_utility_secondary_subtitle">Brillo y controles del dispositivo de ambas pantallas</string>
+    <string name="companion_menu_tweaker">Tweaker</string>
+    <string name="companion_menu_tweaker_subtitle">Rendimiento y telemetría</string>
+    <string name="companion_menu_return">Volver al estante</string>
+    <string name="companion_menu_return_subtitle">Restaurar la pantalla inferior</string>
+    <string name="companion_menu_swap">Cambiar</string>
+    <string name="companion_menu_swap_subtitle">Mover la app entre pantallas</string>
+    <string name="companion_menu_trackpad">Panel táctil</string>
+    <string name="companion_menu_trackpad_subtitle">Mouse para la pantalla principal</string>
+</resources>

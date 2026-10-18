@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <queries tools:node="replace">
+        <!-- D0 may compare package/UID posture without opening the owner package's data. -->
+        <package android:name="com.gruning.mimir.rewrite" />
+        <!-- RC-14 (CertifiedVendorIdentityProbeDeviceTest / CertifiedVendorOdinDeviceTest): read-only
+             PackageManager lookups against the two fixed vendor settings packages. Without these, API
+             30+ package-visibility filtering makes getApplicationInfo()/getPackageInfo() throw for an
+             actually-installed package exactly the same way it does for a genuinely absent one — a
+             false "NOT INSTALLED" the probe cannot tell apart from the real thing. Declaring visibility
+             grants no access to either package's data or components, only lets these two names resolve
+             in queries, so it does not widen the lab target's actual authority. -->
+        <package android:name="com.odin.settings" />
+        <package android:name="com.rp.settings" />
+    </queries>
+
+    <!-- The lab target has no connected/native/overlay/system authority. -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.KILL_BACKGROUND_PROCESSES"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.VIBRATE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE"
+        tools:node="remove" />
+    <!-- Its special-use sibling: the two Mimir foreground services below declare THIS one, so removing
+         only FOREGROUND_SERVICE left the lab target holding a foreground-service permission its own
+         contract forbids. -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+        tools:node="remove" />
+    <!-- Your music's mediaPlayback sibling ; MimirMusicService is removed below. -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
+        tools:node="remove" />
+    <!-- O13's notice permission (2026-09-11) exists only for those two services' notifications, and this target
+         removes both services below. -->
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="com.gruning.mimir.tweaker.permission.CONTROL_TWEAKER"
+        tools:node="remove" />
+
+    <application
+        android:name="com.gruning.mimir.rewrite.MimirLabApplication"
+        android:label="Mimir recovery lab"
+        tools:replace="android:name,android:label">
+
+        <!-- These providers initialize before Application.onCreate; the lab target must remain inert. -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            tools:node="remove" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            tools:node="remove" />
+        <meta-data
+            android:name="com.gruning.mimir.rewrite.TWEAKER_REQUIRED_API_VERSION"
+            tools:node="remove" />
+
+        <!-- A lab install must never become a HOME/launcher candidate or start product activities. -->
+        <activity
+            android:name="com.gruning.mimir.rewrite.MainActivity"
+            tools:node="remove" />
+        <activity
+            android:name="com.gruning.mimir.rewrite.CompanionReturnActivity"
+            tools:node="remove" />
+        <activity
+            android:name="com.gruning.mimir.rewrite.PrimaryTransferActivity"
+            tools:node="remove" />
+        <!-- The Bottom floor  is an exported SECONDARY_HOME activity, so the rule above covers it:
+             kept, every lab install was a SECONDARY_HOME candidate, which verifyLabIsolationManifest forbids. -->
+        <activity
+            android:name="com.gruning.mimir.rewrite.CompanionSecondaryHomeActivity"
+            tools:node="remove" />
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            tools:node="remove" />
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            tools:node="remove" />
+
+        <!-- Mimir's own foreground services. These are the "overlay/native authority" the comment at the
+             top of this file says the lab target does not have, and they were leaking into the merged lab
+             manifest — verified against
+             intermediates/merged_manifests/lab/processLabManifest/AndroidManifest.xml, which declared both.
+             lab already removes SYSTEM_ALERT_WINDOW so the overlay could not actually draw, but a DECLARED
+             service is still authority the contract says is absent, and verifyLabIsolationManifest asserts
+             no `<service` survives at all. -->
+        <service
+            android:name="com.gruning.mimir.rewrite.MButtonKeepAliveService"
+            tools:node="remove" />
+        <service
+            android:name="com.gruning.mimir.rewrite.PerformanceOverlayService"
+            tools:node="remove" />
+        <!-- Your music's media service (core-audio's MimirMusicService, declared in the main manifest): the same authority. -->
+        <service
+            android:name="com.gruning.mimir.rewrite.core.audio.MimirMusicService"
+            tools:node="remove" />
+        <!-- Mimir's keyboard  is an exported input method service with android.view.im
+             meta-data: system-bound authority this target does not have, and the same leak as the two services above. -->
+        <service
+            android:name="com.gruning.mimir.rewrite.MimirInputMethodService"
+            tools:node="remove" />
+
+        <!-- The engine-only lab target must not register system-bound product services. -->
+        <service
+            android:name="com.gruning.mimir.rewrite.MimirTrackpadAccessibilityService"
+            tools:node="remove" />
+        <service
+            android:name="com.gruning.mimir.rewrite.CompanionMediaNotificationListenerService"
+            tools:node="remove" />
+
+        <service
+            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+            tools:node="remove" />
+        <service
+            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+            tools:node="remove" />
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            tools:node="remove" />
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            tools:node="remove" />
+
+        <receiver
+            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+            tools:node="remove" />
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            tools:node="remove" />
+
+        <provider
+            android:name="com.gruning.mimir.rewrite.MimirLabRecoveryDocumentsProvider"
+            android:authorities="${applicationId}.recoverylab"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+    </application>
+</manifest>

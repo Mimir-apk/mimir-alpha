@@ -1,0 +1,67 @@
+# REAL device run of capture.sh (read-only), an AYN Thor test device, 2026-10-13, over adb Wi-Fi.
+# Unedited apart from this header. Read it with two facts in mind:
+#   - A Tweaker Balanced clamp was standing: scaling_max_freq (policy3 1401600, policy7 1593600) and the
+#     msm_performance map sit below the table tops, and performance_mode read 0. The OPP maxima come
+#     from scaling_available_frequencies, never from those clamped readings.
+#   - cpuinfo_min_freq and scaling_min_freq (and policy0's scaling_max_freq) were refused to the adb
+#     shell, so capture.sh marked them "daemon read owed". cpuinfo_max_freq sits above the top
+#     available OPP on policy3/policy7 (2803200 vs 2707200, 3187200 vs 2956800).
+### meta
+capture_format=1
+captured_utc=2026-10-13T20:37:29Z
+### getprop
+ro.soc.model=QCS8550
+ro.vendor.qti.soc_model=QCS8550
+ro.board.platform=kalama
+ro.hardware=qcom
+ro.product.manufacturer=AYN
+ro.product.model=AYN Thor
+ro.product.device=kalama
+ro.build.fingerprint=qti/kalama/kalama:13/TKQ1.231222.001/eng.Thor.20260206.163241:user/release-keys
+init.svc.pservice=running
+### cpufreq
+policy0.related_cpus=0 1 2
+policy0.cpuinfo_min_freq=<denied>
+# daemon read owed: policy0.cpuinfo_min_freq
+policy0.cpuinfo_max_freq=2016000
+policy0.scaling_available_frequencies=307200 441600 556800 672000 787200 902400 1017600 1113600 1228800 1344000 1459200 1555200 1670400 1785600 1900800 2016000
+policy0.scaling_min_freq=<denied>
+# daemon read owed: policy0.scaling_min_freq
+policy0.scaling_max_freq=<denied>
+# daemon read owed: policy0.scaling_max_freq
+policy3.related_cpus=3 4 5 6
+policy3.cpuinfo_min_freq=<denied>
+# daemon read owed: policy3.cpuinfo_min_freq
+policy3.cpuinfo_max_freq=2803200
+policy3.scaling_available_frequencies=499200 614400 729600 844800 940800 1056000 1171200 1286400 1401600 1536000 1651200 1785600 1920000 2054400 2188800 2323200 2457600 2592000 2707200
+policy3.scaling_min_freq=<denied>
+# daemon read owed: policy3.scaling_min_freq
+policy3.scaling_max_freq=1401600
+policy7.related_cpus=7
+policy7.cpuinfo_min_freq=<denied>
+# daemon read owed: policy7.cpuinfo_min_freq
+policy7.cpuinfo_max_freq=3187200
+policy7.scaling_available_frequencies=595200 729600 864000 998400 1132800 1248000 1363200 1478400 1593600 1708800 1843200 1977600 2092800 2227200 2342400 2476800 2592000 2726400 2841600 2956800
+policy7.scaling_min_freq=<denied>
+# daemon read owed: policy7.scaling_min_freq
+policy7.scaling_max_freq=1593600
+### msm_performance
+cpu_max_freq=0:1113600 1:1113600 2:1113600 3:1401600 4:1401600 5:1401600 6:1401600 7:1593600
+### kgsl
+gpu_available_frequencies=680000000 615000000 550000000 475000000 401000000 348000000 295000000 220000000 124800000
+num_pwrlevels=9
+min_pwrlevel=4
+max_pwrlevel=0
+default_pwrlevel=7
+thermal_pwrlevel=0
+devfreq_available_frequencies=680000000 615000000 550000000 475000000 401000000 348000000 295000000 220000000 124800000
+### settings
+fan_mode=6
+fan_speed=44748
+fan_thermal_management_area=CPU
+is_quick_set_performance_and_fan_enable=1
+performance_mode=0
+### gpio5_pwm2
+ls=dp_state duty en_backlight hdmi_state period secondary_en_backlight speed state thermal
+### logcat_cpugpumode
+### end

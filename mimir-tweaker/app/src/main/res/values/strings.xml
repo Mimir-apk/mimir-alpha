@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mimir Tweaker</string>
+    <string name="connecting">Connecting to the isolated Tweaker service…</string>
+    <string name="service_disconnected">Tweaker service disconnected.</string>
+    <string name="refresh_probe">Refresh capability probe</string>
+    <string name="preview_balanced">Preview Balanced plan (dry run)</string>
+    <string name="start_observation">Start 30-second RP5 observation</string>
+    <string name="observation_status">Show calibration status</string>
+    <string name="stop_observation">Stop calibration observation</string>
+    <string name="probe_failed">Probe failed: %1$s</string>
+    <string name="plan_failed">Dry-run plan failed: %1$s</string>
+    <string name="observation_failed">Calibration observation failed: %1$s</string>
+    <string name="lab_command_running">Running lab command: %1$s…</string>
+    <string name="notification_active_profile">A game performance profile is active</string>
+    <string name="notification_calibration_observation">Observe-only RP5 calibration is recording telemetry</string>
+    <string name="notification_recovery_restore">Restoring stock hardware after reboot</string>
+    <!-- Main screen, bottom: GPL-3.0 section 5(d) notice, and buttons to read the notices and the license text. -->
+    <string name="legal_copyright" translatable="false">Copyright (C) 2026 Mimir-apk</string>
+    <string name="legal_free_software">Mimir Tweaker is free software under the GNU General Public License, version 3 or later. It comes with absolutely no warranty. You are welcome to redistribute it under the conditions of that license.</string>
+    <string name="legal_source">Source code: %1$s</string>
+    <string name="legal_show_notices">Show notices</string>
+    <string name="legal_show_license">Show license</string>
+    <string name="legal_unavailable">This text could not be read.</string>
+</resources>

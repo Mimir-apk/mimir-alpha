@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  PRODUCTION posture: no launcher diagnostic activity and no lab-only exported entry.
+  Signature-protected service and boot/package-replace recovery remain from the main manifest.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity
+            android:name=".MainActivity"
+            tools:node="remove" />
+    </application>
+</manifest>

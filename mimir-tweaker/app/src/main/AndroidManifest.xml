@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!--
+      The live family catalog (FamilyCatalogFetcher): one HTTPS GET of a small signed file, from the single host in
+      BuildConfig.FAMILY_CATALOG_URL, on a background thread, in the main process only. Nothing is sent about the
+      device. With no catalog public key compiled in, no connection is ever opened.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.gruning.mimir.tweaker.permission.CONTROL_TWEAKER" />
+    <!-- Special App Access: user/owner must explicitly grant Usage Access; absence fails attestation closed. -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--
+      Package visibility for the game audio-focus hold (API v11): every launcher app, so the daemon can
+      check that a package Mimir launched is installed and not a system app. Not QUERY_ALL_PACKAGES.
+    -->
+    <queries>
+        <!-- Mimir itself, and its devlab variant: the v11 caller check resolves the calling uid to a package, and must see this one. -->
+        <package android:name="com.gruning.mimir.rewrite" />
+        <package android:name="com.gruning.mimir.rewrite.devlab" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <permission
+        android:name="com.gruning.mimir.tweaker.permission.CONTROL_TWEAKER"
+        android:label="Control Mimir Tweaker"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name=".TweakerApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+
+        <meta-data
+            android:name="com.gruning.mimir.tweaker.API_VERSION"
+            android:value="${mimirTweakerApiVersion}" />
+        <meta-data
+            android:name="com.gruning.mimir.tweaker.POSTURE"
+            android:value="${mimirTweakerPosture}" />
+        <meta-data
+            android:name="com.gruning.mimir.tweaker.HARDWARE_WRITES_COMPILED"
+            android:value="${mimirTweakerHardwareWritesCompiled}" />
+        <meta-data
+            android:name="com.gruning.mimir.tweaker.SIGNED_MANIFEST_REQUIRED"
+            android:value="${mimirTweakerSignedManifestRequired}" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MimirTweakerService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:permission="com.gruning.mimir.tweaker.permission.CONTROL_TWEAKER"
+            android:stopWithTask="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="User-directed per-game performance profile and telemetry service" />
+        </service>
+
+        <service
+            android:name=".RestoreGuardianProcessService"
+            android:directBootAware="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":guardian"
+            android:stopWithTask="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Fail-closed hardware recovery guardian for an active Mimir profile" />
+        </service>
+
+        <receiver
+            android:name=".TweakerBootReceiver"
+            android:directBootAware="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_UNLOCKED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

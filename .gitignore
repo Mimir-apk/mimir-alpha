@@ -1,0 +1,53 @@
+# MIMIR-REWRITE — .gitignore.
+
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android / IDE
+local.properties
+*.iml
+.idea/
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Kotlin
+.kotlin/
+
+# Keys / signing (never commit)
+*.jks
+*.keystore
+*.p12
+
+# OS / editor
+*.log
+
+# Design reference bundle (local mirror for Cowork; lives on T7, not git)
+design-reference/
+
+# Nested agent worktrees. Gate scripts already exclude these (fix 1c54838) after nested copies were
+# scanned as duplicate live violations on a dirty checkout; ignoring them stops the contamination
+# reaching git status in the first place.
+.cursor/worktrees/
+
+# Perfetto captures from tools/capture-perfetto-trace.sh -- large binaries, never committed.
+.mimir-traces/
+
+# QA evidence (screenshots, video, traces) stays local and is excluded from Git.
+# Existing tracked evidence is unaffected by these ignore rules.
+implementation-notes
+
+# Publish tooling: local personal-data exclusion patterns (see tools/publish/README.md).
+tools/publish/private-markers.local
+
+# Nested editor and Git worktree checkouts are separate repositories.
+**/worktrees/
+.worktrees/
+
+# Python tool caches.
+__pycache__/
+*.pyc

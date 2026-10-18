@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "families": [
+    {
+      "id": "qualcomm-8-elite",
+      "label": "Qualcomm SM8750 Snapdragon 8 Elite / CQ8725S Q-8750 / AYN Odin 3",
+      "treatment": "mimir-certified-reference",
+      "match": {
+        "soc": ["CQ8725S", "SM8750"],
+        "platform": ["sun"]
+      },
+      "cpu": {
+        "kind": "khz",
+        "profiles": {
+          "quiet": { "0": 1785600, "6": 2246400 },
+          "balanced": { "0": 1996800, "6": 2438400 },
+          "performance": { "0": 1996800, "6": 3072000 }
+        }
+      },
+      "gpu": {
+        "kind": "levels",
+        "levels": { "quiet": 5, "balanced": 0, "performance": 0 }
+      },
+      "vendorMode": { "quiet": 0, "balanced": 1, "performance": 2 },
+      "transports": [
+        "cpu-msm-performance-qos",
+        "gpu-kgsl-max-pwrlevel",
+        "vendor-performance-mode",
+        "fan-pwm"
+      ]
+    },
+    {
+      "id": "qualcomm-8gen2",
+      "label": "Qualcomm QCS8550 / SM8550 / Snapdragon 8 Gen 2",
+      "treatment": "mimir-certified-reference",
+      "match": {
+        "soc": ["QCS8550", "SM8550"],
+        "platform": ["kalama"]
+      },
+      "cpu": {
+        "kind": "anchor",
+        "profiles": {
+          "quiet": { "little": [1785600, 3532800], "prime": [2246400, 4320000] },
+          "balanced": { "little": [1996800, 3532800], "prime": [2438400, 4320000] },
+          "performance": { "little": [1996800, 3532800], "prime": [3072000, 4320000] }
+        }
+      },
+      "gpu": {
+        "kind": "transposed",
+        "anchorLevels": 14,
+        "capped": { "quiet": 5 },
+        "uncapped": ["balanced", "performance"]
+      },
+      "vendorMode": { "quiet": 0, "balanced": 1, "performance": 2 },
+      "transports": [
+        "cpu-msm-performance-qos",
+        "gpu-kgsl-max-pwrlevel",
+        "vendor-performance-mode",
+        "fan-pwm"
+      ]
+    },
+    {
+      "id": "qualcomm-sm8250",
+      "label": "Qualcomm SM8250 / Snapdragon 865",
+      "treatment": "mimir-certified-reference",
+      "match": {
+        "soc": ["SM8250"],
+        "platform": ["kona"]
+      },
+      "cpu": {
+        "kind": "anchor",
+        "profiles": {
+          "quiet": { "little": [1785600, 3532800], "prime": [2246400, 4320000] },
+          "balanced": { "little": [1996800, 3532800], "prime": [2438400, 4320000] },
+          "performance": { "little": [1996800, 3532800], "prime": [3072000, 4320000] }
+        }
+      },
+      "gpu": {
+        "kind": "transposed",
+        "anchorLevels": 14,
+        "capped": { "quiet": 5 },
+        "uncapped": ["balanced", "performance"]
+      },
+      "vendorMode": { "quiet": 0, "balanced": 1, "performance": 2 },
+      "transports": [
+        "cpu-scaling-max",
+        "gpu-kgsl-max-pwrlevel",
+        "fan-pwm"
+      ]
+    }
+  ]
+}

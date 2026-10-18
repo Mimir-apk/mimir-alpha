@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home and its Tome folio. Names: library_<surface>_<purpose>. Controller tokens (A, B, X, Y, L/R, D-PAD) are never translated. -->
+
+    <!-- Home footer hints: the pill that follows the focused tile, the permanent X shortcut, the launch card's Back. Words beside a keycap are stored in sentence case (the shared chrome seam may still draw them in caps). -->
+    <string name="library_home_hint_edit">Editar</string>
+    <string name="library_home_hint_open">Abrir</string>
+    <string name="library_home_hint_mode">Modo</string>
+    <string name="library_home_hint_tome">Tomo</string>
+    <string name="library_home_hint_tome_shortcut_description">X, abrir la Biblioteca de Tomos</string>
+    <string name="library_home_launch_back_hint">B Atrás</string>
+
+    <!-- A Tome folio's footer legend: whole lines in sentence case, controller tokens in caps (the shared chrome seam may still draw them in caps). -->
+    <string name="library_home_folio_footer_empty">B Atrás</string>
+    <string name="library_home_folio_footer_browse">A Abrir · X Ordenar · Y Editar · B Atrás</string>
+    <string name="library_home_folio_footer_arrange">A Tomar · X Salir · B Cancelar</string>
+    <string name="library_home_folio_footer_carrying">A Soltar · D-PAD Mover · B Cancelar</string>
+
+    <!-- Home shelf: its title, its empty state, the spoken names of a Tome seat and of the arrows that say more items wait off screen. -->
+    <string name="library_home_title">Estante de Inicio</string>
+    <string name="library_home_empty_title">Selección del editor vacía</string>
+    <string name="library_home_empty_body">Elige juegos en Biblioteca para tenerlos aquí.</string>
+    <string name="library_home_empty_action_description">Abrir biblioteca</string>
+    <string name="library_home_empty_action">Abrir biblioteca</string>
+    <string name="library_home_more_items_left">Hay más elementos a la izquierda</string>
+    <string name="library_home_more_items_right">Hay más elementos a la derecha</string>
+    <!-- A Tome: %1$s is its name, %2$s its game count (library_home_games_count). -->
+    <string name="library_home_tome_description">%1$s, Tomo, %2$s</string>
+    <string name="library_home_tome_count_empty">Vacío</string>
+    <plurals name="library_home_games_count">
+        <item quantity="one">%1$d juego</item>
+        <item quantity="many">%1$d juegos</item>
+        <item quantity="other">%1$d juegos</item>
+    </plurals>
+
+    <!-- A Tome folio: the arrange pill (drawn as written), the empty seat, the empty Tome and the touch Back. -->
+    <string name="library_home_folio_arrange_active">Modo ordenar activo</string>
+    <string name="library_home_folio_arrange_pill">Ordenar</string>
+    <string name="library_home_folio_empty_seat">Espacio vacío %1$d del Tomo</string>
+    <string name="library_home_folio_empty_title">Este Tomo está vacío</string>
+    <string name="library_home_folio_empty_hint">Agrega juegos desde Inicio › Editar</string>
+    <string name="library_home_folio_empty_description">Este Tomo está vacío. Agrega juegos desde Inicio, Editar.</string>
+    <string name="library_home_folio_back">Atrás</string>
+
+    <!-- Library. Names: library_<surface>_<purpose>. Controller tokens (A, B, X, Y, L/R, START, SELECT, D-PAD) are never translated; the words beside them are stored in sentence case (the shared chrome seam may still draw them in caps). -->
+
+    <!-- Library shelf: the title, the platform eyebrow, the mode tabs, the Add pill and the empty shelf. -->
+    <string name="library_shelf_title">Biblioteca</string>
+    <string name="library_shelf_eyebrow_platforms">Elige una plataforma</string>
+    <string name="library_shelf_mode_emulation">Emulación</string>
+    <string name="library_shelf_mode_android_games">Juegos de Android</string>
+    <string name="library_shelf_add_games">Agregar juegos</string>
+    <string name="library_shelf_add_game">Agregar juego</string>
+    <string name="library_shelf_empty">Aún no hay plataformas.</string>
+    <string name="library_shelf_empty_android_games">Aún no hay juegos de Android.</string>
+    <string name="library_shelf_empty_android_apps">Aún no hay apps de Android.</string>
+    <!-- The spoken action of a tappable row or card. -->
+    <string name="library_shelf_open_description">Abrir</string>
+    <plurals name="library_shelf_games_count">
+        <item quantity="one">%1$d juego</item>
+        <item quantity="many">%1$d juegos</item>
+        <item quantity="other">%1$d juegos</item>
+    </plurals>
+
+    <!-- The Library's hint legend: the word beside each controller token on the shelf, the Android shelf and a game list, and the hint rail button. -->
+    <string name="library_hint_platforms">Plataformas</string>
+    <string name="library_hint_mode">Modo</string>
+    <string name="library_hint_open">Abrir</string>
+    <string name="library_hint_back">Atrás</string>
+    <string name="library_hint_favorites">Favoritos</string>
+    <string name="library_hint_favorite">Favorito</string>
+    <string name="library_hint_settings">Configuración</string>
+    <string name="library_hint_apps">Apps</string>
+    <string name="library_hint_games">Juegos</string>
+    <string name="library_hint_category">Categoría</string>
+    <string name="library_hint_media">Medios</string>
+    <string name="library_hint_hide">Ocultar</string>
+    <string name="library_hint_show_all">Mostrar todo</string>
+    <string name="library_hint_show_favorites">Mostrar favoritos</string>
+    <string name="library_hint_rail_caption">Ayudas</string>
+    <string name="library_hint_rail_description">Ayudas del control</string>
+    <string name="library_hint_rail_shown">Visibles</string>
+    <string name="library_hint_rail_hidden">Ocultas</string>
+
+    <!-- A game list: the view-mode hint (the glyph names the view it switches to), the header, the search fields, the Favorites tabs and the empty states. -->
+    <string name="library_gamelist_view_list">L/R · ᛚ Lista</string>
+    <string name="library_gamelist_view_shelf">L/R · ᚲ Estante</string>
+    <string name="library_gamelist_title_favorites">Favoritos</string>
+    <string name="library_gamelist_title_fallback">Juegos</string>
+    <string name="library_gamelist_local_library">Biblioteca local</string>
+    <string name="library_gamelist_count_games_none">Sin juegos</string>
+    <string name="library_gamelist_count_apps_none">Sin apps</string>
+    <plurals name="library_gamelist_count_games">
+        <item quantity="one">%1$d juego</item>
+        <item quantity="many">%1$d juegos</item>
+        <item quantity="other">%1$d juegos</item>
+    </plurals>
+    <plurals name="library_gamelist_count_apps">
+        <item quantity="one">%1$d app</item>
+        <item quantity="many">%1$d apps</item>
+        <item quantity="other">%1$d apps</item>
+    </plurals>
+    <string name="library_gamelist_search_games">Buscar juegos</string>
+    <string name="library_gamelist_search_apps">Buscar apps</string>
+    <string name="library_gamelist_search_favorites">Buscar favoritos</string>
+    <string name="library_gamelist_favorites_only">Solo favoritos</string>
+    <string name="library_gamelist_favorites_only_chip">ᛗ · Solo favoritos</string>
+    <string name="library_gamelist_segment_games">Juegos</string>
+    <string name="library_gamelist_segment_android_apps">Apps de Android</string>
+    <string name="library_gamelist_empty_platform">Aún no hay juegos en esta plataforma.</string>
+    <string name="library_gamelist_empty_favorites_platform">Aún no hay favoritos en esta plataforma.</string>
+    <!-- %1$s is what the player typed. -->
+    <string name="library_gamelist_empty_search">Ningún juego coincide con “%1$s”.</string>
+    <string name="library_gamelist_empty_favorites">Aún no hay favoritos. Marca un juego como favorito para tenerlo aquí.</string>
+    <string name="library_gamelist_empty_favorites_search">Ningún favorito coincide con “%1$s”.</string>
+    <string name="library_gamelist_empty_android_games">Aún no hay juegos de Android favoritos.</string>
+    <string name="library_gamelist_empty_android_apps">Aún no hay apps de Android favoritas.</string>
+    <string name="library_gamelist_empty_library_title">Aún no hay juegos</string>
+    <string name="library_gamelist_empty_library_body">Agrega una carpeta de biblioteca y Mimir leerá tus juegos donde están.</string>
+
+    <!-- Library search: the overlay, its fields and filter pickers, the result rows and the empty states. -->
+    <string name="library_search_title">ᛋ · Buscar en la biblioteca</string>
+    <plurals name="library_search_results">
+        <item quantity="one">%1$d resultado</item>
+        <item quantity="many">%1$d resultados</item>
+        <item quantity="other">%1$d resultados</item>
+    </plurals>
+    <string name="library_search_hint_back">B Atrás</string>
+    <string name="library_search_hint_open">A Abrir</string>
+    <string name="library_search_hint_picker">A Elegir · B Atrás</string>
+    <string name="library_search_field_query">Búsqueda</string>
+    <string name="library_search_field_genre">Género</string>
+    <string name="library_search_field_platform">Plataforma</string>
+    <string name="library_search_query_placeholder">Título o nombre</string>
+    <string name="library_search_all_genres">Todos los géneros</string>
+    <string name="library_search_all_platforms">Todas las plataformas</string>
+    <string name="library_search_clear_label">Borrar filtros</string>
+    <string name="library_search_clear_value">Mostrar todos los resultados</string>
+    <string name="library_search_picker_genre">Elegir género</string>
+    <string name="library_search_picker_platform">Elegir plataforma</string>
+    <string name="library_search_empty_matches_title">Sin coincidencias</string>
+    <string name="library_search_empty_matches_body">Cambia un filtro o borra la búsqueda.</string>
+    <string name="library_search_empty_library_title">No hay juegos para buscar</string>
+    <string name="library_search_empty_library_body">Podrás buscar cuando esta biblioteca tenga juegos.</string>
+</resources>

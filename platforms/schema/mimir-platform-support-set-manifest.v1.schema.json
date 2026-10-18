@@ -1,0 +1,548 @@
+{
+  "$id": "https://mimir.local/schema/mimir-platform-support-set-manifest.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "additiveExpansion": {
+      "$ref": "#/$defs/additiveExpansion"
+    },
+    "catalogPartition": {
+      "$ref": "#/$defs/catalogPartition"
+    },
+    "catalogNormalization": {
+      "$ref": "#/$defs/catalogNormalization"
+    },
+    "compatibilityFloor": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "digests": {
+      "$ref": "#/$defs/digests"
+    },
+    "generatedBy": {
+      "const": "tools/platform-registry/generate-platform-registry.mjs"
+    },
+    "idMapVersion": {
+      "const": "mimirPlatformIdMap.v1"
+    },
+    "lockedInputSetSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "registryRevision": {
+      "$ref": "#/$defs/registryRevision"
+    },
+    "registrySemanticOutputSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "schemaVersion": {
+      "const": "mimirPlatformSupportSetManifest.v1"
+    },
+    "sets": {
+      "$ref": "#/$defs/sets"
+    },
+    "sourceSetSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "standalone": {
+      "$ref": "#/$defs/standalone"
+    },
+    "wiiDefaultDrift": {
+      "$ref": "#/$defs/wiiDefaultDrift"
+    }
+  },
+  "required": [
+    "additiveExpansion",
+    "catalogNormalization",
+    "catalogPartition",
+    "compatibilityFloor",
+    "digests",
+    "generatedBy",
+    "idMapVersion",
+    "lockedInputSetSha256",
+    "registryRevision",
+    "registrySemanticOutputSha256",
+    "schemaVersion",
+    "sets",
+    "sourceSetSha256",
+    "standalone",
+    "wiiDefaultDrift"
+  ],
+  "title": "Mimir exact support-set manifest v1",
+  "type": "object",
+  "$defs": {
+    "additiveExpansion": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "standaloneTargetRows": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "catalogEntryIds",
+        "standaloneTargetRows"
+      ],
+      "type": "object"
+    },
+    "catalogPartition": {
+      "additionalProperties": false,
+      "properties": {
+        "disjointSetNames": {
+          "items": {
+            "enum": [
+              "A287_CATALOG_ONLY",
+              "D59_DISCOVERY_ONLY",
+              "R10_DISCOVERY_GAP",
+              "DR47_DISCOVERY_RUNTIME"
+            ],
+            "type": "string"
+          },
+          "minItems": 4,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "unionCount": {
+          "const": 403
+        },
+        "unionIdsSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "disjointSetNames",
+        "unionCount",
+        "unionIdsSha256"
+      ],
+      "type": "object"
+    },
+    "catalogNormalization": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalPlatformCount": {
+          "const": 226
+        },
+        "catalogEntryCount": {
+          "const": 403
+        },
+        "countRationale": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "fixtures": {
+          "items": {
+            "$ref": "#/$defs/canonicalizationFixture"
+          },
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "relationCounts": {
+          "additionalProperties": false,
+          "properties": {
+            "CANONICAL": { "const": 225 },
+            "CONTENT_VARIANT": { "const": 37 },
+            "HARDWARE_VARIANT": { "const": 137 },
+            "PRESENTATION_ALIAS": { "const": 3 },
+            "REGIONAL_VARIANT": { "const": 1 },
+            "SOFTWARE_FAMILY": { "const": 0 }
+          },
+          "required": [
+            "CANONICAL",
+            "CONTENT_VARIANT",
+            "HARDWARE_VARIANT",
+            "PRESENTATION_ALIAS",
+            "REGIONAL_VARIANT",
+            "SOFTWARE_FAMILY"
+          ],
+          "type": "object"
+        },
+        "relationFixtureSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "canonicalPlatformCount",
+        "catalogEntryCount",
+        "countRationale",
+        "fixtures",
+        "relationCounts",
+        "relationFixtureSha256"
+      ],
+      "type": "object"
+    },
+    "canonicalizationFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryId": { "$ref": "#/$defs/scopedId" },
+        "expectedPlatformId": { "$ref": "#/$defs/unscopedId" },
+        "expectedRelation": {
+          "enum": [
+            "CONTENT_VARIANT",
+            "HARDWARE_VARIANT",
+            "PRESENTATION_ALIAS",
+            "REGIONAL_VARIANT",
+            "SOFTWARE_FAMILY"
+          ],
+          "type": "string"
+        },
+        "observedPlatformId": { "$ref": "#/$defs/unscopedId" },
+        "observedRelation": {
+          "enum": [
+            "CONTENT_VARIANT",
+            "HARDWARE_VARIANT",
+            "PRESENTATION_ALIAS",
+            "REGIONAL_VARIANT",
+            "SOFTWARE_FAMILY"
+          ],
+          "type": "string"
+        },
+        "status": { "const": "PASS" }
+      },
+      "required": [
+        "catalogEntryId",
+        "expectedPlatformId",
+        "expectedRelation",
+        "observedPlatformId",
+        "observedRelation",
+        "status"
+      ],
+      "type": "object"
+    },
+    "digests": {
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "const": "SHA-256"
+        },
+        "canonicalization": {
+          "const": "mimir-canonical-json-v1"
+        },
+        "manifestPayloadSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "setIds": {
+          "additionalProperties": {
+            "$ref": "#/$defs/sha256"
+          },
+          "type": "object"
+        },
+        "standalonePackageNamesSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "standaloneTargetRowsSha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "algorithm",
+        "canonicalization",
+        "manifestPayloadSha256",
+        "setIds",
+        "standalonePackageNamesSha256",
+        "standaloneTargetRowsSha256"
+      ],
+      "type": "object"
+    },
+    "duplicatePackage": {
+      "additionalProperties": false,
+      "properties": {
+        "occurrenceCount": {
+          "minimum": 2,
+          "type": "integer"
+        },
+        "packageName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "targetRowIds": {
+          "items": {
+            "$ref": "#/$defs/scopedId"
+          },
+          "minItems": 2,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "occurrenceCount",
+        "packageName",
+        "targetRowIds"
+      ],
+      "type": "object"
+    },
+    "externalAlias": {
+      "additionalProperties": false,
+      "properties": {
+        "namespace": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "value": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "namespace",
+        "value"
+      ],
+      "type": "object"
+    },
+    "registryRevision": {
+      "pattern": "^pk00-[0-9a-f]{12}-[0-9a-f]{12}$",
+      "type": "string"
+    },
+    "scopedId": {
+      "pattern": "^[a-z0-9][a-z0-9-]*:[A-Za-z0-9._:+-]+$",
+      "type": "string"
+    },
+    "set": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalPlatformIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "canonicalPlatformIdsSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ids": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "idsSha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "namespace": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "count",
+        "ids",
+        "idsSha256",
+        "namespace"
+      ],
+      "type": "object"
+    },
+    "sets": {
+      "additionalProperties": false,
+      "properties": {
+        "A287_CATALOG_ONLY": {
+          "$ref": "#/$defs/set"
+        },
+        "B21": {
+          "$ref": "#/$defs/set"
+        },
+        "D59_DISCOVERY_ONLY": {
+          "$ref": "#/$defs/set"
+        },
+        "DR47_DISCOVERY_RUNTIME": {
+          "$ref": "#/$defs/set"
+        },
+        "R10_DISCOVERY_GAP": {
+          "$ref": "#/$defs/set"
+        },
+        "R39_DISCOVERABLE": {
+          "$ref": "#/$defs/set"
+        },
+        "R49": {
+          "$ref": "#/$defs/set"
+        }
+      },
+      "required": [
+        "A287_CATALOG_ONLY",
+        "B21",
+        "D59_DISCOVERY_ONLY",
+        "DR47_DISCOVERY_RUNTIME",
+        "R10_DISCOVERY_GAP",
+        "R39_DISCOVERABLE",
+        "R49"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "standalone": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryCount": {
+          "const": 12
+        },
+        "catalogEntryIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "duplicatePackages": {
+          "items": {
+            "$ref": "#/$defs/duplicatePackage"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "packageCount": {
+          "const": 43
+        },
+        "packageNames": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "targetRowCount": {
+          "const": 44
+        },
+        "targetRows": {
+          "items": {
+            "$ref": "#/$defs/targetRow"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "catalogEntryCount",
+        "catalogEntryIds",
+        "duplicatePackages",
+        "packageCount",
+        "packageNames",
+        "targetRowCount",
+        "targetRows"
+      ],
+      "type": "object"
+    },
+    "targetRow": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogEntryId": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "id": {
+          "$ref": "#/$defs/scopedId"
+        },
+        "label": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "packageName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sourceOrdinal": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sourceStatus": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "catalogEntryId",
+        "id",
+        "label",
+        "packageName",
+        "sourceOrdinal",
+        "sourceStatus"
+      ],
+      "type": "object"
+    },
+    "unscopedId": {
+      "pattern": "^[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "wiiDefaultDrift": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalResolution": {
+          "additionalProperties": false,
+          "properties": {
+            "alias": {
+              "$ref": "#/$defs/externalAlias"
+            },
+            "targetPlatformId": {
+              "const": "nintendo_wii"
+            }
+          },
+          "required": [
+            "alias",
+            "targetPlatformId"
+          ],
+          "type": "object"
+        },
+        "expectedRuntimeIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "extraCatalogDefaultIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "id": {
+          "const": "shipping-catalog-default-active-wii-drift"
+        },
+        "missingCatalogDefaultIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "observedCatalogDefaultIds": {
+          "items": {
+            "$ref": "#/$defs/unscopedId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "status": {
+          "const": "RESOLVED_BY_SCOPED_ALIAS"
+        }
+      },
+      "required": [
+        "canonicalResolution",
+        "expectedRuntimeIds",
+        "extraCatalogDefaultIds",
+        "id",
+        "missingCatalogDefaultIds",
+        "observedCatalogDefaultIds",
+        "status"
+      ],
+      "type": "object"
+    }
+  }
+}

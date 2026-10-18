@@ -1,0 +1,171 @@
+{
+  "digestAlgorithm": "SHA-256",
+  "digestCanonicalization": "mimir-canonical-json-v1",
+  "generatedBy": "tools/platform-registry/generate-platform-registry.mjs",
+  "generatorSemanticsVersion": "mimirPlatformRegistryGeneratorSemantics.v3",
+  "importProvenance": {
+    "interpretationInputs": [
+      {
+        "bytes": 54762,
+        "id": "platform-registry-generator",
+        "path": "tools/platform-registry/generate-platform-registry.mjs",
+        "roles": [
+          "generator-semantics",
+          "registry-revision"
+        ],
+        "sha256": "9a9c2b9c57493dd86ce97a4c9b236ff8be53bf7551d70b19ca02efb994a02c17"
+      },
+      {
+        "bytes": 29751,
+        "id": "shipping-catalog-relations",
+        "path": "tools/platform-registry/fixtures/shipping-catalog-relations.v1.json",
+        "roles": [
+          "catalog-canonicalization",
+          "variant-classification"
+        ],
+        "sha256": "bc8e769312f97845c3accd778142411911679e805d1a8bf42b6baf5c54423461"
+      }
+    ],
+    "lockedInputSetSha256": "97f39e7ed118723f94ca66fb1be83465705118db6dd4585f57942560b2c7571c",
+    "repository": {
+      "pathHint": "../gaming-hobby-android-handhelds",
+      "revision": "b34752d0290ef1a34199aa6c6dd4258646fe4c06",
+      "url": "https://github.com/Mimir-apk/gaming-hobby-android-handhelds.git"
+    },
+    "sourceSetSha256": "567bea49645fae7e7b686a2072624206f64aa515d4ff3c64faadca809bda913f",
+    "sources": [
+      {
+        "bytes": 1373704,
+        "id": "shipping-runtime-js",
+        "license": "UNSPECIFIED_PROJECT_SOURCE",
+        "path": "thor-torrent-shop/app.js",
+        "repositoryRevision": "b34752d0290ef1a34199aa6c6dd4258646fe4c06",
+        "roles": [
+          "baseline-runtime-systems",
+          "runtime-folder-aliases",
+          "runtime-ambiguous-disc-handling"
+        ],
+        "sha256": "2e5d7c25e104c52a0cb1b415d409e9a44088d292dfe87eac73a238e40663981c"
+      },
+      {
+        "bytes": 1080178,
+        "id": "shipping-platform-catalog",
+        "license": "MIXED_PROJECT_METADATA_AND_NOTICED_ASSETS",
+        "path": "thor-torrent-shop/mimir-platform-catalog.json",
+        "repositoryRevision": "b34752d0290ef1a34199aa6c6dd4258646fe4c06",
+        "roles": [
+          "catalog-identities",
+          "discovery-bindings",
+          "standalone-target-observations",
+          "visual-assets"
+        ],
+        "sha256": "f2ea34810476db28d1583b84869ea6ef89c67fac66b61bee28a7568fbb16ad56"
+      },
+      {
+        "bytes": 12547,
+        "id": "shipping-retroarch-registry",
+        "license": "UNSPECIFIED_PROJECT_SOURCE",
+        "path": "thor-torrent-shop/mimir-retroarch-core-registry.json",
+        "repositoryRevision": "b34752d0290ef1a34199aa6c6dd4258646fe4c06",
+        "roles": [
+          "retroarch-registration-ids",
+          "retroarch-platform-core-registrations"
+        ],
+        "sha256": "64d7fe9f06f2dba41de1b003224270f90840a2fd727aa5f5659a7a98ae8df7a2"
+      },
+      {
+        "bytes": 824447,
+        "id": "shipping-android-bridge",
+        "license": "UNSPECIFIED_PROJECT_SOURCE",
+        "path": "thor-shop-android/app/src/main/java/com/gruning/mimir/MimirBridge.java",
+        "repositoryRevision": "b34752d0290ef1a34199aa6c6dd4258646fe4c06",
+        "roles": [
+          "shipping-runtime-reference-only"
+        ],
+        "sha256": "876d50b9c5552c6c67e14f30d3e5aef0ebdcf2e1c48622019f48348f0fb64ee0"
+      }
+    ]
+  },
+  "interpretationInputs": [
+    {
+      "bytes": 71370,
+      "id": "platform-registry-generator",
+      "path": "tools/platform-registry/generate-platform-registry.mjs",
+      "roles": [
+        "generator-semantics",
+        "registry-revision"
+      ],
+      "sha256": "4a4cfa16fc7969192605bdc9760f9f053888a6ecfc640b053f46fd4445f49f99"
+    },
+    {
+      "bytes": 29751,
+      "id": "shipping-catalog-relations",
+      "path": "tools/platform-registry/fixtures/shipping-catalog-relations.v1.json",
+      "roles": [
+        "catalog-canonicalization",
+        "variant-classification"
+      ],
+      "sha256": "bc8e769312f97845c3accd778142411911679e805d1a8bf42b6baf5c54423461"
+    }
+  ],
+  "nativeSources": [
+    {
+      "bytes": 644,
+      "id": "mimir-native-platforms",
+      "license": "MIMIR_OWNED_DERIVED_DATA",
+      "path": "platforms/sources/mimir-native-platforms.json",
+      "roles": [
+        "mimir-native-platform-extension-point"
+      ],
+      "sha256": "3ff97cacb766b97864c420cacb23413fb7391b00d7d3a0604bc0edd6b2de7cae"
+    }
+  ],
+  "schemaVersion": "mimirPlatformSourcesLock.v1",
+  "sources": [
+    {
+      "bytes": 1080178,
+      "id": "mimir-platform-catalog",
+      "license": "MIXED_PROJECT_METADATA_AND_NOTICED_ASSETS",
+      "path": "platforms/sources/mimir-platform-catalog.json",
+      "roles": [
+        "catalog-identities",
+        "discovery-bindings",
+        "standalone-target-observations",
+        "visual-assets"
+      ],
+      "sha256": "f2ea34810476db28d1583b84869ea6ef89c67fac66b61bee28a7568fbb16ad56"
+    },
+    {
+      "bytes": 12522,
+      "id": "mimir-retroarch-core-registry",
+      "license": "UNSPECIFIED_PROJECT_SOURCE",
+      "path": "platforms/sources/mimir-retroarch-core-registry.json",
+      "roles": [
+        "retroarch-registration-ids",
+        "retroarch-platform-core-registrations"
+      ],
+      "sha256": "153a9a28eaa6f35e8d74209c86a21ee80cc72f696ce0503444fd132c9328b4b8"
+    },
+    {
+      "bytes": 9635,
+      "id": "mimir-runtime-systems",
+      "license": "MIMIR_OWNED_DERIVED_DATA",
+      "path": "platforms/sources/mimir-runtime-systems.json",
+      "roles": [
+        "baseline-runtime-systems",
+        "runtime-folder-aliases"
+      ],
+      "sha256": "9b836700eae2fd9862fb2f0f62320ac4dae75448271e85ef3ce252e84db89bf3"
+    }
+  ],
+  "upstreamAssets": [
+    {
+      "license": "MIT",
+      "name": "BAXY Automatic",
+      "noticePath": "thor-torrent-shop/NOTICE_BAXY_AUTOMATIC.txt",
+      "path": "Automatic/src/svg",
+      "revision": "af8db5db4cbb76c0db1334f5096ac2289f83efcf",
+      "url": "https://github.com/baxysquare/baxy-retroarch-themes"
+    }
+  ]
+}

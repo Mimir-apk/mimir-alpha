@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MIMIR-REWRITE :core-audio — library manifest. Posture: NO INTERNET, no permissions needed —
+     SoundPool/AudioManager/SharedPreferences are all permission-free local APIs. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

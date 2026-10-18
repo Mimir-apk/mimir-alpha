@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MIMIR-REWRITE :core-input — posture: NO permissions. A pure input/focus authority library;
+     it interprets KeyEvent/MotionEvent handed to it by the host Activity, it does not request any. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

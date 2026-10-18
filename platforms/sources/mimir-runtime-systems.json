@@ -1,0 +1,573 @@
+[
+  {
+    "extensions": [
+      "3ds",
+      "3dsx",
+      "cci",
+      "cfa",
+      "cia",
+      "cxi"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "3ds"
+    },
+    "folder": "3ds",
+    "folderAliases": [
+      "3ds",
+      "nintendo 3ds",
+      "nintendo3ds"
+    ],
+    "id": "shipping-runtime:3ds",
+    "label": "3DS",
+    "platformId": "3ds",
+    "sourceOrdinal": 10
+  },
+  {
+    "extensions": [
+      "7z",
+      "chd",
+      "cmd",
+      "neo",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "arcade"
+    },
+    "folder": "arcade",
+    "folderAliases": [
+      "arcade",
+      "atomiswave",
+      "cps",
+      "fba",
+      "fbneo",
+      "mame",
+      "naomi"
+    ],
+    "id": "shipping-runtime:arcade",
+    "label": "Arcade",
+    "platformId": "arcade",
+    "sourceOrdinal": 0
+  },
+  {
+    "extensions": [
+      "7z",
+      "cdi",
+      "chd",
+      "cue",
+      "dat",
+      "elf",
+      "gdi",
+      "iso",
+      "lst",
+      "m3u",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "dreamcast"
+    },
+    "folder": "dreamcast",
+    "folderAliases": [
+      "dc",
+      "dreamcast"
+    ],
+    "id": "shipping-runtime:dreamcast",
+    "label": "Dreamcast",
+    "platformId": "dreamcast",
+    "sourceOrdinal": 1
+  },
+  {
+    "extensions": [
+      "7z",
+      "dsi",
+      "ids",
+      "nds",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "ds"
+    },
+    "folder": "nds",
+    "folderAliases": [
+      "ds",
+      "nds",
+      "nintendo ds",
+      "nintendods"
+    ],
+    "id": "shipping-runtime:ds",
+    "label": "DS",
+    "platformId": "ds",
+    "sourceOrdinal": 9
+  },
+  {
+    "extensions": [
+      "7z",
+      "ciso",
+      "dol",
+      "elf",
+      "gcm",
+      "gcz",
+      "iso",
+      "json",
+      "m3u",
+      "rvz",
+      "tgc",
+      "wia",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "gamecube"
+    },
+    "folder": "gamecube",
+    "folderAliases": [
+      "game cube",
+      "gamecube",
+      "gc",
+      "gcn",
+      "ngc"
+    ],
+    "id": "shipping-runtime:gamecube",
+    "label": "GameCube",
+    "platformId": "gamecube",
+    "sourceOrdinal": 11
+  },
+  {
+    "extensions": [
+      "7z",
+      "dmg",
+      "gb",
+      "gbx",
+      "sgb",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "gb"
+    },
+    "folder": "gb",
+    "folderAliases": [
+      "game boy",
+      "gameboy",
+      "gb"
+    ],
+    "id": "shipping-runtime:gb",
+    "label": "GB",
+    "platformId": "gb",
+    "sourceOrdinal": 2
+  },
+  {
+    "extensions": [
+      "7z",
+      "agb",
+      "gba",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "gba"
+    },
+    "folder": "gba",
+    "folderAliases": [
+      "game boy advance",
+      "gameboyadvance",
+      "gba"
+    ],
+    "id": "shipping-runtime:gba",
+    "label": "GBA",
+    "platformId": "gba",
+    "sourceOrdinal": 4
+  },
+  {
+    "extensions": [
+      "7z",
+      "cgb",
+      "gbc",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "gbc"
+    },
+    "folder": "gbc",
+    "folderAliases": [
+      "game boy color",
+      "gameboycolor",
+      "gbc"
+    ],
+    "id": "shipping-runtime:gbc",
+    "label": "GBC",
+    "platformId": "gbc",
+    "sourceOrdinal": 3
+  },
+  {
+    "extensions": [
+      "32x",
+      "68k",
+      "7z",
+      "bin",
+      "chd",
+      "cue",
+      "gen",
+      "gg",
+      "iso",
+      "m3u",
+      "md",
+      "mdx",
+      "sg",
+      "sgd",
+      "smd",
+      "sms",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "genesis"
+    },
+    "folder": "genesis",
+    "folderAliases": [
+      "genesis",
+      "md",
+      "mega drive",
+      "megadrive"
+    ],
+    "id": "shipping-runtime:genesis",
+    "label": "Genesis",
+    "platformId": "genesis",
+    "sourceOrdinal": 5
+  },
+  {
+    "extensions": [
+      "7z",
+      "d64",
+      "n64",
+      "ndd",
+      "u1",
+      "v64",
+      "z64",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "n64"
+    },
+    "folder": "n64",
+    "folderAliases": [
+      "n64",
+      "nintendo 64",
+      "nintendo64"
+    ],
+    "id": "shipping-runtime:n64",
+    "label": "N64",
+    "platformId": "n64",
+    "sourceOrdinal": 8
+  },
+  {
+    "extensions": [
+      "3dsen",
+      "7z",
+      "fds",
+      "nes",
+      "unf",
+      "unif",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "nes"
+    },
+    "folder": "nes",
+    "folderAliases": [
+      "famicom",
+      "nes"
+    ],
+    "id": "shipping-runtime:nes",
+    "label": "NES",
+    "platformId": "nes",
+    "sourceOrdinal": 6
+  },
+  {
+    "extensions": [
+      "7z",
+      "bin",
+      "cbn",
+      "ccd",
+      "chd",
+      "cue",
+      "ecm",
+      "exe",
+      "img",
+      "iso",
+      "m3u",
+      "mdf",
+      "mds",
+      "minipsf",
+      "pbp",
+      "psexe",
+      "psf",
+      "toc",
+      "z",
+      "zip",
+      "znx"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "ps1"
+    },
+    "folder": "ps1",
+    "folderAliases": [
+      "playstation",
+      "playstation 1",
+      "playstation1",
+      "ps1",
+      "psx"
+    ],
+    "id": "shipping-runtime:ps1",
+    "label": "PS1",
+    "platformId": "ps1",
+    "sourceOrdinal": 13
+  },
+  {
+    "extensions": [
+      "bin",
+      "chd",
+      "ciso",
+      "cso",
+      "dump",
+      "elf",
+      "gz",
+      "img",
+      "iso",
+      "isz",
+      "m3u",
+      "mdf",
+      "nrg",
+      "zso"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "ps2"
+    },
+    "folder": "ps2",
+    "folderAliases": [
+      "playstation 2",
+      "playstation2",
+      "ps2"
+    ],
+    "id": "shipping-runtime:ps2",
+    "label": "PS2",
+    "platformId": "ps2",
+    "sourceOrdinal": 14
+  },
+  {
+    "extensions": [
+      "bin",
+      "elf",
+      "iso",
+      "pkg",
+      "self"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "ps3"
+    },
+    "folder": "ps3",
+    "folderAliases": [
+      "playstation 3",
+      "playstation3",
+      "ps3",
+      "ps3_game"
+    ],
+    "id": "shipping-runtime:ps3",
+    "label": "PS3",
+    "platformId": "ps3",
+    "sourceOrdinal": 15
+  },
+  {
+    "extensions": [
+      "7z",
+      "chd",
+      "cso",
+      "elf",
+      "iso",
+      "pbp",
+      "prx",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "psp"
+    },
+    "folder": "psp",
+    "folderAliases": [
+      "playstation portable",
+      "playstationportable",
+      "psp"
+    ],
+    "id": "shipping-runtime:psp",
+    "label": "PSP",
+    "platformId": "psp",
+    "sourceOrdinal": 16
+  },
+  {
+    "extensions": [
+      "7z",
+      "bin",
+      "ccd",
+      "chd",
+      "cue",
+      "iso",
+      "m3u",
+      "mds",
+      "toc",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "saturn"
+    },
+    "folder": "saturn",
+    "folderAliases": [
+      "saturn",
+      "sega saturn",
+      "segasaturn"
+    ],
+    "id": "shipping-runtime:saturn",
+    "label": "Saturn",
+    "platformId": "saturn",
+    "sourceOrdinal": 17
+  },
+  {
+    "extensions": [
+      "7z",
+      "bml",
+      "bs",
+      "bsx",
+      "dx2",
+      "fig",
+      "gd3",
+      "gd7",
+      "mgd",
+      "sfc",
+      "smc",
+      "st",
+      "swc",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "snes"
+    },
+    "folder": "snes",
+    "folderAliases": [
+      "sfc",
+      "snes",
+      "super nintendo",
+      "supernintendo"
+    ],
+    "id": "shipping-runtime:snes",
+    "label": "SNES",
+    "platformId": "snes",
+    "sourceOrdinal": 7
+  },
+  {
+    "extensions": [
+      "nca",
+      "nro",
+      "nso",
+      "nsp",
+      "xci"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "switch"
+    },
+    "folder": "switch",
+    "folderAliases": [
+      "nintendo switch",
+      "nintendoswitch",
+      "switch"
+    ],
+    "id": "shipping-runtime:switch",
+    "label": "Switch",
+    "platformId": "switch",
+    "sourceOrdinal": 18
+  },
+  {
+    "extensions": [
+      "7z",
+      "ciso",
+      "dol",
+      "elf",
+      "gcz",
+      "iso",
+      "m3u",
+      "rvz",
+      "wad",
+      "wbfs",
+      "wia",
+      "zip"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "wii"
+    },
+    "folder": "wii",
+    "folderAliases": [
+      "nintendo wii",
+      "nintendowii",
+      "wii"
+    ],
+    "id": "shipping-runtime:wii",
+    "label": "Wii",
+    "platformId": "nintendo_wii",
+    "sourceOrdinal": 12
+  },
+  {
+    "extensions": [
+      "iso",
+      "xiso"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "xbox"
+    },
+    "folder": "xbox",
+    "folderAliases": [
+      "microsoft xbox",
+      "microsoftxbox",
+      "xbox"
+    ],
+    "id": "shipping-runtime:xbox",
+    "label": "Xbox",
+    "platformId": "xbox",
+    "sourceOrdinal": 19
+  },
+  {
+    "extensions": [
+      "iso",
+      "xbla",
+      "xex",
+      "zar"
+    ],
+    "externalId": {
+      "namespace": "shipping-runtime",
+      "value": "xbox360"
+    },
+    "folder": "xbox360",
+    "folderAliases": [
+      "microsoft xbox 360",
+      "microsoftxbox360",
+      "x360",
+      "xbox 360",
+      "xbox360"
+    ],
+    "id": "shipping-runtime:xbox360",
+    "label": "Xbox 360",
+    "platformId": "xbox360",
+    "sourceOrdinal": 20
+  }
+]

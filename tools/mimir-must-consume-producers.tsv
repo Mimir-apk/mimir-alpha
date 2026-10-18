@@ -1,0 +1,16 @@
+rule	producer	scope_path	note
+D1	SteamGridDbTileFetcher.clearPickAsAutomatic		Boolean carries the interrupted-transaction recovery refusal (GameIdentityMediaMutationGate); A3 discards it as a bare statement.
+D1	CustomHeroStore.clearAsAutomatic		Same recovery-refusal Boolean as clearPickAsAutomatic; A4 discards it as a bare statement.
+D1	CustomHeroStore.clearPreviewClipAsAutomatic		Same recovery-refusal Boolean; A5 discards it as a bare statement.
+D1	SteamGridDbTileFetcher.applyPick		Load-bearing apply-succeeded Boolean; registered for completeness (both known call sites already bind and branch it).
+D1	CustomImageImportStore.activateIcon		Load-bearing apply-succeeded Boolean; registered for completeness (the known call site already binds and branches it).
+D1	persist	app/src/main/kotlin/com/gruning/mimir/rewrite/HomeCollectionStore.kt	HomeCollectionStore.persist(): Boolean; toggleMember discards it behind a trailing Unit while every sibling mutation consumes it. Scoped to this file: "persist" is reused by unrelated classes elsewhere in the tree.
+D1	RecoveryArchiveService.recoverPendingPublication		RecoveryPublicationResult from an interrupted archive-export recovery; discarded in a LaunchedEffect(Unit) that runs on every app start.
+D1	executeQuickLaunchInPlace		QuickLaunchInPlaceOutcome sealed result; discarded at its only production call site while acknowledge(request.id) still runs.
+D1	CompanionRunningAppState.stageTransfer		Boolean collapsing two distinct refusal reasons (staging-window collision vs mutex); registered for D1 in case a future call site discards it as a bare statement (the known site is D3-shaped, see the D3 row below).
+D1	MimirSessionAuthority.preparePrimaryApp		Session-mutex nullable operation id; registered per the spec's seed list. Known call sites already bind it to `val operation`/`val operationId` and branch the null arm.
+D1	MimirSessionAuthority.prepareHomeGame		Same session-mutex nullable operation id as preparePrimaryApp; known call sites already bind and branch it.
+D1	resolveNativeShelfLaunchIntent		Nullable launch Intent; registered for D1 in case a future call site discards it as a bare statement (the known sites are D3-shaped or already honest, see the D3 row below).
+D2	ScanOutcome		Sealed ScanOutcome (Healthy vs Failed(reason, kind)); rescan/addSource collapse it via `== ScanOutcome.Healthy` to a bare Boolean, losing SourceFailureKind.
+D3	resolveNativeShelfLaunchIntent		Nullable launch Intent gating an early return with no player-facing message in the block.
+D3	CompanionRunningAppState.stageTransfer		Boolean gating an early return with no player-facing message in the block, distinct from the sibling refusal 6 lines below that does toast.

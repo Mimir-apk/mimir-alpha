@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- API 31+ system SplashScreen: the ᛗ launcher icon over the same deep-navy base, so even the
+         OS-drawn instant before Compose is branded (the Thor reported SDK 33 on 2026-09-11, so this applies
+         there; API 30 devices use windowBackground alone). -->
+    <style name="Mimir.App" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/mimir_cold_window</item>
+        <item name="android:windowSplashScreenBackground">@color/mimir_cold_window</item>
+    </style>
+</resources>

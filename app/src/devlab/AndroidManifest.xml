@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  devlab — a RUNNABLE side-by-side build for device passes.
+
+  Why this variant exists. An Odin test device carries a Mimir Release-signed install; local builds are
+  signed with the shared debug keystore, so `install -r` over it is impossible and the only alternative
+  is an uninstall that destroys the example library, Tomes and settings. The `lab` variant is separate-UID and
+  debug-signed, which would have solved it — except `lab` deliberately removes MainActivity
+  (`app/src/lab/AndroidManifest.xml`: "A lab install must never become a HOME/launcher candidate or
+  start product activities"), so it has no activity to drive and cannot host a UI pass.
+
+  That rule is honoured here, not worked around. What must never happen is a test install becoming a
+  HOME or LAUNCHER candidate on a device whose whole point is that Mimir IS the frontend. What is
+  merely incidental is being launchable at all. So devlab KEEPS MainActivity and removes every one of
+  its intent filters:
+
+    - no android.intent.category.LAUNCHER  -> never appears in the app drawer
+    - no android.intent.category.HOME      -> never offered as, or selectable as, the device launcher
+    - no android.intent.action.MAIN at all -> nothing can resolve it implicitly
+
+  It is therefore reachable ONLY by explicit component, which is exactly what a scripted device pass
+  uses and exactly what a stray tap or a launcher-default prompt cannot do:
+
+      adb shell am start -n com.gruning.mimir.rewrite.devlab/com.gruning.mimir.rewrite.MainActivity
+
+  Unlike `lab`, this variant keeps the product's permissions, providers and services: it is a faithful
+  stand-in for the debug build (`initWith(debug)`), because a variant that behaves differently from the
+  thing under test is a worse instrument. It is NOT an isolated engine target — that is what `lab` is
+  for, and `lab` is unchanged.
+
+  The safety properties above are asserted by `verifyDevlabManifest` in app/build.gradle.kts, not left
+  to this comment. If you change this file, that task is what will tell you.
+-->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity
+            android:name="com.gruning.mimir.rewrite.MainActivity"
+            tools:node="merge">
+            <!-- removeAll, not a per-category remove: the merger matches an intent-filter by its whole
+                 content, so removing "the LAUNCHER category" would silently stop matching the moment
+                 someone edited the filter around it. Dropping every filter is the property we actually
+                 want and the only one that cannot rot. -->
+            <intent-filter tools:node="removeAll" />
+        </activity>
+        <!-- The Bottom floor  declares SECONDARY_HOME in main, and a devlab install must not be a
+             home candidate on either display. Same treatment as MainActivity: kept, so an explicit component start still
+             reaches it, with every intent filter dropped. -->
+        <activity
+            android:name="com.gruning.mimir.rewrite.CompanionSecondaryHomeActivity"
+            tools:node="merge">
+            <intent-filter tools:node="removeAll" />
+        </activity>
+    </application>
+</manifest>

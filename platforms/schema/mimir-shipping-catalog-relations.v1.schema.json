@@ -1,0 +1,76 @@
+{
+  "$id": "https://mimir.local/schema/mimir-shipping-catalog-relations.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "canonicalIds": {
+      "items": {
+        "$ref": "#/$defs/platformId"
+      },
+      "maxItems": 225,
+      "minItems": 225,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": {
+      "const": "mimirShippingCatalogRelations.v1"
+    },
+    "sourceCatalogSha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "variantLinks": {
+      "items": {
+        "$ref": "#/$defs/variantLink"
+      },
+      "maxItems": 178,
+      "minItems": 178,
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "canonicalIds",
+    "schemaVersion",
+    "sourceCatalogSha256",
+    "variantLinks"
+  ],
+  "title": "Mimir shipping catalog relation fixture v1",
+  "type": "object",
+  "$defs": {
+    "platformId": {
+      "pattern": "^[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "variantLink": {
+      "additionalProperties": false,
+      "properties": {
+        "catalogId": {
+          "$ref": "#/$defs/platformId"
+        },
+        "platformId": {
+          "$ref": "#/$defs/platformId"
+        },
+        "relation": {
+          "enum": [
+            "CONTENT_VARIANT",
+            "HARDWARE_VARIANT",
+            "PRESENTATION_ALIAS",
+            "REGIONAL_VARIANT",
+            "SOFTWARE_FAMILY"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "catalogId",
+        "platformId",
+        "relation"
+      ],
+      "type": "object"
+    }
+  }
+}

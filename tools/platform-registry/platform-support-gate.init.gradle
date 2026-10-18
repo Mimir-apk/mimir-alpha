@@ -1,0 +1,28 @@
+gradle.afterProject { project, state ->
+    if (project != gradle.rootProject) {
+        return
+    }
+
+    def offlineGate = project.tasks.register(
+        "pk00OfflinePlatformRegistryGate",
+        org.gradle.api.tasks.Exec,
+    ) {
+        group = "verification"
+        description = "Verifies committed PK-00 platform artifacts without shipping sources"
+        workingDir(project.rootDir)
+        commandLine(
+            "node",
+            new File(project.rootDir, "tools/platform-registry/verify-platform-registry.mjs").absolutePath,
+            "--offline",
+        )
+    }
+
+    def platformSupportGate = project.tasks.findByName("platformSupportGate")
+    if (platformSupportGate == null) {
+        platformSupportGate = project.tasks.register("platformSupportGate") {
+            group = "verification"
+            description = "Runs the offline PK-00 platform support closure gate"
+        }.get()
+    }
+    platformSupportGate.dependsOn(offlineGate)
+}

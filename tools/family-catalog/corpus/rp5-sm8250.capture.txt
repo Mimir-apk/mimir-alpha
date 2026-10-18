@@ -1,0 +1,56 @@
+# HAND-ASSEMBLED fixture, not a device run. Retroid Pocket 5 (SoC SM8250, platform kona).
+# Deliberately partial: it holds only what the repo has as real readings, so it exercises the
+# "owed" paths (no msm_performance, no vendor mode, two policies with no OPP table, no transports).
+#   - ro.soc.model SM8250, platform kona: design D4 (TWEAKER_FAMILIES_AS_DATA_DESIGN_2026-10-13.md).
+#   - policy0's 17-entry OPP list and the three cpuinfo_max values (1804800 / 2419200 / 2841600), and the
+#     8-level GPU table: TuningPlannerTest.kt, "SM8250 (RP5) CPU targets are the Odin-anchored transposition ..."
+#     (its comment: the RP5's own real live tables). Its policy4/policy7 5-entry lists are sparse
+#     stand-ins, so they are NOT used here: those two OPP tables are owed.
+#   - manufacturer/model: the strings that test uses.
+### meta
+capture_format=1
+captured_utc=<not-captured>
+### getprop
+ro.soc.model=SM8250
+ro.vendor.qti.soc_model=<not-captured>
+ro.board.platform=kona
+ro.hardware=<not-captured>
+ro.product.manufacturer=Moorechip
+ro.product.model=Retroid Pocket 5
+ro.product.device=<not-captured>
+ro.build.fingerprint=<not-captured>
+init.svc.pservice=<not-captured>
+### cpufreq
+policy0.related_cpus=<not-captured>
+policy0.cpuinfo_min_freq=<not-captured>
+policy0.cpuinfo_max_freq=1804800
+policy0.scaling_available_frequencies=300000 403200 518400 614400 691200 787200 883200 979200 1075200 1171200 1248000 1344000 1420800 1516800 1612800 1708800 1804800
+policy0.scaling_min_freq=<not-captured>
+policy0.scaling_max_freq=<not-captured>
+policy4.related_cpus=<not-captured>
+policy4.cpuinfo_min_freq=<not-captured>
+policy4.cpuinfo_max_freq=2419200
+policy4.scaling_available_frequencies=<not-captured>
+policy4.scaling_min_freq=<not-captured>
+policy4.scaling_max_freq=<not-captured>
+policy7.related_cpus=<not-captured>
+policy7.cpuinfo_min_freq=<not-captured>
+policy7.cpuinfo_max_freq=2841600
+policy7.scaling_available_frequencies=<not-captured>
+policy7.scaling_min_freq=<not-captured>
+policy7.scaling_max_freq=<not-captured>
+### msm_performance
+cpu_max_freq=<not-captured>
+### kgsl
+gpu_available_frequencies=905000000 670000000 587000000 525000000 490000000 441600000 400000000 305000000
+num_pwrlevels=<not-captured>
+min_pwrlevel=<not-captured>
+max_pwrlevel=<not-captured>
+default_pwrlevel=<not-captured>
+thermal_pwrlevel=<not-captured>
+devfreq_available_frequencies=<not-captured>
+### settings
+### gpio5_pwm2
+ls=<not-captured>
+### logcat_cpugpumode
+### end

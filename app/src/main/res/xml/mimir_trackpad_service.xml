@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The keyboard trackpad's Accessibility service.
+
+  It can PERFORM GESTURES (taps and swipes where the trackpad pointer is) and nothing else: no
+  canRetrieveWindowContent, so it cannot read the screen, a field or what is typed; no accessibilityEventTypes, so it
+  is told about no events; no key filtering; no touch exploration. A source pin (MimirTrackpadServiceXmlTest) holds
+  those three facts.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canPerformGestures="true"
+    android:description="@string/mimir_trackpad_service_description"
+    android:notificationTimeout="0" />

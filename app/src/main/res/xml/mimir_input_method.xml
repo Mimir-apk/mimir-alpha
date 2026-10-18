@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mimir's own keyboard, offered to the system as an input method.
+
+  `isDefault=false` stays: the manifest does not volunteer the keyboard as the default on install, and a
+  device without the privileged bridge still has the player enable and pick it in Android's own settings.
+  The app can set it as the default: through the
+  certified vendor bridge only, on by default, switchable in Settings > Keyboard, and never against a player
+  who picked another keyboard (see MimirKeyboardDefault.kt).
+-->
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:isDefault="false"
+    android:supportsSwitchingToNextInputMethod="true">
+    <subtype
+        android:name="@string/mimir_ime_subtype_label"
+        android:imeSubtypeLocale="en_US"
+        android:imeSubtypeMode="keyboard" />
+</input-method>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Shown in Android's own keyboard list and picker — this is Mimir naming itself to the SYSTEM, not
+      to a Mimir surface, so it is a plain label rather than the product's runic chrome. A player
+      scanning a list of installed keyboards has to recognise it there.
+    -->
+    <string name="mimir_ime_label">Mimir Keyboard</string>
+    <string name="mimir_trackpad_service_label">Mimir trackpad</string>
+    <string name="mimir_trackpad_service_description">Lets the Mimir Keyboard trackpad place taps and swipes on your main screen. It does not read your screen, your typing or your passwords.</string>
+    <string name="mimir_ime_subtype_label">Mimir</string>
+
+    <!-- First-run setup (localization step 1). Names: app_<screen>_<purpose>. Controller tokens (A, B, X, Y, START) are never translated. -->
+
+    <!-- Shared by several screens. -->
+    <string name="app_common_continue">Continue</string>
+    <string name="app_common_not_now">Not now</string>
+    <string name="app_common_allow">Allow</string>
+    <string name="app_common_back">Back</string>
+    <string name="app_common_connect">Connect</string>
+    <string name="app_common_connected">Connected</string>
+    <string name="app_common_update">Update</string>
+    <string name="app_common_search">Search</string>
+    <string name="app_brand_wordmark" translatable="false">Mimir</string>
+    <string name="app_onboarding_progress_of">%1$d of %2$d</string>
+    <string name="app_onboarding_hint_card_description">%1$s, %2$s</string>
+
+    <!-- Welcome -->
+    <string name="app_onboarding_welcome_title">Mimir organizes the games you already have.</string>
+    <string name="app_onboarding_welcome_promise">Your games stay where they are. Nothing is moved or copied.</string>
+    <string name="app_onboarding_welcome_verse">“And still, within him, a spark of hope was burning.”</string>
+    <string name="app_onboarding_welcome_verse_attribution">— Eoksadberg</string>
+    <string name="app_onboarding_welcome_begin">Begin</string>
+
+    <!-- Profile name, its keyboard and its confirm -->
+    <string name="app_onboarding_profile_title">Who’s playing?</string>
+    <string name="app_onboarding_profile_support">Optional. It names your library on this device.</string>
+    <string name="app_onboarding_profile_touch_hint">Press A on the field, or tap it, to type.</string>
+    <string name="app_onboarding_profile_hint_action">Select</string>
+    <string name="app_onboarding_profile_placeholder">Add a name</string>
+    <string name="app_onboarding_profile_keyboard_target">Name</string>
+    <string name="app_onboarding_profile_confirm_title">Continue without a name?</string>
+    <string name="app_onboarding_profile_confirm_body">You can add one later in Settings.</string>
+    <string name="app_onboarding_profile_confirm_keep">Keep editing</string>
+
+    <!-- Permissions: the orientation page and its four cards -->
+    <string name="app_onboarding_access_orientation_eyebrow">Setting up permissions</string>
+    <string name="app_onboarding_access_orientation_title">A few optional permissions</string>
+    <string name="app_onboarding_access_orientation_promise">Mimir works offline, and never asks for your location, camera, microphone or contacts.</string>
+    <string name="app_onboarding_access_card_steps">One screen per permission</string>
+    <string name="app_onboarding_access_card_allow">Choose Allow, or skip with Not now</string>
+    <string name="app_onboarding_access_card_confirm">Android may ask you to turn it on</string>
+    <string name="app_onboarding_access_card_later">Change them later in Android\'s settings</string>
+    <string name="app_onboarding_access_card_back_to_mimir">back to Mimir</string>
+
+    <!-- Permissions: the progress cue, naming the page Android opens as Android words it -->
+    <string name="app_onboarding_access_progress_named">%1$d of %2$d · %3$s</string>
+    <string name="app_onboarding_access_android_files">All files access</string>
+    <string name="app_onboarding_access_android_overlay">Display over other apps</string>
+    <string name="app_onboarding_access_android_usage">Usage access</string>
+    <string name="app_onboarding_access_android_home">Home app</string>
+    <string name="app_onboarding_access_granted">Allowed</string>
+    <string name="app_onboarding_access_active">Active</string>
+
+    <!-- Permissions: files -->
+    <string name="app_onboarding_access_files_title">Let Mimir use your game folders</string>
+    <string name="app_onboarding_access_files_why">For Mimir\'s own file manager, and to show and save your artwork.</string>
+    <string name="app_onboarding_access_files_refusal">Not now: you\'ll choose folders in Android\'s picker.</string>
+
+    <!-- Permissions: usage access -->
+    <string name="app_onboarding_access_usage_title">Let Mimir see when a game is running</string>
+    <string name="app_onboarding_access_usage_why_two_screens">Mimir sees when you leave a game.</string>
+    <string name="app_onboarding_access_usage_why_one_screen">So the Mimir button can show over your games.</string>
+    <string name="app_onboarding_access_usage_refusal_one_screen">Not now: no Mimir button on this handheld.</string>
+    <string name="app_onboarding_access_usage_unavailable">This handheld doesn’t offer Usage access.</string>
+
+    <!-- Permissions: Home app -->
+    <string name="app_onboarding_access_home_title">Make Mimir your Home app</string>
+    <string name="app_onboarding_access_home_why">Power on and land straight in Mimir, like a console.</string>
+    <string name="app_onboarding_access_home_refusal">Not now: open Mimir like any other app.</string>
+    <string name="app_onboarding_access_home_unavailable">This handheld doesn’t offer a Home app choice.</string>
+
+    <!-- Permissions: display over other apps (the Mimir button) -->
+    <string name="app_onboarding_access_overlay_title">Let Mimir display over other apps</string>
+    <string name="app_onboarding_access_overlay_why">The Mimir button: an M you hold for a menu, even mid-game.</string>
+    <string name="app_onboarding_access_overlay_refusal">In Android\'s list, pick Mimir, then turn it on.</string>
+
+    <!-- Library folder -->
+    <string name="app_onboarding_library_title">Show Mimir your games</string>
+    <string name="app_onboarding_library_body">Choose the folder your games are in. Mimir builds your library from it.</string>
+    <string name="app_onboarding_library_choose_folder">Choose folder</string>
+    <string name="app_onboarding_library_choose_another">Choose another folder</string>
+    <string name="app_onboarding_library_done">Done</string>
+    <string name="app_onboarding_library_next">Next</string>
+    <string name="app_onboarding_library_skip">Skip</string>
+    <string name="app_onboarding_library_none">No games in that folder. Choose another, or continue and add games later.</string>
+    <string name="app_onboarding_library_count_one_one">1 game across 1 platform.</string>
+    <string name="app_onboarding_library_count_one_many">1 game across %1$d platforms.</string>
+    <string name="app_onboarding_library_count_many_one">%1$d games across 1 platform.</string>
+    <string name="app_onboarding_library_count_many_many">%1$d games across %2$d platforms.</string>
+    <string name="app_onboarding_library_failure_grant">Android didn’t keep Mimir’s access to that folder. Choose it again to continue.</string>
+    <string name="app_onboarding_library_failure_read">Mimir couldn’t finish reading that folder. Choose it again, or choose another.</string>
+    <string name="app_onboarding_library_building_promise">Nothing is moved or copied.</string>
+    <plurals name="app_onboarding_library_scan_found">
+        <item quantity="one">Found %1$d file</item>
+        <item quantity="other">Found %1$d files</item>
+    </plurals>
+    <plurals name="app_onboarding_library_scan_recognizing_of">
+        <item quantity="one">Recognizing %1$d of %2$d file</item>
+        <item quantity="other">Recognizing %1$d of %2$d files</item>
+    </plurals>
+    <plurals name="app_onboarding_library_scan_recognizing">
+        <item quantity="one">Recognizing %1$d file</item>
+        <item quantity="other">Recognizing %1$d files</item>
+    </plurals>
+    <plurals name="app_onboarding_library_scan_grouping">
+        <item quantity="one">Grouping %1$d file</item>
+        <item quantity="other">Grouping %1$d files</item>
+    </plurals>
+    <plurals name="app_onboarding_library_scan_saving">
+        <item quantity="one">Saving %1$d file</item>
+        <item quantity="other">Saving %1$d files</item>
+    </plurals>
+
+    <!-- Game details and art accounts -->
+    <string name="app_onboarding_metadata_title">Add game details and art</string>
+    <string name="app_onboarding_metadata_subtitle">Each is optional.</string>
+    <string name="app_onboarding_metadata_screenscraper_title">ScreenScraper game details</string>
+    <string name="app_onboarding_metadata_screenscraper_detail">Real titles and descriptions for your games. Connecting alone downloads nothing.</string>
+    <string name="app_onboarding_metadata_screenscraper_connected">Connected as %1$s. Details fill in after setup, and Mimir offers art once your games are identified.</string>
+    <string name="app_onboarding_metadata_steamgriddb_title">SteamGridDB artwork</string>
+    <string name="app_onboarding_metadata_steamgriddb_with_key">Free box art, logos and backgrounds, with your key.</string>
+    <string name="app_onboarding_metadata_steamgriddb_without_key">Free box art, logos and backgrounds. Needs a free key from steamgriddb.com.</string>
+    <string name="app_onboarding_metadata_steamgriddb_added">Added</string>
+    <string name="app_onboarding_metadata_steamgriddb_update_key">Update key</string>
+    <string name="app_onboarding_metadata_steamgriddb_add_key">Add key</string>
+    <string name="app_onboarding_metadata_ra_detail">Achievement progress, with your RetroAchievements key.</string>
+    <string name="app_onboarding_metadata_ra_rejected">RetroAchievements is no longer accepting this key.</string>
+    <string name="app_onboarding_metadata_ra_connected">Progress will be read for %1$s.</string>
+
+    <!-- Settling the library -->
+    <string name="app_onboarding_settling_phase_indexing">Reading your folder</string>
+    <string name="app_onboarding_settling_phase_identifying">Identifying games</string>
+    <string name="app_onboarding_settling_phase_ready">Library ready</string>
+    <string name="app_onboarding_settling_phase_limited">Local library ready</string>
+    <string name="app_onboarding_settling_phase_failed">Setup paused</string>
+    <string name="app_onboarding_settling_checked">%1$d of %2$d checked</string>
+    <string name="app_onboarding_settling_working">Working</string>
+    <string name="app_onboarding_settling_retry">Retry</string>
+    <string name="app_onboarding_settling_continue_locally">Continue locally</string>
+    <string name="app_onboarding_settling_ready_title">Your library is ready</string>
+    <string name="app_onboarding_settling_limited_title">Your local library is ready</string>
+    <string name="app_onboarding_settling_limited_detail">Optional online artwork can be added later from Settings.</string>
+    <string name="app_onboarding_settling_failed_title">Library setup needs attention</string>
+    <string name="app_onboarding_settling_failed_detail">Choose your games folder again.</string>
+    <string name="app_onboarding_settling_indexing_title">Reading your library</string>
+    <string name="app_onboarding_settling_grouping_title">Grouping related releases</string>
+    <string name="app_onboarding_settling_identifying_title">Identifying your games</string>
+    <string name="app_onboarding_settling_finishing_title">Finishing your library</string>
+    <string name="app_onboarding_settling_grouping_detail">Picking one version of each game.</string>
+    <string name="app_onboarding_settling_identifying_detail">No artwork is downloaded.</string>
+    <string name="app_onboarding_settling_identifying_live_detail">Finishing up. No artwork is downloaded.</string>
+    <plurals name="app_onboarding_settling_games_to_check">
+        <item quantity="one">%1$d game still to check.</item>
+        <item quantity="other">%1$d games still to check.</item>
+    </plurals>
+
+    <!-- Settling: the reasons the store keeps (the English written there is the key; see OnboardingStoredText) -->
+    <string name="app_onboarding_reason_unconverged">Some games are still being identified. That finishes in the background.</string>
+    <string name="app_onboarding_reason_details_art_ask">Game details fill in after setup. Mimir asks before downloading any artwork.</string>
+    <string name="app_onboarding_reason_details_art_key">Game details fill in after setup. With your SteamGridDB key, Home shelf art downloads by itself.</string>
+    <string name="app_onboarding_reason_art_ask">Mimir asks before downloading any artwork.</string>
+    <string name="app_onboarding_reason_art_key">With your SteamGridDB key, Home shelf art downloads by itself.</string>
+    <string name="app_onboarding_reason_scan_grant_lost">Folder access was not retained. Choose the folder again.</string>
+    <string name="app_onboarding_reason_scan_failed">Mimir could not finish reading that folder.</string>
+    <string name="app_onboarding_reason_scan_access_gone">Folder access is no longer available. Choose the folder again.</string>
+    <string name="app_onboarding_library_pick_inside_drive">Pick a folder inside a drive</string>
+
+    <!-- Home shelf picks (favorites) -->
+    <string name="app_onboarding_favorites_eyebrow">ᛗ · Your Home shelf</string>
+    <string name="app_onboarding_favorites_title">Pick a few to start</string>
+    <string name="app_onboarding_favorites_body">Mimir opens on your Home shelf.</string>
+    <string name="app_onboarding_favorites_open_tome">Open Tome</string>
+    <string name="app_onboarding_favorites_chosen_none">Nothing on your Home shelf yet.</string>
+    <plurals name="app_onboarding_favorites_chosen">
+        <item quantity="one">%1$d game on your Home shelf.</item>
+        <item quantity="other">%1$d games on your Home shelf.</item>
+    </plurals>
+    <string name="app_onboarding_favorites_skip">Skip for now</string>
+    <string name="app_onboarding_favorites_identifying_counted">Identifying your games: %1$d of %2$d. The Tome unlocks soon.</string>
+    <string name="app_onboarding_favorites_identifying">Identifying your games. The Tome unlocks soon.</string>
+    <string name="app_onboarding_favorites_background">Still identifying in the background. Names fill in as it goes.</string>
+    <string name="app_onboarding_favorites_search_eyebrow">Find a game</string>
+    <string name="app_onboarding_favorites_search_placeholder">Type to filter</string>
+    <string name="app_onboarding_favorites_search_support">Type part of a name. Clear it to see every game.</string>
+    <string name="app_onboarding_favorites_no_match">No game matches that.</string>
+    <string name="app_onboarding_favorites_filter_label">Platform filter</string>
+    <string name="app_onboarding_favorites_filter_chip">Platform</string>
+    <string name="app_onboarding_favorites_filter_choose">Choose platform</string>
+    <string name="app_onboarding_favorites_filter_all">All</string>
+    <string name="app_onboarding_favorites_filter_selected">Selected</string>
+    <string name="app_onboarding_favorites_cell_marked">Marked</string>
+    <string name="app_onboarding_favorites_cell_not_marked">Not marked</string>
+    <string name="app_onboarding_favorites_hint_search">A Search · B Back</string>
+    <string name="app_onboarding_favorites_hint_platform">A Platform · B Back</string>
+    <string name="app_onboarding_favorites_hint_back">B Back</string>
+    <string name="app_onboarding_favorites_hint_unmark">A Unmark · B Back</string>
+    <string name="app_onboarding_favorites_hint_mark">A Mark · B Back</string>
+
+    <!-- Theme step -->
+    <string name="app_onboarding_theme_title">ᛗ · Choose a theme</string>
+    <string name="app_onboarding_theme_subtitle">Mimir’s colors and atmosphere. Change it later in Settings.</string>
+    <string name="app_onboarding_theme_keep_current">Keep current</string>
+
+    <!-- The button cards: Home's buttons, and the words FINISH recaps -->
+    <string name="app_onboarding_hint_mark">Mark a game for your Home shelf</string>
+    <string name="app_onboarding_hint_open">Open a game to play</string>
+    <string name="app_onboarding_hint_edit">Edit a game</string>
+    <string name="app_onboarding_hint_tomes">Open Tomes</string>
+    <string name="app_onboarding_hint_dock">Library and Settings</string>
+    <string name="app_onboarding_hint_menu">Hold for menu</string>
+    <string name="app_onboarding_hint_show_hints">Show hints in the Library</string>
+    <string name="app_onboarding_hint_scene_favorites">Favorites</string>
+    <string name="app_onboarding_hint_scene_tome">Tome</string>
+    <string name="app_onboarding_tour_open">On your Home shelf, or in the Library\'s game lists.</string>
+    <string name="app_onboarding_tour_edit">On your Home shelf: any game’s art, Tomes, achievements.</string>
+    <string name="app_onboarding_tour_tomes">From your Home shelf: your game collections.</string>
+    <string name="app_onboarding_tour_dock">From your Home shelf or the Library\'s platforms: press down.</string>
+    <string name="app_onboarding_tour_menu">Anywhere, even in a game: hold the Mimir button.</string>
+
+    <!-- Finish -->
+    <string name="app_onboarding_finish_eyebrow">Setup complete</string>
+    <string name="app_onboarding_finish_eyebrow_visual">✓ Setup complete</string>
+    <string name="app_onboarding_finish_title">Next: your Home shelf</string>
+    <string name="app_onboarding_finish_home_row">Make Mimir your Home app in Android Settings, under Default apps.</string>
+    <string name="app_onboarding_finish_enter">Enter Mimir</string>
+
+    <!-- Mimir button permission prompt (the companion overlay) -->
+    <string name="app_overlay_prompt_eyebrow">Mimir button</string>
+    <string name="app_overlay_prompt_eyebrow_visual">ᛗ · Mimir button</string>
+    <string name="app_overlay_prompt_title">Keep the Mimir button visible</string>
+    <string name="app_overlay_prompt_body">Mimir needs “Draw over other apps” to keep its controls visible above another app.</string>
+    <string name="app_overlay_prompt_open_settings">Open settings</string>
+    <string name="app_overlay_prompt_hint">Left/Right Move · A Select · B Back</string>
+
+    <!-- Home (localization step 2). Names: app_home_<purpose>. The eyebrow is drawn as written, in sentence case. -->
+    <string name="app_home_surface_editors_choice">Editor’s choice</string>
+    <string name="app_home_surface_pinned_tomes">Pinned Tomes</string>
+    <!-- The mark beside a focused game that also lives in custom Tomes: the Tome's name, as the player typed it, or how many. -->
+    <string name="app_home_tome_mark_one">In %1$s</string>
+    <plurals name="app_home_tome_mark_count">
+        <item quantity="one">In %1$d Tome</item>
+        <item quantity="other">In %1$d Tomes</item>
+    </plurals>
+
+    <!-- The Tome Library and the Tome editor (localization step 3). Names: app_tome_<purpose>. Controller tokens (A, B, X, Y) are never translated; the word beside each is stored in sentence case (the shared chrome seam may still draw it in caps). -->
+
+    <!-- Home's own Tome (the Home shelf as a Tome): the title it wears wherever a Tome is drawn. -->
+    <string name="app_tome_home_shelf_title">Home shelf</string>
+
+    <!-- The Tome Library's header: the eyebrow, the create cell and the status that follows the focused cell or a pin. Every status below is reserved width, so none may be added without listing it in HomeTomeLibraryHeaderStatusCandidates. The create cell keeps its two spaces after the plus, so it is quoted. -->
+    <string name="app_tome_library_eyebrow">· Tome Library</string>
+    <string name="app_tome_library_create_action">"+  Create Tome"</string>
+    <string name="app_tome_library_status_update_failed">Update failed</string>
+    <string name="app_tome_library_status_pinned_to_home">Pinned to Home</string>
+    <string name="app_tome_library_status_unpinned_from_home">Unpinned from Home</string>
+    <string name="app_tome_library_status_home_shelf">Home shelf</string>
+    <string name="app_tome_library_status_pinned">Pinned</string>
+    <string name="app_tome_library_status_custom">Custom Tomes</string>
+    <string name="app_tome_library_status_platforms">Platforms</string>
+    <string name="app_tome_library_status_create">Create</string>
+    <string name="app_tome_library_status_tomes">Tomes</string>
+
+    <!-- The Tome Library's footer: one whole line per case (the Home shelf's Tome, a custom or platform Tome pinned or not, the create cell). -->
+    <string name="app_tome_library_hint_home">A Open · B Back</string>
+    <string name="app_tome_library_hint_pin_edit">A Open · X Pin · Y Edit · B Back</string>
+    <string name="app_tome_library_hint_unpin_edit">A Open · X Unpin · Y Edit · B Back</string>
+    <string name="app_tome_library_hint_pin_create">A Open · X Pin · Y Create · B Back</string>
+    <string name="app_tome_library_hint_unpin_create">A Open · X Unpin · Y Create · B Back</string>
+    <string name="app_tome_library_hint_create">A Create · B Back</string>
+
+    <!-- The Tome name editor: its status line, its legend, both together when the keyboard leaves no room (%1$s status, %2$s legend), and the keyboard's target. -->
+    <string name="app_tome_editor_status_deleting">Deleting Tome…</string>
+    <string name="app_tome_editor_status_confirm_delete">Delete this Tome?</string>
+    <string name="app_tome_editor_status_limit">Up to %1$d characters</string>
+    <string name="app_tome_editor_legend_delete">Y Delete · B Cancel</string>
+    <string name="app_tome_editor_legend_cancel">B Cancel</string>
+    <string name="app_tome_editor_legend_confirm">A Confirm · B Cancel</string>
+    <string name="app_tome_editor_status_with_legend">%1$s · %2$s</string>
+    <string name="app_tome_editor_target_edit">Edit Tome</string>
+    <string name="app_tome_editor_target_new">New Tome</string>
+
+    <!-- What the editor says when a save or a delete fails. The Tome store hands these sentences over in English; HomeTomeEditorStoredText resolves each to the line below it, so the store's own wording is never the key a language change breaks. %1$d is the name limit. -->
+    <string name="app_tome_error_save_failed">Couldn’t save Tome</string>
+    <string name="app_tome_error_delete_failed">Couldn’t delete Tome</string>
+    <string name="app_tome_error_gone">This Tome is no longer available</string>
+    <string name="app_tome_error_name_empty">Name a Tome first</string>
+    <string name="app_tome_error_name_long">Keep it under %1$d characters</string>
+    <string name="app_tome_error_name_taken">That Tome name is already in use</string>
+</resources>

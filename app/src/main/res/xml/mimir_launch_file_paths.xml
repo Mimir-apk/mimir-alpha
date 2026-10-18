@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MIMIR-REWRITE launch FileProvider roots.
+
+  IntentLaunchDispatcher exposes a ROM file as a content:// URI so the emulator can read it without a
+  raw file:// URI (StrictMode forbids that on targetSdk >= 24). These roots must cover every place a
+  launchable ROM can live:
+    - external-files-path  → the app's own external files dir (the demo-library seed lives here).
+    - external-path        → primary shared storage (/storage/emulated/0/...), the common ROM home.
+    - root-path            → any absolute path, incl. removable SD-card mounts (/storage/XXXX-XXXX/...).
+  root-path is deliberately broad because owner libraries live on SD cards with volume-specific mounts;
+  the provider is not exported and access is only ever a per-launch read grant, so breadth here does not
+  widen exposure. No network, no acquisition — this only re-shares files already on the device.
+-->
+<paths>
+    <external-files-path name="ext_files" path="." />
+    <external-path name="ext_storage" path="." />
+    <root-path name="device_root" path="/" />
+</paths>

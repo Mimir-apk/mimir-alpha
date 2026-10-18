@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The shipping welcome/auth base tone (.eok-auth #05060f): the cold-start window paints this
+         instead of the stock flash, so a process-cold relaunch never reads as a hang. -->
+    <color name="mimir_cold_window">#FF05060F</color>
+</resources>

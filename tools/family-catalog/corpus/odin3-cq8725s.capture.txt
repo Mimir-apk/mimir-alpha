@@ -1,0 +1,52 @@
+# HAND-ASSEMBLED fixture, not a device run. Odin 3 (AYN, SoC CQ8725S, platform sun).
+# Every value below is a real reading already in the repo; anything the repo does not hold is
+# marked <not-captured> (draft.py reports it as owed) instead of guessed.
+#   - ro.soc.model, ro.board.platform: reported properties for this device.
+#   - manufacturer/model/policy tables/GPU table: mimir-tweaker/app/src/test/kotlin/com/gruning/mimir/tweaker/HardwareFingerprintOdinPinTest.kt
+#     (the table pinned against the signed Sequence 10 fingerprint). cpuinfo_min_freq 384000 and
+#     the cpuinfo_max values (3532800 / 4320000): TuningPlanner.kt comments and build/test-captures/odin-gpu-sample-2.txt.
+#   - scaling_min/max, the msm_performance map, performance_mode: odin-gpu-sample-2.txt, taken while a
+#     Performance profile was standing (so the clamp note fires). max/thermal_pwrlevel: odin-gpu-sample-1.txt.
+#   - init.svc.pservice=running: AndroidHardware.kt documents AYN's pservice reasserting each policy on this chassis.
+### meta
+capture_format=1
+captured_utc=<not-captured>
+### getprop
+ro.soc.model=CQ8725S
+ro.vendor.qti.soc_model=<not-captured>
+ro.board.platform=sun
+ro.hardware=<not-captured>
+ro.product.manufacturer=AYN
+ro.product.model=Odin3
+ro.product.device=sun
+ro.build.fingerprint=<not-captured>
+init.svc.pservice=running
+### cpufreq
+policy0.related_cpus=0 1 2 3 4 5
+policy0.cpuinfo_min_freq=384000
+policy0.cpuinfo_max_freq=3532800
+policy0.scaling_available_frequencies=384000 556800 748800 960000 1152000 1363200 1555200 1785600 1996800 2227200 2400000 2745600 2918400 3072000 3321600 3532800
+policy0.scaling_min_freq=1996800
+policy0.scaling_max_freq=1996800
+policy6.related_cpus=6 7
+policy6.cpuinfo_min_freq=<not-captured>
+policy6.cpuinfo_max_freq=4320000
+policy6.scaling_available_frequencies=1017600 1209600 1401600 1689600 1958400 2246400 2438400 2649600 2841600 3072000 3283200 3513600 3801600 4089600 4204800 4320000
+policy6.scaling_min_freq=3072000
+policy6.scaling_max_freq=3072000
+### msm_performance
+cpu_max_freq=0:1996800 1:1996800 2:1996800 3:1996800 4:1996800 5:1996800 6:3072000 7:3072000
+### kgsl
+gpu_available_frequencies=1100000000 1050000000 967000000 900000000 832000000 734000000 660000000 607000000 525000000 443000000 389000000 342000000 222000000 160000000
+num_pwrlevels=<not-captured>
+min_pwrlevel=<not-captured>
+max_pwrlevel=0
+default_pwrlevel=<not-captured>
+thermal_pwrlevel=0
+devfreq_available_frequencies=<not-captured>
+### settings
+performance_mode=2
+### gpio5_pwm2
+ls=<not-captured>
+### logcat_cpugpumode
+### end

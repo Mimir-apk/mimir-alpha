@@ -1,0 +1,121 @@
+{
+  "$id": "https://mimir.local/schema/mimir-native-platforms.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "platforms": {
+      "items": {
+        "$ref": "#/$defs/nativePlatformRecord"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": {
+      "const": "mimirNativePlatforms.v1"
+    }
+  },
+  "required": [
+    "platforms",
+    "schemaVersion"
+  ],
+  "title": "Mimir-native platform extension point v1",
+  "type": "object",
+  "$defs": {
+    "externalId": {
+      "additionalProperties": false,
+      "properties": {
+        "namespace": {
+          "const": "mimir-native"
+        },
+        "value": {
+          "minLength": 1,
+          "pattern": "^[a-z0-9_]+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "namespace",
+        "value"
+      ],
+      "type": "object"
+    },
+    "nativePlatformRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "displayName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "extensions": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[a-z0-9]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "externalId": {
+          "$ref": "#/$defs/externalId"
+        },
+        "folder": {
+          "minLength": 1,
+          "pattern": "^[a-z0-9]+$",
+          "type": "string"
+        },
+        "folderAliases": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "id": {
+          "pattern": "^[a-z0-9][a-z0-9-]*:[A-Za-z0-9._:+-]+$",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "manufacturer": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "platformId": {
+          "pattern": "^[a-z0-9][a-z0-9_]*$",
+          "type": "string"
+        },
+        "shortName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sourceOrdinal": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "type": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "displayName",
+        "extensions",
+        "externalId",
+        "folder",
+        "folderAliases",
+        "id",
+        "label",
+        "manufacturer",
+        "platformId",
+        "shortName",
+        "sourceOrdinal",
+        "type"
+      ],
+      "type": "object"
+    }
+  }
+}

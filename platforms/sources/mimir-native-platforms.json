@@ -1,0 +1,32 @@
+{
+  "platforms": [
+    {
+      "displayName": "PC Games",
+      "extensions": [
+        "amazon",
+        "epic",
+        "gog",
+        "pcgame",
+        "steam"
+      ],
+      "externalId": {
+        "namespace": "mimir-native",
+        "value": "pc_games"
+      },
+      "folder": "pcgames",
+      "folderAliases": [
+        "pc",
+        "pc games",
+        "pcgames"
+      ],
+      "id": "mimir-native:pc_games",
+      "label": "PC Games",
+      "manufacturer": "Windows",
+      "platformId": "pc_games",
+      "shortName": "PC",
+      "sourceOrdinal": 0,
+      "type": "computer"
+    }
+  ],
+  "schemaVersion": "mimirNativePlatforms.v1"
+}

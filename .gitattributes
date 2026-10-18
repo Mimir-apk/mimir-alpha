@@ -1,0 +1,110 @@
+# Line-ending policy for Mimir-rewrite.
+#
+# Why this file exists, concretely: several gates compare committed artifacts BYTE FOR BYTE.
+# `:core-platform:platformSupportGate` runs tools/platform-registry/verify-platform-registry.mjs,
+# which asserts `file.text === prettyJson(file.value)` and `entry.bytes === bytes.length`.
+#
+# Git on Windows defaults to core.autocrlf=true and rewrites every LF to CRLF on checkout,
+# adding one byte per line. platforms/mimir-platform-registry.v2.json is 48,158 lines, so a
+# Windows clone checks it out 48,158 bytes larger than the file the gate was built against.
+# That single default made the project unbuildable on a fresh Windows clone until this file
+# landed. Pinning LF here fixes it for every machine, permanently, with no local workaround.
+
+# ── Default ───────────────────────────────────────────────────────────────────
+# Normalise text to LF in the repository and on checkout, on every platform.
+* text=auto eol=lf
+
+# ── Byte-verified artifacts ───────────────────────────────────────────────────
+# Read byte-for-byte by the platform registry verifier. Never let a platform touch these.
+platforms/**                                     text eol=lf
+core-ui/src/main/assets/platform-console-art/**  text eol=lf
+tools/platform-registry/fixtures/**              text eol=lf
+
+# ── Files that MUST keep CRLF ─────────────────────────────────────────────────
+# cmd.exe requires CRLF in batch files. gradlew.bat -- the only batch file in the tree --
+# is ALREADY stored CRLF in the index, so `-text` is deliberate: it disables conversion in
+# both directions and hands every platform the bytes the repo already holds. The obvious
+# alternative, `text eol=crlf`, would instead normalise the blob to LF and rewrite a
+# committed file as a side effect of adding this policy, which is not this change's job.
+# If a future .bat is ever authored on macOS or Linux, commit it with CRLF endings.
+*.bat  -text
+*.cmd  -text
+
+# ── Files that MUST keep LF ───────────────────────────────────────────────────
+# Shell scripts break on Windows-style endings even when run under WSL or git-bash.
+gradlew  text eol=lf
+*.sh     text eol=lf
+
+# ── Vendored third-party source: preserve upstream bytes exactly ──────────────
+# libchdr and its bundled LZMA ship with CRLF upstream. Renormalising them would turn every
+# diff against upstream into noise and would rewrite bytes we do not own.
+core-metadata/src/main/cpp/vendor/**  -text
+
+# ── Committed device evidence: never rewrite ──────────────────────────────────
+# Evidence records what a machine actually produced. Its bytes are the whole point of it,
+# and several of these XMLs are already stored with CRLF from the tools that emitted them.
+implementation-notes**  -text
+
+# ── Binary ────────────────────────────────────────────────────────────────────
+# Images
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.bmp   binary
+*.ico   binary
+
+# Audio and video
+*.ogg   binary
+*.mp3   binary
+*.m4a   binary
+*.wav   binary
+*.mp4   binary
+*.mov   binary
+
+# Archives and compressed payloads
+*.zip     binary
+*.7z      binary
+*.gz      binary
+*.tgz     binary
+*.jar     binary
+*.aar     binary
+*.tsvgz   binary
+*.mpaygz  binary
+*.mmemgz  binary
+*.mdepgz  binary
+
+# Android and signing artifacts. Keystores are gitignored today; if one is ever tracked
+# deliberately, EOL conversion would silently corrupt it.
+*.apk       binary
+*.aab       binary
+*.so        binary
+*.keystore  binary
+*.jks       binary
+
+# Fonts
+*.ttf    binary
+*.otf    binary
+*.woff   binary
+*.woff2  binary
+
+# Certificates in DER form and binary index payloads
+*.der   binary
+*.midx  binary
+
+# ROM and disc-image fixtures. Byte-exactness is the reason these fixtures exist.
+*.sfc  binary
+*.smc  binary
+*.gba  binary
+*.nes  binary
+*.chd  binary
+*.bin  binary
+
+# Retain upstream legal files byte-for-byte across platforms.
+app/src/main/assets/legal/LICENSE-titledb.txt -text
+app/src/main/assets/legal/NOTICE-NDK-toolchain.txt -text
+app/src/main/assets/legal/dependencies/*.txt -text
+
+# Preserve the upstream font license verbatim.
+core-ui/src/main/assets/fonts/IBMPlex-OFL.txt -text

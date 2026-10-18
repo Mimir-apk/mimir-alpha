@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  :core-metadata declares no Android permissions. The application manifest owns INTERNET because multiple
+  explicit metadata/media adapters cross module boundaries. Current posture is enforced by typed provider
+  gates and transport tests: no network on scan or launch; opt-in metadata/media only.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

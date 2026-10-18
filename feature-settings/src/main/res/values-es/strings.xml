@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Settings > Appearance > Language. The two language names are not resources: each is shown in its own language. -->
+    <string name="settings_language_title">Idioma</string>
+    <string name="settings_language_supporting">El idioma de los menús de Mimir. Automático sigue el de tu dispositivo.</string>
+    <string name="settings_language_automatic">Automático</string>
+
+    <!-- Theme gallery, shared by first-run setup and Settings > Appearance. Theme names are proper names and stay as they are. -->
+    <string name="settings_theme_gallery_footer">A Elegir · B %1$s</string>
+    <string name="settings_theme_gallery_mood_default">Pozo · oro</string>
+    <string name="settings_theme_gallery_mood_freyr">Salón · oro</string>
+    <string name="settings_theme_gallery_mood_surtr">Brasa · hierro</string>
+    <string name="settings_theme_gallery_mood_mani">Luna · estrella</string>
+    <string name="settings_theme_gallery_mood_hel">Temor · sangre</string>
+    <string name="settings_theme_gallery_mood_niflheim">Hielo · niebla</string>
+    <string name="settings_theme_gallery_mood_yggdrasil">Raíz · bronce</string>
+    <string name="settings_theme_gallery_mood_folkvangr">Ceniza · hueso</string>
+    <string name="settings_theme_gallery_mood_baldr">Cielo · sol</string>
+
+    <!-- Settings > About > Credits & licenses. GPL-3.0 section 5(d): copyright, no warranty, license, source. The copyright line is not translated. -->
+    <string name="settings_about_legal_eyebrow">Licencia</string>
+    <string name="settings_about_legal_free_software">Mimir es software libre bajo la Licencia Pública General de GNU, versión 3 o posterior. Se ofrece sin ninguna garantía. Puedes redistribuirlo bajo las condiciones de esa licencia.</string>
+    <string name="settings_about_legal_source">Código fuente: %1$s</string>
+    <string name="settings_about_credits_supporting">Licencia, código fuente y reconocimientos.</string>
+    <string name="settings_about_legal_source_title">Código fuente</string>
+    <string name="settings_about_legal_source_supporting">Abre la página del proyecto en tu navegador.</string>
+    <string name="settings_about_legal_visit">Visitar</string>
+    <string name="settings_about_legal_open">Abrir</string>
+    <string name="settings_about_legal_close">Cerrar</string>
+    <string name="settings_about_legal_notices_title">Leer los avisos</string>
+    <string name="settings_about_legal_notices_supporting">Código, datos e ilustraciones de otros proyectos, con su origen y sus condiciones.</string>
+    <string name="settings_about_legal_license_title">Leer la licencia</string>
+    <string name="settings_about_legal_license_supporting">El texto completo de la Licencia Pública General de GNU, versión 3.</string>
+    <string name="settings_about_legal_loading">Cargando…</string>
+    <string name="settings_about_legal_unavailable">No se pudo leer este texto.</string>
+</resources>

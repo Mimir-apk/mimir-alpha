@@ -1,0 +1,5667 @@
+{
+  "schemaVersion": "mimirPlatformConsoleArt.v1",
+  "generatedBy": "tools/platform-registry/generate-platform-console-art.mjs",
+  "source": {
+    "license": "MIT",
+    "name": "BAXY Automatic",
+    "noticePath": "NOTICE_BAXY_AUTOMATIC.txt",
+    "revision": "af8db5db4cbb76c0db1334f5096ac2289f83efcf",
+    "url": "https://github.com/baxysquare/baxy-retroarch-themes"
+  },
+  "coverage": {
+    "canonicalPlatforms": 226,
+    "genericFallbacks": 125,
+    "realAndroidVectors": 101,
+    "shippingAliasNormalizations": 418,
+    "sourceSvgFiles": 403
+  },
+  "fallback": {
+    "id": "generic-console-v1",
+    "renderer": "compose-stroke-console"
+  },
+  "aliases": [
+    {
+      "canonicalId": "1292_advanced_programmable_video_system",
+      "normalizedId": "1292advancedprogrammablevideosystem"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "3ds"
+    },
+    {
+      "canonicalId": "acorn_archimedes",
+      "normalizedId": "acornarchimedes"
+    },
+    {
+      "canonicalId": "acorn_atom",
+      "normalizedId": "acornatom"
+    },
+    {
+      "canonicalId": "acorn_atom",
+      "normalizedId": "acornatomtapes"
+    },
+    {
+      "canonicalId": "acorn_bbc_micro",
+      "normalizedId": "acornbbcmicro"
+    },
+    {
+      "canonicalId": "acorn_risc_pc",
+      "normalizedId": "acornriscpc"
+    },
+    {
+      "canonicalId": "act_apricot_pc_xi",
+      "normalizedId": "actapricotpcxi"
+    },
+    {
+      "canonicalId": "amazon_fire_tv",
+      "normalizedId": "amazonfiretv"
+    },
+    {
+      "canonicalId": "amazon_fire_tv",
+      "normalizedId": "amazonfiretv2ndgen"
+    },
+    {
+      "canonicalId": "amazon_fire_tv",
+      "normalizedId": "amazonfiretv3rdgen"
+    },
+    {
+      "canonicalId": "amazon_fire_tv",
+      "normalizedId": "amazonfiretvcube"
+    },
+    {
+      "canonicalId": "amazon_luna",
+      "normalizedId": "amazonluna"
+    },
+    {
+      "canonicalId": "amstrad_cpc",
+      "normalizedId": "amstradcpc"
+    },
+    {
+      "canonicalId": "amstrad_gx4000",
+      "normalizedId": "amstradgx4000"
+    },
+    {
+      "canonicalId": "apf_imagination_machine",
+      "normalizedId": "apfimaginationmachine"
+    },
+    {
+      "canonicalId": "apf_mp_1000",
+      "normalizedId": "apfmp1000"
+    },
+    {
+      "canonicalId": "apple_bandai_pippin",
+      "normalizedId": "applebandaipippin"
+    },
+    {
+      "canonicalId": "apple_i",
+      "normalizedId": "applei"
+    },
+    {
+      "canonicalId": "apple_ii",
+      "normalizedId": "appleii"
+    },
+    {
+      "canonicalId": "apple_iie",
+      "normalizedId": "appleiie"
+    },
+    {
+      "canonicalId": "apple_iigs",
+      "normalizedId": "appleiigs"
+    },
+    {
+      "canonicalId": "apple_ii",
+      "normalizedId": "appleiiplus"
+    },
+    {
+      "canonicalId": "apple_i",
+      "normalizedId": "appleitapes"
+    },
+    {
+      "canonicalId": "apple_macintosh",
+      "normalizedId": "applemacintosh"
+    },
+    {
+      "canonicalId": "apple_macintosh",
+      "normalizedId": "applemacintoshbeta"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "arcade"
+    },
+    {
+      "canonicalId": "arduboy_inc_arduboy",
+      "normalizedId": "arduboyincarduboy"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari260063775000"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600cx2600a"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600cx2600jr"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600cx2700"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600flashback"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "normalizedId": "atari2600flashback2"
+    },
+    {
+      "canonicalId": "atari_5200",
+      "normalizedId": "atari5200"
+    },
+    {
+      "canonicalId": "atari_7800",
+      "normalizedId": "atari7800"
+    },
+    {
+      "canonicalId": "atari_8_bit_family",
+      "normalizedId": "atari8bitfamily"
+    },
+    {
+      "canonicalId": "atari_jaguar",
+      "normalizedId": "atarijaguar"
+    },
+    {
+      "canonicalId": "atari_jaguar_cd",
+      "normalizedId": "atarijaguarcd"
+    },
+    {
+      "canonicalId": "atari_lynx",
+      "normalizedId": "atarilynx"
+    },
+    {
+      "canonicalId": "atari_lynx",
+      "normalizedId": "atarilynxpag0401"
+    },
+    {
+      "canonicalId": "atari_pong",
+      "normalizedId": "ataripong"
+    },
+    {
+      "canonicalId": "atari_pong",
+      "normalizedId": "ataripongc140"
+    },
+    {
+      "canonicalId": "atari_pong",
+      "normalizedId": "ataripongc200"
+    },
+    {
+      "canonicalId": "atari_st",
+      "normalizedId": "atarist"
+    },
+    {
+      "canonicalId": "atari_st",
+      "normalizedId": "ataristtapes"
+    },
+    {
+      "canonicalId": "atari_vcs",
+      "normalizedId": "atarivcs"
+    },
+    {
+      "canonicalId": "atari_xegs",
+      "normalizedId": "atarixegs"
+    },
+    {
+      "canonicalId": "atomiswave",
+      "normalizedId": "atomiswave"
+    },
+    {
+      "canonicalId": "bally_astrocade",
+      "normalizedId": "ballyastrocade"
+    },
+    {
+      "canonicalId": "bally_astrocade",
+      "normalizedId": "ballyastrocadetapes"
+    },
+    {
+      "canonicalId": "bandai_design_master_denshi_mangajuku",
+      "normalizedId": "bandaidesignmasterdenshimangajuku"
+    },
+    {
+      "canonicalId": "bandai_gundam_rx_78",
+      "normalizedId": "bandaigundamrx78"
+    },
+    {
+      "canonicalId": "bandai_playdia",
+      "normalizedId": "bandaiplaydia"
+    },
+    {
+      "canonicalId": "bandai_super_vision_8000",
+      "normalizedId": "bandaisupervision8000"
+    },
+    {
+      "canonicalId": "bandai_terebikko",
+      "normalizedId": "bandaiterebikko"
+    },
+    {
+      "canonicalId": "bandai_wonderswan",
+      "normalizedId": "bandaiwonderswan"
+    },
+    {
+      "canonicalId": "bandai_wonderswan_color",
+      "normalizedId": "bandaiwonderswancolor"
+    },
+    {
+      "canonicalId": "bandai_wonderswan_color",
+      "normalizedId": "bandaiwonderswancolorwsc001"
+    },
+    {
+      "canonicalId": "bbc_bridge_companion",
+      "normalizedId": "bbcbridgecompanion"
+    },
+    {
+      "canonicalId": "benesse_pocket_challenge_v2",
+      "normalizedId": "benessepocketchallengev2"
+    },
+    {
+      "canonicalId": "benesse_pocket_challenge_w",
+      "normalizedId": "benessepocketchallengew"
+    },
+    {
+      "canonicalId": "bit_corporation_gamate",
+      "normalizedId": "bitcorporationgamate"
+    },
+    {
+      "canonicalId": "capcom_cp_system_i",
+      "normalizedId": "capcomcpsystemi"
+    },
+    {
+      "canonicalId": "capcom_cp_system_ii",
+      "normalizedId": "capcomcpsystemii"
+    },
+    {
+      "canonicalId": "capcom_cp_system_iii",
+      "normalizedId": "capcomcpsystemiii"
+    },
+    {
+      "canonicalId": "casio_loopy",
+      "normalizedId": "casioloopy"
+    },
+    {
+      "canonicalId": "casio_pv_1000",
+      "normalizedId": "casiopv1000"
+    },
+    {
+      "canonicalId": "chip_8",
+      "normalizedId": "chip8"
+    },
+    {
+      "canonicalId": "coleco_colecovision",
+      "normalizedId": "colecocolecovision"
+    },
+    {
+      "canonicalId": "coleco_colecovision_adam",
+      "normalizedId": "colecocolecovisionadam"
+    },
+    {
+      "canonicalId": "coleco_telstar_6030",
+      "normalizedId": "colecotelstar6030"
+    },
+    {
+      "canonicalId": "coleco_telstar_6040",
+      "normalizedId": "colecotelstar6040"
+    },
+    {
+      "canonicalId": "coleco_telstar_6045",
+      "normalizedId": "colecotelstar6045"
+    },
+    {
+      "canonicalId": "coleco_telstar_6065",
+      "normalizedId": "colecotelstar6065"
+    },
+    {
+      "canonicalId": "coleco_telstar_6071",
+      "normalizedId": "colecotelstar6071"
+    },
+    {
+      "canonicalId": "coleco_telstar_6135",
+      "normalizedId": "colecotelstar6135"
+    },
+    {
+      "canonicalId": "commodore_128",
+      "normalizedId": "commodore128"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "normalizedId": "commodore64"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "normalizedId": "commodore6464c"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "normalizedId": "commodore64gamessystem"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "normalizedId": "commodore64pp"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "normalizedId": "commodore64tapes"
+    },
+    {
+      "canonicalId": "commodore_amiga",
+      "normalizedId": "commodoreamiga"
+    },
+    {
+      "canonicalId": "commodore_cd32",
+      "normalizedId": "commodorecd32"
+    },
+    {
+      "canonicalId": "commodore_cdtv",
+      "normalizedId": "commodorecdtv"
+    },
+    {
+      "canonicalId": "commodore_pet",
+      "normalizedId": "commodorepet"
+    },
+    {
+      "canonicalId": "commodore_plus_4",
+      "normalizedId": "commodoreplus4"
+    },
+    {
+      "canonicalId": "commodore_vic_20",
+      "normalizedId": "commodorevic20"
+    },
+    {
+      "canonicalId": "connor_videosmarts",
+      "normalizedId": "connorvideosmarts"
+    },
+    {
+      "canonicalId": "digital_media_cartridge_firecore",
+      "normalizedId": "digitalmediacartridgefirecore"
+    },
+    {
+      "canonicalId": "digital_media_cartridge_firecore",
+      "normalizedId": "digitalmediacartridgefirecoreportable2"
+    },
+    {
+      "canonicalId": "dos",
+      "normalizedId": "dos"
+    },
+    {
+      "canonicalId": "dreamcast",
+      "normalizedId": "dreamcast"
+    },
+    {
+      "canonicalId": "ds",
+      "normalizedId": "ds"
+    },
+    {
+      "canonicalId": "emerson_arcadia_2001",
+      "normalizedId": "emersonarcadia2001"
+    },
+    {
+      "canonicalId": "entex_adventure_vision",
+      "normalizedId": "entexadventurevision"
+    },
+    {
+      "canonicalId": "entex_select_a_game",
+      "normalizedId": "entexselectagame"
+    },
+    {
+      "canonicalId": "epoch_cassette_vision",
+      "normalizedId": "epochcassettevision"
+    },
+    {
+      "canonicalId": "epoch_cassette_vision",
+      "normalizedId": "epochcassettevisionjr"
+    },
+    {
+      "canonicalId": "epoch_game_pocket_computer",
+      "normalizedId": "epochgamepocketcomputer"
+    },
+    {
+      "canonicalId": "epoch_super_cassette_vision",
+      "normalizedId": "epochsupercassettevision"
+    },
+    {
+      "canonicalId": "epoch_tv_tennis_electrotennis",
+      "normalizedId": "epochtvtenniselectrotennis"
+    },
+    {
+      "canonicalId": "fairchild_channel_f",
+      "normalizedId": "fairchildchannelf"
+    },
+    {
+      "canonicalId": "fairchild_channel_f",
+      "normalizedId": "fairchildchannelfsystemii"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "fbneoarcadegames"
+    },
+    {
+      "canonicalId": "fujitsu_fm_7",
+      "normalizedId": "fujitsufm7"
+    },
+    {
+      "canonicalId": "fujitsu_fm_7",
+      "normalizedId": "fujitsufm7tapes"
+    },
+    {
+      "canonicalId": "fujitsu_fm_towns",
+      "normalizedId": "fujitsufmtowns"
+    },
+    {
+      "canonicalId": "fujitsu_fm_towns",
+      "normalizedId": "fujitsufmtownsmarty"
+    },
+    {
+      "canonicalId": "fukutake_publishing_studybox",
+      "normalizedId": "fukutakepublishingstudybox"
+    },
+    {
+      "canonicalId": "funtech_super_acan",
+      "normalizedId": "funtechsuperacan"
+    },
+    {
+      "canonicalId": "gakken_compact_vision_tv_boy",
+      "normalizedId": "gakkencompactvisiontvboy"
+    },
+    {
+      "canonicalId": "gamecube",
+      "normalizedId": "gamecube"
+    },
+    {
+      "canonicalId": "sega_game_gear",
+      "normalizedId": "gamegear"
+    },
+    {
+      "canonicalId": "gamepark_caanoo",
+      "normalizedId": "gameparkcaanoo"
+    },
+    {
+      "canonicalId": "gamepark_gp2x",
+      "normalizedId": "gameparkgp2x"
+    },
+    {
+      "canonicalId": "gamepark_gp2x",
+      "normalizedId": "gameparkgp2xdigital"
+    },
+    {
+      "canonicalId": "gamepark_gp2x",
+      "normalizedId": "gameparkgp2xf200"
+    },
+    {
+      "canonicalId": "gamepark_gp2x",
+      "normalizedId": "gameparkgp2xwiz"
+    },
+    {
+      "canonicalId": "gamepark_gp32",
+      "normalizedId": "gameparkgp32"
+    },
+    {
+      "canonicalId": "gb",
+      "normalizedId": "gb"
+    },
+    {
+      "canonicalId": "gba",
+      "normalizedId": "gba"
+    },
+    {
+      "canonicalId": "gbc",
+      "normalizedId": "gbc"
+    },
+    {
+      "canonicalId": "gce_vectrex",
+      "normalizedId": "gcevectrex"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "genesis"
+    },
+    {
+      "canonicalId": "google_nexus_player",
+      "normalizedId": "googlenexusplayer"
+    },
+    {
+      "canonicalId": "google_stadia",
+      "normalizedId": "googlestadia"
+    },
+    {
+      "canonicalId": "handheld_electronic_game",
+      "normalizedId": "handheldelectronicgame"
+    },
+    {
+      "canonicalId": "hartung_game_master",
+      "normalizedId": "hartunggamemaster"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "hbmame"
+    },
+    {
+      "canonicalId": "hitachi_s1",
+      "normalizedId": "hitachis1"
+    },
+    {
+      "canonicalId": "infocom_z_machine",
+      "normalizedId": "infocomzmachine"
+    },
+    {
+      "canonicalId": "intellivision_amico",
+      "normalizedId": "intellivisionamico"
+    },
+    {
+      "canonicalId": "interton_vc_4000",
+      "normalizedId": "intertonvc4000"
+    },
+    {
+      "canonicalId": "interton_video_2000",
+      "normalizedId": "intertonvideo2000"
+    },
+    {
+      "canonicalId": "ique_ique",
+      "normalizedId": "iqueique"
+    },
+    {
+      "canonicalId": "konami_picno",
+      "normalizedId": "konamipicno"
+    },
+    {
+      "canonicalId": "leapfrog_explorer",
+      "normalizedId": "leapfrogexplorer"
+    },
+    {
+      "canonicalId": "leapfrog_leappad",
+      "normalizedId": "leapfrogleappad"
+    },
+    {
+      "canonicalId": "leapfrog_leapster_learning_game_system",
+      "normalizedId": "leapfrogleapsterlearninggamesystem"
+    },
+    {
+      "canonicalId": "leapfrog_leapster_learning_game_system",
+      "normalizedId": "leapfrogleapsterlearninggamesystem1"
+    },
+    {
+      "canonicalId": "leapfrog_my_first_leappad",
+      "normalizedId": "leapfrogmyfirstleappad"
+    },
+    {
+      "canonicalId": "ljn_video_art",
+      "normalizedId": "ljnvideoart"
+    },
+    {
+      "canonicalId": "lowres_nx",
+      "normalizedId": "lowresnx"
+    },
+    {
+      "canonicalId": "lutro",
+      "normalizedId": "lutro"
+    },
+    {
+      "canonicalId": "luxor_abc_800",
+      "normalizedId": "luxorabc800"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey100"
+    },
+    {
+      "canonicalId": "magnavox_odyssey2",
+      "normalizedId": "magnavoxodyssey2"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey200"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey2000"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey2001"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey2100"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey300"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey3000"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey400"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey4000"
+    },
+    {
+      "canonicalId": "magnavox_odyssey",
+      "normalizedId": "magnavoxodyssey500"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2000"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2003"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2003plus"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2010"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2015"
+    },
+    {
+      "canonicalId": "arcade",
+      "normalizedId": "mame2016"
+    },
+    {
+      "canonicalId": "sega_master_system_mark_iii",
+      "normalizedId": "mastersystem"
+    },
+    {
+      "canonicalId": "mattel_hyperscan",
+      "normalizedId": "mattelhyperscan"
+    },
+    {
+      "canonicalId": "mattel_hyperscan",
+      "normalizedId": "mattelhyperscanalt"
+    },
+    {
+      "canonicalId": "mattel_intellivision",
+      "normalizedId": "mattelintellivision"
+    },
+    {
+      "canonicalId": "mattel_intellivision",
+      "normalizedId": "mattelintellivision4975011"
+    },
+    {
+      "canonicalId": "mattel_intellivision",
+      "normalizedId": "mattelintellivision5872"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "megadrive"
+    },
+    {
+      "canonicalId": "microsoft_msx",
+      "normalizedId": "microsoftmsx"
+    },
+    {
+      "canonicalId": "microsoft_msx2",
+      "normalizedId": "microsoftmsx2"
+    },
+    {
+      "canonicalId": "xbox360",
+      "normalizedId": "microsoftxbox360digital"
+    },
+    {
+      "canonicalId": "xbox360",
+      "normalizedId": "microsoftxbox360e"
+    },
+    {
+      "canonicalId": "xbox360",
+      "normalizedId": "microsoftxbox360s"
+    },
+    {
+      "canonicalId": "microsoft_xbox_one",
+      "normalizedId": "microsoftxboxone"
+    },
+    {
+      "canonicalId": "microsoft_xbox_one",
+      "normalizedId": "microsoftxboxones"
+    },
+    {
+      "canonicalId": "microsoft_xbox_one",
+      "normalizedId": "microsoftxboxonexk"
+    },
+    {
+      "canonicalId": "microsoft_xbox_series_x",
+      "normalizedId": "microsoftxboxseriesx"
+    },
+    {
+      "canonicalId": "microw8",
+      "normalizedId": "microw8"
+    },
+    {
+      "canonicalId": "milton_bradley_microvision",
+      "normalizedId": "miltonbradleymicrovision"
+    },
+    {
+      "canonicalId": "n64",
+      "normalizedId": "n64"
+    },
+    {
+      "canonicalId": "nec_pc_98",
+      "normalizedId": "necpc98"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "necpcenginecdturbografxcd"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "necpcenginecdturbografxcdcdr30j"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "necpcenginecdturbografxcdhescdr01u"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "necpcenginecdturbografxcdhesduo01u"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "necpcenginecdturbografxcdpicd1j"
+    },
+    {
+      "canonicalId": "nec_pc_engine_supergrafx",
+      "normalizedId": "necpcenginesupergrafx"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16hesexp01u"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16hestgx01u"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16pitg2j"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16pitg3j"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16pitg7j"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "necpcengineturbografx16pitg9j"
+    },
+    {
+      "canonicalId": "nec_pc_fx",
+      "normalizedId": "necpcfx"
+    },
+    {
+      "canonicalId": "snk_neo_geo",
+      "normalizedId": "neogeo"
+    },
+    {
+      "canonicalId": "nes",
+      "normalizedId": "nes"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket",
+      "normalizedId": "ngp"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket_color",
+      "normalizedId": "ngpc"
+    },
+    {
+      "canonicalId": "nichibutsu_my_vision",
+      "normalizedId": "nichibutsumyvision"
+    },
+    {
+      "canonicalId": "nintendo_color_tv_game_ctg_15v",
+      "normalizedId": "nintendocolortvgamectg15v"
+    },
+    {
+      "canonicalId": "nintendo_color_tv_game_ctg_6",
+      "normalizedId": "nintendocolortvgamectg6"
+    },
+    {
+      "canonicalId": "nintendo_color_tv_game_ctg_bk6",
+      "normalizedId": "nintendocolortvgamectgbk6"
+    },
+    {
+      "canonicalId": "nintendo_color_tv_game_ctg_cr112",
+      "normalizedId": "nintendocolortvgamectgcr112"
+    },
+    {
+      "canonicalId": "nintendo_color_tv_game_ctg_hc10",
+      "normalizedId": "nintendocolortvgamectghc10"
+    },
+    {
+      "canonicalId": "gba",
+      "normalizedId": "nintendoereader"
+    },
+    {
+      "canonicalId": "nintendo_family_computer_disk_system",
+      "normalizedId": "nintendofamilycomputerdisksystem"
+    },
+    {
+      "canonicalId": "nintendo_family_computer_disk_system",
+      "normalizedId": "nintendofamilycomputerdisksysteman500"
+    },
+    {
+      "canonicalId": "nintendo_family_computer_disk_system",
+      "normalizedId": "nintendofamilycomputerdisksysteman505"
+    },
+    {
+      "canonicalId": "nintendo_family_computer_disk_system",
+      "normalizedId": "nintendofamilycomputerdisksystemhvc101"
+    },
+    {
+      "canonicalId": "gba",
+      "normalizedId": "nintendogameboyadvanceags001"
+    },
+    {
+      "canonicalId": "gba",
+      "normalizedId": "nintendogameboyadvanceereader"
+    },
+    {
+      "canonicalId": "gba",
+      "normalizedId": "nintendogameboyadvanceoxy001"
+    },
+    {
+      "canonicalId": "gb",
+      "normalizedId": "nintendogameboymgb001"
+    },
+    {
+      "canonicalId": "gamecube",
+      "normalizedId": "nintendogamecubeslgc10"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonewnintendo3ds"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonewnintendo3dsjan001"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonewnintendo3dsktr001"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonintendo3dsctr001"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonintendo3dsdigital"
+    },
+    {
+      "canonicalId": "3ds",
+      "normalizedId": "nintendonintendo3dsftr001"
+    },
+    {
+      "canonicalId": "nintendo_nintendo_64dd",
+      "normalizedId": "nintendonintendo64dd"
+    },
+    {
+      "canonicalId": "ds",
+      "normalizedId": "nintendonintendodsdecrypted"
+    },
+    {
+      "canonicalId": "ds",
+      "normalizedId": "nintendonintendodsdownloadplay"
+    },
+    {
+      "canonicalId": "nintendo_nintendo_dsi",
+      "normalizedId": "nintendonintendodsi"
+    },
+    {
+      "canonicalId": "nintendo_nintendo_dsi",
+      "normalizedId": "nintendonintendodsidecrypted"
+    },
+    {
+      "canonicalId": "nintendo_nintendo_dsi",
+      "normalizedId": "nintendonintendodsidlc"
+    },
+    {
+      "canonicalId": "nintendo_nintendo_dsi",
+      "normalizedId": "nintendonintendodsitwl001"
+    },
+    {
+      "canonicalId": "ds",
+      "normalizedId": "nintendonintendodsntr001"
+    },
+    {
+      "canonicalId": "nes",
+      "normalizedId": "nintendonintendoentertainmentsystemhvc001"
+    },
+    {
+      "canonicalId": "nes",
+      "normalizedId": "nintendonintendoentertainmentsystemhvc101"
+    },
+    {
+      "canonicalId": "nes",
+      "normalizedId": "nintendonintendoentertainmentsystemnes101"
+    },
+    {
+      "canonicalId": "nintendo_pokemon_mini",
+      "normalizedId": "nintendopokemonmini"
+    },
+    {
+      "canonicalId": "nintendo_satellaview",
+      "normalizedId": "nintendosatellaview"
+    },
+    {
+      "canonicalId": "nintendo_sufami_turbo",
+      "normalizedId": "nintendosufamiturbo"
+    },
+    {
+      "canonicalId": "nintendo_sufami_turbo",
+      "normalizedId": "nintendosufamiturboshvc101"
+    },
+    {
+      "canonicalId": "nintendo_sufami_turbo",
+      "normalizedId": "nintendosufamiturbosns001"
+    },
+    {
+      "canonicalId": "nintendo_sufami_turbo",
+      "normalizedId": "nintendosufamiturbosns101"
+    },
+    {
+      "canonicalId": "snes",
+      "normalizedId": "nintendosupernintendoentertainmentsystemshvc101"
+    },
+    {
+      "canonicalId": "snes",
+      "normalizedId": "nintendosupernintendoentertainmentsystemsns001"
+    },
+    {
+      "canonicalId": "snes",
+      "normalizedId": "nintendosupernintendoentertainmentsystemsns101"
+    },
+    {
+      "canonicalId": "snes",
+      "normalizedId": "nintendosupernintendoentertainmentsystemsnsp001"
+    },
+    {
+      "canonicalId": "switch",
+      "normalizedId": "nintendoswitchhac001"
+    },
+    {
+      "canonicalId": "switch",
+      "normalizedId": "nintendoswitchhac007"
+    },
+    {
+      "canonicalId": "switch",
+      "normalizedId": "nintendoswitchhdh001"
+    },
+    {
+      "canonicalId": "nintendo_virtual_boy",
+      "normalizedId": "nintendovirtualboy"
+    },
+    {
+      "canonicalId": "nintendo_wii",
+      "normalizedId": "nintendowii"
+    },
+    {
+      "canonicalId": "nintendo_wii",
+      "normalizedId": "nintendowiidigital"
+    },
+    {
+      "canonicalId": "nintendo_wii",
+      "normalizedId": "nintendowiirvl201"
+    },
+    {
+      "canonicalId": "nintendo_wii_u",
+      "normalizedId": "nintendowiiu"
+    },
+    {
+      "canonicalId": "nokia_n_gage",
+      "normalizedId": "nokiangage"
+    },
+    {
+      "canonicalId": "nokia_n_gage",
+      "normalizedId": "nokiangageqd"
+    },
+    {
+      "canonicalId": "nvidia_shield_portable",
+      "normalizedId": "nvidiashieldportable"
+    },
+    {
+      "canonicalId": "nvidia_shield_tv",
+      "normalizedId": "nvidiashieldtv"
+    },
+    {
+      "canonicalId": "nvidia_shield_tv",
+      "normalizedId": "nvidiashieldtvp3430"
+    },
+    {
+      "canonicalId": "ouya_ouya",
+      "normalizedId": "ouyaouya"
+    },
+    {
+      "canonicalId": "palmtex_super_micro",
+      "normalizedId": "palmtexsupermicro"
+    },
+    {
+      "canonicalId": "panic_playdate",
+      "normalizedId": "panicplaydate"
+    },
+    {
+      "canonicalId": "pc_50x_palladium_tele_cassetten_game_825_530",
+      "normalizedId": "pc50xpalladiumtelecassettengame825530"
+    },
+    {
+      "canonicalId": "pc_50x_palladium_tele_cassetten_game_825_581",
+      "normalizedId": "pc50xpalladiumtelecassettengame825581"
+    },
+    {
+      "canonicalId": "pc_50x_shg_black_point_fs_1003",
+      "normalizedId": "pc50xshgblackpointfs1003"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "normalizedId": "pcengine"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "normalizedId": "pcenginecd"
+    },
+    {
+      "canonicalId": "pc_games",
+      "normalizedId": "pcgames"
+    },
+    {
+      "canonicalId": "philips_cd_i",
+      "normalizedId": "philipscdi"
+    },
+    {
+      "canonicalId": "philips_tele_game",
+      "normalizedId": "philipstelegame"
+    },
+    {
+      "canonicalId": "philips_tele_game",
+      "normalizedId": "philipstelegamees2203"
+    },
+    {
+      "canonicalId": "philips_videopac",
+      "normalizedId": "philipsvideopac"
+    },
+    {
+      "canonicalId": "pioneer_laseractive",
+      "normalizedId": "pioneerlaseractive"
+    },
+    {
+      "canonicalId": "playjam_game_stick",
+      "normalizedId": "playjamgamestick"
+    },
+    {
+      "canonicalId": "nintendo_pokemon_mini",
+      "normalizedId": "pokemini"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "ps1"
+    },
+    {
+      "canonicalId": "ps2",
+      "normalizedId": "ps2"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "ps3"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "psp"
+    },
+    {
+      "canonicalId": "rca_studio_ii",
+      "normalizedId": "rcastudioii"
+    },
+    {
+      "canonicalId": "rpg_maker",
+      "normalizedId": "rpgmaker"
+    },
+    {
+      "canonicalId": "saturn",
+      "normalizedId": "saturn"
+    },
+    {
+      "canonicalId": "scummvm",
+      "normalizedId": "scummvm"
+    },
+    {
+      "canonicalId": "sega_32x",
+      "normalizedId": "sega32x"
+    },
+    {
+      "canonicalId": "sega_32x",
+      "normalizedId": "sega32xmk160184000u"
+    },
+    {
+      "canonicalId": "sega_32x",
+      "normalizedId": "sega32xneptuneu"
+    },
+    {
+      "canonicalId": "sega_beena",
+      "normalizedId": "segabeena"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segacd"
+    },
+    {
+      "canonicalId": "sega_chihiro",
+      "normalizedId": "segachihiro"
+    },
+    {
+      "canonicalId": "dreamcast",
+      "normalizedId": "segadreamcastvisualmemoryunit"
+    },
+    {
+      "canonicalId": "sega_game_gear",
+      "normalizedId": "segagamegear"
+    },
+    {
+      "canonicalId": "sega_master_system_mark_iii",
+      "normalizedId": "segamastersystemmarkiii"
+    },
+    {
+      "canonicalId": "sega_master_system_mark_iii",
+      "normalizedId": "segamastersystemmarkiiimk3006"
+    },
+    {
+      "canonicalId": "sega_master_system_mark_iii",
+      "normalizedId": "segamastersystemmarkiiisg1000m3j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacd"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdcsdgm1j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdhaa25022912j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdhaa25102910j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdhaa25102912j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdmk16011690u"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdmk16014102u"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdmk16314102u"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdrgm1j"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "normalizedId": "segamegacdsegacdrgm2j"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesisfb3680"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesishaa2502j"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesishaa2510j"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesishmj0300j"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesiskr"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesismk1461u"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesismk1631u"
+    },
+    {
+      "canonicalId": "genesis",
+      "normalizedId": "segamegadrivegenesismk6100u"
+    },
+    {
+      "canonicalId": "sega_naomi",
+      "normalizedId": "seganaomi"
+    },
+    {
+      "canonicalId": "sega_naomi_2",
+      "normalizedId": "seganaomi2"
+    },
+    {
+      "canonicalId": "sega_pico",
+      "normalizedId": "segapico"
+    },
+    {
+      "canonicalId": "saturn",
+      "normalizedId": "segasaturnhst3200j"
+    },
+    {
+      "canonicalId": "saturn",
+      "normalizedId": "segasaturnmmp1000nv"
+    },
+    {
+      "canonicalId": "saturn",
+      "normalizedId": "segasaturnmmp1000nvnx4yd"
+    },
+    {
+      "canonicalId": "saturn",
+      "normalizedId": "segasaturnplutou"
+    },
+    {
+      "canonicalId": "sega_sg_1000",
+      "normalizedId": "segasg1000"
+    },
+    {
+      "canonicalId": "sega_sg_1000",
+      "normalizedId": "segasg1000ii"
+    },
+    {
+      "canonicalId": "sega_video_driver",
+      "normalizedId": "segavideodriver"
+    },
+    {
+      "canonicalId": "sega_sg_1000",
+      "normalizedId": "sg1000"
+    },
+    {
+      "canonicalId": "sharp_x1",
+      "normalizedId": "sharpx1"
+    },
+    {
+      "canonicalId": "sharp_x68000",
+      "normalizedId": "sharpx68000"
+    },
+    {
+      "canonicalId": "sinclair_zx_81",
+      "normalizedId": "sinclairzx81"
+    },
+    {
+      "canonicalId": "sinclair_zx_spectrum",
+      "normalizedId": "sinclairzxspectrum"
+    },
+    {
+      "canonicalId": "sinclair_zx_spectrum",
+      "normalizedId": "sinclairzxspectrum3"
+    },
+    {
+      "canonicalId": "snes",
+      "normalizedId": "snes"
+    },
+    {
+      "canonicalId": "snk_neo_geo",
+      "normalizedId": "snkneogeo"
+    },
+    {
+      "canonicalId": "snk_neo_geo_cd",
+      "normalizedId": "snkneogeocd"
+    },
+    {
+      "canonicalId": "snk_neo_geo_cd",
+      "normalizedId": "snkneogeocdtray"
+    },
+    {
+      "canonicalId": "snk_neo_geo_cd",
+      "normalizedId": "snkneogeocdz"
+    },
+    {
+      "canonicalId": "snk_neo_geo",
+      "normalizedId": "snkneogeomini"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket",
+      "normalizedId": "snkneogeopocket"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket_color",
+      "normalizedId": "snkneogeopocketcolor"
+    },
+    {
+      "canonicalId": "snk_neo_geo",
+      "normalizedId": "snkneogeox"
+    },
+    {
+      "canonicalId": "ps2",
+      "normalizedId": "sonyplaystation2psx5000"
+    },
+    {
+      "canonicalId": "ps2",
+      "normalizedId": "sonyplaystation2scph10000"
+    },
+    {
+      "canonicalId": "ps2",
+      "normalizedId": "sonyplaystation2scph70000"
+    },
+    {
+      "canonicalId": "ps2",
+      "normalizedId": "sonyplaystation2scph90000"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3cech2000"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3cech4000"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3cecha00kt"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3dlc"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3downloadable"
+    },
+    {
+      "canonicalId": "ps3",
+      "normalizedId": "sonyplaystation3psn"
+    },
+    {
+      "canonicalId": "sony_playstation_4",
+      "normalizedId": "sonyplaystation4"
+    },
+    {
+      "canonicalId": "sony_playstation_4",
+      "normalizedId": "sonyplaystation4cuh2000"
+    },
+    {
+      "canonicalId": "sony_playstation_4",
+      "normalizedId": "sonyplaystation4cuh7000"
+    },
+    {
+      "canonicalId": "sony_playstation_5",
+      "normalizedId": "sonyplaystation5"
+    },
+    {
+      "canonicalId": "sony_playstation_5",
+      "normalizedId": "sonyplaystation5cfi2000"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "sonyplaystationpocketstation"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportabledlc"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportablepsn"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportablepspe1000"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportablepspn1000"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "sonyplaystationportablepsx2psp"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportableumdmusic"
+    },
+    {
+      "canonicalId": "psp",
+      "normalizedId": "sonyplaystationportableumdvideo"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "sonyplaystationscph100"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "sonyplaystationscph100131"
+    },
+    {
+      "canonicalId": "ps1",
+      "normalizedId": "sonyplaystationscph100131flat"
+    },
+    {
+      "canonicalId": "sony_playstation_vita",
+      "normalizedId": "sonyplaystationvita"
+    },
+    {
+      "canonicalId": "sony_playstation_vita",
+      "normalizedId": "sonyplaystationvitapch2000"
+    },
+    {
+      "canonicalId": "sony_playstation_vita",
+      "normalizedId": "sonyplaystationvitavte1000"
+    },
+    {
+      "canonicalId": "spectravideo_sv",
+      "normalizedId": "spectravideosv"
+    },
+    {
+      "canonicalId": "spectravideo_sv",
+      "normalizedId": "spectravideosv328"
+    },
+    {
+      "canonicalId": "ssd_xavixport",
+      "normalizedId": "ssdxavixport"
+    },
+    {
+      "canonicalId": "switch",
+      "normalizedId": "switch"
+    },
+    {
+      "canonicalId": "takara_video_challenger",
+      "normalizedId": "takaravideochallenger"
+    },
+    {
+      "canonicalId": "tandy_video_information_system",
+      "normalizedId": "tandyvideoinformationsystem"
+    },
+    {
+      "canonicalId": "tapwave_zodiac",
+      "normalizedId": "tapwavezodiac"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "normalizedId": "the3docompany3do"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "normalizedId": "the3docompany3dofz10"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "normalizedId": "the3docompany3dogdo101"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "normalizedId": "the3docompany3dogdo203p"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "normalizedId": "the3docompany3doimp21j"
+    },
+    {
+      "canonicalId": "thomson_moto",
+      "normalizedId": "thomsonmoto"
+    },
+    {
+      "canonicalId": "thomson_moto",
+      "normalizedId": "thomsonmotocartridge"
+    },
+    {
+      "canonicalId": "thomson_moto",
+      "normalizedId": "thomsonmototo8d"
+    },
+    {
+      "canonicalId": "tic_80",
+      "normalizedId": "tic80"
+    },
+    {
+      "canonicalId": "tiger_game_com",
+      "normalizedId": "tigergamecom"
+    },
+    {
+      "canonicalId": "tiger_gizmondo",
+      "normalizedId": "tigergizmondo"
+    },
+    {
+      "canonicalId": "tiger_r_zone",
+      "normalizedId": "tigerrzone"
+    },
+    {
+      "canonicalId": "tiger_r_zone",
+      "normalizedId": "tigerrzonedatazone"
+    },
+    {
+      "canonicalId": "tiger_r_zone",
+      "normalizedId": "tigerrzonesuperscreen"
+    },
+    {
+      "canonicalId": "tiger_r_zone",
+      "normalizedId": "tigerrzonexpg"
+    },
+    {
+      "canonicalId": "tomy_tutor",
+      "normalizedId": "tomytutor"
+    },
+    {
+      "canonicalId": "umtech_videobrain",
+      "normalizedId": "umtechvideobrain"
+    },
+    {
+      "canonicalId": "unisonic_champion_2711",
+      "normalizedId": "unisonicchampion2711"
+    },
+    {
+      "canonicalId": "uzebox",
+      "normalizedId": "uzebox"
+    },
+    {
+      "canonicalId": "valve_steam_deck",
+      "normalizedId": "valvesteamdeck"
+    },
+    {
+      "canonicalId": "valve_steam_link",
+      "normalizedId": "valvesteamlink"
+    },
+    {
+      "canonicalId": "view_master_interactive_vision",
+      "normalizedId": "viewmasterinteractivevision"
+    },
+    {
+      "canonicalId": "vircon32",
+      "normalizedId": "vircon32"
+    },
+    {
+      "canonicalId": "nintendo_virtual_boy",
+      "normalizedId": "virtualboy"
+    },
+    {
+      "canonicalId": "vm_labs_nuon",
+      "normalizedId": "vmlabsnuon"
+    },
+    {
+      "canonicalId": "vtech_3d_gamate",
+      "normalizedId": "vtech3dgamate"
+    },
+    {
+      "canonicalId": "vtech_creativision",
+      "normalizedId": "vtechcreativision"
+    },
+    {
+      "canonicalId": "vtech_socrates",
+      "normalizedId": "vtechsocrates"
+    },
+    {
+      "canonicalId": "vtech_socrates",
+      "normalizedId": "vtechsocratesalt"
+    },
+    {
+      "canonicalId": "vtech_v_flash",
+      "normalizedId": "vtechvflash"
+    },
+    {
+      "canonicalId": "vtech_v_smile",
+      "normalizedId": "vtechvsmile"
+    },
+    {
+      "canonicalId": "wasm_4",
+      "normalizedId": "wasm4"
+    },
+    {
+      "canonicalId": "watara_supervision",
+      "normalizedId": "watarasupervision"
+    },
+    {
+      "canonicalId": "watara_supervision",
+      "normalizedId": "watarasupervisionoriginal"
+    },
+    {
+      "canonicalId": "welback_mega_duck",
+      "normalizedId": "welbackmegaduck"
+    },
+    {
+      "canonicalId": "nintendo_wii",
+      "normalizedId": "wii"
+    },
+    {
+      "canonicalId": "bandai_wonderswan",
+      "normalizedId": "wonderswan"
+    },
+    {
+      "canonicalId": "bandai_wonderswan_color",
+      "normalizedId": "wonderswancolor"
+    },
+    {
+      "canonicalId": "worlds_of_wonder_action_max",
+      "normalizedId": "worldsofwonderactionmax"
+    },
+    {
+      "canonicalId": "xbox",
+      "normalizedId": "xbox"
+    },
+    {
+      "canonicalId": "xbox360",
+      "normalizedId": "xbox360"
+    },
+    {
+      "canonicalId": "yamaha_copera",
+      "normalizedId": "yamahacopera"
+    },
+    {
+      "canonicalId": "zapit_game_wave",
+      "normalizedId": "zapitgamewave"
+    },
+    {
+      "canonicalId": "zeebo_zeebo",
+      "normalizedId": "zeebozeebo"
+    }
+  ],
+  "canonicalResolutions": [
+    {
+      "id": "1292_advanced_programmable_video_system",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "3ds",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_nintendo_3ds"
+    },
+    {
+      "id": "acorn_archimedes",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_archimedes"
+    },
+    {
+      "id": "acorn_atom",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "acorn_bbc_micro",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_bbc_micro"
+    },
+    {
+      "id": "acorn_risc_pc",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "act_apricot_pc_xi",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "amazon_fire_tv",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "amazon_luna",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "amstrad_cpc",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_amstrad_cpc"
+    },
+    {
+      "id": "amstrad_gx4000",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_amstrad_gx4000"
+    },
+    {
+      "id": "apf_imagination_machine",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apf_mp_1000",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apple_bandai_pippin",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apple_i",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apple_ii",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_apple_ii"
+    },
+    {
+      "id": "apple_iie",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apple_iigs",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "apple_macintosh",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_macintosh"
+    },
+    {
+      "id": "arcade",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_arcade"
+    },
+    {
+      "id": "arduboy_inc_arduboy",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_arduboy"
+    },
+    {
+      "id": "atari_2600",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_2600"
+    },
+    {
+      "id": "atari_5200",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_5200"
+    },
+    {
+      "id": "atari_7800",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_7800"
+    },
+    {
+      "id": "atari_8_bit_family",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_8_bit"
+    },
+    {
+      "id": "atari_jaguar",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_jaguar"
+    },
+    {
+      "id": "atari_jaguar_cd",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "atari_lynx",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_lynx"
+    },
+    {
+      "id": "atari_pong",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "atari_st",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_atari_st"
+    },
+    {
+      "id": "atari_vcs",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "atari_xegs",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "atomiswave",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bally_astrocade",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_astrocade"
+    },
+    {
+      "id": "bandai_design_master_denshi_mangajuku",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bandai_gundam_rx_78",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bandai_playdia",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bandai_super_vision_8000",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bandai_terebikko",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bandai_wonderswan",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_wonderswan"
+    },
+    {
+      "id": "bandai_wonderswan_color",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_wonderswan_color"
+    },
+    {
+      "id": "bbc_bridge_companion",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "benesse_pocket_challenge_v2",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "benesse_pocket_challenge_w",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "bit_corporation_gamate",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_gamate"
+    },
+    {
+      "id": "capcom_cp_system_i",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "capcom_cp_system_ii",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "capcom_cp_system_iii",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "casio_loopy",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "casio_pv_1000",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_pv_1000"
+    },
+    {
+      "id": "chip_8",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_colecovision",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_colecovision"
+    },
+    {
+      "id": "coleco_colecovision_adam",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_coleco_adam"
+    },
+    {
+      "id": "coleco_telstar_6030",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_telstar_6040",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_telstar_6045",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_telstar_6065",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_telstar_6071",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "coleco_telstar_6135",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "commodore_128",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "commodore_64",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_commodore_64"
+    },
+    {
+      "id": "commodore_amiga",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_amiga"
+    },
+    {
+      "id": "commodore_cd32",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "commodore_cdtv",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "commodore_pet",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "commodore_plus_4",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_commodore_plus_4"
+    },
+    {
+      "id": "commodore_vic_20",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_vic_20"
+    },
+    {
+      "id": "connor_videosmarts",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "digital_media_cartridge_firecore",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "dos",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_pc"
+    },
+    {
+      "id": "dreamcast",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_dreamcast"
+    },
+    {
+      "id": "ds",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_nintendo_ds"
+    },
+    {
+      "id": "emerson_arcadia_2001",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_arcadia_2001"
+    },
+    {
+      "id": "entex_adventure_vision",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "entex_select_a_game",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "epoch_cassette_vision",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "epoch_game_pocket_computer",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "epoch_super_cassette_vision",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_super_cassette_vision"
+    },
+    {
+      "id": "epoch_tv_tennis_electrotennis",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "fairchild_channel_f",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_channel_f"
+    },
+    {
+      "id": "fujitsu_fm_7",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_fm_7"
+    },
+    {
+      "id": "fujitsu_fm_towns",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_fm_towns"
+    },
+    {
+      "id": "fukutake_publishing_studybox",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "funtech_super_acan",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_super_acan"
+    },
+    {
+      "id": "gakken_compact_vision_tv_boy",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "gamecube",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_gamecube"
+    },
+    {
+      "id": "gamepark_caanoo",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "gamepark_gp2x",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "gamepark_gp32",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "gb",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_boy"
+    },
+    {
+      "id": "gba",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_boy_advance"
+    },
+    {
+      "id": "gbc",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_boy_color"
+    },
+    {
+      "id": "gce_vectrex",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_vectrex"
+    },
+    {
+      "id": "genesis",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_genesis"
+    },
+    {
+      "id": "google_nexus_player",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "google_stadia",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "handheld_electronic_game",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "hartung_game_master",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_master"
+    },
+    {
+      "id": "hitachi_s1",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "infocom_z_machine",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_z_machine"
+    },
+    {
+      "id": "intellivision_amico",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "interton_vc_4000",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "interton_video_2000",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "ique_ique",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "konami_picno",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "leapfrog_explorer",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "leapfrog_leappad",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "leapfrog_leapster_learning_game_system",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "leapfrog_my_first_leappad",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "ljn_video_art",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "lowres_nx",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_lowres_nx"
+    },
+    {
+      "id": "lutro",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "luxor_abc_800",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "magnavox_odyssey",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "magnavox_odyssey2",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_odyssey_2"
+    },
+    {
+      "id": "mattel_hyperscan",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "mattel_intellivision",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_intellivision"
+    },
+    {
+      "id": "microsoft_msx",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_msx"
+    },
+    {
+      "id": "microsoft_msx2",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_msx2"
+    },
+    {
+      "id": "microsoft_xbox_one",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_xbox_one"
+    },
+    {
+      "id": "microsoft_xbox_series_x",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "microw8",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "milton_bradley_microvision",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "n64",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_n64"
+    },
+    {
+      "id": "nec_pc_98",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_pc_98"
+    },
+    {
+      "id": "nec_pc_engine_cd_turbografx_cd",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_turbografx_cd"
+    },
+    {
+      "id": "nec_pc_engine_supergrafx",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_supergrafx"
+    },
+    {
+      "id": "nec_pc_engine_turbografx_16",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_turbografx_16"
+    },
+    {
+      "id": "nec_pc_fx",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_pc_fx"
+    },
+    {
+      "id": "nes",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_nes"
+    },
+    {
+      "id": "nichibutsu_my_vision",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_color_tv_game_ctg_15v",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_color_tv_game_ctg_6",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_color_tv_game_ctg_bk6",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_color_tv_game_ctg_cr112",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_color_tv_game_ctg_hc10",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_family_computer_disk_system",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_famicom_disk_system"
+    },
+    {
+      "id": "nintendo_nintendo_64dd",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_nintendo_dsi",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_pokemon_mini",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_pokemon_mini"
+    },
+    {
+      "id": "nintendo_satellaview",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_sufami_turbo",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nintendo_virtual_boy",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_virtual_boy"
+    },
+    {
+      "id": "nintendo_wii",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_wii"
+    },
+    {
+      "id": "nintendo_wii_u",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_wii_u"
+    },
+    {
+      "id": "nokia_n_gage",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_n_gage"
+    },
+    {
+      "id": "nvidia_shield_portable",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "nvidia_shield_tv",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "ouya_ouya",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "palmtex_super_micro",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "panic_playdate",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "pc_50x_palladium_tele_cassetten_game_825_530",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "pc_50x_palladium_tele_cassetten_game_825_581",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "pc_50x_shg_black_point_fs_1003",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "pc_games",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_windows_98"
+    },
+    {
+      "id": "philips_cd_i",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_philips_cdi"
+    },
+    {
+      "id": "philips_tele_game",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "philips_videopac",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "pioneer_laseractive",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "playjam_game_stick",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "ps1",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_playstation"
+    },
+    {
+      "id": "ps2",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_playstation_2"
+    },
+    {
+      "id": "ps3",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_playstation_3"
+    },
+    {
+      "id": "psp",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_psp"
+    },
+    {
+      "id": "rca_studio_ii",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "rpg_maker",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "saturn",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_saturn"
+    },
+    {
+      "id": "scummvm",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_32x",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_sega_32x"
+    },
+    {
+      "id": "sega_beena",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_chihiro",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_game_gear",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_gear"
+    },
+    {
+      "id": "sega_master_system_mark_iii",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_master_system"
+    },
+    {
+      "id": "sega_mega_cd_sega_cd",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_sega_cd"
+    },
+    {
+      "id": "sega_naomi",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_naomi_2",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_pico",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sega_sg_1000",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_sg_1000"
+    },
+    {
+      "id": "sega_video_driver",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sharp_x1",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_sharp_x1"
+    },
+    {
+      "id": "sharp_x68000",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_x68000"
+    },
+    {
+      "id": "sinclair_zx_81",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_zx81"
+    },
+    {
+      "id": "sinclair_zx_spectrum",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_zx_spectrum"
+    },
+    {
+      "id": "snes",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_snes"
+    },
+    {
+      "id": "snk_neo_geo",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_neo_geo"
+    },
+    {
+      "id": "snk_neo_geo_cd",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_neo_geo_cd"
+    },
+    {
+      "id": "snk_neo_geo_pocket",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_neo_geo_pocket"
+    },
+    {
+      "id": "snk_neo_geo_pocket_color",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_neo_geo_pocket_color"
+    },
+    {
+      "id": "sony_playstation_4",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_playstation_4"
+    },
+    {
+      "id": "sony_playstation_5",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "sony_playstation_vita",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_playstation_vita"
+    },
+    {
+      "id": "spectravideo_sv",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_spectravideo"
+    },
+    {
+      "id": "ssd_xavixport",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "switch",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_switch"
+    },
+    {
+      "id": "takara_video_challenger",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "tandy_video_information_system",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "tapwave_zodiac",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "the_3do_company_3do",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_3do"
+    },
+    {
+      "id": "thomson_moto",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_thomson"
+    },
+    {
+      "id": "tic_80",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_tic_80"
+    },
+    {
+      "id": "tiger_game_com",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_game_com"
+    },
+    {
+      "id": "tiger_gizmondo",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "tiger_r_zone",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "tomy_tutor",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "umtech_videobrain",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "unisonic_champion_2711",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "uzebox",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_uzebox"
+    },
+    {
+      "id": "valve_steam_deck",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "valve_steam_link",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "view_master_interactive_vision",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "vircon32",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_vircon32"
+    },
+    {
+      "id": "vm_labs_nuon",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "vtech_3d_gamate",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "vtech_creativision",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_creativision"
+    },
+    {
+      "id": "vtech_socrates",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "vtech_v_flash",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "vtech_v_smile",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_v_smile"
+    },
+    {
+      "id": "wasm_4",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_wasm_4"
+    },
+    {
+      "id": "watara_supervision",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_supervision"
+    },
+    {
+      "id": "welback_mega_duck",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_mega_duck"
+    },
+    {
+      "id": "worlds_of_wonder_action_max",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "xbox",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_xbox"
+    },
+    {
+      "id": "xbox360",
+      "kind": "BUNDLED_VECTOR",
+      "resourceName": "mimir_platform_icon_xbox_360"
+    },
+    {
+      "id": "yamaha_copera",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "zapit_game_wave",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    },
+    {
+      "id": "zeebo_zeebo",
+      "kind": "GENERIC_FALLBACK",
+      "fallbackId": "generic-console-v1"
+    }
+  ],
+  "licenseFiles": [
+    {
+      "bytes": 1294,
+      "path": "LICENSE_BAXY_AUTOMATIC.txt",
+      "sha256": "fa3de95c37f61a9fe434f5c2257a333908ae42d2c9f8acbae8fae3e55743c94a"
+    },
+    {
+      "bytes": 424,
+      "path": "NOTICE_BAXY_AUTOMATIC.txt",
+      "sha256": "83b66ba14fc2e302bfdd82a8adc0fcad14910da70422bd8edeb3a64726e29a7f"
+    }
+  ],
+  "renderedVectors": [
+    {
+      "canonicalId": "3ds",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_nintendo_3ds.xml",
+      "resourceName": "mimir_platform_icon_nintendo_3ds",
+      "sha256": "491af0f2c2c46c68fb30ab99ff93a26ffac3b9649b10eaa7907af0a58e5b59f7",
+      "sourcePath": "baxy-automatic/3ds.svg",
+      "sourceSha256": "d766be6dda8b0c2ba4a02378dbfa147379c91b697b130751d7aa18ab4d7ea964"
+    },
+    {
+      "canonicalId": "acorn_archimedes",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_archimedes.xml",
+      "resourceName": "mimir_platform_icon_archimedes",
+      "sha256": "83e74363975cce7dde71a842acbd48790d3c78c1b44797272694d0400509e684",
+      "sourcePath": "baxy-automatic/acorn_archimedes.svg",
+      "sourceSha256": "ca0aa8ee2fffe927b29e8fce037be7b58eb4664542339efefc6d1df195c97b0d"
+    },
+    {
+      "canonicalId": "acorn_bbc_micro",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_bbc_micro.xml",
+      "resourceName": "mimir_platform_icon_bbc_micro",
+      "sha256": "fa66811f7245a17d61f4132c565d646ac1dce2b4fd863ef4ede4748c796e6d2e",
+      "sourcePath": "baxy-automatic/acorn_bbc_micro.svg",
+      "sourceSha256": "8237e3bef36c1c1066961dbcfa88a65ec8bc33973849b70409f4f0c3e1d24fbe"
+    },
+    {
+      "canonicalId": "amstrad_cpc",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_amstrad_cpc.xml",
+      "resourceName": "mimir_platform_icon_amstrad_cpc",
+      "sha256": "7cc30d9c16ff99f190a2b6afa5de7bca58f404161017e2e143ff674d8fca56d9",
+      "sourcePath": "baxy-automatic/amstrad_cpc.svg",
+      "sourceSha256": "0d2cd86bac3c3f5279d58fb1093b36d2a38138d3c7fe268375c86758a3f3c049"
+    },
+    {
+      "canonicalId": "amstrad_gx4000",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_amstrad_gx4000.xml",
+      "resourceName": "mimir_platform_icon_amstrad_gx4000",
+      "sha256": "3b696f02a75e80a154e9625eadad77e0294ea90b50d876980917af8973416864",
+      "sourcePath": "baxy-automatic/amstrad_gx4000.svg",
+      "sourceSha256": "9158fdb7d7929ed078a1b4e5f2996a2a12c3067f47874db4b122e28fedce41d1"
+    },
+    {
+      "canonicalId": "apple_ii",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_apple_ii.xml",
+      "resourceName": "mimir_platform_icon_apple_ii",
+      "sha256": "fcc3fed6d8100572d8b8ab85faad527e967cad3715cb1de2ed92f8a5f8d211bd",
+      "sourcePath": "baxy-automatic/apple_ii.svg",
+      "sourceSha256": "c9441c38c34f580cddb6f5bb47733372bc7e45e46171f582fa2c0399d2e01d66"
+    },
+    {
+      "canonicalId": "apple_macintosh",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_macintosh.xml",
+      "resourceName": "mimir_platform_icon_macintosh",
+      "sha256": "6219fe0b357027fbbe079307b43e31de2311f26ee6d552ceb7fe87a2b5b8359b",
+      "sourcePath": "baxy-automatic/apple_macintosh.svg",
+      "sourceSha256": "9c147606edc27df9200c5188366546549c9f6b35b81949a616103923f71d7f8b"
+    },
+    {
+      "canonicalId": "arcade",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_arcade.xml",
+      "resourceName": "mimir_platform_icon_arcade",
+      "sha256": "a610db680a04626ce875a6bb15c6bc59ac4ecbe54887a3f6d7367bba02b276e3",
+      "sourcePath": "baxy-automatic/arcade.svg",
+      "sourceSha256": "20a07d088f593c73181ccc63f02a3dd05504a2585e1a86a657303e5d014efe68"
+    },
+    {
+      "canonicalId": "arduboy_inc_arduboy",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_arduboy.xml",
+      "resourceName": "mimir_platform_icon_arduboy",
+      "sha256": "8b27b511e7a2cb0286a0b51a5b9f36811d684f1fa70f83218e441927af723a7b",
+      "sourcePath": "baxy-automatic/arduboy_inc_arduboy.svg",
+      "sourceSha256": "2c2a3ea824482e91d02256b355f00cf270964141242c71b31c7b6a6ef9d9f681"
+    },
+    {
+      "canonicalId": "atari_2600",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_2600.xml",
+      "resourceName": "mimir_platform_icon_atari_2600",
+      "sha256": "4614f477cb5f5d50a81b76b6e2167b608541986bbf54cdc032431683e17b8459",
+      "sourcePath": "baxy-automatic/atari_2600.svg",
+      "sourceSha256": "3083936bf414b2db600c08d85e59d2f6744b35be0a33114758c214fac4270650"
+    },
+    {
+      "canonicalId": "atari_5200",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_5200.xml",
+      "resourceName": "mimir_platform_icon_atari_5200",
+      "sha256": "d5db155fc1f625c966809ed7786af41baa61d5f2843d8fbb4946aaf73944af78",
+      "sourcePath": "baxy-automatic/atari_5200.svg",
+      "sourceSha256": "21fe82493af493ee4677b2a9b6adaa3dbf602077079a64d8a9155b6310d56726"
+    },
+    {
+      "canonicalId": "atari_7800",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_7800.xml",
+      "resourceName": "mimir_platform_icon_atari_7800",
+      "sha256": "5dcf25d37b8a2fd6b33aa153c0f0af77882cf96fb215bcaf56ae0183038cbfe6",
+      "sourcePath": "baxy-automatic/atari_7800.svg",
+      "sourceSha256": "34f6bedbd50d80211c2b9b1378997e4bd28033d01d1130424c494c4855fc2416"
+    },
+    {
+      "canonicalId": "atari_8_bit_family",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_8_bit.xml",
+      "resourceName": "mimir_platform_icon_atari_8_bit",
+      "sha256": "b68874eba94ddcf641a8270d082481beefcc0f47857d44998c714460d6bfa9e8",
+      "sourcePath": "baxy-automatic/atari_8_bit_family.svg",
+      "sourceSha256": "9e8bca94655f69bd0f537ede9f79a51e9d30fc48cb3294e09d19631fe7851cee"
+    },
+    {
+      "canonicalId": "atari_jaguar",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_jaguar.xml",
+      "resourceName": "mimir_platform_icon_atari_jaguar",
+      "sha256": "51dbb9e3c87c8293d7d53d24cf7825f214c5fdec320e1dc9428beda7871d3acb",
+      "sourcePath": "baxy-automatic/atari_jaguar.svg",
+      "sourceSha256": "ae49fba26ea7c891d9f6ea645de8173bb7bbe8c0c6157de31da9073dc4a5b0ac"
+    },
+    {
+      "canonicalId": "atari_lynx",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_lynx.xml",
+      "resourceName": "mimir_platform_icon_atari_lynx",
+      "sha256": "42c9f80a35b812a86f996b98001eebeca79bd8dc0e3406f2771a49ebe8eb293b",
+      "sourcePath": "baxy-automatic/atari_lynx.svg",
+      "sourceSha256": "a3aeb379957bd7680f91bad332eca97b44424fd5ca9ad8bf47a67a752b12f632"
+    },
+    {
+      "canonicalId": "atari_st",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_atari_st.xml",
+      "resourceName": "mimir_platform_icon_atari_st",
+      "sha256": "f23503e00eafbb7b20f282c85059c1fa693fd08fbfe7ed2a4d0f0f739e094b0e",
+      "sourcePath": "baxy-automatic/atari_st.svg",
+      "sourceSha256": "2f3766e5628435478739dfb03022b43117758a380a621f16be9067b701cfd62d"
+    },
+    {
+      "canonicalId": "bally_astrocade",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_astrocade.xml",
+      "resourceName": "mimir_platform_icon_astrocade",
+      "sha256": "54a5e0f488cf8f3eec550ddee5b9b9de86b12298e56578427e2dc407f583627d",
+      "sourcePath": "baxy-automatic/bally_astrocade.svg",
+      "sourceSha256": "6af57c99b30c72a3ffa42e5e8b0d783b0ac49df2373716a0fa478f887d5956f7"
+    },
+    {
+      "canonicalId": "bandai_wonderswan",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_wonderswan.xml",
+      "resourceName": "mimir_platform_icon_wonderswan",
+      "sha256": "2cf25d36f39009ba56aa034bc5d03ad0d5adcc59003c957c0975f53cf7daef7c",
+      "sourcePath": "baxy-automatic/bandai_wonderswan.svg",
+      "sourceSha256": "304e9c021997dbdaecbe11b05c7c7543089bc1ebf8f014013a6fc32dbaed0bed"
+    },
+    {
+      "canonicalId": "bandai_wonderswan_color",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_wonderswan_color.xml",
+      "resourceName": "mimir_platform_icon_wonderswan_color",
+      "sha256": "7324f3f2d71c833670ffdf9e4625a5fbd689280720f05a4735a563c232841ded",
+      "sourcePath": "baxy-automatic/bandai_wonderswan_color.svg",
+      "sourceSha256": "b0d3bc1c15d56bbeacf7991ae2f0e5c15a48f2864a655dc016257d0d664ddfe2"
+    },
+    {
+      "canonicalId": "bit_corporation_gamate",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_gamate.xml",
+      "resourceName": "mimir_platform_icon_gamate",
+      "sha256": "2b2b933f5c573f66db0f02aefa2b2dc6f5586658ee5df02c59b99b4f4777c588",
+      "sourcePath": "baxy-automatic/bit_corporation_gamate.svg",
+      "sourceSha256": "68e3499a78ac9871e1fd601a1ffa0206fa565dfb2986f999a4aa7db1b4ed435e"
+    },
+    {
+      "canonicalId": "casio_pv_1000",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_pv_1000.xml",
+      "resourceName": "mimir_platform_icon_pv_1000",
+      "sha256": "5ea71fc9ea5e1ab61a08683f72a42efe3ece4d09d57a7cf23bb65f8ed4e55b6f",
+      "sourcePath": "baxy-automatic/casio_pv_1000.svg",
+      "sourceSha256": "5eb4b348afb4c0ab0d8d7911dde3313ab69495e508de7586652dbcb69b85e683"
+    },
+    {
+      "canonicalId": "coleco_colecovision",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_colecovision.xml",
+      "resourceName": "mimir_platform_icon_colecovision",
+      "sha256": "4aac406d04389441da06dba8de628669f8ff2f824c6d8c4277756b0fddbc8e79",
+      "sourcePath": "baxy-automatic/coleco_colecovision.svg",
+      "sourceSha256": "56f111472c37ed8a400b192632703181758e66891b104737d3e0ec219574c752"
+    },
+    {
+      "canonicalId": "coleco_colecovision_adam",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_coleco_adam.xml",
+      "resourceName": "mimir_platform_icon_coleco_adam",
+      "sha256": "bfa6ecdd82865e436b30f1fd10a56aafba0b51cd87fa11917c529df35992f6db",
+      "sourcePath": "baxy-automatic/coleco_colecovision_adam.svg",
+      "sourceSha256": "b124b270c2f2b4c35d5fc78981671521a54a3bff47e0252a0ff54ae4c34488ee"
+    },
+    {
+      "canonicalId": "commodore_64",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_commodore_64.xml",
+      "resourceName": "mimir_platform_icon_commodore_64",
+      "sha256": "c1c65913ee6170dc613fef70ea7d6aafb1e652ade06145fd0a21a95b90b280a6",
+      "sourcePath": "baxy-automatic/commodore_64.svg",
+      "sourceSha256": "a782573c7b251e38f4ca9fed10fe1039ad907345f17139c6527b84203aaba27e"
+    },
+    {
+      "canonicalId": "commodore_amiga",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_amiga.xml",
+      "resourceName": "mimir_platform_icon_amiga",
+      "sha256": "e7bbbac15b4f08aba7a279a8989d7bada3d7dbc7ff5eaf1c847095c88614d749",
+      "sourcePath": "baxy-automatic/commodore_amiga.svg",
+      "sourceSha256": "eae1d082476b3bf3f6c0931e65e092816b0fdd05c96dd34fe1e2c8861f0c35e3"
+    },
+    {
+      "canonicalId": "commodore_plus_4",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_commodore_plus_4.xml",
+      "resourceName": "mimir_platform_icon_commodore_plus_4",
+      "sha256": "e23fa5908e8ba2d4b9d88608fac77da7c238bfae45379b8a893479f42d20bcf0",
+      "sourcePath": "baxy-automatic/commodore_plus_4.svg",
+      "sourceSha256": "a6d2f1f4b394553ef6122800824228640ea3c5e2cb2c6831009fed666d68391d"
+    },
+    {
+      "canonicalId": "commodore_vic_20",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_vic_20.xml",
+      "resourceName": "mimir_platform_icon_vic_20",
+      "sha256": "c1c65913ee6170dc613fef70ea7d6aafb1e652ade06145fd0a21a95b90b280a6",
+      "sourcePath": "baxy-automatic/commodore_vic_20.svg",
+      "sourceSha256": "a782573c7b251e38f4ca9fed10fe1039ad907345f17139c6527b84203aaba27e"
+    },
+    {
+      "canonicalId": "dos",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_pc.xml",
+      "resourceName": "mimir_platform_icon_pc",
+      "sha256": "c1ab01e3914466db4fbd83e9384a331836daf5d08f11b9c59cea9e804807d9bf",
+      "sourcePath": "baxy-automatic/dos.svg",
+      "sourceSha256": "dc8b99883fb6444cfe450885f2424a76e44dbac83a774346b96d6ba4460aca3f"
+    },
+    {
+      "canonicalId": "dreamcast",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_dreamcast.xml",
+      "resourceName": "mimir_platform_icon_dreamcast",
+      "sha256": "cde780cd7959a7494fa02f07626778727413e5dbf62d11719079fbe08da363f6",
+      "sourcePath": "baxy-automatic/dreamcast.svg",
+      "sourceSha256": "8d916dab725fdf1c6308c38794bccda42b049c6d1de45fdfe8f1de1f3e2460af"
+    },
+    {
+      "canonicalId": "ds",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_nintendo_ds.xml",
+      "resourceName": "mimir_platform_icon_nintendo_ds",
+      "sha256": "6a656505feef56bf32930a6857bdb5ba4ec681f3a413a75bfaa864921ff56541",
+      "sourcePath": "baxy-automatic/ds.svg",
+      "sourceSha256": "51c4577d552827772141075c5b04c9fae129f2b1a58bd81c391f53fcf8ff0e36"
+    },
+    {
+      "canonicalId": "emerson_arcadia_2001",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_arcadia_2001.xml",
+      "resourceName": "mimir_platform_icon_arcadia_2001",
+      "sha256": "372a7c0eca2326ec6a4b36d0204c2aa2097c273bd2befa6d27fc6c62bac5b587",
+      "sourcePath": "baxy-automatic/emerson_arcadia_2001.svg",
+      "sourceSha256": "bc19bbe2a5f250a0886f3d01e54fe42222adf5984a53239f85b01af60c9d4a88"
+    },
+    {
+      "canonicalId": "epoch_super_cassette_vision",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_super_cassette_vision.xml",
+      "resourceName": "mimir_platform_icon_super_cassette_vision",
+      "sha256": "a151571b54f146afe2021f072b3b54b90805b161362ebc729bedcb33afb9e66f",
+      "sourcePath": "baxy-automatic/epoch_super_cassette_vision.svg",
+      "sourceSha256": "a23bcf8b6adb44913f085ba6ee12b59fadf543a61277aeecbe9e32f9c6a7d4bf"
+    },
+    {
+      "canonicalId": "fairchild_channel_f",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_channel_f.xml",
+      "resourceName": "mimir_platform_icon_channel_f",
+      "sha256": "b0b48baf3ad9e1faf03c746f6bb3a575b527b64296349757de298ae37476ea7f",
+      "sourcePath": "baxy-automatic/fairchild_channel_f.svg",
+      "sourceSha256": "49b95be68772bda736b2cc4864322508636e340f3a993b5a1ba82249f6aab149"
+    },
+    {
+      "canonicalId": "fujitsu_fm_7",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_fm_7.xml",
+      "resourceName": "mimir_platform_icon_fm_7",
+      "sha256": "b6d7c76686615fcc29607f538d672a07b2826bbea3ed32403cf95b614e9b2205",
+      "sourcePath": "baxy-automatic/fujitsu_fm_7.svg",
+      "sourceSha256": "03b9c0f7eada8e0c7124d4ef679039bfcfd467e77b9cbf7e542875c93413410a"
+    },
+    {
+      "canonicalId": "fujitsu_fm_towns",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_fm_towns.xml",
+      "resourceName": "mimir_platform_icon_fm_towns",
+      "sha256": "3c16d6ac19a30b89b6c1816514e321d6d3d2b22248c8b128a822daf50fcf03dd",
+      "sourcePath": "baxy-automatic/fujitsu_fm_towns.svg",
+      "sourceSha256": "b946d624ee7bab3037cea2b9f95d69f9ab89fd3c5de31a46933d7a0de7aaff38"
+    },
+    {
+      "canonicalId": "funtech_super_acan",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_super_acan.xml",
+      "resourceName": "mimir_platform_icon_super_acan",
+      "sha256": "14a814902d6351ae2c5fe7394ef31b0edd9401b928a9b62593b480ed94ccb22e",
+      "sourcePath": "baxy-automatic/funtech_super_acan.svg",
+      "sourceSha256": "85af73c936e8485616cec4b8327c6206847496aaa2973c50ee5a2ba8dad2a2c4"
+    },
+    {
+      "canonicalId": "gamecube",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_gamecube.xml",
+      "resourceName": "mimir_platform_icon_gamecube",
+      "sha256": "7ddf0fd5badfc4f3f88f0060d776163ca6de116073e3857606d38b339b5f2e00",
+      "sourcePath": "baxy-automatic/gamecube.svg",
+      "sourceSha256": "8c4a82974d5accdb02db3752cb18b714dff2b0bb668a5da8ac478bf862573676"
+    },
+    {
+      "canonicalId": "gb",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_boy.xml",
+      "resourceName": "mimir_platform_icon_game_boy",
+      "sha256": "f3ca2c6b9f4a64bca528e0778e9adc9d50f042c663719bca9b602a1e41922269",
+      "sourcePath": "baxy-automatic/gb.svg",
+      "sourceSha256": "48753b989e6662d091da0e473d8a497e68ab01adf8b4e1a1e130a32eca2d2014"
+    },
+    {
+      "canonicalId": "gba",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_boy_advance.xml",
+      "resourceName": "mimir_platform_icon_game_boy_advance",
+      "sha256": "22301aa298d5255dafeaf476c0724007e68a2e81dd5ddd87608954d06a0da88e",
+      "sourcePath": "baxy-automatic/gba.svg",
+      "sourceSha256": "502b8e8cb45ad4d2930062efa5c95d330e736818ae9aa11a7b8ef5d24f07ed41"
+    },
+    {
+      "canonicalId": "gbc",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_boy_color.xml",
+      "resourceName": "mimir_platform_icon_game_boy_color",
+      "sha256": "352dc96fcbe90c4277737bff656bb94ebd6e41139beac820197ea26ff4dc6015",
+      "sourcePath": "baxy-automatic/gbc.svg",
+      "sourceSha256": "3dcaa11c55dcc52e80ef4252978bd86aa47e56aa1d700a91a3148f34e23786fa"
+    },
+    {
+      "canonicalId": "gce_vectrex",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_vectrex.xml",
+      "resourceName": "mimir_platform_icon_vectrex",
+      "sha256": "a519fe2ad185ea12696856a3c2d8ca46d869631c5ca8671c119b4ddfad85f4ed",
+      "sourcePath": "baxy-automatic/gce_vectrex.svg",
+      "sourceSha256": "32e4b52a7eee8ced4e0b229a06fe1a8df5a0b7777dbd86512664ef00cd945979"
+    },
+    {
+      "canonicalId": "genesis",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_genesis.xml",
+      "resourceName": "mimir_platform_icon_genesis",
+      "sha256": "141bf6056d5cf4ac964d34a178754a6da01f76a7360cbc113286034d5df4ccd0",
+      "sourcePath": "baxy-automatic/genesis.svg",
+      "sourceSha256": "e6a96b90cdb522319f9854c190843ae6a28c1633b40ce824bd99690c8f1721ab"
+    },
+    {
+      "canonicalId": "hartung_game_master",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_master.xml",
+      "resourceName": "mimir_platform_icon_game_master",
+      "sha256": "68d49562ce1a4f49fa9f7b146a229ab6abc00420649c0fc014f3b1d9c5c043aa",
+      "sourcePath": "baxy-automatic/hartung_game_master.svg",
+      "sourceSha256": "6ba80ced9749e8efcbba3b5f95597d8e70654198721c4fe2c79bce865bfedd92"
+    },
+    {
+      "canonicalId": "infocom_z_machine",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_z_machine.xml",
+      "resourceName": "mimir_platform_icon_z_machine",
+      "sha256": "d773d81118e92d41ba77b091b63e43d38a46aeda6c13d4d6bbd0360e5ea7b8ea",
+      "sourcePath": "baxy-automatic/infocom_z_machine.svg",
+      "sourceSha256": "cc942095c725c858f769f918754e2cd19aee5bf000fea5f277abddea438f4e30"
+    },
+    {
+      "canonicalId": "lowres_nx",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_lowres_nx.xml",
+      "resourceName": "mimir_platform_icon_lowres_nx",
+      "sha256": "07700a9aab1ef7c2ff56b9a7bfa424a31c87fde80dea959ce6761c2e09c20554",
+      "sourcePath": "baxy-automatic/lowres_nx.svg",
+      "sourceSha256": "c54f26e6f261eeaf2c8204aee4f9e8da55389f40fe695911f3972f1db48f0a2d"
+    },
+    {
+      "canonicalId": "magnavox_odyssey2",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_odyssey_2.xml",
+      "resourceName": "mimir_platform_icon_odyssey_2",
+      "sha256": "13b4b95290ff1fce6255770b52b018b0085b1905a69a879ad5eaa3a656d2bec8",
+      "sourcePath": "baxy-automatic/magnavox_odyssey2.svg",
+      "sourceSha256": "a163c93124d20e7d78fb11923648e795c2272181dde54a0f529a4a838ecf7e8b"
+    },
+    {
+      "canonicalId": "mattel_intellivision",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_intellivision.xml",
+      "resourceName": "mimir_platform_icon_intellivision",
+      "sha256": "d30b36ea89d086ab5fc14829523c121151597e284549a34ca852ece14371ec27",
+      "sourcePath": "baxy-automatic/mattel_intellivision.svg",
+      "sourceSha256": "85a50f9f3b6c82893abeb1a2a755bb191038f09c6cb6cfca9e510d3230fc6a14"
+    },
+    {
+      "canonicalId": "microsoft_msx",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_msx.xml",
+      "resourceName": "mimir_platform_icon_msx",
+      "sha256": "c2d3769af57918c13745df7605e33fb451d5053ebfc64001960423246b46aa4b",
+      "sourcePath": "baxy-automatic/microsoft_msx.svg",
+      "sourceSha256": "b0edc543f98aa362031d53779b7f1f77dcb81b0dddddaa9a0d63885ffcc40a51"
+    },
+    {
+      "canonicalId": "microsoft_msx2",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_msx2.xml",
+      "resourceName": "mimir_platform_icon_msx2",
+      "sha256": "cafa377c294138102e445e9c5b198fde191a635cc271bfe97bb4ccb343966888",
+      "sourcePath": "baxy-automatic/microsoft_msx2.svg",
+      "sourceSha256": "d22655ebfa27b5d0288c13c38bfa7e85c4a3010b45e495d8e80ce9d94ba0f8c4"
+    },
+    {
+      "canonicalId": "microsoft_xbox_one",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_xbox_one.xml",
+      "resourceName": "mimir_platform_icon_xbox_one",
+      "sha256": "97323219074772234d14fec62e2c14544d292acc96ae5afc13291eb28d1f8ed7",
+      "sourcePath": "baxy-automatic/microsoft_xbox_one.svg",
+      "sourceSha256": "082e90764b066b8184cd5a3bc8f453678ff331f6954726a9b44917711c67af72"
+    },
+    {
+      "canonicalId": "n64",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_n64.xml",
+      "resourceName": "mimir_platform_icon_n64",
+      "sha256": "6a9c51732b7371fe58120af2049f1d47be1c506fb8525f17e5c9f8b5df02dc7d",
+      "sourcePath": "baxy-automatic/n64.svg",
+      "sourceSha256": "6b59bf9da6a66468f0cec769e4af4ddb9d6a3dd3c8bd5daf26dc4a8ed38641da"
+    },
+    {
+      "canonicalId": "nec_pc_98",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_pc_98.xml",
+      "resourceName": "mimir_platform_icon_pc_98",
+      "sha256": "3a748a1caf618b5451c5cbb8950ee87df0cc9fc801fe20d6b62df54131c28501",
+      "sourcePath": "baxy-automatic/nec_pc_98.svg",
+      "sourceSha256": "c3ee1d053ae08f864c1b75df5b367c999c5b9bf8b2fb7c856bf4aeed8fde9f6f"
+    },
+    {
+      "canonicalId": "nec_pc_engine_cd_turbografx_cd",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_turbografx_cd.xml",
+      "resourceName": "mimir_platform_icon_turbografx_cd",
+      "sha256": "45f4c2e837a557a4477c030d5b66557b9e5fb71ef515fba150f67f85cf632828",
+      "sourcePath": "baxy-automatic/nec_pc_engine_cd_turbografx_cd.svg",
+      "sourceSha256": "16d88162cd4517d1b6fb55049025ffab30ad92fa551b9ba95622bd243e233a5c"
+    },
+    {
+      "canonicalId": "nec_pc_engine_supergrafx",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_supergrafx.xml",
+      "resourceName": "mimir_platform_icon_supergrafx",
+      "sha256": "ffb98a66abcdf1f78cb8db918a7f108f39af2a756e4f4611e4aa7ecf5bf07123",
+      "sourcePath": "baxy-automatic/nec_pc_engine_supergrafx.svg",
+      "sourceSha256": "d4f153b4dfacb3503807d06319dea327c119aee8fa4e51e517b7671bd224585e"
+    },
+    {
+      "canonicalId": "nec_pc_engine_turbografx_16",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_turbografx_16.xml",
+      "resourceName": "mimir_platform_icon_turbografx_16",
+      "sha256": "ec133e2ebf715fb53846aa3f836d2a47e735d0c7878276cc54c38ce254871752",
+      "sourcePath": "baxy-automatic/nec_pc_engine_turbografx_16.svg",
+      "sourceSha256": "80af33c92489dcbdc6d945f255a9dac48586203e4a65b88bb9f12598d7a5ac2b"
+    },
+    {
+      "canonicalId": "nec_pc_fx",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_pc_fx.xml",
+      "resourceName": "mimir_platform_icon_pc_fx",
+      "sha256": "a02eb253f00542d61b73bf60d471cb08119ff0119d7dc567b1254c957bfe9255",
+      "sourcePath": "baxy-automatic/nec_pc_fx.svg",
+      "sourceSha256": "e2e4a53cfa44f8b0f4a2a8def018e57ea3e5ab8a8f4a5e7a7d6eb558d8f5442f"
+    },
+    {
+      "canonicalId": "nes",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_nes.xml",
+      "resourceName": "mimir_platform_icon_nes",
+      "sha256": "6d72e780d0f66cd0e0c27a40e8213108c3f860db17bafba336559183aa32981d",
+      "sourcePath": "baxy-automatic/nes.svg",
+      "sourceSha256": "f13d579ad063a9aad9f77f8f6c678d4d114dce4303c4b71644b8208e3663e08a"
+    },
+    {
+      "canonicalId": "nintendo_family_computer_disk_system",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_famicom_disk_system.xml",
+      "resourceName": "mimir_platform_icon_famicom_disk_system",
+      "sha256": "d6a9bcd6d6d122835d7c37217380c7af88ccedc3ba0ec59525665d31395c3750",
+      "sourcePath": "baxy-automatic/nintendo_family_computer_disk_system.svg",
+      "sourceSha256": "4e1b3aea8923d6d9a27187dc7abcf8fc4c9d601344d296bb19d1f43bbb3f066a"
+    },
+    {
+      "canonicalId": "nintendo_pokemon_mini",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_pokemon_mini.xml",
+      "resourceName": "mimir_platform_icon_pokemon_mini",
+      "sha256": "29dd3d10b5a6958229d766c3c0b6a7c484a76ad12b7822ee66b1e0da0f3a99ba",
+      "sourcePath": "baxy-automatic/nintendo_pokemon_mini.svg",
+      "sourceSha256": "a8caf0e88ba7d34bcbd757ad5651ca2eedef3258e084f4e1122ca8694f65df40"
+    },
+    {
+      "canonicalId": "nintendo_virtual_boy",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_virtual_boy.xml",
+      "resourceName": "mimir_platform_icon_virtual_boy",
+      "sha256": "fb6e8023a11ea3f0f0b339ccf9a6496a3869d9191518d275dc09fce1fabb1073",
+      "sourcePath": "baxy-automatic/nintendo_virtual_boy.svg",
+      "sourceSha256": "3dd3dd8f255a6cf6ff3787accdd78c4635bbbd02d6ecc0ed422456fb8556ad6f"
+    },
+    {
+      "canonicalId": "nintendo_wii",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_wii.xml",
+      "resourceName": "mimir_platform_icon_wii",
+      "sha256": "2c07c1872f3dabab91f9de75ed8e56927d3a73c952ce3afb7140c9ed43a00194",
+      "sourcePath": "baxy-automatic/nintendo_wii.svg",
+      "sourceSha256": "66dfd4859085d0dcc4af1b67fec20307bb745c9b621eb3762353b75d94e96ab0"
+    },
+    {
+      "canonicalId": "nintendo_wii_u",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_wii_u.xml",
+      "resourceName": "mimir_platform_icon_wii_u",
+      "sha256": "49ad132c82d49d0e9e9eb5724f0a19e6f9568c4ab72da8a8387c33b78cd11f41",
+      "sourcePath": "baxy-automatic/nintendo_wii_u.svg",
+      "sourceSha256": "1bfea0d43b84371169df924f267c2d61ebfcd3eb1c718252e5a441bbfed6d742"
+    },
+    {
+      "canonicalId": "nokia_n_gage",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_n_gage.xml",
+      "resourceName": "mimir_platform_icon_n_gage",
+      "sha256": "77dcfaa4c6249707f787a145ed157442f28efbfd0627a2ff37860cf0b942c3db",
+      "sourcePath": "baxy-automatic/nokia_n_gage.svg",
+      "sourceSha256": "60c86ad28dc3e529838a435ede8c65e91e8a084469d4a4a9dfd6293a7009079d"
+    },
+    {
+      "canonicalId": "pc_games",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_windows_98.xml",
+      "resourceName": "mimir_platform_icon_windows_98",
+      "sha256": "d57f16e9f7399806e0e6c2c59301428cfac9de34eda095e56c506047db50829c",
+      "sourcePath": "tools/platform-registry/author-windows-98-flag.py",
+      "sourceSha256": "034c4d1f4ed2a4889882569c5a9f7d9952e1d028cf204c4243b195ae0cbc536c"
+    },
+    {
+      "canonicalId": "philips_cd_i",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_philips_cdi.xml",
+      "resourceName": "mimir_platform_icon_philips_cdi",
+      "sha256": "7c2a3e16381e14fdf763dff31cc348fa8cd30af00d4966363971f97da992863c",
+      "sourcePath": "baxy-automatic/philips_cd_i.svg",
+      "sourceSha256": "f1fec9c2b967e52c76114f5a84ca11d7ef236e4a21e3e185dce3258504f19652"
+    },
+    {
+      "canonicalId": "ps1",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_playstation.xml",
+      "resourceName": "mimir_platform_icon_playstation",
+      "sha256": "cc81e482ba965a71194f6a64f5662e73bb1c0ceca3cafcd6b222e4aa9926d63e",
+      "sourcePath": "baxy-automatic/ps1.svg",
+      "sourceSha256": "e3617c46eb3809620864bcc5d5fa33aa771ab3a608200f92dc89907297dfa9d8"
+    },
+    {
+      "canonicalId": "ps2",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_playstation_2.xml",
+      "resourceName": "mimir_platform_icon_playstation_2",
+      "sha256": "3b51d046d13f4916dab15737ef0361ea4f89ceff76795dcf8dac7da144af13e1",
+      "sourcePath": "baxy-automatic/ps2.svg",
+      "sourceSha256": "3fff2cfd9596ead37b25510ce2b0d5bbe1090c4b74b4a7fea9972792c8586293"
+    },
+    {
+      "canonicalId": "ps3",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_playstation_3.xml",
+      "resourceName": "mimir_platform_icon_playstation_3",
+      "sha256": "8d0cfeb7ecaafcc0601d2475fc6ae6c70ce0ead4f2d8b986f601b79a86790e10",
+      "sourcePath": "baxy-automatic/ps3.svg",
+      "sourceSha256": "7c4cf9d2961bd7a91e6cec83e12fa7866ee4abd440ba78572fed881bb0043c3b"
+    },
+    {
+      "canonicalId": "psp",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_psp.xml",
+      "resourceName": "mimir_platform_icon_psp",
+      "sha256": "501e319114387d08fa07e1b78711a3ca242b7eab78ed54529e85bf707e29bd5d",
+      "sourcePath": "baxy-automatic/psp.svg",
+      "sourceSha256": "a3561e4a2f5b83e997776c9a4498ca7aafb6c380c95738a9f627ad6418f0fcf7"
+    },
+    {
+      "canonicalId": "saturn",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_saturn.xml",
+      "resourceName": "mimir_platform_icon_saturn",
+      "sha256": "bcbea74fe9b84ae39102f6f1add063ae96f474c1fd69a0ee49312a466f3a3630",
+      "sourcePath": "baxy-automatic/saturn.svg",
+      "sourceSha256": "06432bb840d7e2e0edec9b79b285904a6aee1ba677f899524b2c2bab6ab07e79"
+    },
+    {
+      "canonicalId": "sega_32x",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_sega_32x.xml",
+      "resourceName": "mimir_platform_icon_sega_32x",
+      "sha256": "cf85cc2d2e20be788d4b20a5d6f813b9765dcf6800d834544d2f074a797d12fb",
+      "sourcePath": "baxy-automatic/sega_32x.svg",
+      "sourceSha256": "328f1ac5df9210c5eb776daa8c760c069cb0c87dd3cf1d984c37876b1e9f362e"
+    },
+    {
+      "canonicalId": "sega_game_gear",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_gear.xml",
+      "resourceName": "mimir_platform_icon_game_gear",
+      "sha256": "92e641f0993e19518604a28b97e733e2af192cd25a3ef3e53733e3c496a9f812",
+      "sourcePath": "baxy-automatic/sega_game_gear.svg",
+      "sourceSha256": "f2c528f603be04c7f22691b49ba49873f95099d9457fd843766997c9bfaf5763"
+    },
+    {
+      "canonicalId": "sega_master_system_mark_iii",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_master_system.xml",
+      "resourceName": "mimir_platform_icon_master_system",
+      "sha256": "f23872c6b60d52654b74fd0f08f37cb639a1cf389b6f52b98f70f9fe3f59006b",
+      "sourcePath": "baxy-automatic/sega_master_system_mark_iii.svg",
+      "sourceSha256": "650d3fd211daa7b9a7ae01414fbb2d77eef729513cd20399b0d20cc4490a4a20"
+    },
+    {
+      "canonicalId": "sega_mega_cd_sega_cd",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_sega_cd.xml",
+      "resourceName": "mimir_platform_icon_sega_cd",
+      "sha256": "2f5f6550e7290a578c0f90fdc785b21f94a86a23db298357cdf22785e2a0d27c",
+      "sourcePath": "baxy-automatic/sega_mega_cd_sega_cd.svg",
+      "sourceSha256": "24ba53e48a92f7ab5ce9ae60b11a55ea77607b3b8caa1d3fad9a0c1494ad7a78"
+    },
+    {
+      "canonicalId": "sega_sg_1000",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_sg_1000.xml",
+      "resourceName": "mimir_platform_icon_sg_1000",
+      "sha256": "ff8bc7aa072311a8b15d4e9c96219e6b3bad701d919a4c8d410e68818bf0ebb9",
+      "sourcePath": "baxy-automatic/sega_sg_1000.svg",
+      "sourceSha256": "6c2385471983329d6dac5f6b5741ac607788adc14561fe1f9b5213d9a404b21c"
+    },
+    {
+      "canonicalId": "sharp_x1",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_sharp_x1.xml",
+      "resourceName": "mimir_platform_icon_sharp_x1",
+      "sha256": "edb93911f3cacbb73ef6010bb6eb35b09275223db6ced3f1b95e7873e02f505a",
+      "sourcePath": "baxy-automatic/sharp_x1.svg",
+      "sourceSha256": "3b5b2b0c66dd6971c62486372dbc2b0dc6b1456f0aa8a225b9ea609eb8be60a7"
+    },
+    {
+      "canonicalId": "sharp_x68000",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_x68000.xml",
+      "resourceName": "mimir_platform_icon_x68000",
+      "sha256": "2e3144ad912cc8455832d2f610b255e9994f4a4fbdd69a62b359ae88de7008bd",
+      "sourcePath": "baxy-automatic/sharp_x68000.svg",
+      "sourceSha256": "b1ee693db053297d69b7844d15959db9415707795c98e87bcf50ade2f2df5d47"
+    },
+    {
+      "canonicalId": "sinclair_zx_81",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_zx81.xml",
+      "resourceName": "mimir_platform_icon_zx81",
+      "sha256": "80d309b430417ca47bf4f80b8ad4634714d2de9e720d4557b13608e52026d9c5",
+      "sourcePath": "baxy-automatic/sinclair_zx_81.svg",
+      "sourceSha256": "cd1ff6a432428dab71b1f723cb6ebb70c52023410be54c238a3acde5525ac228"
+    },
+    {
+      "canonicalId": "sinclair_zx_spectrum",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_zx_spectrum.xml",
+      "resourceName": "mimir_platform_icon_zx_spectrum",
+      "sha256": "16413f00713b41c302168d07ca79e5ce867bf16f6e07d39f42d5ff294a3a2ba1",
+      "sourcePath": "baxy-automatic/sinclair_zx_spectrum.svg",
+      "sourceSha256": "dacf2e16fd99f061a7fb04cf64164988cac79606c3484b0f82ff65f623bcffe6"
+    },
+    {
+      "canonicalId": "snes",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_snes.xml",
+      "resourceName": "mimir_platform_icon_snes",
+      "sha256": "334a28edb23a0d904cf3197b5060dfb8e37d2a8f5e0fa6bed3a9b1c7207452e0",
+      "sourcePath": "baxy-automatic/snes.svg",
+      "sourceSha256": "40f84839cab39a3f0f60c70a4c512e6e14cd4c43cc116d10ea1095b1ac461bbb"
+    },
+    {
+      "canonicalId": "snk_neo_geo",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_neo_geo.xml",
+      "resourceName": "mimir_platform_icon_neo_geo",
+      "sha256": "30d804eff802dcb42f54ab95c798d8262603c31872bd54ad4cd0efe81bff2d32",
+      "sourcePath": "baxy-automatic/snk_neo_geo.svg",
+      "sourceSha256": "80b8680b387e943f34cc511cca95891c4f9e95153d379f666099712f6916e01e"
+    },
+    {
+      "canonicalId": "snk_neo_geo_cd",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_neo_geo_cd.xml",
+      "resourceName": "mimir_platform_icon_neo_geo_cd",
+      "sha256": "d57b1d86a8519607171892d97064d779e211dc18a1abbf206ecc2f07fc330981",
+      "sourcePath": "baxy-automatic/snk_neo_geo_cd.svg",
+      "sourceSha256": "f9a0205c600bba4fedd1739af72fd304da4963750a3374ca878bd4f5a1e15907"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_neo_geo_pocket.xml",
+      "resourceName": "mimir_platform_icon_neo_geo_pocket",
+      "sha256": "8798e8402cc70e11db934948c9982b015162119135bf9daf4d16052055b469b4",
+      "sourcePath": "baxy-automatic/snk_neo_geo_pocket.svg",
+      "sourceSha256": "5d7fa3ba188f7e6f791793db8f49fdf6bd7b8f1a8c12411e0153adf1a1590546"
+    },
+    {
+      "canonicalId": "snk_neo_geo_pocket_color",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_neo_geo_pocket_color.xml",
+      "resourceName": "mimir_platform_icon_neo_geo_pocket_color",
+      "sha256": "c82d039fb3a6804d293776d83224d09bb62943319d8c5af41d453c7519d9f08c",
+      "sourcePath": "baxy-automatic/snk_neo_geo_pocket_color.svg",
+      "sourceSha256": "14637cbd18acb16aef423fdb6bedeaaa42dc25343272c8ba3704b003ccd0797e"
+    },
+    {
+      "canonicalId": "sony_playstation_4",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_playstation_4.xml",
+      "resourceName": "mimir_platform_icon_playstation_4",
+      "sha256": "2761caae1c5ec291b10f092c8fde4b29a28d4c612685f0f3d9053f054bfece16",
+      "sourcePath": "baxy-automatic/sony_playstation_4.svg",
+      "sourceSha256": "668caa0d8ca470f0309d9d26d017c04b13758e67909c5a6928a237d17c58bf14"
+    },
+    {
+      "canonicalId": "sony_playstation_vita",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_playstation_vita.xml",
+      "resourceName": "mimir_platform_icon_playstation_vita",
+      "sha256": "a49289fa19f23f4cc18567da9f704915e553dcb650dbd34104decc710c5c5b46",
+      "sourcePath": "baxy-automatic/sony_playstation_vita.svg",
+      "sourceSha256": "6f3e5b87e4ed7b6e25d90032dcd405b5c1eae3cde7bd87704fadf4dfccb2b18a"
+    },
+    {
+      "canonicalId": "spectravideo_sv",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_spectravideo.xml",
+      "resourceName": "mimir_platform_icon_spectravideo",
+      "sha256": "fac620480422ee119f39ab223a6f18f5f378b76dc284db3f3470401520c06e6d",
+      "sourcePath": "baxy-automatic/spectravideo_sv.svg",
+      "sourceSha256": "0fca1dad7161eedcceff112d0223fdf7b0073fc0781abece32abf41acc86f590"
+    },
+    {
+      "canonicalId": "switch",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_switch.xml",
+      "resourceName": "mimir_platform_icon_switch",
+      "sha256": "c22c98b8e316f4d60642ec80d0b5eb02b68deeb8ca53eee2caa8d8770133dfaf",
+      "sourcePath": "baxy-automatic/switch.svg",
+      "sourceSha256": "b134765be39cb88f6e2c61cdd78c41a53e79ec8aa2a6e51f6a6530d8e4cfa95b"
+    },
+    {
+      "canonicalId": "the_3do_company_3do",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_3do.xml",
+      "resourceName": "mimir_platform_icon_3do",
+      "sha256": "e0757e9b1ad29205168d74d85c29d20bccac7f67a57c2a340fd74a8b89c7884e",
+      "sourcePath": "baxy-automatic/the_3do_company_3do.svg",
+      "sourceSha256": "61bbc66b6da34fb221444987dfbdc34b235e57e221fbf1dc124bae9712ebc77c"
+    },
+    {
+      "canonicalId": "thomson_moto",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_thomson.xml",
+      "resourceName": "mimir_platform_icon_thomson",
+      "sha256": "a909af5a90816d84b3fd37f35966638c52df2509abf0e0b17a5a9bc554f5e36b",
+      "sourcePath": "baxy-automatic/thomson_moto.svg",
+      "sourceSha256": "0f497c48775862624a6b622f4255a0c88fa2e6f6ec3733089d981b3cbe8e3fcf"
+    },
+    {
+      "canonicalId": "tic_80",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_tic_80.xml",
+      "resourceName": "mimir_platform_icon_tic_80",
+      "sha256": "3ec5aaf22822af0a030566e2a62d009e048b1d9341e01cf3d60b80d760951ebd",
+      "sourcePath": "baxy-automatic/tic_80.svg",
+      "sourceSha256": "3977147a4bfba6838becfeaad6750136b3a4df89e492b4fea59770da5b2e0722"
+    },
+    {
+      "canonicalId": "tiger_game_com",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_game_com.xml",
+      "resourceName": "mimir_platform_icon_game_com",
+      "sha256": "8e521dc380515958f6a157e145fbf76f8b67e0b14f6d8b27798095e41e6d4ba3",
+      "sourcePath": "baxy-automatic/tiger_game_com.svg",
+      "sourceSha256": "cb8be8290a8e0d15eaf41763809fa4bda7aa7ad8e3c2596c3191671047d7b4a8"
+    },
+    {
+      "canonicalId": "uzebox",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_uzebox.xml",
+      "resourceName": "mimir_platform_icon_uzebox",
+      "sha256": "6debff7341dc3984f994855d981e41c5a29c4c4e97973f56a2659df2f0b22ecf",
+      "sourcePath": "baxy-automatic/uzebox.svg",
+      "sourceSha256": "3df6fe8389f7f01fb0f704b4b263bc623d83961725ca1108de644c58fe80acea"
+    },
+    {
+      "canonicalId": "vircon32",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_vircon32.xml",
+      "resourceName": "mimir_platform_icon_vircon32",
+      "sha256": "059dec4071a63bc32dadbc7800e3ef643a066d47c267134f1b225af0db191485",
+      "sourcePath": "baxy-automatic/vircon32.svg",
+      "sourceSha256": "73e2444f3f898116b63d9f3d8ed1b50a96a36e132eded5b531c74bd1db0a34c0"
+    },
+    {
+      "canonicalId": "vtech_creativision",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_creativision.xml",
+      "resourceName": "mimir_platform_icon_creativision",
+      "sha256": "e69dccb12f015ed1d73554960eaa207850b4b5ee55b1b4066d3fc4eec35ab429",
+      "sourcePath": "baxy-automatic/vtech_creativision.svg",
+      "sourceSha256": "5bfaa40989738c6fef049f671bdca95e6706c4c621a3a9a09d762fd71437185c"
+    },
+    {
+      "canonicalId": "vtech_v_smile",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_v_smile.xml",
+      "resourceName": "mimir_platform_icon_v_smile",
+      "sha256": "23b74aa4a3f2e1fc6153410acbc29b72910e8d729fa0cdab905be6c9097dbf9a",
+      "sourcePath": "baxy-automatic/vtech_v_smile.svg",
+      "sourceSha256": "5179e8f707823f0acb97ab3623d089b27c7227ea915bd845e085acdf128e80ba"
+    },
+    {
+      "canonicalId": "wasm_4",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_wasm_4.xml",
+      "resourceName": "mimir_platform_icon_wasm_4",
+      "sha256": "7f6130d1237a99e956815379f17862b402f1345c3a1b817292ce405ecbc236c4",
+      "sourcePath": "baxy-automatic/wasm_4.svg",
+      "sourceSha256": "a3d0c729e8e27955db36005e84519e60f83dca4ad8185c3ad87c567fff85f7c5"
+    },
+    {
+      "canonicalId": "watara_supervision",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_supervision.xml",
+      "resourceName": "mimir_platform_icon_supervision",
+      "sha256": "32b53887b20c062c263fdc071dec29dda17b5f3c202a7ec7fa8d97e0a1158fc4",
+      "sourcePath": "baxy-automatic/watara_supervision.svg",
+      "sourceSha256": "6c071c9700b4eab9a0d440578eea03c00c0c8df53fa71af57e11080dc987bdbb"
+    },
+    {
+      "canonicalId": "welback_mega_duck",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_mega_duck.xml",
+      "resourceName": "mimir_platform_icon_mega_duck",
+      "sha256": "c5de7a415922823145ee061537e1d0bd40afd0e067fe3203301d33d4f8424bf3",
+      "sourcePath": "baxy-automatic/welback_mega_duck.svg",
+      "sourceSha256": "3c3db15c3e97070245a3d070f336679b3649a4790c909a94b958c30b397ca7df"
+    },
+    {
+      "canonicalId": "xbox",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_xbox.xml",
+      "resourceName": "mimir_platform_icon_xbox",
+      "sha256": "3b799c871924643a7b87b72447994b9a630d75d51b8ba5ac15dbba47e9e72b2a",
+      "sourcePath": "baxy-automatic/xbox.svg",
+      "sourceSha256": "8877bc7655f0f4e4a4f93a1a83cc4d573dd2546cad21dcb0b266eb2e196a020c"
+    },
+    {
+      "canonicalId": "xbox360",
+      "path": "core-ui/src/main/res/drawable/mimir_platform_icon_xbox_360.xml",
+      "resourceName": "mimir_platform_icon_xbox_360",
+      "sha256": "e53130f2a0a2689aa3682f733b82b3ffeb967c5f406cad07c4b1c2f512de09d0",
+      "sourcePath": "baxy-automatic/xbox360.svg",
+      "sourceSha256": "c26b9af955d0ebeb72cbd86b9a091044d3f600f919c69f8151f9c723b83eb6c4"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "bytes": 1717,
+      "path": "baxy-automatic/1292_advanced_programmable_video_system.svg",
+      "sha256": "5482b81289de95b1692726b24827e39d0731f8e9345f82f9e1cfdf41e5dc31ad"
+    },
+    {
+      "bytes": 4131,
+      "path": "baxy-automatic/3ds.svg",
+      "sha256": "d766be6dda8b0c2ba4a02378dbfa147379c91b697b130751d7aa18ab4d7ea964"
+    },
+    {
+      "bytes": 2387,
+      "path": "baxy-automatic/acorn_archimedes.svg",
+      "sha256": "ca0aa8ee2fffe927b29e8fce037be7b58eb4664542339efefc6d1df195c97b0d"
+    },
+    {
+      "bytes": 2203,
+      "path": "baxy-automatic/acorn_atom_tapes.svg",
+      "sha256": "905306f7206af9246a88a312c32a8b966f40b3612836773f2d616ea7f06fc2de"
+    },
+    {
+      "bytes": 1760,
+      "path": "baxy-automatic/acorn_atom.svg",
+      "sha256": "8d3d4d21af0a03bcf042d4c675e3ffb1052b0c57b2b561f5740ee824e4918b8d"
+    },
+    {
+      "bytes": 6821,
+      "path": "baxy-automatic/acorn_bbc_micro.svg",
+      "sha256": "8237e3bef36c1c1066961dbcfa88a65ec8bc33973849b70409f4f0c3e1d24fbe"
+    },
+    {
+      "bytes": 1108,
+      "path": "baxy-automatic/acorn_risc_pc.svg",
+      "sha256": "dcdee7c58b0ddbf2ab340ee574e964930544b5247308839f5759ba6611eb1fe2"
+    },
+    {
+      "bytes": 3194,
+      "path": "baxy-automatic/act_apricot_pc_xi.svg",
+      "sha256": "11be6281bfcf97c389db46486ef50e9059fa747d6913e49267dbc27011949f7c"
+    },
+    {
+      "bytes": 481,
+      "path": "baxy-automatic/amazon_fire_tv_2nd_gen.svg",
+      "sha256": "211c89bfe8d627fdc2823ef07ac92cb4718930430eb7f6fa95530afe5aa11e00"
+    },
+    {
+      "bytes": 928,
+      "path": "baxy-automatic/amazon_fire_tv_3rd_gen.svg",
+      "sha256": "1c5742f86899e64f2515750440d7d3498c96d4f82512bb207fd8bd2bc3ec723f"
+    },
+    {
+      "bytes": 2451,
+      "path": "baxy-automatic/amazon_fire_tv_cube.svg",
+      "sha256": "25b2b07cc2681a0be4c7b3a90dde08233ec028b57cd341dfc0985e60acc1825c"
+    },
+    {
+      "bytes": 481,
+      "path": "baxy-automatic/amazon_fire_tv.svg",
+      "sha256": "211c89bfe8d627fdc2823ef07ac92cb4718930430eb7f6fa95530afe5aa11e00"
+    },
+    {
+      "bytes": 4426,
+      "path": "baxy-automatic/amazon_luna.svg",
+      "sha256": "26961d305fd8cebf5c400a8587ea04de9c29503fd011196e79263b7310400427"
+    },
+    {
+      "bytes": 1866,
+      "path": "baxy-automatic/amstrad_cpc.svg",
+      "sha256": "0d2cd86bac3c3f5279d58fb1093b36d2a38138d3c7fe268375c86758a3f3c049"
+    },
+    {
+      "bytes": 5321,
+      "path": "baxy-automatic/amstrad_gx4000.svg",
+      "sha256": "9158fdb7d7929ed078a1b4e5f2996a2a12c3067f47874db4b122e28fedce41d1"
+    },
+    {
+      "bytes": 3094,
+      "path": "baxy-automatic/apf_imagination_machine.svg",
+      "sha256": "d00b0c7a3f526cc5cfa7edb6940be70652cd573aaa8017b6d99af5fefabfd2e8"
+    },
+    {
+      "bytes": 5168,
+      "path": "baxy-automatic/apf_mp_1000.svg",
+      "sha256": "b62591058a232f85c091903dcc871100d1b39406e38a4d0167ea3b9efb79ee09"
+    },
+    {
+      "bytes": 40346,
+      "path": "baxy-automatic/apple_bandai_pippin.svg",
+      "sha256": "9a27125090e3c0c506829e3633237afdda22ea5e2353e58f86fba7a1976b4ba8"
+    },
+    {
+      "bytes": 5424,
+      "path": "baxy-automatic/apple_i_tapes.svg",
+      "sha256": "b9110055892a67d73bce3028fcfe70e5ac7655c7812fbb2a448b823d44a2c793"
+    },
+    {
+      "bytes": 6911,
+      "path": "baxy-automatic/apple_i.svg",
+      "sha256": "066c9ae11bb27ef822df916ad3965a5fea5d418fc2b961a7947288de9a44cb2d"
+    },
+    {
+      "bytes": 3757,
+      "path": "baxy-automatic/apple_ii_plus.svg",
+      "sha256": "c9441c38c34f580cddb6f5bb47733372bc7e45e46171f582fa2c0399d2e01d66"
+    },
+    {
+      "bytes": 3757,
+      "path": "baxy-automatic/apple_ii.svg",
+      "sha256": "c9441c38c34f580cddb6f5bb47733372bc7e45e46171f582fa2c0399d2e01d66"
+    },
+    {
+      "bytes": 3954,
+      "path": "baxy-automatic/apple_iie.svg",
+      "sha256": "d87574cc8db223c7b3d42ca47def7f2e603050f710affc5e1760daa378ee5b52"
+    },
+    {
+      "bytes": 1503,
+      "path": "baxy-automatic/apple_iigs.svg",
+      "sha256": "2001658020c18c9dc4104f02dd3e42639f845260de4363890e2afccaf69f41ed"
+    },
+    {
+      "bytes": 4901,
+      "path": "baxy-automatic/apple_macintosh_beta.svg",
+      "sha256": "b6e9bef7fc1221ce56529eee869a4e60fefe21db3d51e6f57e43c4364a84c8fc"
+    },
+    {
+      "bytes": 2305,
+      "path": "baxy-automatic/apple_macintosh.svg",
+      "sha256": "9c147606edc27df9200c5188366546549c9f6b35b81949a616103923f71d7f8b"
+    },
+    {
+      "bytes": 4200,
+      "path": "baxy-automatic/arcade.svg",
+      "sha256": "20a07d088f593c73181ccc63f02a3dd05504a2585e1a86a657303e5d014efe68"
+    },
+    {
+      "bytes": 2930,
+      "path": "baxy-automatic/arduboy_inc_arduboy.svg",
+      "sha256": "2c2a3ea824482e91d02256b355f00cf270964141242c71b31c7b6a6ef9d9f681"
+    },
+    {
+      "bytes": 1661,
+      "path": "baxy-automatic/atari_2600_637_75000.svg",
+      "sha256": "9133d95ebc2701746ab971f64b24ac1a54aff3b7386fcb572b1852672faa10e6"
+    },
+    {
+      "bytes": 2170,
+      "path": "baxy-automatic/atari_2600_cx2600a.svg",
+      "sha256": "e1bfa8b449b3fc7aa5093e4bffa60ef9198436d45742fe440d3fedbf5aee0273"
+    },
+    {
+      "bytes": 1218,
+      "path": "baxy-automatic/atari_2600_cx2600jr.svg",
+      "sha256": "8bee8f3c4f9440d997a437595f9a85393b216a58a3631d8a5b35e416d26690e7"
+    },
+    {
+      "bytes": 4524,
+      "path": "baxy-automatic/atari_2600_cx2700.svg",
+      "sha256": "c83e60876235d1de584366e7e774b570f4e94ab17ec72bb903deb95f137b23dd"
+    },
+    {
+      "bytes": 2232,
+      "path": "baxy-automatic/atari_2600_flashback_2.svg",
+      "sha256": "21e5e1ace7e146b56c49ea69a24b94e4c65ea3b21d95724da9798791a218a8d2"
+    },
+    {
+      "bytes": 1378,
+      "path": "baxy-automatic/atari_2600_flashback.svg",
+      "sha256": "0653b1d1d5a156c47a330c82d5272ffc8f8ab79aeeaa41699298d88a26f7db17"
+    },
+    {
+      "bytes": 2740,
+      "path": "baxy-automatic/atari_2600.svg",
+      "sha256": "3083936bf414b2db600c08d85e59d2f6744b35be0a33114758c214fac4270650"
+    },
+    {
+      "bytes": 1800,
+      "path": "baxy-automatic/atari_5200.svg",
+      "sha256": "21fe82493af493ee4677b2a9b6adaa3dbf602077079a64d8a9155b6310d56726"
+    },
+    {
+      "bytes": 1287,
+      "path": "baxy-automatic/atari_7800.svg",
+      "sha256": "34f6bedbd50d80211c2b9b1378997e4bd28033d01d1130424c494c4855fc2416"
+    },
+    {
+      "bytes": 1907,
+      "path": "baxy-automatic/atari_8_bit_family.svg",
+      "sha256": "9e8bca94655f69bd0f537ede9f79a51e9d30fc48cb3294e09d19631fe7851cee"
+    },
+    {
+      "bytes": 6389,
+      "path": "baxy-automatic/atari_jaguar_cd.svg",
+      "sha256": "8c9571d865467b7c26dcde7385a6ad402a2e818cfdc32e4da6d79bfddfe2d8d6"
+    },
+    {
+      "bytes": 6098,
+      "path": "baxy-automatic/atari_jaguar.svg",
+      "sha256": "ae49fba26ea7c891d9f6ea645de8173bb7bbe8c0c6157de31da9073dc4a5b0ac"
+    },
+    {
+      "bytes": 3609,
+      "path": "baxy-automatic/atari_lynx_pag_0401.svg",
+      "sha256": "3cf9c51a246b825f714bf92ee84f965d7f3472529156b798b3b8c44c6ccb090a"
+    },
+    {
+      "bytes": 4369,
+      "path": "baxy-automatic/atari_lynx.svg",
+      "sha256": "a3aeb379957bd7680f91bad332eca97b44424fd5ca9ad8bf47a67a752b12f632"
+    },
+    {
+      "bytes": 3016,
+      "path": "baxy-automatic/atari_pong_c_140.svg",
+      "sha256": "4e584b355a7e5853d9404400fbf41fa1e86bf8873725163c66aa48c7d600d0b8"
+    },
+    {
+      "bytes": 3752,
+      "path": "baxy-automatic/atari_pong_c_200.svg",
+      "sha256": "907f46711d423d947d2884dec8fd8e882fad310838cf8c95d0f25d5ea3e4719f"
+    },
+    {
+      "bytes": 2602,
+      "path": "baxy-automatic/atari_pong.svg",
+      "sha256": "8d0c83c96f3ec9ce0178e08c5697f1434a131861846222683b94a7b0f1cafcf7"
+    },
+    {
+      "bytes": 2204,
+      "path": "baxy-automatic/atari_st_tapes.svg",
+      "sha256": "350778ecdd18e94845937802930ecb722a4b52cd7e7a327a0a09387516b6e00a"
+    },
+    {
+      "bytes": 2206,
+      "path": "baxy-automatic/atari_st.svg",
+      "sha256": "2f3766e5628435478739dfb03022b43117758a380a621f16be9067b701cfd62d"
+    },
+    {
+      "bytes": 2882,
+      "path": "baxy-automatic/atari_vcs.svg",
+      "sha256": "25642d4a2298b89c11d5ec5cc7b2f8276dd5eaed851a151db46d525fa33af648"
+    },
+    {
+      "bytes": 2910,
+      "path": "baxy-automatic/atari_xegs.svg",
+      "sha256": "eeb637f727592f15439db652f5b278a049ebaa033e5ca2a6811e1a98805be3ef"
+    },
+    {
+      "bytes": 1516,
+      "path": "baxy-automatic/atomiswave.svg",
+      "sha256": "3dde846cc91c96800817fb832dc597787229bf6fb48df48c2b32e92a26cec348"
+    },
+    {
+      "bytes": 1789,
+      "path": "baxy-automatic/bally_astrocade_tapes.svg",
+      "sha256": "6af57c99b30c72a3ffa42e5e8b0d783b0ac49df2373716a0fa478f887d5956f7"
+    },
+    {
+      "bytes": 1789,
+      "path": "baxy-automatic/bally_astrocade.svg",
+      "sha256": "6af57c99b30c72a3ffa42e5e8b0d783b0ac49df2373716a0fa478f887d5956f7"
+    },
+    {
+      "bytes": 3670,
+      "path": "baxy-automatic/bandai_design_master_denshi_mangajuku.svg",
+      "sha256": "5316c36292527ad1ed2e8ee6882d36bbeac8d6ccb862982d43ad267f71e8cc1a"
+    },
+    {
+      "bytes": 2114,
+      "path": "baxy-automatic/bandai_gundam_rx_78.svg",
+      "sha256": "eceb8531a6f3c736644b411654a6640f11a3a2dcb303a438e997b20cebbe71b2"
+    },
+    {
+      "bytes": 4697,
+      "path": "baxy-automatic/bandai_playdia.svg",
+      "sha256": "d47e429b63e4857ed98e1b802f767416349455710b329f76ae070ea35dc4c323"
+    },
+    {
+      "bytes": 1971,
+      "path": "baxy-automatic/bandai_super_vision_8000.svg",
+      "sha256": "96bb12966e6d12f589f356dfcbb3bb12392d93428185af006ba680fb35c5df4e"
+    },
+    {
+      "bytes": 5057,
+      "path": "baxy-automatic/bandai_terebikko.svg",
+      "sha256": "e3347676ba6944e4a9b366c50ae9f94405d9c3428fd39b8f1e9824d8d4a9f2bb"
+    },
+    {
+      "bytes": 8699,
+      "path": "baxy-automatic/bandai_wonderswan_color_wsc_001.svg",
+      "sha256": "a5a0bc6101760d24746e6035414e961fb88da7476f6ecbfe36cb036a1830502a"
+    },
+    {
+      "bytes": 8207,
+      "path": "baxy-automatic/bandai_wonderswan_color.svg",
+      "sha256": "b0d3bc1c15d56bbeacf7991ae2f0e5c15a48f2864a655dc016257d0d664ddfe2"
+    },
+    {
+      "bytes": 7343,
+      "path": "baxy-automatic/bandai_wonderswan.svg",
+      "sha256": "304e9c021997dbdaecbe11b05c7c7543089bc1ebf8f014013a6fc32dbaed0bed"
+    },
+    {
+      "bytes": 3553,
+      "path": "baxy-automatic/bbc_bridge_companion.svg",
+      "sha256": "ebe85a267e97590c8e3a36fb896d0d5666020c811b221a330f55a2ca1c608ef8"
+    },
+    {
+      "bytes": 8254,
+      "path": "baxy-automatic/benesse_pocket_challenge_v2.svg",
+      "sha256": "2221b0d076938cc292f4f59684759582fae7f586582d018613aadc1cd695a0fc"
+    },
+    {
+      "bytes": 4094,
+      "path": "baxy-automatic/benesse_pocket_challenge_w.svg",
+      "sha256": "4b97101162bfd742e303fab2a8dbd0344e5c56db273e7fc511ae0289978cfa2a"
+    },
+    {
+      "bytes": 6162,
+      "path": "baxy-automatic/bit_corporation_gamate.svg",
+      "sha256": "68e3499a78ac9871e1fd601a1ffa0206fa565dfb2986f999a4aa7db1b4ed435e"
+    },
+    {
+      "bytes": 5293,
+      "path": "baxy-automatic/capcom_cp_system_i.svg",
+      "sha256": "8d937837b11277ba53cd58200e6b71716a4dc8781331a84fedb30796a468a960"
+    },
+    {
+      "bytes": 4164,
+      "path": "baxy-automatic/capcom_cp_system_ii.svg",
+      "sha256": "dad4c6b8f92d71e2daaed4476adef330040f5df7ad53b4b396575cfe612b7a1e"
+    },
+    {
+      "bytes": 4200,
+      "path": "baxy-automatic/capcom_cp_system_iii.svg",
+      "sha256": "f68bfa1f8be3ac22afa9e091004c4ccd214bb699dee34a914630968f0ce5f433"
+    },
+    {
+      "bytes": 3528,
+      "path": "baxy-automatic/casio_loopy.svg",
+      "sha256": "6b517a4e1d56e2b23470a022bcb15d326269578c7801883ec9e711579715f8f7"
+    },
+    {
+      "bytes": 1919,
+      "path": "baxy-automatic/casio_pv_1000.svg",
+      "sha256": "5eb4b348afb4c0ab0d8d7911dde3313ab69495e508de7586652dbcb69b85e683"
+    },
+    {
+      "bytes": 3986,
+      "path": "baxy-automatic/chip_8.svg",
+      "sha256": "aad70206bc23be446842bb7ab27da7caef0ee9d2163dcf6f00f0bab9a7e96429"
+    },
+    {
+      "bytes": 2053,
+      "path": "baxy-automatic/coleco_colecovision_adam.svg",
+      "sha256": "b124b270c2f2b4c35d5fc78981671521a54a3bff47e0252a0ff54ae4c34488ee"
+    },
+    {
+      "bytes": 2673,
+      "path": "baxy-automatic/coleco_colecovision.svg",
+      "sha256": "56f111472c37ed8a400b192632703181758e66891b104737d3e0ec219574c752"
+    },
+    {
+      "bytes": 2220,
+      "path": "baxy-automatic/coleco_telstar_6030.svg",
+      "sha256": "60b54909a014fad9d5e560132cc61bb51fc80fc2c435760ed575e57f30c2b6d1"
+    },
+    {
+      "bytes": 3016,
+      "path": "baxy-automatic/coleco_telstar_6040.svg",
+      "sha256": "deb72cbd8feda38fd24fcefe383ef83a5609c75924b7ea4a3f10633ef86fc5af"
+    },
+    {
+      "bytes": 1375,
+      "path": "baxy-automatic/coleco_telstar_6045.svg",
+      "sha256": "f15daead994f2b1431a1b72fbbd8e385cdc18d3b0e746f2552a0d74c24d5ce9c"
+    },
+    {
+      "bytes": 2449,
+      "path": "baxy-automatic/coleco_telstar_6065.svg",
+      "sha256": "75476a318d6e2235ce266bfb5f8e09d65f1b779411d026c040b6e1ec8e7effee"
+    },
+    {
+      "bytes": 7800,
+      "path": "baxy-automatic/coleco_telstar_6071.svg",
+      "sha256": "b8179a1f954f19c684c1edff46910ad00a25fb91f0173ed5321b63f60b7dea32"
+    },
+    {
+      "bytes": 1832,
+      "path": "baxy-automatic/coleco_telstar_6135.svg",
+      "sha256": "5d5e6b23534ea40827b882ffc29e8bfb71d89fff175a5f1da9d26a8b30b25ba3"
+    },
+    {
+      "bytes": 2294,
+      "path": "baxy-automatic/commodore_128.svg",
+      "sha256": "e1015bb15b3e0351e85621ea9f03e5713c923f68358db8f83c42ca7197ea551b"
+    },
+    {
+      "bytes": 8582,
+      "path": "baxy-automatic/commodore_64_64c.svg",
+      "sha256": "7c16637f1bf6c4e14152ae57fb1eb834a5d425c3e2490a82d6e7f75d9ff10425"
+    },
+    {
+      "bytes": 767,
+      "path": "baxy-automatic/commodore_64_games_system.svg",
+      "sha256": "6f2e94bea3da572f33d4a9ce27e216d07cd4734d2a4060b0230a2090f135e7cf"
+    },
+    {
+      "bytes": 8582,
+      "path": "baxy-automatic/commodore_64_pp.svg",
+      "sha256": "7c16637f1bf6c4e14152ae57fb1eb834a5d425c3e2490a82d6e7f75d9ff10425"
+    },
+    {
+      "bytes": 1933,
+      "path": "baxy-automatic/commodore_64_tapes.svg",
+      "sha256": "8f212a4aadd9b4ab8c6b748e7d33568119ec3df649e71a46e62408bb09ecc466"
+    },
+    {
+      "bytes": 8487,
+      "path": "baxy-automatic/commodore_64.svg",
+      "sha256": "a782573c7b251e38f4ca9fed10fe1039ad907345f17139c6527b84203aaba27e"
+    },
+    {
+      "bytes": 2759,
+      "path": "baxy-automatic/commodore_amiga.svg",
+      "sha256": "eae1d082476b3bf3f6c0931e65e092816b0fdd05c96dd34fe1e2c8861f0c35e3"
+    },
+    {
+      "bytes": 5148,
+      "path": "baxy-automatic/commodore_cd32.svg",
+      "sha256": "0f256caf9fa5f0e5c67eafa64a2f38ca27ee1f3dc2705d902127947e3471b75c"
+    },
+    {
+      "bytes": 1787,
+      "path": "baxy-automatic/commodore_cdtv.svg",
+      "sha256": "2a337cf73c201aee863fc951f0ed69fc618308f4491c5719be5ed6426753d1f7"
+    },
+    {
+      "bytes": 2593,
+      "path": "baxy-automatic/commodore_pet.svg",
+      "sha256": "cbf532b6d388cfb85c653d53615b0168931c2e1062f4bf4ff35cbf9ac8be1892"
+    },
+    {
+      "bytes": 2450,
+      "path": "baxy-automatic/commodore_plus_4.svg",
+      "sha256": "a6d2f1f4b394553ef6122800824228640ea3c5e2cb2c6831009fed666d68391d"
+    },
+    {
+      "bytes": 8487,
+      "path": "baxy-automatic/commodore_vic_20.svg",
+      "sha256": "a782573c7b251e38f4ca9fed10fe1039ad907345f17139c6527b84203aaba27e"
+    },
+    {
+      "bytes": 4278,
+      "path": "baxy-automatic/connor_videosmarts.svg",
+      "sha256": "31090b1b1a8d332b0fe3973cd7e8dbcd37afbcebd2ae86a115d605e5bdd30527"
+    },
+    {
+      "bytes": 6856,
+      "path": "baxy-automatic/digital_media_cartridge_firecore_portable_2.svg",
+      "sha256": "8e93c3a7cb41a49707c66154e9f7a3b1fd2e7a6dce48b311942796ca69559f4c"
+    },
+    {
+      "bytes": 2094,
+      "path": "baxy-automatic/digital_media_cartridge_firecore.svg",
+      "sha256": "d5135a194708ac03b9e0890c813a08a510d4a0631b25530cda60386636c98ffe"
+    },
+    {
+      "bytes": 1506,
+      "path": "baxy-automatic/dos.svg",
+      "sha256": "dc8b99883fb6444cfe450885f2424a76e44dbac83a774346b96d6ba4460aca3f"
+    },
+    {
+      "bytes": 8059,
+      "path": "baxy-automatic/dreamcast.svg",
+      "sha256": "8d916dab725fdf1c6308c38794bccda42b049c6d1de45fdfe8f1de1f3e2460af"
+    },
+    {
+      "bytes": 5103,
+      "path": "baxy-automatic/ds.svg",
+      "sha256": "51c4577d552827772141075c5b04c9fae129f2b1a58bd81c391f53fcf8ff0e36"
+    },
+    {
+      "bytes": 6807,
+      "path": "baxy-automatic/emerson_arcadia_2001.svg",
+      "sha256": "bc19bbe2a5f250a0886f3d01e54fe42222adf5984a53239f85b01af60c9d4a88"
+    },
+    {
+      "bytes": 3896,
+      "path": "baxy-automatic/entex_adventure_vision.svg",
+      "sha256": "a40dd6e314c205b584020ed71c66a71326683abb2b6b6fcb07af131d47da651d"
+    },
+    {
+      "bytes": 1533,
+      "path": "baxy-automatic/entex_select_a_game.svg",
+      "sha256": "d81be239a7f5c8833e3d546c4156815a3db195f6490e3caff34cab51876328cb"
+    },
+    {
+      "bytes": 2433,
+      "path": "baxy-automatic/epoch_cassette_vision_jr.svg",
+      "sha256": "f98793e3b7c486843d7e8af510777e459109dceb3cfe25f02e807eecca382e5d"
+    },
+    {
+      "bytes": 3595,
+      "path": "baxy-automatic/epoch_cassette_vision.svg",
+      "sha256": "da630fa06bcc8492619ca6ff75404a02e0d59867e4acdea2973c495835c4f410"
+    },
+    {
+      "bytes": 1574,
+      "path": "baxy-automatic/epoch_game_pocket_computer.svg",
+      "sha256": "8e5ab5940204e5350c334010a470a03199362f98fe4cd1a06ff2c86d7407db23"
+    },
+    {
+      "bytes": 1018,
+      "path": "baxy-automatic/epoch_super_cassette_vision.svg",
+      "sha256": "a23bcf8b6adb44913f085ba6ee12b59fadf543a61277aeecbe9e32f9c6a7d4bf"
+    },
+    {
+      "bytes": 3780,
+      "path": "baxy-automatic/epoch_tv_tennis_electrotennis.svg",
+      "sha256": "39150bca1f3dee35737dfe08da1103eb3a59c17b9d836e1b54ec11a8a78c18fc"
+    },
+    {
+      "bytes": 1757,
+      "path": "baxy-automatic/fairchild_channel_f_system_ii.svg",
+      "sha256": "3925951fce299d6ad0f0ed59f1846e364c47321b1f34797b0358c1ffadcf89aa"
+    },
+    {
+      "bytes": 1443,
+      "path": "baxy-automatic/fairchild_channel_f.svg",
+      "sha256": "49b95be68772bda736b2cc4864322508636e340f3a993b5a1ba82249f6aab149"
+    },
+    {
+      "bytes": 5030,
+      "path": "baxy-automatic/fbneo_arcade_games.svg",
+      "sha256": "125790efbfd7d455f8ad9e8010361df72004502b64f4a625d009f985f3557b90"
+    },
+    {
+      "bytes": 2356,
+      "path": "baxy-automatic/fujitsu_fm_7_tapes.svg",
+      "sha256": "de2eeac2bd3441547f6031517796e489c5550434978f6b514532b5219957687e"
+    },
+    {
+      "bytes": 2387,
+      "path": "baxy-automatic/fujitsu_fm_7.svg",
+      "sha256": "03b9c0f7eada8e0c7124d4ef679039bfcfd467e77b9cbf7e542875c93413410a"
+    },
+    {
+      "bytes": 3116,
+      "path": "baxy-automatic/fujitsu_fm_towns_marty.svg",
+      "sha256": "6efae4b436b8b2945cc31fa78c8210b42e46bfb15dcbee7236d657a757329a4a"
+    },
+    {
+      "bytes": 1189,
+      "path": "baxy-automatic/fujitsu_fm_towns.svg",
+      "sha256": "b946d624ee7bab3037cea2b9f95d69f9ab89fd3c5de31a46933d7a0de7aaff38"
+    },
+    {
+      "bytes": 2534,
+      "path": "baxy-automatic/fukutake_publishing_studybox.svg",
+      "sha256": "ba242d3c90cab46ede613484263a854adbb25c9f24bbb6e2c39baf8739753129"
+    },
+    {
+      "bytes": 3150,
+      "path": "baxy-automatic/funtech_super_acan.svg",
+      "sha256": "85af73c936e8485616cec4b8327c6206847496aaa2973c50ee5a2ba8dad2a2c4"
+    },
+    {
+      "bytes": 2257,
+      "path": "baxy-automatic/gakken_compact_vision_tv_boy.svg",
+      "sha256": "b7d93e66873157e1cbcb9a92e5b49b8b4b5334f12bae8b689db3017873687dc8"
+    },
+    {
+      "bytes": 2935,
+      "path": "baxy-automatic/gamecube.svg",
+      "sha256": "8c4a82974d5accdb02db3752cb18b714dff2b0bb668a5da8ac478bf862573676"
+    },
+    {
+      "bytes": 3584,
+      "path": "baxy-automatic/gamepark_caanoo.svg",
+      "sha256": "4e19cee8a1ce528a97931cdd04751ffefd135e3970d950fa8955ce27f4aa623e"
+    },
+    {
+      "bytes": 3433,
+      "path": "baxy-automatic/gamepark_gp2x_digital.svg",
+      "sha256": "ebe7d0038730f406ab4d206df3464830835d55dc1e11f90375d7eb31ccc23104"
+    },
+    {
+      "bytes": 4943,
+      "path": "baxy-automatic/gamepark_gp2x_f200.svg",
+      "sha256": "7f915e6069eaa75295325a58b8d5cc823c150086046eaa0cb9b780577b05bb86"
+    },
+    {
+      "bytes": 2000,
+      "path": "baxy-automatic/gamepark_gp2x_wiz.svg",
+      "sha256": "4097f0927a46b53fd38f859e80cc7c81aa342d9fc25e9f23b9af6749ec490322"
+    },
+    {
+      "bytes": 3737,
+      "path": "baxy-automatic/gamepark_gp2x.svg",
+      "sha256": "6a888e772ce924215ab5f2270468390637bca34f8e744bb060267f13c0805e0c"
+    },
+    {
+      "bytes": 3673,
+      "path": "baxy-automatic/gamepark_gp32.svg",
+      "sha256": "42841f82b2eaba4480666ad5499bea0de734f3df3d94f27f4484ea186bda2d2b"
+    },
+    {
+      "bytes": 7854,
+      "path": "baxy-automatic/gb.svg",
+      "sha256": "48753b989e6662d091da0e473d8a497e68ab01adf8b4e1a1e130a32eca2d2014"
+    },
+    {
+      "bytes": 4389,
+      "path": "baxy-automatic/gba.svg",
+      "sha256": "502b8e8cb45ad4d2930062efa5c95d330e736818ae9aa11a7b8ef5d24f07ed41"
+    },
+    {
+      "bytes": 2591,
+      "path": "baxy-automatic/gbc.svg",
+      "sha256": "3dcaa11c55dcc52e80ef4252978bd86aa47e56aa1d700a91a3148f34e23786fa"
+    },
+    {
+      "bytes": 2012,
+      "path": "baxy-automatic/gce_vectrex.svg",
+      "sha256": "32e4b52a7eee8ced4e0b229a06fe1a8df5a0b7777dbd86512664ef00cd945979"
+    },
+    {
+      "bytes": 6622,
+      "path": "baxy-automatic/genesis.svg",
+      "sha256": "e6a96b90cdb522319f9854c190843ae6a28c1633b40ce824bd99690c8f1721ab"
+    },
+    {
+      "bytes": 710,
+      "path": "baxy-automatic/google_nexus_player.svg",
+      "sha256": "6b8c0a15829c287ecf25b57177ac25366c27909c962fd2bc68a13047e3afd314"
+    },
+    {
+      "bytes": 4926,
+      "path": "baxy-automatic/google_stadia.svg",
+      "sha256": "6fcc270e8db66bd7a9f4e5a0f1d3e73ebd5d5ba3c537c40ce90354701c7b7f72"
+    },
+    {
+      "bytes": 2668,
+      "path": "baxy-automatic/handheld_electronic_game.svg",
+      "sha256": "a16fcb729ca8417f0f35f8331fbf6f9dc9845e08c71758993b6c8755d836f355"
+    },
+    {
+      "bytes": 2782,
+      "path": "baxy-automatic/hartung_game_master.svg",
+      "sha256": "6ba80ced9749e8efcbba3b5f95597d8e70654198721c4fe2c79bce865bfedd92"
+    },
+    {
+      "bytes": 4331,
+      "path": "baxy-automatic/hbmame.svg",
+      "sha256": "906c362fde3e96dd5abdec7b3836e7da618b9033ce5714be76d8cdb110310070"
+    },
+    {
+      "bytes": 1070,
+      "path": "baxy-automatic/hitachi_s1.svg",
+      "sha256": "2fc0f738736d71a946680e137e95bd356641b777b07b1f75d4438b4a61219337"
+    },
+    {
+      "bytes": 2874,
+      "path": "baxy-automatic/infocom_z_machine.svg",
+      "sha256": "cc942095c725c858f769f918754e2cd19aee5bf000fea5f277abddea438f4e30"
+    },
+    {
+      "bytes": 3568,
+      "path": "baxy-automatic/intellivision_amico.svg",
+      "sha256": "9b7084a9fb8a97f4f412c919ab10fa1128e80aa2f6c75e90348e0ded3c36e8ae"
+    },
+    {
+      "bytes": 3760,
+      "path": "baxy-automatic/interton_vc_4000.svg",
+      "sha256": "cfe8b350d6c36fb6af188584272a6bd133019947a60bf73ee322c5ec4e9073df"
+    },
+    {
+      "bytes": 2565,
+      "path": "baxy-automatic/interton_video_2000.svg",
+      "sha256": "17bba5000cdc19e001f41f3601ec5c1923e4cad530fc6fe53bcb31b4c8e86fed"
+    },
+    {
+      "bytes": 17836,
+      "path": "baxy-automatic/ique_ique.svg",
+      "sha256": "3995c0c978739dfcb12db59a31ab7f4db937a99a3de3db90f79ea42d3da78b6b"
+    },
+    {
+      "bytes": 3139,
+      "path": "baxy-automatic/konami_picno.svg",
+      "sha256": "c98a3b22b5c3c4fc8893a46dfcc8bca2e955e160f05dd1be3a640fb9156de076"
+    },
+    {
+      "bytes": 4754,
+      "path": "baxy-automatic/leapfrog_explorer.svg",
+      "sha256": "a4b1b866726ad53589fad819d7f92be567183bb2226efe260991292a21da1708"
+    },
+    {
+      "bytes": 4934,
+      "path": "baxy-automatic/leapfrog_leappad.svg",
+      "sha256": "c7ec76b6e853407ba766245d6ff6cc3e0c18d9c3a756a4b1a23c15a06b5ee6e5"
+    },
+    {
+      "bytes": 12566,
+      "path": "baxy-automatic/leapfrog_leapster_learning_game_system_1.svg",
+      "sha256": "6b5feebaf1243c231a0fc32eb46b33d02a8d07f35186a853395522d332bef8de"
+    },
+    {
+      "bytes": 5946,
+      "path": "baxy-automatic/leapfrog_leapster_learning_game_system.svg",
+      "sha256": "d2d5d2f3d339e2e5949ab21fe12842159b2e3f234f63882644bad1f1fa9836e3"
+    },
+    {
+      "bytes": 9924,
+      "path": "baxy-automatic/leapfrog_my_first_leappad.svg",
+      "sha256": "67c32b1cb638ac975b1553949ef80ed4ee3f27013fa6ddd31b29cb7d7280f67a"
+    },
+    {
+      "bytes": 8328,
+      "path": "baxy-automatic/ljn_video_art.svg",
+      "sha256": "69b8b0052962213046619ce2831ea9e61e42f89cd44f4a2160c143a822ddf390"
+    },
+    {
+      "bytes": 15242,
+      "path": "baxy-automatic/lowres_nx.svg",
+      "sha256": "c54f26e6f261eeaf2c8204aee4f9e8da55389f40fe695911f3972f1db48f0a2d"
+    },
+    {
+      "bytes": 1508,
+      "path": "baxy-automatic/lutro.svg",
+      "sha256": "31bd3781cc36a147fd35b81da53e9e19529b7046aade0e2a1306273ff20a64e8"
+    },
+    {
+      "bytes": 1975,
+      "path": "baxy-automatic/luxor_abc_800.svg",
+      "sha256": "2f5114fdfbe5727b2c1195418a721d8cd06d49633982425220a136a919182c60"
+    },
+    {
+      "bytes": 4850,
+      "path": "baxy-automatic/magnavox_odyssey_100.svg",
+      "sha256": "af4a587e39ab0de4e2ad28f63ce25a8f7dc53ff2a6d9d64994c101e4fbf97e69"
+    },
+    {
+      "bytes": 4847,
+      "path": "baxy-automatic/magnavox_odyssey_200.svg",
+      "sha256": "130d90693e32fe93767e32bdb370bfba0caffb407e294796ff96cd1958347814"
+    },
+    {
+      "bytes": 3059,
+      "path": "baxy-automatic/magnavox_odyssey_2000.svg",
+      "sha256": "3f8f0ab30c16dff37a51514b193f8f47d7e7c31909ae46e11d7a7368ef25cbca"
+    },
+    {
+      "bytes": 2140,
+      "path": "baxy-automatic/magnavox_odyssey_2001.svg",
+      "sha256": "349ac889985ce008215e1d47da41d219a4d24f8189eda582bcba0109e53ee9dd"
+    },
+    {
+      "bytes": 2118,
+      "path": "baxy-automatic/magnavox_odyssey_2100.svg",
+      "sha256": "737fa7d791fdf1d3e0b729222c66524851fea873af872fefb0ff4261c8b283d0"
+    },
+    {
+      "bytes": 3296,
+      "path": "baxy-automatic/magnavox_odyssey_300.svg",
+      "sha256": "489ce601c566b72a8ad6592e2a41d4bc49edc69b25cf5f1d454344613aa6d5e3"
+    },
+    {
+      "bytes": 3087,
+      "path": "baxy-automatic/magnavox_odyssey_3000.svg",
+      "sha256": "c037a29eff20e1e337aa008bdfd749468de51d97bbc355787f8f9b79891be94a"
+    },
+    {
+      "bytes": 4752,
+      "path": "baxy-automatic/magnavox_odyssey_400.svg",
+      "sha256": "151227a7910dde63c0ab7d83a944257b178febdaf65a9f92e76142da26245b8b"
+    },
+    {
+      "bytes": 2614,
+      "path": "baxy-automatic/magnavox_odyssey_4000.svg",
+      "sha256": "8e382fa1989f41a8aa253975226616d23e6e673e233560c0b12d2dcf0194f9cf"
+    },
+    {
+      "bytes": 4752,
+      "path": "baxy-automatic/magnavox_odyssey_500.svg",
+      "sha256": "151227a7910dde63c0ab7d83a944257b178febdaf65a9f92e76142da26245b8b"
+    },
+    {
+      "bytes": 1159,
+      "path": "baxy-automatic/magnavox_odyssey.svg",
+      "sha256": "fb453460d6e9c161b40a6e0173ddf4d42dc0c106a8c35955f05d0853f179ed26"
+    },
+    {
+      "bytes": 4609,
+      "path": "baxy-automatic/magnavox_odyssey2.svg",
+      "sha256": "a163c93124d20e7d78fb11923648e795c2272181dde54a0f529a4a838ecf7e8b"
+    },
+    {
+      "bytes": 3050,
+      "path": "baxy-automatic/mame_2000.svg",
+      "sha256": "a0420e0fd68bef176de02655550ec0dddaf70dfb188d30f752fb377b8f0e1bc9"
+    },
+    {
+      "bytes": 3077,
+      "path": "baxy-automatic/mame_2003_plus.svg",
+      "sha256": "f1808f05b5db19ea633c5de1735cfb524266b11a2e6bedddfaf2ab925f003e36"
+    },
+    {
+      "bytes": 3114,
+      "path": "baxy-automatic/mame_2003.svg",
+      "sha256": "15636feedf06ea89882ef34b7fe21c140bb54b432fbd62d7c2c52ecc2d4b96ae"
+    },
+    {
+      "bytes": 4325,
+      "path": "baxy-automatic/mame_2010.svg",
+      "sha256": "e8bc193bf083968358235a8cf85f71ddb363370fe2311ce4a150d1084233f470"
+    },
+    {
+      "bytes": 4359,
+      "path": "baxy-automatic/mame_2015.svg",
+      "sha256": "00a73ac519c1d80bb6745ba8ab65696e4cf1bbac1da0e9dd3dda572bd6e14e4a"
+    },
+    {
+      "bytes": 4335,
+      "path": "baxy-automatic/mame_2016.svg",
+      "sha256": "086437eaec07d6796949e858fc81940b25732bc369e649e54a43bd3cd3c94cc8"
+    },
+    {
+      "bytes": 10820,
+      "path": "baxy-automatic/mattel_hyperscan_alt.svg",
+      "sha256": "8acc41a6e6464a441b37f67fa7fcaa47d692443296a44e68af55d0d7b7aa61b2"
+    },
+    {
+      "bytes": 1386,
+      "path": "baxy-automatic/mattel_hyperscan.svg",
+      "sha256": "646bed2721b1566c63bc355c7623e5f9f415c8bc6131229a0818bcb115411190"
+    },
+    {
+      "bytes": 5531,
+      "path": "baxy-automatic/mattel_intellivision_49_75011.svg",
+      "sha256": "ae62ae2e6b685a8f35e324f2310d62a23ee5121a1b85975f6145158543fc6aa4"
+    },
+    {
+      "bytes": 5366,
+      "path": "baxy-automatic/mattel_intellivision_5872.svg",
+      "sha256": "93bf7017ac46cdb077b20342311d6ce632ad928cd3a9814cfe44ad7a479d39f1"
+    },
+    {
+      "bytes": 6686,
+      "path": "baxy-automatic/mattel_intellivision.svg",
+      "sha256": "85a50f9f3b6c82893abeb1a2a755bb191038f09c6cb6cfca9e510d3230fc6a14"
+    },
+    {
+      "bytes": 2671,
+      "path": "baxy-automatic/microsoft_msx.svg",
+      "sha256": "b0edc543f98aa362031d53779b7f1f77dcb81b0dddddaa9a0d63885ffcc40a51"
+    },
+    {
+      "bytes": 3899,
+      "path": "baxy-automatic/microsoft_msx2.svg",
+      "sha256": "d22655ebfa27b5d0288c13c38bfa7e85c4a3010b45e495d8e80ce9d94ba0f8c4"
+    },
+    {
+      "bytes": 2672,
+      "path": "baxy-automatic/microsoft_xbox_360_digital.svg",
+      "sha256": "436672147ce485acc4ee00002fe238edc0ec4327032a9de0c3af25c738fd9e7d"
+    },
+    {
+      "bytes": 1558,
+      "path": "baxy-automatic/microsoft_xbox_360_e.svg",
+      "sha256": "e627ef010b11495c6d0c5c9902b51850756c0fb856d79e97bae6c4b6f57aad2c"
+    },
+    {
+      "bytes": 4876,
+      "path": "baxy-automatic/microsoft_xbox_360_s.svg",
+      "sha256": "2c790bc9dc03680bcd9409e4685ce92e8d124530ebf6726dc209457eaeb99b99"
+    },
+    {
+      "bytes": 29705,
+      "path": "baxy-automatic/microsoft_xbox_one_s.svg",
+      "sha256": "b3974bfeabd5ef713e05e86c7236e8d5480c062c7315773bce596ba94144a027"
+    },
+    {
+      "bytes": 241,
+      "path": "baxy-automatic/microsoft_xbox_one_x_k.svg",
+      "sha256": "a936507b638654a37f0303c615afb359c7c2f49103035c8075919175cca43854"
+    },
+    {
+      "bytes": 1868,
+      "path": "baxy-automatic/microsoft_xbox_one.svg",
+      "sha256": "082e90764b066b8184cd5a3bc8f453678ff331f6954726a9b44917711c67af72"
+    },
+    {
+      "bytes": 15502,
+      "path": "baxy-automatic/microsoft_xbox_series_x.svg",
+      "sha256": "c1b068c1137d055f5a513088baf017f42a239f479e66296cb96cbd4b50fd6477"
+    },
+    {
+      "bytes": 3630,
+      "path": "baxy-automatic/microw8.svg",
+      "sha256": "66cb03bb4931b6ef164da96cbbd25b60abf8cd98357d8702797979a3a1b2d853"
+    },
+    {
+      "bytes": 1972,
+      "path": "baxy-automatic/milton_bradley_microvision.svg",
+      "sha256": "6f7a8cd4175e9a7d97a664a7064107a0eacbb83fef7a8be058e981049eb359c9"
+    },
+    {
+      "bytes": 4603,
+      "path": "baxy-automatic/n64.svg",
+      "sha256": "6b59bf9da6a66468f0cec769e4af4ddb9d6a3dd3c8bd5daf26dc4a8ed38641da"
+    },
+    {
+      "bytes": 1411,
+      "path": "baxy-automatic/nec_pc_98.svg",
+      "sha256": "c3ee1d053ae08f864c1b75df5b367c999c5b9bf8b2fb7c856bf4aeed8fde9f6f"
+    },
+    {
+      "bytes": 3010,
+      "path": "baxy-automatic/nec_pc_engine_cd_turbografx_cd_cdr_30_j.svg",
+      "sha256": "77d0bbde108cc4cb62a7daeeab098c9aae03f614dff1cf7eb05397794be88d76"
+    },
+    {
+      "bytes": 2849,
+      "path": "baxy-automatic/nec_pc_engine_cd_turbografx_cd_hes_cdr_01_u.svg",
+      "sha256": "e9706461dc2c2f85b9e9427f3822e2d45d8cb9e65396e5021a0f0ecd8407a530"
+    },
+    {
+      "bytes": 8722,
+      "path": "baxy-automatic/nec_pc_engine_cd_turbografx_cd_hes_duo_01_u.svg",
+      "sha256": "5c39767d988026f618623d84302d79c2afb28383ebe0763f2ee0b8515909b95f"
+    },
+    {
+      "bytes": 3680,
+      "path": "baxy-automatic/nec_pc_engine_cd_turbografx_cd_pi_cd1_j.svg",
+      "sha256": "b2792146f845c2b683b509ab404d5a8817a1a3d58add0aee8678f94648ca39f1"
+    },
+    {
+      "bytes": 3585,
+      "path": "baxy-automatic/nec_pc_engine_cd_turbografx_cd.svg",
+      "sha256": "16d88162cd4517d1b6fb55049025ffab30ad92fa551b9ba95622bd243e233a5c"
+    },
+    {
+      "bytes": 3928,
+      "path": "baxy-automatic/nec_pc_engine_supergrafx.svg",
+      "sha256": "d4f153b4dfacb3503807d06319dea327c119aee8fa4e51e517b7671bd224585e"
+    },
+    {
+      "bytes": 6418,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_hes_exp_01_u.svg",
+      "sha256": "dcc00036e7aba8e64144d236ad121cf56d78c01ad4c02c1733bc03d4928f62ee"
+    },
+    {
+      "bytes": 2836,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_hes_tgx_01_u.svg",
+      "sha256": "340cf837e946fdb7855e135a8c26f26e457beab33e01c0c9ed7c907f52078e1c"
+    },
+    {
+      "bytes": 3666,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_pi_tg2_j.svg",
+      "sha256": "65a3b5dd68675ed0b783c4848c7e9cbf45c8b86a5af5d7225ca113caa0f9f2fa"
+    },
+    {
+      "bytes": 4225,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_pi_tg3_j.svg",
+      "sha256": "db506f49b355d62abce65f49b28ec9a6208566bbd1ffb07564cbde153f752130"
+    },
+    {
+      "bytes": 3201,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_pi_tg7_j.svg",
+      "sha256": "65c67455de8b8887d50905761910f66508b7e08903c630df7116af63274a4b36"
+    },
+    {
+      "bytes": 7580,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16_pi_tg9_j.svg",
+      "sha256": "4f5316a8890dfdfe9e43e2dd797f400e9a6fee1f974f79a7450dd4b3ac1a3839"
+    },
+    {
+      "bytes": 2518,
+      "path": "baxy-automatic/nec_pc_engine_turbografx_16.svg",
+      "sha256": "80af33c92489dcbdc6d945f255a9dac48586203e4a65b88bb9f12598d7a5ac2b"
+    },
+    {
+      "bytes": 1500,
+      "path": "baxy-automatic/nec_pc_fx.svg",
+      "sha256": "e2e4a53cfa44f8b0f4a2a8def018e57ea3e5ab8a8f4a5e7a7d6eb558d8f5442f"
+    },
+    {
+      "bytes": 2324,
+      "path": "baxy-automatic/neo_geo.svg",
+      "sha256": "80b8680b387e943f34cc511cca95891c4f9e95153d379f666099712f6916e01e"
+    },
+    {
+      "bytes": 633,
+      "path": "baxy-automatic/nes.svg",
+      "sha256": "f13d579ad063a9aad9f77f8f6c678d4d114dce4303c4b71644b8208e3663e08a"
+    },
+    {
+      "bytes": 4301,
+      "path": "baxy-automatic/nichibutsu_my_vision.svg",
+      "sha256": "2cc1e79d16a4128f4d9c447251d89ac94ebad0867a182c1e4885d5aa2df3ee28"
+    },
+    {
+      "bytes": 3972,
+      "path": "baxy-automatic/nintendo_color_tv_game_ctg_15v.svg",
+      "sha256": "40e72fc457c3455569a6a18432aaa09c9838c6cb32490f6a94cfc850a16ee974"
+    },
+    {
+      "bytes": 3670,
+      "path": "baxy-automatic/nintendo_color_tv_game_ctg_6.svg",
+      "sha256": "39d6911363b34920a2d045eb4a391bfbdc95ac7bbe9a3b5d8f33013b270baab8"
+    },
+    {
+      "bytes": 2078,
+      "path": "baxy-automatic/nintendo_color_tv_game_ctg_bk6.svg",
+      "sha256": "feaf2cd10309315df41cc74cabf42e11c87c0db495b55edb0c460a78fdf3355a"
+    },
+    {
+      "bytes": 9941,
+      "path": "baxy-automatic/nintendo_color_tv_game_ctg_cr112.svg",
+      "sha256": "75cae0d3356b269ecd0e39bbe3577a24c50447e8a1e095f152e044ecfa630575"
+    },
+    {
+      "bytes": 3429,
+      "path": "baxy-automatic/nintendo_color_tv_game_ctg_hc10.svg",
+      "sha256": "74e3bf0832a17398432eab3ad90570f435d4cf0f6de0d80766896b7e150b45ff"
+    },
+    {
+      "bytes": 6289,
+      "path": "baxy-automatic/nintendo_e_reader.svg",
+      "sha256": "fba4bc2e6abf5e5f554084be766a51d0f689e63c5bb119fcea21b956ab54a3ba"
+    },
+    {
+      "bytes": 4126,
+      "path": "baxy-automatic/nintendo_family_computer_disk_system_an500.svg",
+      "sha256": "e61d10aed02afa3d3e427b52530d06a4a35001bc11df1c58a86a211aafa7e6c5"
+    },
+    {
+      "bytes": 1947,
+      "path": "baxy-automatic/nintendo_family_computer_disk_system_an505.svg",
+      "sha256": "93aec865d0758ac18dda9fe705c6ba5a887dfac3e368ca78484b08af36d5683b"
+    },
+    {
+      "bytes": 2715,
+      "path": "baxy-automatic/nintendo_family_computer_disk_system_hvc_101.svg",
+      "sha256": "44258e5e18f51c77d39bd6f3c04b078514598e6244a660713138336abf3df60c"
+    },
+    {
+      "bytes": 2536,
+      "path": "baxy-automatic/nintendo_family_computer_disk_system.svg",
+      "sha256": "4e1b3aea8923d6d9a27187dc7abcf8fc4c9d601344d296bb19d1f43bbb3f066a"
+    },
+    {
+      "bytes": 5062,
+      "path": "baxy-automatic/nintendo_game_boy_advance_ags_001.svg",
+      "sha256": "273415516eb442188405dc616bd92ce869c744f4bb1c29552ec342f431ca21a3"
+    },
+    {
+      "bytes": 6289,
+      "path": "baxy-automatic/nintendo_game_boy_advance_e_reader.svg",
+      "sha256": "fba4bc2e6abf5e5f554084be766a51d0f689e63c5bb119fcea21b956ab54a3ba"
+    },
+    {
+      "bytes": 2066,
+      "path": "baxy-automatic/nintendo_game_boy_advance_oxy_001.svg",
+      "sha256": "6228154f1e5ecd7d99aad739fff320ca8e85c8917e81dd31dc190f32e5e095a0"
+    },
+    {
+      "bytes": 2146,
+      "path": "baxy-automatic/nintendo_game_boy_mgb_001.svg",
+      "sha256": "5d4d61f3d28e0caf34ea3a3d486a80bf9718bba4a573cfe6223b2de27a07aa3d"
+    },
+    {
+      "bytes": 2791,
+      "path": "baxy-automatic/nintendo_gamecube_sl_gc10.svg",
+      "sha256": "49afe010ac35b20f3542249fa094b010dae8b6b2c588fc11a00f3e2fa017012b"
+    },
+    {
+      "bytes": 3997,
+      "path": "baxy-automatic/nintendo_new_nintendo_3ds_jan_001.svg",
+      "sha256": "a843e5d65c78aff8f534f2623845d673f1f5d56ebf3505622be08cc6ec993c11"
+    },
+    {
+      "bytes": 5902,
+      "path": "baxy-automatic/nintendo_new_nintendo_3ds_ktr_001.svg",
+      "sha256": "0d31d1e2342f1dc5dff973d0b984c2eda04114efb3abc839b68758678a470d7c"
+    },
+    {
+      "bytes": 6795,
+      "path": "baxy-automatic/nintendo_new_nintendo_3ds.svg",
+      "sha256": "8f5fe6d80f680eb348783aa55fa3e9838f40646136cf100f28c8ad40083c487f"
+    },
+    {
+      "bytes": 5243,
+      "path": "baxy-automatic/nintendo_nintendo_3ds_ctr_001.svg",
+      "sha256": "45ccf1e3a50de7521a1293a9cfee8514ad4721ec0ab55ec4c27532f83be04f65"
+    },
+    {
+      "bytes": 5698,
+      "path": "baxy-automatic/nintendo_nintendo_3ds_digital.svg",
+      "sha256": "aadca8f30f9d12d3bda330035dec4e4c71a28698c5603d2b5264a2bedb0111a6"
+    },
+    {
+      "bytes": 3738,
+      "path": "baxy-automatic/nintendo_nintendo_3ds_ftr_001.svg",
+      "sha256": "b6e9d4d4fe26eb513f14698a4f46acd6e28c8f4aa0c6b16dd9d52d6e69a186be"
+    },
+    {
+      "bytes": 4670,
+      "path": "baxy-automatic/nintendo_nintendo_64dd.svg",
+      "sha256": "0851b9306a0c6a50f124ffb0aed19955ae43270191c079a622dc46b87dc3c16b"
+    },
+    {
+      "bytes": 5812,
+      "path": "baxy-automatic/nintendo_nintendo_ds_decrypted.svg",
+      "sha256": "a93bb92cd2ec283889e8291a67733a57bd45519e9382a6c04cd840aa1c557b07"
+    },
+    {
+      "bytes": 5645,
+      "path": "baxy-automatic/nintendo_nintendo_ds_download_play.svg",
+      "sha256": "fcc8e3fb22b7d441c9d07726a0f0d85c042c4932a46bb020883339df94b45cbb"
+    },
+    {
+      "bytes": 8476,
+      "path": "baxy-automatic/nintendo_nintendo_ds_ntr_001.svg",
+      "sha256": "cb7b2a627b7acf7cc7878a0445ee4c156ac40d6e0e5de05359c1da431ac8407f"
+    },
+    {
+      "bytes": 5636,
+      "path": "baxy-automatic/nintendo_nintendo_dsi_decrypted.svg",
+      "sha256": "96e18624ba82b0d8cd62bb50ead309a899835d456223fa1ed42900e17a52d9a3"
+    },
+    {
+      "bytes": 5686,
+      "path": "baxy-automatic/nintendo_nintendo_dsi_dlc.svg",
+      "sha256": "18b4e972fcbba9d235c277bcc85e21b20a548bb46d9c34e6faa1038d9074bf10"
+    },
+    {
+      "bytes": 3735,
+      "path": "baxy-automatic/nintendo_nintendo_dsi_twl_001.svg",
+      "sha256": "cbe3bda6f73ba1a5b82bb1e98b8ecde54f4e388ea75a52be72f9f515d7bb8119"
+    },
+    {
+      "bytes": 5081,
+      "path": "baxy-automatic/nintendo_nintendo_dsi.svg",
+      "sha256": "a5ad4cc0740ab3cc6b3488d4e60db3ad65860843ab54e16cfe40f69acc2d8590"
+    },
+    {
+      "bytes": 1980,
+      "path": "baxy-automatic/nintendo_nintendo_entertainment_system_hvc_001.svg",
+      "sha256": "e8607b2a4e43f2ad0df682f32784dca5828d2149d15e82aa209d0b048034a1d4"
+    },
+    {
+      "bytes": 1242,
+      "path": "baxy-automatic/nintendo_nintendo_entertainment_system_hvc_101.svg",
+      "sha256": "1df549c819a32cedaa47211c33b1183b1cbd7bd3f674ba4f458c5a392c5a83eb"
+    },
+    {
+      "bytes": 1558,
+      "path": "baxy-automatic/nintendo_nintendo_entertainment_system_nes_101.svg",
+      "sha256": "a9c71cea9ea59bc52dada9275306dca9bdc6369c1fee60ac840378c9aa43b02d"
+    },
+    {
+      "bytes": 3074,
+      "path": "baxy-automatic/nintendo_pokemon_mini.svg",
+      "sha256": "a8caf0e88ba7d34bcbd757ad5651ca2eedef3258e084f4e1122ca8694f65df40"
+    },
+    {
+      "bytes": 3768,
+      "path": "baxy-automatic/nintendo_satellaview.svg",
+      "sha256": "d1be849ffc6c28794ed082d739d22f573fcf5e61b71c83dfa1826785ec9ed442"
+    },
+    {
+      "bytes": 2297,
+      "path": "baxy-automatic/nintendo_sufami_turbo_shvc_101.svg",
+      "sha256": "d881633f67affa57d3313d94be4cbbf8e105f6e9e5bb6e259106fb9dc2f0044f"
+    },
+    {
+      "bytes": 4863,
+      "path": "baxy-automatic/nintendo_sufami_turbo_sns_001.svg",
+      "sha256": "54e2d44a03c2a7bc56a6f0b8ffcd9a2cfa452f6c10a0dad8d608758b39199b98"
+    },
+    {
+      "bytes": 2297,
+      "path": "baxy-automatic/nintendo_sufami_turbo_sns_101.svg",
+      "sha256": "d881633f67affa57d3313d94be4cbbf8e105f6e9e5bb6e259106fb9dc2f0044f"
+    },
+    {
+      "bytes": 2917,
+      "path": "baxy-automatic/nintendo_sufami_turbo.svg",
+      "sha256": "b811e387324d9c3d72b9a568d5bc3276216fd1cdf784ef94d84ab3390c2ada51"
+    },
+    {
+      "bytes": 2288,
+      "path": "baxy-automatic/nintendo_super_nintendo_entertainment_system_shvc_101.svg",
+      "sha256": "c1b1dfee96f5bc4270bcb072a07070de9a28269d054ba4cb160c31a103a5b4bc"
+    },
+    {
+      "bytes": 2058,
+      "path": "baxy-automatic/nintendo_super_nintendo_entertainment_system_sns_001.svg",
+      "sha256": "7fff7679c84dabbbe91fd6b16444b299fdb46871c2b3d2b951df15a3ba7b15fa"
+    },
+    {
+      "bytes": 1913,
+      "path": "baxy-automatic/nintendo_super_nintendo_entertainment_system_sns_101.svg",
+      "sha256": "2c54cef64b169975272d5a608f8e227736459ff489b15c22b46a7c44030e9cde"
+    },
+    {
+      "bytes": 2989,
+      "path": "baxy-automatic/nintendo_super_nintendo_entertainment_system_snsp_001.svg",
+      "sha256": "40f84839cab39a3f0f60c70a4c512e6e14cd4c43cc116d10ea1095b1ac461bbb"
+    },
+    {
+      "bytes": 1152,
+      "path": "baxy-automatic/nintendo_switch_hac_001.svg",
+      "sha256": "59a67156e584a8355dee69511ac57ffb58288f1a997c2c7f912428843f9a7fdf"
+    },
+    {
+      "bytes": 1445,
+      "path": "baxy-automatic/nintendo_switch_hac_007.svg",
+      "sha256": "48802b0a73ee4a8c0e8f023ee9b663c396d17fdc6b426ec39ee209207d689155"
+    },
+    {
+      "bytes": 3902,
+      "path": "baxy-automatic/nintendo_switch_hdh_001.svg",
+      "sha256": "37e3bd5e4e8603898869a5b5d0b3530fe68d4cd811d34f70d80f5999fa7b3a25"
+    },
+    {
+      "bytes": 3895,
+      "path": "baxy-automatic/nintendo_virtual_boy.svg",
+      "sha256": "3dd3dd8f255a6cf6ff3787accdd78c4635bbbd02d6ecc0ed422456fb8556ad6f"
+    },
+    {
+      "bytes": 1379,
+      "path": "baxy-automatic/nintendo_wii_digital.svg",
+      "sha256": "9bcc402a1172e495dc352532c13da44c62facccb29e99be1b3a38f34af94e1cf"
+    },
+    {
+      "bytes": 890,
+      "path": "baxy-automatic/nintendo_wii_rvl_201.svg",
+      "sha256": "1584b4c53c70166a8e1f7071c39f5ec12f41316a9bd36a36967a42a47e5a62aa"
+    },
+    {
+      "bytes": 1097,
+      "path": "baxy-automatic/nintendo_wii_u.svg",
+      "sha256": "1bfea0d43b84371169df924f267c2d61ebfcd3eb1c718252e5a441bbfed6d742"
+    },
+    {
+      "bytes": 789,
+      "path": "baxy-automatic/nintendo_wii.svg",
+      "sha256": "66dfd4859085d0dcc4af1b67fec20307bb745c9b621eb3762353b75d94e96ab0"
+    },
+    {
+      "bytes": 8141,
+      "path": "baxy-automatic/nokia_n_gage_qd.svg",
+      "sha256": "41aa95f4b0543f8479933fe9f991a984ccf868ad74a04c21a0391125220b7028"
+    },
+    {
+      "bytes": 14045,
+      "path": "baxy-automatic/nokia_n_gage.svg",
+      "sha256": "60c86ad28dc3e529838a435ede8c65e91e8a084469d4a4a9dfd6293a7009079d"
+    },
+    {
+      "bytes": 5088,
+      "path": "baxy-automatic/nvidia_shield_portable.svg",
+      "sha256": "cb5b121f15aa547705c2c0a6805c48411ece0166c86b246bd02dd72af26a6383"
+    },
+    {
+      "bytes": 1094,
+      "path": "baxy-automatic/nvidia_shield_tv_p3430.svg",
+      "sha256": "a51f71d2b436e3a46b8fe1f7e6e37d02ecab7683ff35249828ed46266311b1c5"
+    },
+    {
+      "bytes": 516,
+      "path": "baxy-automatic/nvidia_shield_tv.svg",
+      "sha256": "53e6c8e081d9bbb62984fc23de189be73f3572f74e9f5b2a0a4b6c06612f7481"
+    },
+    {
+      "bytes": 1920,
+      "path": "baxy-automatic/ouya_ouya.svg",
+      "sha256": "eda7027a1e9f29c6d593f8f97bc235b33ec34f927affef8641d8a441dc62b00c"
+    },
+    {
+      "bytes": 2331,
+      "path": "baxy-automatic/palmtex_super_micro.svg",
+      "sha256": "5e0213df5ce520f1bc2e842a68dbfb31458c42a55731147cdad435e392a6e9b2"
+    },
+    {
+      "bytes": 3047,
+      "path": "baxy-automatic/panic_playdate.svg",
+      "sha256": "5f89873c9efc8c1af2856d2061f507e7fea0601b8e21fd59bff4796ad315281c"
+    },
+    {
+      "bytes": 6734,
+      "path": "baxy-automatic/pc_50x_palladium_tele_cassetten_game_825_530.svg",
+      "sha256": "c4d5e114090fc5a589fdf3934ea0540fcc23c2960344c19fd7c69728eb5101cb"
+    },
+    {
+      "bytes": 3793,
+      "path": "baxy-automatic/pc_50x_palladium_tele_cassetten_game_825_581.svg",
+      "sha256": "ef3e62e705d73084798b2e4bf998a73f598fdb2399355b234e4a1aca8bf7ad4b"
+    },
+    {
+      "bytes": 3312,
+      "path": "baxy-automatic/pc_50x_shg_black_point_fs_1003.svg",
+      "sha256": "da3a8ce7617d533eb5e26b96098f011568fe68bf639fee0d1e223df39b0b6d40"
+    },
+    {
+      "bytes": 1394,
+      "path": "baxy-automatic/philips_cd_i.svg",
+      "sha256": "f1fec9c2b967e52c76114f5a84ca11d7ef236e4a21e3e185dce3258504f19652"
+    },
+    {
+      "bytes": 2011,
+      "path": "baxy-automatic/philips_tele_game_es_2203.svg",
+      "sha256": "1d29af095dc1a5c71233bea998d504bb6bdd9a9fe240e11d881e41998c857125"
+    },
+    {
+      "bytes": 1630,
+      "path": "baxy-automatic/philips_tele_game.svg",
+      "sha256": "29ca6a587e4825af66d12e5db0dc91249e46c382e1cda077f78c14d9c5e5128a"
+    },
+    {
+      "bytes": 8025,
+      "path": "baxy-automatic/philips_videopac.svg",
+      "sha256": "a2c31e96b62f6dd521bdec1f2c3cc12d9c39b7a6eaff265cb3cceba3b9f233c5"
+    },
+    {
+      "bytes": 5703,
+      "path": "baxy-automatic/pioneer_laseractive.svg",
+      "sha256": "29467a0d22c66c3a2bfcf515cd7043cc1a4a4b3bc478b42db660d960e470a4c8"
+    },
+    {
+      "bytes": 322,
+      "path": "baxy-automatic/playjam_game_stick.svg",
+      "sha256": "8ac999c27ac21c3519e761c3f39637adff4053aae6d7645cae332b38c19386f5"
+    },
+    {
+      "bytes": 2703,
+      "path": "baxy-automatic/ps1.svg",
+      "sha256": "e3617c46eb3809620864bcc5d5fa33aa771ab3a608200f92dc89907297dfa9d8"
+    },
+    {
+      "bytes": 309,
+      "path": "baxy-automatic/ps2.svg",
+      "sha256": "3fff2cfd9596ead37b25510ce2b0d5bbe1090c4b74b4a7fea9972792c8586293"
+    },
+    {
+      "bytes": 1065,
+      "path": "baxy-automatic/ps3.svg",
+      "sha256": "7c4cf9d2961bd7a91e6cec83e12fa7866ee4abd440ba78572fed881bb0043c3b"
+    },
+    {
+      "bytes": 5844,
+      "path": "baxy-automatic/psp.svg",
+      "sha256": "a3561e4a2f5b83e997776c9a4498ca7aafb6c380c95738a9f627ad6418f0fcf7"
+    },
+    {
+      "bytes": 5347,
+      "path": "baxy-automatic/rca_studio_ii.svg",
+      "sha256": "82395efad417f470b97ff2cb9f37772ba26d745a13e944296d956df16c29b764"
+    },
+    {
+      "bytes": 2578,
+      "path": "baxy-automatic/rpg_maker.svg",
+      "sha256": "7a8ef4b42e838c44f3a7d701fbfbe4652a255690248756e16a44aa099a03ced9"
+    },
+    {
+      "bytes": 8169,
+      "path": "baxy-automatic/saturn.svg",
+      "sha256": "06432bb840d7e2e0edec9b79b285904a6aee1ba677f899524b2c2bab6ab07e79"
+    },
+    {
+      "bytes": 3318,
+      "path": "baxy-automatic/scummvm.svg",
+      "sha256": "23d55abc936f68d2c521f8addd466a89bca63b08cb46832b2aa707a9d158c3ce"
+    },
+    {
+      "bytes": 10136,
+      "path": "baxy-automatic/sega_32x_mk_1601_84000_u.svg",
+      "sha256": "80e4f3187a33213271a0f77ac6102afd867af50def9143e62d0b9ef06e07bed1"
+    },
+    {
+      "bytes": 10649,
+      "path": "baxy-automatic/sega_32x_neptune_u.svg",
+      "sha256": "093662701908ded5688c5cf73c16f12cd673a935c6cccb75982c7efb63037c86"
+    },
+    {
+      "bytes": 6763,
+      "path": "baxy-automatic/sega_32x.svg",
+      "sha256": "328f1ac5df9210c5eb776daa8c760c069cb0c87dd3cf1d984c37876b1e9f362e"
+    },
+    {
+      "bytes": 6998,
+      "path": "baxy-automatic/sega_beena.svg",
+      "sha256": "acce9979579b53902a37667d25f5e5fe381f634d38ca4d9931cc32e2620d84eb"
+    },
+    {
+      "bytes": 7164,
+      "path": "baxy-automatic/sega_chihiro.svg",
+      "sha256": "8a09dbfe746c27d6ff3bb0516d9d81539f7359c17d2d5b229d15241c87fb8aba"
+    },
+    {
+      "bytes": 3616,
+      "path": "baxy-automatic/sega_dreamcast_visual_memory_unit.svg",
+      "sha256": "753c06bd258e4fdac239a32a0db85a9f14edb8ee074f631ab1cd8dfe53bc346d"
+    },
+    {
+      "bytes": 5453,
+      "path": "baxy-automatic/sega_game_gear.svg",
+      "sha256": "f2c528f603be04c7f22691b49ba49873f95099d9457fd843766997c9bfaf5763"
+    },
+    {
+      "bytes": 2479,
+      "path": "baxy-automatic/sega_master_system_mark_iii_mk_3006.svg",
+      "sha256": "6b5cf8e8fc7d783d9f03b7c799a7bb8daf338bbb2c682dda0cd1d19404b36425"
+    },
+    {
+      "bytes": 1733,
+      "path": "baxy-automatic/sega_master_system_mark_iii_sg_1000m3_j.svg",
+      "sha256": "331f0a783e65f4aea53232b6535c8edf874c2c8c34dc82a839473c3a7f120c86"
+    },
+    {
+      "bytes": 2051,
+      "path": "baxy-automatic/sega_master_system_mark_iii.svg",
+      "sha256": "650d3fd211daa7b9a7ae01414fbb2d77eef729513cd20399b0d20cc4490a4a20"
+    },
+    {
+      "bytes": 6911,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_csd_gm1_j.svg",
+      "sha256": "b97a85bbff0c3b1cf5a70c3a822cbe7210f5538acd8fa78b78ffc335dc4f9fcc"
+    },
+    {
+      "bytes": 7958,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_haa_2502_2912_j.svg",
+      "sha256": "eb869caf24586a4eff84c3d3baa14394874ba70732b07660a9f99d8c2814f085"
+    },
+    {
+      "bytes": 4868,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_haa_2510_2910_j.svg",
+      "sha256": "6a82b096cf11973d9d02093179ca64908e17b9d7f5f3aa53e8406b991731eb43"
+    },
+    {
+      "bytes": 9114,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_haa_2510_2912_j.svg",
+      "sha256": "c235ded15089865bcfaf0d58712ee75e3f82ccbbcd0bb819e22f962c49f39360"
+    },
+    {
+      "bytes": 4973,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_mk_1601_1690_u.svg",
+      "sha256": "edb69412b60209dbef583074ab6bfab577ee889dc9446d6a801b301d09ac80b6"
+    },
+    {
+      "bytes": 9135,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_mk_1601_4102_u.svg",
+      "sha256": "7fc2809a740b3e1ef07b3ddccaae7872d9e70b60fda34e449a12341d3369941c"
+    },
+    {
+      "bytes": 8126,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_mk_1631_4102_u.svg",
+      "sha256": "7ad3f2cc7a475715dcf560e1d4d1138b74bd440b9aed319e087b7b364f842663"
+    },
+    {
+      "bytes": 5260,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_rg_m1_j.svg",
+      "sha256": "68a8fba8c64fbdffb18d0430dde3471a64947b42379bff976b1e760110b75e55"
+    },
+    {
+      "bytes": 3717,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd_rg_m2_j.svg",
+      "sha256": "b5e52005a80a9674bef902c308dddea06436e398cd3ecbb428efdb442ed0ee34"
+    },
+    {
+      "bytes": 5717,
+      "path": "baxy-automatic/sega_mega_cd_sega_cd.svg",
+      "sha256": "24ba53e48a92f7ab5ce9ae60b11a55ea77607b3b8caa1d3fad9a0c1494ad7a78"
+    },
+    {
+      "bytes": 7772,
+      "path": "baxy-automatic/sega_mega_drive_genesis_fb3680.svg",
+      "sha256": "3b7b9beeb73de899e33a4f9244fda01303fb856426939497fc18e34a3b13dbe3"
+    },
+    {
+      "bytes": 4738,
+      "path": "baxy-automatic/sega_mega_drive_genesis_haa_2502_j.svg",
+      "sha256": "817cb28046bceb0d8f43fee068faaf580201a8837473547a602624f288631b5b"
+    },
+    {
+      "bytes": 6487,
+      "path": "baxy-automatic/sega_mega_drive_genesis_haa_2510_j.svg",
+      "sha256": "b161f922d287b317e6416ed2fd86ec4cb0829dac01e06d2a44ed15d8c7bf502f"
+    },
+    {
+      "bytes": 4564,
+      "path": "baxy-automatic/sega_mega_drive_genesis_hmj_0300_j.svg",
+      "sha256": "81d6bf3f9fa62a625bd3efb14226e9906373d0692efd84a919492bd6701da380"
+    },
+    {
+      "bytes": 8784,
+      "path": "baxy-automatic/sega_mega_drive_genesis_kr.svg",
+      "sha256": "b5f10a68ed264e1fd3feeb529d63a7992472541a98d3afe52a966460a999e798"
+    },
+    {
+      "bytes": 5048,
+      "path": "baxy-automatic/sega_mega_drive_genesis_mk_1461_u.svg",
+      "sha256": "e3c5b9449aaf905b3740fd0b909c382459f8850f2aa43abf3d0fa99f615243dc"
+    },
+    {
+      "bytes": 4983,
+      "path": "baxy-automatic/sega_mega_drive_genesis_mk_1631_u.svg",
+      "sha256": "525663a034b9ccf6d5229840a11f5d23b6267ceb8d0d0b742d69e0e8fc8c82d7"
+    },
+    {
+      "bytes": 5674,
+      "path": "baxy-automatic/sega_mega_drive_genesis_mk_6100_u.svg",
+      "sha256": "afe14854a1221faeffcf3da6201b39e9fcd321408538f5cb1b8e7723bb48643e"
+    },
+    {
+      "bytes": 5471,
+      "path": "baxy-automatic/sega_naomi_2.svg",
+      "sha256": "95b801dfc659cfa903cb12302846cb8d550f52bc53c2e6ef0693694ef13c5c0e"
+    },
+    {
+      "bytes": 5451,
+      "path": "baxy-automatic/sega_naomi.svg",
+      "sha256": "79bf13fc2210b93beee6722c2a080063c6bed022135843c55dfe4623452dd4df"
+    },
+    {
+      "bytes": 5304,
+      "path": "baxy-automatic/sega_pico.svg",
+      "sha256": "00e734ee732e8f6f94f4e8e814ca298132ec574fa035d47907a05eee09c2676c"
+    },
+    {
+      "bytes": 6995,
+      "path": "baxy-automatic/sega_saturn_hst_3200_j.svg",
+      "sha256": "6e62641603bdd88c07c7b605ca6bfeea2bcf7135e0103705173308bbfa3f4ca2"
+    },
+    {
+      "bytes": 3452,
+      "path": "baxy-automatic/sega_saturn_mmp_1000nv_nx_4yd.svg",
+      "sha256": "0cc85c608ce1fea8364767418160dfc4a37701a6e53e46f3eb64277ca4fa9a85"
+    },
+    {
+      "bytes": 3163,
+      "path": "baxy-automatic/sega_saturn_mmp_1000nv.svg",
+      "sha256": "cf2be53f7751a7a70a92a84e0780b609c3959029484e4b6d2b222dc5d371f6e3"
+    },
+    {
+      "bytes": 1470,
+      "path": "baxy-automatic/sega_saturn_pluto_u.svg",
+      "sha256": "ae733f7c30ca83c360b008b44d3f32227c7e309e8331dbf2c4aa47f988dcb63d"
+    },
+    {
+      "bytes": 1987,
+      "path": "baxy-automatic/sega_sg_1000_ii.svg",
+      "sha256": "acae63ac9d8564bab1634386057d0d429d79a85997656d11afba1ecefa091e4d"
+    },
+    {
+      "bytes": 1609,
+      "path": "baxy-automatic/sega_sg_1000.svg",
+      "sha256": "6c2385471983329d6dac5f6b5741ac607788adc14561fe1f9b5213d9a404b21c"
+    },
+    {
+      "bytes": 6244,
+      "path": "baxy-automatic/sega_video_driver.svg",
+      "sha256": "69629a98f107eea9b6b051b8100c188f3e234d5133b75e11d2209e931b071ff8"
+    },
+    {
+      "bytes": 2298,
+      "path": "baxy-automatic/sharp_x1.svg",
+      "sha256": "3b5b2b0c66dd6971c62486372dbc2b0dc6b1456f0aa8a225b9ea609eb8be60a7"
+    },
+    {
+      "bytes": 6043,
+      "path": "baxy-automatic/sharp_x68000.svg",
+      "sha256": "b1ee693db053297d69b7844d15959db9415707795c98e87bcf50ade2f2df5d47"
+    },
+    {
+      "bytes": 1699,
+      "path": "baxy-automatic/sinclair_zx_81.svg",
+      "sha256": "cd1ff6a432428dab71b1f723cb6ebb70c52023410be54c238a3acde5525ac228"
+    },
+    {
+      "bytes": 2113,
+      "path": "baxy-automatic/sinclair_zx_spectrum_3.svg",
+      "sha256": "3290a38f4483ec4de3b5c01ed1cccf86aab1456c831c36b180c039681f9cd233"
+    },
+    {
+      "bytes": 1696,
+      "path": "baxy-automatic/sinclair_zx_spectrum.svg",
+      "sha256": "dacf2e16fd99f061a7fb04cf64164988cac79606c3484b0f82ff65f623bcffe6"
+    },
+    {
+      "bytes": 2989,
+      "path": "baxy-automatic/snes.svg",
+      "sha256": "40f84839cab39a3f0f60c70a4c512e6e14cd4c43cc116d10ea1095b1ac461bbb"
+    },
+    {
+      "bytes": 1896,
+      "path": "baxy-automatic/snk_neo_geo_cd_tray.svg",
+      "sha256": "ebc3e53bc728d6facb4c9884da225f67a06724c553948f720b49c43b9a931a7e"
+    },
+    {
+      "bytes": 4188,
+      "path": "baxy-automatic/snk_neo_geo_cd.svg",
+      "sha256": "f9a0205c600bba4fedd1739af72fd304da4963750a3374ca878bd4f5a1e15907"
+    },
+    {
+      "bytes": 6874,
+      "path": "baxy-automatic/snk_neo_geo_cdz.svg",
+      "sha256": "a38e405a16a41789263dfc63a8b3dd3bed1c248b5458aacec540433fc151dd9f"
+    },
+    {
+      "bytes": 3934,
+      "path": "baxy-automatic/snk_neo_geo_mini.svg",
+      "sha256": "19732ba7b073d98c79ae3e88193ca7a3e9ab47e22686e67d8ebcdb145ea61b1e"
+    },
+    {
+      "bytes": 6369,
+      "path": "baxy-automatic/snk_neo_geo_pocket_color.svg",
+      "sha256": "14637cbd18acb16aef423fdb6bedeaaa42dc25343272c8ba3704b003ccd0797e"
+    },
+    {
+      "bytes": 2079,
+      "path": "baxy-automatic/snk_neo_geo_pocket.svg",
+      "sha256": "5d7fa3ba188f7e6f791793db8f49fdf6bd7b8f1a8c12411e0153adf1a1590546"
+    },
+    {
+      "bytes": 3339,
+      "path": "baxy-automatic/snk_neo_geo_x.svg",
+      "sha256": "07f451251fd2edb74282e09a2abb4c4028ae4a03af13a286bc92e5766a5b342e"
+    },
+    {
+      "bytes": 2324,
+      "path": "baxy-automatic/snk_neo_geo.svg",
+      "sha256": "80b8680b387e943f34cc511cca95891c4f9e95153d379f666099712f6916e01e"
+    },
+    {
+      "bytes": 530,
+      "path": "baxy-automatic/sony_playstation_2_psx_5000.svg",
+      "sha256": "bbbb2265be5053be72df92eda87105ef8173a89a8798410018c7351c8b01af22"
+    },
+    {
+      "bytes": 265,
+      "path": "baxy-automatic/sony_playstation_2_scph_10000.svg",
+      "sha256": "c3c03e14521d5049520a066cd5c571bc9925b5a3f764488fb358be2a7466c7f8"
+    },
+    {
+      "bytes": 321,
+      "path": "baxy-automatic/sony_playstation_2_scph_70000.svg",
+      "sha256": "1b36005b5e802cdf73c70ea999b95a109a791f8053e1b12b9a7475e4098146d9"
+    },
+    {
+      "bytes": 292,
+      "path": "baxy-automatic/sony_playstation_2_scph_90000.svg",
+      "sha256": "28b753aad9f7212f81505aa9d1eb562c09b7ab59d62933c739824fea38a0ff89"
+    },
+    {
+      "bytes": 1013,
+      "path": "baxy-automatic/sony_playstation_3_cech_2000.svg",
+      "sha256": "584739aee3c05c94a9169d9ed35eb723721c5ec4d1f533525e6f0437ba586330"
+    },
+    {
+      "bytes": 969,
+      "path": "baxy-automatic/sony_playstation_3_cech_4000.svg",
+      "sha256": "5438ab3332854c01c6417f25e7dc34f3e9499c6895cabdb1acfff2a91d3db2c1"
+    },
+    {
+      "bytes": 1062,
+      "path": "baxy-automatic/sony_playstation_3_cecha00_kt.svg",
+      "sha256": "8827605099935f93f6ed9739296ed7657833a0162048e4f1dd2ac6cc8a264f97"
+    },
+    {
+      "bytes": 1621,
+      "path": "baxy-automatic/sony_playstation_3_dlc.svg",
+      "sha256": "7b6657792440d6502c5c14cac00ced36773511e5fd1db2afeb29aa22c94c3e05"
+    },
+    {
+      "bytes": 1437,
+      "path": "baxy-automatic/sony_playstation_3_downloadable.svg",
+      "sha256": "7f5a0e0270781cdb1b937b396e9c478cf2df634ecefb4a181321e84b389cecd9"
+    },
+    {
+      "bytes": 1788,
+      "path": "baxy-automatic/sony_playstation_3_psn.svg",
+      "sha256": "946d8b4d69fd65611fa8535cfc837476143d8daad32d5a76707d927e43e81760"
+    },
+    {
+      "bytes": 2274,
+      "path": "baxy-automatic/sony_playstation_4_cuh_2000.svg",
+      "sha256": "ebb73c9f0eea9a76f09f700cad332d37a2e5073111d156aa22d6c3ab4b41a58c"
+    },
+    {
+      "bytes": 950,
+      "path": "baxy-automatic/sony_playstation_4_cuh_7000.svg",
+      "sha256": "31e1310248fc84a1d4cd1e2bc46665d86bb6bcef277b8c5a93c093bf11fc9285"
+    },
+    {
+      "bytes": 459,
+      "path": "baxy-automatic/sony_playstation_4.svg",
+      "sha256": "668caa0d8ca470f0309d9d26d017c04b13758e67909c5a6928a237d17c58bf14"
+    },
+    {
+      "bytes": 1541,
+      "path": "baxy-automatic/sony_playstation_5_cfi_2000.svg",
+      "sha256": "bc578393971c968631801a0fdfe427e35b99e12ac2ece57a918edcb3acb9d130"
+    },
+    {
+      "bytes": 711,
+      "path": "baxy-automatic/sony_playstation_5.svg",
+      "sha256": "2ba2806349836ffbfbdb7490739e8c5c0de1303bebf4e9698d6a63d467eef1ad"
+    },
+    {
+      "bytes": 4077,
+      "path": "baxy-automatic/sony_playstation_pocketstation.svg",
+      "sha256": "f0d9fa5fe58ee0a68570370ad52b4cc2561e145ac6e3c4987ac641df62334603"
+    },
+    {
+      "bytes": 6017,
+      "path": "baxy-automatic/sony_playstation_portable_dlc.svg",
+      "sha256": "a9ed5479e536e6b52222421c294758a857dfe06b69f77d1018be9a460e634199"
+    },
+    {
+      "bytes": 6762,
+      "path": "baxy-automatic/sony_playstation_portable_psn.svg",
+      "sha256": "f00d157c2b5b0ace70f01f28560d3ab6eb776bd19ceeeebc4234ac7a35ead407"
+    },
+    {
+      "bytes": 5971,
+      "path": "baxy-automatic/sony_playstation_portable_psp_e1000.svg",
+      "sha256": "42893dd33a4fead9cf1a64f7a3fc76425de85cb9f801ff66c600d159591c0d80"
+    },
+    {
+      "bytes": 6800,
+      "path": "baxy-automatic/sony_playstation_portable_psp_n1000.svg",
+      "sha256": "1c59441852f4fc03d5f71ca3db5d8e56dc7b4bb3afc4695df77731e0dc62a580"
+    },
+    {
+      "bytes": 6847,
+      "path": "baxy-automatic/sony_playstation_portable_psx2psp.svg",
+      "sha256": "6de58fd3e71745b70ce7c44d572e1f02ec43eb173fc0d0580c4d07df15ec949f"
+    },
+    {
+      "bytes": 6334,
+      "path": "baxy-automatic/sony_playstation_portable_umd_music.svg",
+      "sha256": "b655d5fd0773e05b743f7f80c8f52e7f98a467c95693f542e34990463e3b43a2"
+    },
+    {
+      "bytes": 7500,
+      "path": "baxy-automatic/sony_playstation_portable_umd_video.svg",
+      "sha256": "c0cfad5eb1602ec09b7434a834f25521ff497a47b7f759f7f67a7c785b4facd1"
+    },
+    {
+      "bytes": 4465,
+      "path": "baxy-automatic/sony_playstation_scph_100_131_flat.svg",
+      "sha256": "e8c93e5a6f7ccc10db6842f8483140722ec50159b6e7accc0d107e150e9152eb"
+    },
+    {
+      "bytes": 3654,
+      "path": "baxy-automatic/sony_playstation_scph_100_131.svg",
+      "sha256": "31fb40f6582a4313227b04c5d524d240f16c27dfbb9c21dae90a0f10af55dd3f"
+    },
+    {
+      "bytes": 2422,
+      "path": "baxy-automatic/sony_playstation_scph_100.svg",
+      "sha256": "6bd8d0a084950ee6f1a397b8c05d396d23d6fad344ce44d62b40f846e9da3a81"
+    },
+    {
+      "bytes": 4578,
+      "path": "baxy-automatic/sony_playstation_vita_pch_2000.svg",
+      "sha256": "98f5a78e0255378eb219f3dc9d266ad7b0b23f610551e2ce43e8079a804c98a9"
+    },
+    {
+      "bytes": 253,
+      "path": "baxy-automatic/sony_playstation_vita_vte_1000.svg",
+      "sha256": "78b16a07377327f0df5d0073739659884c662626505e53279f5c21f7f4ab7f6a"
+    },
+    {
+      "bytes": 4911,
+      "path": "baxy-automatic/sony_playstation_vita.svg",
+      "sha256": "6f3e5b87e4ed7b6e25d90032dcd405b5c1eae3cde7bd87704fadf4dfccb2b18a"
+    },
+    {
+      "bytes": 2652,
+      "path": "baxy-automatic/spectravideo_sv_328.svg",
+      "sha256": "975af75fa3f29cfb9931a21a4ac6bb5414ccc7e90454c01c48c4c47e2835786c"
+    },
+    {
+      "bytes": 3461,
+      "path": "baxy-automatic/spectravideo_sv.svg",
+      "sha256": "0fca1dad7161eedcceff112d0223fdf7b0073fc0781abece32abf41acc86f590"
+    },
+    {
+      "bytes": 2627,
+      "path": "baxy-automatic/ssd_xavixport.svg",
+      "sha256": "2cf2ad8ce9753455bc4a32fa6ce375c4ee03cc19b4e725b9138e0a8b43ec3336"
+    },
+    {
+      "bytes": 3494,
+      "path": "baxy-automatic/switch.svg",
+      "sha256": "b134765be39cb88f6e2c61cdd78c41a53e79ec8aa2a6e51f6a6530d8e4cfa95b"
+    },
+    {
+      "bytes": 2797,
+      "path": "baxy-automatic/takara_video_challenger.svg",
+      "sha256": "ce162443efcfa4649d0cf263fea313d0ff591a6c28b95766bd8e01c106833518"
+    },
+    {
+      "bytes": 26322,
+      "path": "baxy-automatic/tandy_video_information_system.svg",
+      "sha256": "e5d27da14e72bde4a4060a38829029023f45da725aea6587bc558c9fa22f532b"
+    },
+    {
+      "bytes": 4837,
+      "path": "baxy-automatic/tapwave_zodiac.svg",
+      "sha256": "f2a8cd0bd674d69d3aa2cba0917de37cbf70d5e979b1a57c0fcc71b7480e2962"
+    },
+    {
+      "bytes": 1930,
+      "path": "baxy-automatic/the_3do_company_3do_fz_10.svg",
+      "sha256": "e4897bc0a853ab563220d371d0209caaaee8916ac277d8ce7473ffb236a8fa71"
+    },
+    {
+      "bytes": 3541,
+      "path": "baxy-automatic/the_3do_company_3do_gdo_101.svg",
+      "sha256": "afbad2259a6b75ee689a19303dfb6a1a713bc2bc91528e98acb349e4e10e7952"
+    },
+    {
+      "bytes": 3607,
+      "path": "baxy-automatic/the_3do_company_3do_gdo_203p.svg",
+      "sha256": "5ca988633c496579aecacc764b8e826efae9454835768ee11bfcb716e4c8d64a"
+    },
+    {
+      "bytes": 2427,
+      "path": "baxy-automatic/the_3do_company_3do_imp_21j.svg",
+      "sha256": "890fb44f896b1ee716c221f1379a6d45efd76cd5e77303b552d27ef1c212d60b"
+    },
+    {
+      "bytes": 2729,
+      "path": "baxy-automatic/the_3do_company_3do.svg",
+      "sha256": "61bbc66b6da34fb221444987dfbdc34b235e57e221fbf1dc124bae9712ebc77c"
+    },
+    {
+      "bytes": 518,
+      "path": "baxy-automatic/thomson_moto_cartridge.svg",
+      "sha256": "1f78ef70693ebbae66110f33a0f74f0f05fabf2af0fa31c1fe069373a9d369d9"
+    },
+    {
+      "bytes": 3997,
+      "path": "baxy-automatic/thomson_moto_to8d.svg",
+      "sha256": "adfb0eb95bebc04227dcc0db49ede1dacb0f3bf1c80b43886e5c7652b6cbed1a"
+    },
+    {
+      "bytes": 3193,
+      "path": "baxy-automatic/thomson_moto.svg",
+      "sha256": "0f497c48775862624a6b622f4255a0c88fa2e6f6ec3733089d981b3cbe8e3fcf"
+    },
+    {
+      "bytes": 961,
+      "path": "baxy-automatic/tic_80.svg",
+      "sha256": "3977147a4bfba6838becfeaad6750136b3a4df89e492b4fea59770da5b2e0722"
+    },
+    {
+      "bytes": 5196,
+      "path": "baxy-automatic/tiger_game_com.svg",
+      "sha256": "cb8be8290a8e0d15eaf41763809fa4bda7aa7ad8e3c2596c3191671047d7b4a8"
+    },
+    {
+      "bytes": 5727,
+      "path": "baxy-automatic/tiger_gizmondo.svg",
+      "sha256": "19c53621756f95d6bcebf3bc07917bd930a9695fc70efd618e950a25e7c721ab"
+    },
+    {
+      "bytes": 5329,
+      "path": "baxy-automatic/tiger_r_zone_datazone.svg",
+      "sha256": "1a47ec0bc4c3eca34059a0ab3e303496eb6ac3fc3dfeb3f44f03ca97be3f2d98"
+    },
+    {
+      "bytes": 4048,
+      "path": "baxy-automatic/tiger_r_zone_superscreen.svg",
+      "sha256": "079b1a85b66a2947a2df926ec23d38ee548d0ddf8a1db6947fa346edd5e059b9"
+    },
+    {
+      "bytes": 7264,
+      "path": "baxy-automatic/tiger_r_zone_xpg.svg",
+      "sha256": "1891c806d802c502833deecda120b21590aa0bd888f32b66a6498abbe13c5e1a"
+    },
+    {
+      "bytes": 2926,
+      "path": "baxy-automatic/tiger_r_zone.svg",
+      "sha256": "2b55ccfabd344c04be2bd75c04459ea6378981acea1d9732d3fd9e26943f603d"
+    },
+    {
+      "bytes": 2214,
+      "path": "baxy-automatic/tomy_tutor.svg",
+      "sha256": "1028cb7ead7e88d3cfed1e6b53d78207003e3637470915528e7c8e5f6e588d34"
+    },
+    {
+      "bytes": 5622,
+      "path": "baxy-automatic/umtech_videobrain.svg",
+      "sha256": "9f7fb4800e1ff7274b9a5492d53b6cb7a8a88019c2a7940b35673d4f5733436d"
+    },
+    {
+      "bytes": 1517,
+      "path": "baxy-automatic/unisonic_champion_2711.svg",
+      "sha256": "b33cca9f4d205bd1a39b7b488420e460e1699618d5d2cee2d149650aa6f4ecdc"
+    },
+    {
+      "bytes": 1043,
+      "path": "baxy-automatic/uzebox.svg",
+      "sha256": "3df6fe8389f7f01fb0f704b4b263bc623d83961725ca1108de644c58fe80acea"
+    },
+    {
+      "bytes": 3109,
+      "path": "baxy-automatic/valve_steam_deck.svg",
+      "sha256": "e8453d559d504356bbebb99fd3cfdb3b6439a74b55bd739a44d891a19b64a470"
+    },
+    {
+      "bytes": 274,
+      "path": "baxy-automatic/valve_steam_link.svg",
+      "sha256": "74bae6a79f36b41ac60e0b307c315435c3cd5b228abe369f35eccfd3bdaf993d"
+    },
+    {
+      "bytes": 14690,
+      "path": "baxy-automatic/view_master_interactive_vision.svg",
+      "sha256": "c87282e4d1edefdd300039ddc532f598b99ef390e4a8e522cdba0278d0235034"
+    },
+    {
+      "bytes": 874,
+      "path": "baxy-automatic/vircon32.svg",
+      "sha256": "73e2444f3f898116b63d9f3d8ed1b50a96a36e132eded5b531c74bd1db0a34c0"
+    },
+    {
+      "bytes": 260,
+      "path": "baxy-automatic/vm_labs_nuon.svg",
+      "sha256": "ce1f2a5652f4b2997f942270c0722b2029f016b80ec66b151974102d313d1c35"
+    },
+    {
+      "bytes": 2485,
+      "path": "baxy-automatic/vtech_3d_gamate.svg",
+      "sha256": "aae3875f97d12bb2200721bdc738524a8ae96533f12e95b331718b52048c2ae3"
+    },
+    {
+      "bytes": 2212,
+      "path": "baxy-automatic/vtech_creativision.svg",
+      "sha256": "5bfaa40989738c6fef049f671bdca95e6706c4c621a3a9a09d762fd71437185c"
+    },
+    {
+      "bytes": 6449,
+      "path": "baxy-automatic/vtech_socrates_alt.svg",
+      "sha256": "3c802cd471ae1b666074d3703000e7f2c6d9b352856b8451b9bc51d35c7d7da0"
+    },
+    {
+      "bytes": 4527,
+      "path": "baxy-automatic/vtech_socrates.svg",
+      "sha256": "dadb41e4b8f674307ccade0b1a96d8c97c7ce895cab61a8f64ccce1feae0556d"
+    },
+    {
+      "bytes": 5196,
+      "path": "baxy-automatic/vtech_v_flash.svg",
+      "sha256": "557887db3225096d5fe4d977127e94a86b5254eed57f761da98284ec72904772"
+    },
+    {
+      "bytes": 8216,
+      "path": "baxy-automatic/vtech_v_smile.svg",
+      "sha256": "5179e8f707823f0acb97ab3623d089b27c7227ea915bd845e085acdf128e80ba"
+    },
+    {
+      "bytes": 1294,
+      "path": "baxy-automatic/wasm_4.svg",
+      "sha256": "a3d0c729e8e27955db36005e84519e60f83dca4ad8185c3ad87c567fff85f7c5"
+    },
+    {
+      "bytes": 3345,
+      "path": "baxy-automatic/watara_supervision_original.svg",
+      "sha256": "e4319df2f01679b45703655d8a13f7cf79e87d4c1ae76ca2e704381838575eb0"
+    },
+    {
+      "bytes": 2582,
+      "path": "baxy-automatic/watara_supervision.svg",
+      "sha256": "6c071c9700b4eab9a0d440578eea03c00c0c8df53fa71af57e11080dc987bdbb"
+    },
+    {
+      "bytes": 7995,
+      "path": "baxy-automatic/welback_mega_duck.svg",
+      "sha256": "3c3db15c3e97070245a3d070f336679b3649a4790c909a94b958c30b397ca7df"
+    },
+    {
+      "bytes": 3163,
+      "path": "baxy-automatic/worlds_of_wonder_action_max.svg",
+      "sha256": "497a029c630cea18a8118c4ce59e445710811c1d8e99ff07e4e51f60711a7f65"
+    },
+    {
+      "bytes": 5185,
+      "path": "baxy-automatic/xbox.svg",
+      "sha256": "8877bc7655f0f4e4a4f93a1a83cc4d573dd2546cad21dcb0b266eb2e196a020c"
+    },
+    {
+      "bytes": 11491,
+      "path": "baxy-automatic/xbox360.svg",
+      "sha256": "c26b9af955d0ebeb72cbd86b9a091044d3f600f919c69f8151f9c723b83eb6c4"
+    },
+    {
+      "bytes": 5299,
+      "path": "baxy-automatic/yamaha_copera.svg",
+      "sha256": "c2fc65770094a563806347d16c3247a6aadb610822e39dc83299b206d890b768"
+    },
+    {
+      "bytes": 3134,
+      "path": "baxy-automatic/zapit_game_wave.svg",
+      "sha256": "ec5f309109d836575a50bfbcf38c7284db1764c95f661bc3502ebfaa9c5dce5c"
+    },
+    {
+      "bytes": 639,
+      "path": "baxy-automatic/zeebo_zeebo.svg",
+      "sha256": "b711ec28ea6643be0dfa64d4b43b682c2e050a067777bb0b752f3b5c137084b6"
+    }
+  ]
+}

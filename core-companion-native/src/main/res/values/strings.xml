@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The Mimir button (ᛗ) and its menu. Names: companion_<surface>_<purpose>. A row's title is drawn as written on its coin; its subtitle and title are spoken together. -->
+    <string name="companion_button_description_primary">Mimir M button</string>
+    <string name="companion_button_description_secondary">Mimir companion</string>
+
+    <!-- The menu's header: drawn as written. The rune is the brand mark and MIMIR the wordmark (caps); the description is what is spoken. -->
+    <string name="companion_menu_title_primary">ᛗ · Mimir</string>
+    <string name="companion_menu_title_secondary">ᛗ · Bottom screen</string>
+    <string name="companion_menu_title_primary_description">Mimir</string>
+    <string name="companion_menu_title_secondary_description">Bottom screen</string>
+
+    <string name="companion_menu_tabs">Tabs</string>
+    <string name="companion_menu_tabs_system_subtitle">Android’s recent apps</string>
+    <string name="companion_menu_tabs_secondary_subtitle">Open apps</string>
+    <string name="companion_menu_quick_launch">Quick launch</string>
+    <string name="companion_menu_quick_launch_subtitle">Open from anywhere</string>
+    <string name="companion_menu_quick_launch_secondary_subtitle">Opens on the bottom screen</string>
+    <string name="companion_menu_utility">Utility</string>
+    <string name="companion_menu_utility_subtitle">Brightness &amp; device controls</string>
+    <string name="companion_menu_utility_secondary_subtitle">Both screens’ brightness &amp; device controls</string>
+    <string name="companion_menu_tweaker">Tweaker</string>
+    <string name="companion_menu_tweaker_subtitle">Performance &amp; telemetry</string>
+    <string name="companion_menu_return">Return to shelf</string>
+    <string name="companion_menu_return_subtitle">Restore the bottom screen</string>
+    <string name="companion_menu_swap">Swap</string>
+    <string name="companion_menu_swap_subtitle">Move app between screens</string>
+    <string name="companion_menu_trackpad">Trackpad</string>
+    <string name="companion_menu_trackpad_subtitle">Mouse for the main screen</string>
+</resources>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Files. Names: files_<surface>_<purpose>. Controller tokens (A, B, X, Y, START) are never translated; the word beside each is stored in sentence case. File names, paths and sizes are never in these strings. -->
+
+    <!-- Footer hints: the browse legend. A hint is a token and a label; these are the labels. -->
+    <string name="files_footer_back_to_origin">Back to origin</string>
+    <string name="files_footer_extract_here">Extract here</string>
+    <string name="files_footer_move_here">Move here</string>
+    <string name="files_footer_copy_here">Copy here</string>
+    <string name="files_footer_images_only">Images only</string>
+    <string name="files_footer_show_all">Show all</string>
+    <string name="files_footer_choose">Choose</string>
+    <string name="files_footer_open">Open</string>
+    <string name="files_footer_add_game">Add game</string>
+    <string name="files_footer_extract">Extract</string>
+    <string name="files_footer_search">Search</string>
+    <string name="files_footer_actions">Actions</string>
+    <string name="files_footer_queue">Queue</string>
+    <!-- %1$d is how many operations the queue holds. -->
+    <string name="files_footer_queue_count">Queue · %1$d</string>
+    <string name="files_footer_close">Close</string>
+    <string name="files_footer_back">Back</string>
+    <!-- B on the browse legend while deletes are held, and B on the queue screen that closes the browser: %1$d held deletes. -->
+    <plurals name="files_footer_review_deletes">
+        <item quantity="one">Review %1$d delete</item>
+        <item quantity="other">Review %1$d deletes</item>
+    </plurals>
+    <plurals name="files_footer_close_final">
+        <item quantity="one">Close · %1$d delete final</item>
+        <item quantity="other">Close · %1$d deletes final</item>
+    </plurals>
+
+    <!-- Footer hints: the choosers, the action overlay, the destination list and Search. -->
+    <string name="files_footer_choose_folder">Choose folder</string>
+    <string name="files_footer_rename">Rename</string>
+    <string name="files_footer_delete">Delete</string>
+    <string name="files_footer_put_it_here">Put it here</string>
+    <string name="files_footer_cancel">Cancel</string>
+    <string name="files_footer_type">Type</string>
+    <string name="files_footer_filter">Filter</string>
+    <string name="files_footer_go_to_file">Go to file</string>
+
+    <!-- The queue's buttons. The footer's A hint reads the same word as the focused button. -->
+    <string name="files_queue_action_undo">Undo</string>
+    <string name="files_queue_action_keep_deleted">Keep deleted</string>
+    <string name="files_queue_action_dismiss">Dismiss</string>
+    <string name="files_queue_action_cancel">Cancel</string>
+    <string name="files_queue_action_keep_both">Keep both</string>
+    <string name="files_queue_action_replace">Replace</string>
+    <string name="files_queue_action_skip">Skip</string>
+
+    <!-- The action overlay (X on a file): its eyebrow, its rows, and the line under Delete. Move and Copy read the transfer chooser's rows. -->
+    <string name="files_overlay_eyebrow">Actions</string>
+    <string name="files_overlay_row_rename">Rename…</string>
+    <string name="files_overlay_row_extract">Extract…</string>
+    <string name="files_overlay_row_delete">Delete</string>
+    <string name="files_overlay_delete_detail">Held in the queue until you keep it</string>
+
+    <!-- The Move/Copy chooser. "Place" is the umbrella word for both verbs; a row names its own. -->
+    <string name="files_transfer_eyebrow">Place</string>
+    <string name="files_transfer_row_move">Move into…</string>
+    <string name="files_transfer_row_copy">Copy into…</string>
+
+    <!-- The Extract chooser. %1$s in a row is a platform code or a folder's own name; in the header it is the archive's file name. -->
+    <string name="files_extract_eyebrow">Extract</string>
+    <string name="files_extract_row_here">Extract here</string>
+    <string name="files_extract_row_in">Extract in %1$s</string>
+    <string name="files_extract_row_choose">Extract in…</string>
+    <string name="files_extract_destination_context">Extract %1$s to…</string>
+
+    <!-- The destination list (platform folders Mimir can see). %1$s is the folder's path. -->
+    <string name="files_destination_eyebrow">Put it in</string>
+    <string name="files_destination_browse">Browse for a folder instead…</string>
+    <string name="files_destination_other_drive">On another drive · %1$s</string>
+    <string name="files_destination_in_library">In library</string>
+
+    <!-- The Queue screen: its header line (%1$d operations held; the promise that nothing leaves the device), its empty state and a card's chip. A card's title and second line are the store's own words, drawn as written. -->
+    <plurals name="files_queue_summary">
+        <item quantity="one">%1$d operation · nothing leaves this device</item>
+        <item quantity="other">%1$d operations · nothing leaves this device</item>
+    </plurals>
+    <string name="files_queue_empty">Nothing queued. A delete waits here, with Undo, until you settle it.</string>
+    <string name="files_queue_chip_cancelling">Cancelling…</string>
+    <!-- %1$d files placed so far of %2$d. -->
+    <string name="files_queue_chip_placing">Placing files %1$d/%2$d</string>
+    <!-- %1$d is a whole percent. -->
+    <string name="files_queue_chip_percent">%1$d%%</string>
+    <string name="files_queue_chip_working">Working…</string>
+    <string name="files_queue_chip_name_taken">Name taken</string>
+    <string name="files_queue_chip_undo_available">Undo available</string>
+    <string name="files_queue_chip_renamed">Renamed</string>
+    <string name="files_queue_chip_moved">Moved</string>
+    <string name="files_queue_chip_not_available">Not available</string>
+    <string name="files_queue_chip_done">Done</string>
+    <string name="files_queue_chip_nothing_moved">Nothing moved</string>
+    <string name="files_queue_chip_cancelled">Cancelled</string>
+    <string name="files_queue_chip_failed">Failed</string>
+
+    <!-- Browser chrome: the header titles (the picker modes wear the rune), the Queue plate in the header, the section headings (%1$d is how many rows follow), the empty folder and the Return row. -->
+    <string name="files_header_files">Files</string>
+    <string name="files_header_pick_image">ᛗ · Choose an image</string>
+    <string name="files_header_pick_music_folder">ᛗ · Choose a music folder</string>
+    <string name="files_browse_queue_plate">Queue</string>
+    <string name="files_browse_folders_heading">Folders · %1$d</string>
+    <string name="files_browse_files_heading">Files · %1$d</string>
+    <string name="files_browse_empty_folder">This folder is empty.</string>
+    <string name="files_browse_return">Return</string>
+    <!-- Spoken by a screen reader on the Return row: %1$s is the folder it returns to. -->
+    <string name="files_browse_return_to">Return to %1$s</string>
+
+    <!-- The pinned commit row: a small eyebrow word and the sentence under it. "this folder" is the one the player has walked to; the chooser rows say "here" for a sibling of the archive. -->
+    <string name="files_commit_extract_eyebrow">Extract</string>
+    <string name="files_commit_extract_label">Extract into this folder</string>
+    <string name="files_commit_move_eyebrow">Move</string>
+    <string name="files_commit_move_label">Move into this folder</string>
+    <string name="files_commit_copy_eyebrow">Copy</string>
+    <string name="files_commit_copy_label">Copy into this folder</string>
+    <string name="files_commit_use_eyebrow">Use</string>
+    <string name="files_commit_use_label">Use this folder</string>
+    <string name="files_commit_add_eyebrow">Add</string>
+    <string name="files_commit_add_label">Add this folder</string>
+
+    <!-- The image picker: its switch between images and every file, and its notes. -->
+    <string name="files_pick_toggle_eyebrow">Show</string>
+    <string name="files_pick_images_only">Images only</string>
+    <!-- %1$d files the picker is leaving out. -->
+    <plurals name="files_pick_all_files">
+        <item quantity="one">All files · %1$d hidden</item>
+        <item quantity="other">All files · %1$d hidden</item>
+    </plurals>
+    <string name="files_pick_no_images">No images in this folder.</string>
+    <!-- Spoken for a file the picker cannot take. -->
+    <string name="files_pick_not_an_image">Not an image</string>
+
+    <!-- The kind vocabulary. One set of words for what a file is: the tile's badge, the Search rows' badge and the inspector's tag read it, and the
+         inspector's chip reads the same words where the kind has only one (the longer chip words are the files_chip_* below). Sentence case. ZIP, 7Z, BIOS
+         and a file's own extension are format identifiers and stay in code. -->
+    <string name="files_kind_dir">Dir</string>
+    <string name="files_kind_folder">Folder</string>
+    <string name="files_kind_game">Game</string>
+    <string name="files_kind_save">Save</string>
+    <string name="files_kind_data">Data</string>
+    <string name="files_kind_music">Music</string>
+    <string name="files_kind_image">Image</string>
+    <string name="files_kind_video">Video</string>
+    <string name="files_kind_doc">Doc</string>
+    <string name="files_kind_app">App</string>
+    <string name="files_kind_file">File</string>
+    <string name="files_kind_archive">Archive</string>
+
+    <!-- The inspector's chip where the kind needs a longer word than its badge. -->
+    <string name="files_chip_platform_tome">Platform tome</string>
+    <string name="files_chip_recognised">Recognised</string>
+    <string name="files_chip_media_art">Media art</string>
+    <string name="files_chip_save_data">Save data</string>
+    <string name="files_chip_document">Document</string>
+    <string name="files_chip_misc">Misc</string>
+
+    <!-- The inspector's Launches row. %1$s is a platform code (GBA, SNES). -->
+    <string name="files_launch_platform_folder">%1$s folder</string>
+    <string name="files_launch_not_platform_folder">Not a platform folder</string>
+    <string name="files_launch_extract_first">Nothing yet — extract it first</string>
+    <string name="files_launch_bios">Emulators need it where it is</string>
+    <string name="files_launch_runs_on">Runs on %1$s</string>
+    <string name="files_launch_no_platform">No platform recognised</string>
+    <string name="files_launch_not_game">Not game content</string>
+
+    <!-- The inspector's field labels (a 70 dp gutter, one line), its date and its buttons. -->
+    <string name="files_inspector_where">Where</string>
+    <string name="files_inspector_modified">Modified</string>
+    <string name="files_inspector_launches">Launches</string>
+    <string name="files_inspector_upload">Upload</string>
+    <string name="files_inspector_checksum">Checksum</string>
+    <string name="files_inspector_unknown">Unknown</string>
+    <string name="files_inspector_open">Open</string>
+    <string name="files_inspector_extract">Extract…</string>
+    <string name="files_inspector_place">Place…</string>
+
+    <!-- The Checksum row: its status word, its three button words, the Copy button's two, and what a refused or failed Verify says. -->
+    <string name="files_checksum_idle">Not checked</string>
+    <string name="files_checksum_reading">Reading…</string>
+    <string name="files_checksum_failed">Verify failed</string>
+    <string name="files_checksum_unreadable">Couldn\'t read this file</string>
+    <string name="files_checksum_refused">Verify didn\'t start</string>
+    <string name="files_checksum_verify">Verify</string>
+    <string name="files_checksum_verify_running">Reading</string>
+    <string name="files_checksum_verify_again">Again</string>
+    <string name="files_checksum_copy">Copy</string>
+    <string name="files_checksum_copied">Copied</string>
+
+    <!-- A tile's meta line. %1$s is the file's extension in capitals (a format identifier), %2$s its size. A folder's count is the plural below. -->
+    <string name="files_tile_meta_ext_size">%1$s · %2$s</string>
+    <string name="files_tile_deleting">Deleting…</string>
+    <plurals name="files_item_count">
+        <item quantity="one">%1$d item</item>
+        <item quantity="other">%1$d items</item>
+    </plurals>
+
+    <!-- A drive's free space (the drive chooser's rows). %1$s and %2$s are sizes (119.4 GB), %1$d in the compact form is whole gigabytes. -->
+    <string name="files_volume_free">%1$s free</string>
+    <string name="files_volume_free_gb">%1$d GB free</string>
+    <string name="files_volume_free_of">%1$s free of %2$s</string>
+
+    <!-- The Search screen's filter chips. BIOS is a format identifier and stays in code. -->
+    <string name="files_search_filter_all">All</string>
+    <string name="files_search_filter_games">Games</string>
+    <string name="files_search_filter_archives">Archives</string>
+    <string name="files_search_filter_saves">Saves</string>
+
+    <!-- The Search screen. Its placeholder, its keyboard's label and the Scope card. The scope sentence is core-files' FILE_SEARCH_SCOPE_COPY word for word (a privacy promise:
+         FilesSearchTextTest pins the English against the const). The width model of the control row was measured against the English placeholder and chip words. -->
+    <string name="files_search_placeholder">Search this volume</string>
+    <string name="files_search_keyboard_label">Search files</string>
+    <string name="files_search_scope_eyebrow">Scope</string>
+    <string name="files_search_scope_copy">Names only, on the volume you are in. Mimir does not read file contents to search, and nothing is sent anywhere.</string>
+
+    <!-- The line under the results. %1$s is the volume's name (SD Card), %2$d how many were found so far. A volume nothing names reads "this volume". -->
+    <string name="files_search_status_running">Searching on %1$s · %2$d so far</string>
+    <string name="files_search_status_running_here">Searching on this volume · %1$d so far</string>
+    <plurals name="files_search_status_matches">
+        <item quantity="one">%1$d match on %2$s</item>
+        <item quantity="other">%1$d matches on %2$s</item>
+    </plurals>
+    <plurals name="files_search_status_matches_here">
+        <item quantity="one">%1$d match on this volume</item>
+        <item quantity="other">%1$d matches on this volume</item>
+    </plurals>
+
+    <!-- The empty states: nothing typed, a walk in progress, a walk that found nothing. -->
+    <string name="files_search_empty_idle">Type a name, or pick a filter.</string>
+    <string name="files_search_empty_running">Looking…</string>
+    <string name="files_search_empty_settled">Nothing here by that name.</string>
+
+    <!-- The multi-disc warning (the English stands word for word, except that the eyebrow is stored in sentence case). Every sentence is one
+         string with its numbers and the game's own title in slots: %1$d the disc's number, %2$d how many discs the game has, %3$s the game's title. -->
+    <string name="files_discset_eyebrow">Multi-disc game</string>
+    <string name="files_discset_headline_numbered">Disc %1$d of %2$d — %3$s</string>
+    <!-- %1$d how many discs, %2$s the game's title; the library never numbered this disc. -->
+    <string name="files_discset_headline_unnumbered">One of %1$d discs — %2$s</string>
+    <string name="files_discset_detail_split_folders">Its discs are already in different folders, so the game can\'t reach them all. Moving them together is what fixes it.</string>
+    <string name="files_discset_detail_bare">The other discs stay in this folder. Move this one alone and the game stops when it asks for it.</string>
+    <string name="files_discset_detail_playlist_by_name">Its playlist points at the other discs by name. Move this one alone and the game stops working.</string>
+    <string name="files_discset_detail_playlist_fixed">Its playlist points at fixed locations, so this game breaks wherever the discs go. Mimir can\'t repair that by moving them together.</string>
+    <!-- The three answers, and the line under the first two. %1$d is how many discs the game has. -->
+    <string name="files_discset_row_move_all">Move all %1$d discs</string>
+    <string name="files_discset_row_move_one">Move just this one</string>
+    <string name="files_discset_row_leave">Leave it where it is</string>
+    <string name="files_discset_row_detail_with_playlist">Takes the playlist too, so the game keeps working</string>
+    <string name="files_discset_row_detail_together">Keeps them together, so the game keeps working</string>
+    <string name="files_discset_row_detail_stops">The game will stop working until you move the rest</string>
+
+    <!-- The Queue screen's cards: a title, a second line and the line a stopped card shows. The app store writes these in English; the screen
+         recognises each sentence by its frame and draws the matching string (FilesQueueText.kt), so every sentence here is ONE format string with the player's own
+         names and counts in its slots: %1$s a file or folder name, %1$d / %1$s a count. -->
+    <plurals name="files_queue_title_files">
+        <item quantity="one">%1$d file</item>
+        <item quantity="other">%1$d files</item>
+    </plurals>
+    <!-- The line between a card's sentence and a note added to it: %1$s the card so far, %2$s the note. -->
+    <string name="files_queue_line_join">%1$s · %2$s</string>
+
+    <!-- The second line written when a card is queued. %1$s is a name; a move or copy names where it came from and where it went. -->
+    <string name="files_queue_line_delete">Delete</string>
+    <string name="files_queue_line_delete_kept">Delete · saves and states kept</string>
+    <string name="files_queue_line_renamed">Renamed %1$s to %2$s</string>
+    <string name="files_queue_line_moved_from">Moved from %1$s to %2$s</string>
+    <string name="files_queue_line_copied_from">Copied from %1$s to %2$s</string>
+    <string name="files_queue_line_moved">Moved %1$s to %2$s</string>
+    <string name="files_queue_line_copied">Copied %1$s to %2$s</string>
+    <plurals name="files_queue_line_moved_files">
+        <item quantity="one">Moved %1$d file to %2$s</item>
+        <item quantity="other">Moved %1$d files to %2$s</item>
+    </plurals>
+    <plurals name="files_queue_line_copied_files">
+        <item quantity="one">Copied %1$d file to %2$s</item>
+        <item quantity="other">Copied %1$d files to %2$s</item>
+    </plurals>
+    <string name="files_queue_line_name_taken">A file named %1$s is already there.</string>
+    <string name="files_queue_line_extract">Extract → %1$s</string>
+
+    <!-- What a failed, empty or stopped card says it left. %1$s / %2$s / %3$s: counts, then the destination folder's name. -->
+    <string name="files_queue_text_nothing_to_delete">Nothing to delete</string>
+    <string name="files_queue_text_nothing_changed">Nothing was changed.</string>
+    <string name="files_queue_text_nothing_moved">Nothing was moved. Everything is still where it was.</string>
+    <string name="files_queue_text_nothing_copied">Nothing was copied. The unfinished copy was removed.</string>
+    <!-- %1$s how many files go with the one picked, %2$s the destination folder's name. -->
+    <plurals name="files_queue_text_late_companions_moved">
+        <item quantity="one">Too late to stop: everything you picked was already moved to %2$s. The %1$s file that goes with it is still where it was.</item>
+        <item quantity="other">Too late to stop: everything you picked was already moved to %2$s. The %1$s files that go with it are still where they were.</item>
+    </plurals>
+    <plurals name="files_queue_text_late_companions_copied">
+        <item quantity="one">Too late to stop: everything you picked was already copied to %2$s. The %1$s file that goes with it is still where it was.</item>
+        <item quantity="other">Too late to stop: everything you picked was already copied to %2$s. The %1$s files that go with it are still where they were.</item>
+    </plurals>
+    <string name="files_queue_text_late_moved">Too late to stop: everything was already moved to %1$s.</string>
+    <string name="files_queue_text_late_copied">Too late to stop: everything was already copied to %1$s.</string>
+    <!-- %1$s how many landed, %2$s how many were picked, %3$s the destination folder's name. -->
+    <string name="files_queue_text_partial_moved">%1$s of %2$s files were moved to %3$s and kept. The rest are still where they were.</string>
+    <string name="files_queue_text_partial_copied">%1$s of %2$s files were copied to %3$s and kept. The rest were not copied.</string>
+    <string name="files_queue_text_late_extracted">Too late to stop: everything was already extracted.</string>
+    <string name="files_queue_text_nothing_extracted">Nothing was extracted.</string>
+
+    <!-- The notes a card gains after its line. %1$s is a file name, or a count of discs. -->
+    <string name="files_queue_note_disc_playlist">The disc it lists stays.</string>
+    <string name="files_queue_note_disc_playlists">The disc they list stays.</string>
+    <string name="files_queue_note_discs_playlist">The %1$s discs it lists stay.</string>
+    <string name="files_queue_note_discs_playlists">The %1$s discs they list stay.</string>
+    <string name="files_queue_note_stayed_cue">%1$s stayed behind: its cue lists it under that name</string>
+    <string name="files_queue_note_stayed_disc">%1$s stayed behind: it only moves under its disc\'s name</string>
+    <string name="files_queue_note_kept_name">%1$s kept its old name</string>
+    <string name="files_queue_note_file_back">The file is back. Your library will re-add the game the next time it scans.</string>
+    <string name="files_queue_note_left_sources">That folder isn\'t one of your game sources, so it left your library.</string>
+    <string name="files_queue_note_left_identity">Your library doesn\'t list it as that platform\'s game any more.</string>
+    <string name="files_queue_note_library_unreachable">Mimir couldn\'t update your library — it\'ll catch up next time it scans.</string>
+    <string name="files_queue_note_new_name">It was saved under a new name, so your library will re-add it on the next scan.</string>
+</resources>

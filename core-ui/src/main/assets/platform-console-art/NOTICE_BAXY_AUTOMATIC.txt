@@ -1,0 +1,10 @@
+Mimir third-party asset notice
+
+BAXY Automatic system icons
+Source: https://github.com/baxysquare/baxy-retroarch-themes
+Source path: Automatic/src/svg
+Source commit: af8db5db4cbb76c0db1334f5096ac2289f83efcf
+License: MIT License, per the upstream BAXY Themes README.
+
+Mimir ships these files as offline console/system silhouettes only.
+They are not game content, BIOS files, emulators, download indexes, or network services.

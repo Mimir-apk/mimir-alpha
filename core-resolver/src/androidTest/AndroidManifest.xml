@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <provider
+            android:name="com.gruning.mimir.rewrite.core.resolver.scan.HostileDocumentsProvider"
+            android:authorities="com.gruning.mimir.rewrite.core.resolver.ep02.documents"
+            android:exported="false" />
+        <provider
+            android:name="com.gruning.mimir.rewrite.core.resolver.capacity.Ep03GeneratedDocumentsProvider"
+            android:authorities="com.gruning.mimir.rewrite.core.resolver.ep03.documents"
+            android:exported="false" />
+        <service
+            android:name="com.gruning.mimir.rewrite.core.resolver.library.ScanProcessDeathService"
+            android:exported="false"
+            android:process=":ep02_scan_probe"
+            android:stopWithTask="true" />
+    </application>
+</manifest>

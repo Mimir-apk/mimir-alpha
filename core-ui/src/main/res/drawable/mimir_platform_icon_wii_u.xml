@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="48dp" android:height="48dp" android:viewportWidth="356.2264" android:viewportHeight="356.2264">
+    <group android:translateX="88.7623" android:translateY="5.9300">
+        <path android:fillColor="#FFFFFFFF" android:pathData="M176 133.33L181.33 133.33 181.33 122.67 176 122.67Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M176 117.33L181.33 117.33 181.33 106.67 176 106.67Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M176 101.33L181.33 101.33 181.33 90.67 176 90.67Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M176 85.33L181.33 85.33 181.33 74.67 176 74.67Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M197.33 274.68C200.63 277.15 202.67 281.07 202.67 285.33 202.67 289.59 200.63 293.51 197.33 295.99L197.33 312C197.33 318.1 189.51 320 186.67 320L10.67 320C7.82 320 0 318.1 0 312L0 8C0 1.9 7.82 0 10.67 0L186.67 0C189.51 0 197.33 1.9 197.33 8L197.33 13.34C200.63 15.82 202.67 19.74 202.67 24 202.67 28.26 200.63 32.18 197.33 34.66ZM192 292.87C195.1 291.77 197.33 288.81 197.33 285.33 197.33 281.85 195.1 278.9 192 277.8L192 31.54C195.1 30.43 197.33 27.48 197.33 24 197.33 20.52 195.1 17.56 192 16.46L192 8C192 6.53 188.14 5.33 186.67 5.33L26.67 5.33 26.67 298.67 192 298.67ZM5.33 8L5.33 298.67 21.33 298.67 21.33 5.33 10.67 5.33C9.2 5.33 5.33 6.53 5.33 8ZM192 312L192 304 5.33 304 5.33 312C5.33 313.47 9.2 314.67 10.67 314.67L186.67 314.67C188.14 314.67 192 313.47 192 312Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M165.33 133.33L165.33 122.67 170.67 122.67 170.67 133.33Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M165.33 117.33L165.33 106.67 170.67 106.67 170.67 117.33Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M165.33 101.33L165.33 90.67 170.67 90.67 170.67 101.33Z" />
+        <path android:fillColor="#FFFFFFFF" android:pathData="M165.33 85.33L165.33 74.67 170.67 74.67 170.67 85.33Z" />
+    </group>
+</vector>

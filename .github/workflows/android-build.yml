@@ -1,0 +1,1067 @@
+name: Android build
+
+# Build APKs and run the selected checks on eligible pushes and pull requests.
+#
+# What runs, and when
+#   pull_request (opened, synchronize, reopened, ready_for_review, labeled), push to main and
+#   integration/**, and manual dispatch. A pull request is diffed against its base and only the builds
+#   its files can affect run (the `changes` job); a push or a plain dispatch runs everything, except a push
+#   whose tree a passed pull request run already tested (see "One run per merge" below).
+#
+#     only docs (*.md outside src/, implementation-notes, configuration/, marketing/, evidence/, LICENSE)  changes + verdict
+#     anything outside mimir-tweaker/, and mimir-tweaker/contract/** (the AIDL both builds compile)
+#                                                                  build + unit + app-unit
+#                                                                  (+ app-unit-slow: see below)
+#     mimir-tweaker/** (its host-signer test sources included), gradle/**, the root gradle files,
+#       gradlew and .github/**                                      tweaker
+#
+#   Job table (all but changes and verdict depend on what the diff touches):
+#     changes         every run   path filter, credential guard
+#     build           main build  debug APK, signer check                              gates
+#     unit            main build  every module's unit tests except :app                critical suites gate
+#     app-unit        :app        :app unit tests, 4 shards, SLOW_APP_TESTS left out   report-only
+#     app-unit-slow   :app        the SLOW_APP_TESTS classes, on their own             report-only
+#                                 (only on a push, a dispatch, or a PR labelled ci:app-tests)
+#     tweaker         tweaker     the Tweaker's unit suites                            gates
+#     verdict         every run   the one line to read
+#
+#   So a core-storage change runs the main build only, a Tweaker app change runs only the Tweaker job, and
+#   a contract, gradle/** or .github/** change runs both. `verdict` always runs last and is the one line to
+#   read: requested jobs must succeed; jobs may skip only when the successful path filter excludes them.
+#
+# :app only when :app is affected (the `app` output of `changes`): the four app-unit shards and app-unit-slow
+# (about 56 of a full run's 75 billed minutes) run on a push, a dispatch, and a pull request that touches
+# anything the :app build reads: app/, core-*/, feature-*/, gradle/, the root build files, platforms/, debug/,
+# NOTICE, tools/platform-registry/, tools/emulator-definitions/, tools/ci/, mimir-tweaker/contract/, this
+# workflow file, and any path not named below. A pull request that only touches .github/ (other than this file),
+# tools/ (other than those three), mimir-tweaker/ (other than contract/), docs/, design-exports/ or the
+# documentation paths above skips them; build and unit still run for whatever else the main build owns. The
+# list of paths that do NOT need :app is the short one, so a new top-level path runs :app until it is named.
+#
+# One run per merge: a pull request run and the push-to-main run of its merge commit test the same tree, so
+# the push run is skipped (every build job skipped, the verdict passes) when that tree was already tested by
+# a pull request run of this workflow that passed. The same holds for a passed push run of an integration/**
+# branch: sprint pull requests stay drafts (no CI) and CI runs once on integration/sprint-*, and when the
+# sprint's pull requests merge to main in order with merge commits, main's final tree equals the integration
+# branch's tree, so that last push run is skipped (the intermediate merges just run, cancelling each other in
+# the concurrency group). See the `changes` job, step "Skip the push run when a passed pull request run
+# already tested this tree". Anything unclear (an API error, a squash or rebase, an
+# octopus merge, a base that moved since the pull request ran, a missing log) runs everything. A merge that
+# changes the Gradle build (*.gradle.kts, gradle/, gradle.properties) also runs everything: only push runs write
+# the Gradle cache that pull requests read.
+#
+# Drafts: a draft pull request skips build jobs and gets a supplemental verdict. Add `ci:run-draft` to run CI.
+# Adding any other label to a pull request starts nothing (and cancels nothing), except `ci:app-tests`:
+#
+# Slow :app classes: a class that takes most of an hour (SLOW_APP_TESTS below, the one place to edit) is left
+# out of the four app-unit shards, whose command passes it as -Pmimir.ci.excludeTests, and runs alone in
+# app-unit-slow (110-minute step limit) on a push to main or integration/**, on a dispatch, and on a pull
+# request that carries the label `ci:app-tests`, in each case only when the main build is affected. Adding
+# that label to a non-draft PR starts a run of its own with just that job: the other jobs already ran for the
+# head, and the run gets its own concurrency group, so nothing in progress is cancelled or restarted. A draft
+# still needs ci:run-draft; the label does not wake it. Later pushes to a labelled PR run the slow job with
+# the others, and a newer slow run for the same PR cancels the older one (the job's own concurrency group).
+#
+# Unit-test policy: core-model, core-storage, core-launch and core-resolver assertions gate the unit job.
+# Other Mimir assertions remain report-only (UNIT_TESTS_GATE below); Tweaker assertions are blocking.
+# All expected test tasks must finish with consistent XML. Compilation, setup, timeout, missing results
+# and entirely skipped critical suites fail CI. The continued Gradle step allows all module results to
+# be collected; the summary verifier enforces critical assertions after checking completeness.
+# A green verdict does not certify report-only assertions, lint, instrumentation or device behavior.
+# Supplemental label/draft/pinned runs use a separate check name and cannot satisfy `CI verdict`.
+#
+# Cost: runners have 2 vCPU / 7 GB and the plan has 2,000 minutes a month. The Gradle cache is written only
+# by pushes (pull requests restore it read-only), the APK is uploaded only by pushes (7 days), the emulator
+# job runs only when a dispatch asks for it, and a superseded run is cancelled.
+#
+# Artifact uploads: the account's artifact quota can be full, so every upload step is best-effort
+# (continue-on-error). The results always reach the run summary and the job log.
+#
+# Dispatch: tweaker_sha runs only the Tweaker unit suites at that exact commit (Alpha host evidence, how a
+# Linux-only Tweaker fix is proven); run_emulator adds the emulator smoke after a normal build.
+#
+# Emulator note: GitHub-hosted Linux runners expose /dev/kvm, so the smoke job uses the stock Android
+# emulator with hardware acceleration. The UML + redroid approach from petebaker17/android-without-kvm
+# is the fallback for containers WITHOUT /dev/kvm (Codespaces, some self-hosted runners); it is not
+# wired here because these runners do not need it. Locally the same smoke runs against the arm64 AVDs
+# under ~/.android/avd on the development Mac.
+#
+# Public CI uses an ephemeral runner debug signer and verifies the APK signature.
+# Official release signing is separate; signing keys never belong in this repository.
+#
+# Third-party actions are pinned to a full commit; the release is in the trailing comment. All of them run on
+# Node 24. setup-gradle stays on v5 on purpose: v6 makes the caching a proprietary component and bumping to it
+# accepts the Gradle Terms of Use, which requires explicit project acceptance. setup-android v4 changed the default
+# cmdline-tools build, so every use pins 12266719, the one v3 used, and only the Node runtime changes.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+  push:
+    branches: [main, "integration/**"]
+  workflow_dispatch:
+    inputs:
+      tweaker_sha:
+        description: "Full 40-hex commit to run the Tweaker unit suites at (Alpha host evidence). Empty = the normal build."
+        required: false
+        default: ""
+      run_emulator:
+        description: "Also boot an emulator that installs and cold-starts the debug APK (slow; parked, it can fail without failing the run)."
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+# One run per pull request or branch; a newer push cancels the older run. A dispatch is never cancelled.
+# A run that stands alone gets its own throwaway group, so it cannot cancel a real run that is in progress:
+# one that skips every job (a draft without ci:run-draft, or a label that starts nothing) and the one that
+# ci:app-tests starts, which runs only app-unit-slow.
+# The "CI wanted" test below is repeated, word for word, in the `changes` job's `if`.
+concurrency:
+  group: >-
+    android-build-${{
+    github.event_name == 'push' && github.ref ||
+    github.event_name == 'workflow_dispatch' && format('dispatch-{0}', github.run_id) ||
+    (
+    github.event.action == 'labeled' &&
+    github.event.pull_request.draft &&
+    github.event.label.name == 'ci:run-draft'
+    ||
+    github.event.action != 'labeled' &&
+    (!github.event.pull_request.draft || contains(github.event.pull_request.labels.*.name, 'ci:run-draft'))
+    ) && format('pr-{0}', github.event.pull_request.number) ||
+    format('solo-{0}', github.run_id)
+    }}
+  cancel-in-progress: true
+
+env:
+  NDK_VERSION: 27.0.12077973
+  # :app test classes too slow for the four app-unit shards (OnboardingScreenFitTest alone ran past 45
+  # minutes): fully qualified names, separated by spaces. The one place to edit. The shards leave them out
+  # (-Pmimir.ci.excludeTests) and app-unit-slow runs only them (--tests).
+  SLOW_APP_TESTS: "com.gruning.mimir.rewrite.OnboardingScreenFitTest"
+  # Ordinary assertions outside the four critical main-build suites remain report-only. Critical suites,
+  # incomplete results and infrastructure failures always block; Tweaker suites also block independently.
+  # Replacing this broad exception with owned, expiring exceptions remains maintenance work.
+  # Any value other than "report-only" gates.
+  UNIT_TESTS_GATE: "report-only"
+
+jobs:
+  changes:
+    name: Changed paths and secret guard
+    # Runs for every push and dispatch. For a pull request it runs unless the pull request is a draft
+    # without ci:run-draft, or the event is a label that does not start CI (see the concurrency note). The label
+    # ci:app-tests starts it on a non-draft PR, for the slow job alone.
+    if: >-
+      github.event_name != 'pull_request' ||
+      (
+      github.event.action == 'labeled' &&
+      github.event.pull_request.draft &&
+      github.event.label.name == 'ci:run-draft'
+      ) ||
+      (
+      github.event.action == 'labeled' &&
+      !github.event.pull_request.draft &&
+      github.event.label.name == 'ci:app-tests'
+      ) ||
+      (
+      github.event.action != 'labeled' &&
+      (!github.event.pull_request.draft || contains(github.event.pull_request.labels.*.name, 'ci:run-draft'))
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # actions: read is for the push-run duplicate check (the runs, jobs and logs of this workflow); nothing else.
+    # A job-level block replaces the workflow-level one, so contents: read is repeated for the checkout.
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      main: ${{ steps.filter.outputs.main }}
+      app: ${{ steps.filter.outputs.app }}
+      tweaker: ${{ steps.filter.outputs.tweaker }}
+      slow: ${{ steps.filter.outputs.slow }}
+      label_run: ${{ steps.filter.outputs.label_run }}
+    steps:
+      # On a pull request this is the merge commit, so HEAD^1 is the base tip and depth 2 reaches it.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      - name: Check shared UI module boundaries
+        run: python3 -B tools/test_module_boundaries.py
+
+      # Names the files only. No step here prints a matching line, so a leaked value never reaches the log.
+      # A real SteamGridDB key is 32 hex characters; the pattern wants 16 or more, which skips the four tracked
+      # files that merely name the setting (the build script, the release-kit script and its test, a handoff doc).
+      - name: Guard against tracked credentials
+        run: |
+          bad=0
+          tracked="$(git ls-files -- ':(glob)**/local.properties' '*.keystore' '*.jks' '*.p12')"
+          if [ -n "$tracked" ]; then
+            echo "::error title=Credential file is tracked::local.properties and key files must stay untracked (see .gitignore). Tracked:"
+            printf '%s\n' "$tracked"
+            bad=1
+          fi
+          leaks="$(git grep -I -l -E 'STEAMGRIDDB_API_KEY[[:space:]]*=[[:space:]]*[0-9A-Za-z]{16,}' || true)"
+          if [ -n "$leaks" ]; then
+            echo "::error title=API key in a tracked file::A SteamGridDB key is committed in these files (names only, the line is not shown):"
+            printf '%s\n' "$leaks"
+            bad=1
+          fi
+          if [ "$bad" -eq 0 ]; then echo "no tracked local.properties, key file or SteamGridDB key"; fi
+          exit "$bad"
+
+      # Printed so a later push run can find which tree this run tested (read back from this job's log by the
+      # step below). On a pull request this is refs/pull/N/merge: the PR head merged into the base tip at the time.
+      - name: Record the tree this run tests
+        run: echo "tested-tree=$(git rev-parse 'HEAD^{tree}')"
+
+      # A merged pull request is built twice: once as the pull request, once as the push of its merge commit. When
+      # both test the same tree the second run adds nothing, so skip it. "Same tree" is exact: the pushed commit
+      # must be a merge of two parents, its second parent (the pull request head) must have a pull request run of
+      # this workflow whose CI verdict passed, and that run's `changes` job log must name the pushed commit's tree
+      # as the tree it tested. A merge commit's tree differs from its second parent's tree whenever main moved, and
+      # the pull request run tested the merge with the base as it was then; comparing the recorded tree with the
+      # pushed tree is true only when the two merges came out identical. Requiring the verdict job to have passed
+      # (not just the run) leaves out the runs that started nothing: a draft, a label, or the ci:app-tests run that
+      # holds only the slow job.
+      # Integration branches can have a passed push run without a corresponding pull request run.
+      # When the pull request lookup finds no
+      # matching run, the same check is made against the recent passed push runs of integration/** branches (the
+      # same verdict, changes-job and tested-tree test, in verify_run). After the sprint pull requests merge to
+      # main in the sprint's order with merge commits, main's final tree equals the integration branch's tree, so
+      # that last push run is skipped; each intermediate merge has a different tree and runs (a newer push
+      # cancels an older one in the concurrency group).
+      # Every doubt runs everything: this step always ends green, with skip=false, on an API error, a missing
+      # log, a squash, rebase or octopus merge, or any other surprise.
+      - name: Skip the push run when a passed pull request run already tested this tree
+        id: dedupe
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          skip=false
+          why="no check was made"
+
+          # Returns 0 only when run $1 passed its CI verdict job and its changes job log names tree $2 as the tree
+          # it tested. $3 describes the run in `why`. Sets `why` either way.
+          verify_run() {
+            local run="$1" tree="$2" what="$3" jobs cid logs trees
+            [[ "$run" =~ ^[0-9]+$ ]] || return 1
+            jobs="$(gh api "repos/${REPO}/actions/runs/${run}/jobs?per_page=100")" || { why="the jobs API failed for ${what}"; return 1; }
+            if [ "$(printf '%s' "$jobs" | jq '[.jobs[] | select(.name == "CI verdict" and .conclusion == "success")] | length')" != "1" ]; then
+              why="${what} has no passed CI verdict job"
+              return 1
+            fi
+            cid="$(printf '%s' "$jobs" | jq -r '[.jobs[] | select(.name == "Changed paths and secret guard" and .conclusion == "success") | .id][0] // empty')"
+            if ! [[ "$cid" =~ ^[0-9]+$ ]]; then why="${what} has no passed changes job"; return 1; fi
+            logs="$(gh api "repos/${REPO}/actions/jobs/${cid}/logs")" || { why="could not read the log of ${what}"; return 1; }
+            # Collected first, then compared: a `grep -q` at the end of a pipe can end it early and, under
+            # pipefail, turn a match into a failure.
+            trees="$(printf '%s\n' "$logs" | grep -oE 'tested-tree=[0-9a-f]{40}' | cut -d= -f2 || true)"
+            if [[ $'\n'"$trees"$'\n' == *$'\n'"$tree"$'\n'* ]]; then
+              why="${what} passed and tested this exact tree ${tree:0:12}"
+              return 0
+            fi
+            why="${what} passed but tested a different tree (the base moved since it ran)"
+            return 1
+          }
+
+          # Returns 0 when a passed pull request run of the second parent $1 tested tree $2.
+          tested_by_pull_request() {
+            local runs run
+            runs="$(gh api "repos/${REPO}/actions/workflows/android-build.yml/runs?head_sha=${1}&event=pull_request&status=success&per_page=20" \
+              --jq ".workflow_runs[] | select(.head_sha == \"${1}\") | .id")" || { why="the workflow runs API failed"; return 1; }
+            if [ -z "$runs" ]; then why="no passed pull request run for the second parent ${1:0:12}"; return 1; fi
+            for run in $runs; do
+              if verify_run "$run" "$2" "pull request run ${run} (head ${1:0:12})"; then return 0; fi
+            done
+            return 1
+          }
+
+          # Returns 0 when a recent passed push run of an integration/** branch tested tree $1. The branch name is
+          # restricted to safe characters because it ends up in `why`.
+          tested_by_integration_push() {
+            local rows row run branch list
+            rows="$(gh api "repos/${REPO}/actions/workflows/android-build.yml/runs?event=push&status=success&per_page=10" \
+              --jq '.workflow_runs[] | select((.head_branch // "") | test("^integration/[A-Za-z0-9._/-]+$")) | "\(.id) \(.head_branch)"')" || { why="the workflow runs API failed"; return 1; }
+            if [ -z "$rows" ]; then why="no recent passed push run of an integration/** branch"; return 1; fi
+            # An array and a for loop, not `while read`, so nothing in verify_run can consume the rest of the list.
+            mapfile -t list <<< "$rows"
+            for row in "${list[@]}"; do
+              run="${row%% *}"
+              branch="${row#* }"
+              if verify_run "$run" "$1" "push run ${run} of ${branch}"; then return 0; fi
+            done
+            return 1
+          }
+
+          # Returns 0 only when a passed run (a pull request run, else an integration/** push run) tested exactly
+          # the pushed tree.
+          decide() {
+            local line tree p2 pr_why
+            line="$(git rev-list --parents -n 1 HEAD)" || { why="could not read the pushed commit"; return 1; }
+            # shellcheck disable=SC2086
+            set -- $line
+            if [ "$#" -ne 3 ]; then why="the push is not a two-parent merge commit (a squash, a rebase or a direct commit)"; return 1; fi
+            p2="$3"
+            # Only push runs write the Gradle cache (pull requests read it), so a merge that changes the Gradle
+            # build keeps its push run and refreshes main's cache. Depth 2 reaches the first parent.
+            local changed
+            changed="$(git diff --name-only "$2" HEAD)" || { why="could not diff the merge against its first parent"; return 1; }
+            if grep -qE '(^|/)[^/]*\.gradle\.kts$|^gradle/|^gradle\.properties$' <<< "$changed"; then
+              why="this merge changes the Gradle build, so the push run refreshes main's Gradle cache"; return 1
+            fi
+            tree="$(git rev-parse 'HEAD^{tree}')" || { why="could not read the pushed tree"; return 1; }
+            if ! [[ "$p2" =~ ^[0-9a-f]{40}$ && "$tree" =~ ^[0-9a-f]{40}$ ]]; then why="unexpected commit or tree id"; return 1; fi
+
+            if tested_by_pull_request "$p2" "$tree"; then return 0; fi
+            pr_why="$why"
+            if tested_by_integration_push "$tree"; then return 0; fi
+            why="${pr_why}; ${why}"
+            return 1
+          }
+
+          if decide; then skip=true; fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+          echo "why=$why" >> "$GITHUB_OUTPUT"
+          echo "duplicate push run: skip=$skip ($why)"
+          exit 0
+
+      - name: Decide which builds this change needs
+        id: filter
+        env:
+          EVENT: ${{ github.event_name }}
+          DEDUPE_SKIP: ${{ steps.dedupe.outputs.skip }}
+          DEDUPE_WHY: ${{ steps.dedupe.outputs.why }}
+          PINNED_SHA: ${{ inputs.tweaker_sha }}
+          ACTION: ${{ github.event.action }}
+          LABEL: ${{ github.event.label.name }}
+          HAS_SLOW_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'ci:app-tests') }}
+        run: |
+          set -euo pipefail
+          main=true
+          app=true
+          tweaker=true
+          why="This is not a pull request, so every build runs."
+          if [ "$EVENT" = "workflow_dispatch" ] && [ -n "$PINNED_SHA" ]; then
+            main=false
+            app=false
+            tweaker=false
+            why="This dispatch is pinned to a Tweaker commit, so only the pinned Tweaker job runs."
+          elif [ "$EVENT" = "pull_request" ]; then
+            if git rev-parse --verify --quiet 'HEAD^2' >/dev/null; then
+              # --no-renames lists both paths of a move, so a file moved out of the main build still counts there.
+              git -c core.quotepath=off diff --name-only --no-renames 'HEAD^1' HEAD > "$RUNNER_TEMP/changed-files.txt"
+              not_build_re='^(\.agents|\.claude|marketing)/|(^|/)evidence/|^LICENSE$'
+              tweaker_re='^(mimir-tweaker/|gradle/|\.github/)|^(gradle\.properties|settings\.gradle\.kts|build\.gradle\.kts|gradlew|gradlew\.bat)$'
+              main=false
+              app=false
+              tweaker=false
+              total=0
+              not_build=0
+              while IFS= read -r f; do
+                [ -n "$f" ] || continue
+                total=$((total + 1))
+                # A Markdown file under src/ ships in the app (legal notices, vendored READMEs): it is code.
+                if [[ "$f" =~ $not_build_re ]] || { [[ "$f" == *.md ]] && [[ "$f" != */src/* ]]; }; then
+                  not_build=$((not_build + 1))
+                  continue
+                fi
+                # The main build owns everything outside mimir-tweaker/, plus the contract both builds compile.
+                if [[ "$f" != mimir-tweaker/* ]] || [[ "$f" == mimir-tweaker/contract/* ]]; then main=true; fi
+                if [[ "$f" =~ $tweaker_re ]]; then tweaker=true; fi
+                # :app (the four app-unit shards and app-unit-slow) runs unless the file is one that :app never reads.
+                # The default is to run: only the paths named in the second arm are known not to matter, so a new
+                # top-level path or file runs :app until it is named here. The first arm lists the exceptions inside
+                # those trees: this workflow (it defines the shards), the CI summary script, the two tool trees the
+                # :app build and its tests read (platformSupportGate and EmulatorDefinitionsEgressTest read
+                # tools/platform-registry and tools/emulator-definitions), and the Tweaker AIDL contract that
+                # :mimir-tweaker-contract compiles into :app. platforms/, debug/ and NOTICE are read by :app and
+                # fall to the default arm, as does every module in settings.gradle.kts.
+                case "$f" in
+                  .github/workflows/android-build.yml|tools/ci/*|tools/platform-registry/*|tools/emulator-definitions/*|mimir-tweaker/contract/*) app=true ;;
+                  .github/*|tools/*|mimir-tweaker/*|docs/*|design-exports/*) ;;
+                  *) app=true ;;
+                esac
+              done < "$RUNNER_TEMP/changed-files.txt"
+              why="Files changed: $total, of which $not_build need no build (documentation and notes)."
+            else
+              why="No merge commit to diff against, so every build runs."
+            fi
+          fi
+          # The slow :app classes run on a push, a dispatch, or a pull request that carries ci:app-tests, and only
+          # when :app is affected. The label's own event runs that job alone.
+          slow=false
+          label_run=false
+          if [ "$EVENT" = "push" ] || [ "$EVENT" = "workflow_dispatch" ]; then
+            slow="$app"
+          elif [ "$EVENT" = "pull_request" ]; then
+            if [ "$HAS_SLOW_LABEL" = "true" ]; then slow="$app"; fi
+            if [ "$ACTION" = "labeled" ] && [ "$LABEL" = "ci:app-tests" ]; then
+              slow="$app"
+              main=false
+              app=false
+              tweaker=false
+              label_run=true
+              why="The label ci:app-tests was added, so only the slow :app classes run; the other jobs already ran for this head."
+            fi
+          fi
+          # A push whose tree a passed pull request run already tested builds nothing (see the dedupe step).
+          if [ "${DEDUPE_SKIP:-}" = "true" ]; then
+            main=false
+            app=false
+            tweaker=false
+            slow=false
+            why="Skipped: $DEDUPE_WHY, so this push run would repeat it."
+          fi
+          {
+            echo "## What this change touches"
+            echo
+            echo "$why"
+            echo
+            echo "| Build | Runs |"
+            echo "| --- | --- |"
+            echo "| Main build: debug APK, unit tests except :app | $main |"
+            echo "| :app unit tests, 4 shards | $app |"
+            echo "| Tweaker build: unit tests | $tweaker |"
+            echo "| Slow :app classes ($SLOW_APP_TESTS), own job | $slow |"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "main=$main" >> "$GITHUB_OUTPUT"
+          echo "app=$app" >> "$GITHUB_OUTPUT"
+          echo "tweaker=$tweaker" >> "$GITHUB_OUTPUT"
+          echo "slow=$slow" >> "$GITHUB_OUTPUT"
+          echo "label_run=$label_run" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build debug APK
+    needs: changes
+    if: needs.changes.outputs.main == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0 ndk;${{ env.NDK_VERSION }} cmake;3.22.1"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+      # render_fps_helper (app/build.gradle.kts buildRenderFpsHelper) reads ANDROID_NDK_HOME first and
+      # refuses any revision but the pinned one; the runner image pre-sets ANDROID_NDK_HOME to its newest
+      # NDK (27.3.x), so point both variables at the pinned revision installed above.
+      - name: Pin the NDK the native helper requires
+        run: |
+          echo "ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_ROOT=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          ls "${ANDROID_HOME}/ndk/${NDK_VERSION}/source.properties"
+
+      # The secret reaches this step only through the environment, is never echoed, and nothing here runs
+      # under set -x. Without the secret (or on a fork pull request, which gets none) the APK carries the
+      # runner's default debug signer.
+      - name: Assemble debug APK
+        timeout-minutes: 30
+        run: ./gradlew :app:assembleDebug --no-daemon --stacktrace
+
+      # apksigner verify exits non-zero for an APK whose signature does not verify, which fails the step.
+      - name: Verify CI APK signature
+        run: '"${ANDROID_HOME}/build-tools/35.0.0/apksigner" verify app/build/outputs/apk/debug/app-debug.apk'
+
+      - name: Name the artifact
+        run: |
+          short="${GITHUB_SHA::12}"
+          cp app/build/outputs/apk/debug/app-debug.apk "mimir-debug-${short}.apk"
+          sha256sum "mimir-debug-${short}.apk" | tee "mimir-debug-${short}.sha256"
+
+      # Pushes only (plus the dispatch that asks for the emulator, which installs this APK).
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.run_emulator)
+        continue-on-error: true
+        with:
+          name: mimir-debug-apk
+          path: |
+            mimir-debug-*.apk
+            mimir-debug-*.sha256
+          retention-days: 7
+
+  unit:
+    name: Unit tests, every module except :app
+    needs: changes
+    if: needs.changes.outputs.main == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Every main-build module with unit tests. The Android libraries use testDebugUnitTest; core-model and
+      # core-platform are plain JVM modules and use test. Not the test lifecycle task: on an Android module
+      # it runs every build type. :app has its own job. The next step fails when a module is missing here.
+      UNIT_TASKS: >-
+        :core-input:testDebugUnitTest
+        :core-ui:testDebugUnitTest
+        :core-audio:testDebugUnitTest
+        :core-companion-native:testDebugUnitTest
+        :core-tweaker-client:testDebugUnitTest
+        :core-storage:testDebugUnitTest
+        :core-files:testDebugUnitTest
+        :core-resolver:testDebugUnitTest
+        :core-launch:testDebugUnitTest
+        :core-metadata:testDebugUnitTest
+        :feature-settings:testDebugUnitTest
+        :feature-library:testDebugUnitTest
+        :feature-companion:testDebugUnitTest
+        :feature-browse:testDebugUnitTest
+        :feature-files:testDebugUnitTest
+        :core-model:test
+        :core-platform:test
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Every module with unit tests is in the task list
+        run: |
+          missing=0
+          for dir in */src/test; do
+            [ -d "$dir" ] || continue
+            module="${dir%%/*}"
+            [ "$module" = "app" ] && continue
+            case " $UNIT_TASKS " in
+              *" :$module:"*) ;;
+              *) echo "::error::$module has unit tests but is not in this job's task list"; missing=1 ;;
+            esac
+          done
+          exit "$missing"
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0 ndk;${{ env.NDK_VERSION }} cmake;3.22.1"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+      - name: Pin the NDK the native helper requires
+        run: |
+          echo "ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_ROOT=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          ls "${ANDROID_HOME}/ndk/${NDK_VERSION}/source.properties"
+
+      - name: Test the completion verifier
+        run: python3 -m unittest discover -s tools/ci -p 'test_verify_*.py'
+
+      # Continue so every module can finish and write results. The blocking summary below rejects
+      # critical assertions and incomplete runs; only other module assertions remain report-only.
+      # UNIT_TESTS_GATE=gate additionally makes all assertion failures blocking at this step.
+      - name: Run the unit tests
+        id: gradle
+        continue-on-error: ${{ env.UNIT_TESTS_GATE == 'report-only' }}
+        timeout-minutes: 35
+        run: |
+          set -o pipefail
+          rm -f -- "$RUNNER_TEMP/gradle-test.exit-code" "$RUNNER_TEMP/gradle-test.log"
+          # Remove only the requested tasks' old XML so cached outputs cannot mask a partial run.
+          for task in $UNIT_TASKS; do
+            module="${task%:*}"; module="${module#:}"; module="${module//:/\/}"
+            rm -rf -- "$module/build/test-results/${task##*:}"
+          done
+          set +e
+          ./gradlew $UNIT_TASKS --console=plain --no-daemon --continue --stacktrace 2>&1 | tee "$RUNNER_TEMP/gradle-test.log"
+          pipeline_status=("${PIPESTATUS[@]}")
+          set -e
+          # Written only after Gradle AND tee return; a killed/timed-out step leaves no record.
+          printf '%s %s\n' "${pipeline_status[0]}" "${pipeline_status[1]}" > "$RUNNER_TEMP/gradle-test.exit-code"
+          if [ "${pipeline_status[1]}" -ne 0 ]; then exit "${pipeline_status[1]}"; fi
+          exit "${pipeline_status[0]}"
+
+      - name: Summarise the results
+        if: always()
+        env:
+          GRADLE_OUTCOME: ${{ steps.gradle.outcome }}
+        run: |
+          python3 tools/ci/junit_summary.py --annotate --title "Unit tests: every module except :app" .
+          if [ "$GRADLE_OUTCOME" = "failure" ] || [ "$GRADLE_OUTCOME" = "cancelled" ]; then
+            echo "::warning title=Test step did not pass::Gradle ended as $GRADLE_OUTCOME: failing tests are annotated above; a build error or a timeout is in the step log"
+            echo "**The Gradle step ended as $GRADLE_OUTCOME** (a failing test, a build error or a timeout; a build error or timeout is in the step log, not above)." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          # Critical module assertions and incomplete/infrastructure runs fail this job.
+          verify_args=(--log "$RUNNER_TEMP/gradle-test.log" --completion "$RUNNER_TEMP/gradle-test.exit-code")
+          for task in $UNIT_TASKS; do
+            module="${task%:*}"; module="${module#:}"; module="${module//:/\/}"
+            verify_args+=(--expect "$task=$module/build/test-results/${task##*:}")
+          done
+          verify_args+=(--gate :core-model:test --gate :core-storage:testDebugUnitTest
+                        --gate :core-launch:testDebugUnitTest --gate :core-resolver:testDebugUnitTest)
+          python3 tools/ci/verify_test_run.py "${verify_args[@]}"
+
+      - name: Upload the JUnit XML
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: unit-junit-xml
+          path: "*/build/test-results/**/*.xml"
+          if-no-files-found: ignore
+          retention-days: 7
+
+  app-unit:
+    name: Unit tests, :app, shard ${{ matrix.shard }} of 4
+    needs: changes
+    if: needs.changes.outputs.app == 'true'
+    runs-on: ubuntu-latest
+    # :app alone ran past 45 minutes on one runner and wrote no XML (Gradle writes a task's XML only when the
+    # task ends), so it runs as four parallel jobs. Each passes -Pmimir.ci.testShard=<shard>/4 and runs only
+    # the test classes whose outer class name hashes to its shard (app/build.gradle.kts), minus SLOW_APP_TESTS,
+    # which app-unit-slow runs. Keep the 4 below, the matrix and the job name in step. The verdict reads this
+    # job's aggregate result.
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    # The step limit leaves the summary and upload steps time to run when a shard still overruns.
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0 ndk;${{ env.NDK_VERSION }} cmake;3.22.1"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+      - name: Pin the NDK the native helper requires
+        run: |
+          echo "ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_ROOT=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          ls "${ANDROID_HOME}/ndk/${NDK_VERSION}/source.properties"
+
+      # mimir.ci.maxParallelForks and mimir.ci.testShard are read in app/build.gradle.kts
+      # (testOptions.unitTests.all). Report-only (UNIT_TESTS_GATE): a red test step does not fail the job, so
+      # it ends green and the summary step below puts every failure, or a missing result, in front of the
+      # reader as a warning, then fails the job itself if the tests did not build or run (it reads the log
+      # kept below). Once the flag is "gate" this is false and the job fails on a red step as before.
+      - name: Run the :app unit tests, shard ${{ matrix.shard }} of 4
+        id: gradle
+        continue-on-error: ${{ env.UNIT_TESTS_GATE == 'report-only' }}
+        timeout-minutes: 45
+        run: |
+          set -o pipefail
+          rm -f -- "$RUNNER_TEMP/gradle-test.exit-code" "$RUNNER_TEMP/gradle-test.log"
+          rm -rf -- app/build/test-results/testDebugUnitTest
+          set +e
+          ./gradlew :app:testDebugUnitTest -Pmimir.ci.maxParallelForks=1 -Pmimir.ci.testShard=${{ matrix.shard }}/4 -Pmimir.ci.excludeTests="$SLOW_APP_TESTS" -Pmimir.ci.logTestEvents=true --console=plain --no-daemon --continue --stacktrace 2>&1 | tee "$RUNNER_TEMP/gradle-test.log"
+          pipeline_status=("${PIPESTATUS[@]}")
+          set -e
+          # Written only after Gradle AND tee return; a killed/timed-out step leaves no record.
+          printf '%s %s\n' "${pipeline_status[0]}" "${pipeline_status[1]}" > "$RUNNER_TEMP/gradle-test.exit-code"
+          if [ "${pipeline_status[1]}" -ne 0 ]; then exit "${pipeline_status[1]}"; fi
+          exit "${pipeline_status[0]}"
+
+      - name: Summarise the results
+        if: always()
+        env:
+          GRADLE_OUTCOME: ${{ steps.gradle.outcome }}
+        run: |
+          python3 tools/ci/junit_summary.py --annotate --title "Unit tests: :app, shard ${{ matrix.shard }} of 4" app
+          if [ "$GRADLE_OUTCOME" = "failure" ] || [ "$GRADLE_OUTCOME" = "cancelled" ]; then
+            echo "::warning title=Test step did not pass::Gradle ended as $GRADLE_OUTCOME: failing tests are annotated above; a build error or a timeout is in the step log"
+            echo "**The Gradle step ended as $GRADLE_OUTCOME** (a failing test, a build error or a timeout; a build error or timeout is in the step log, not above)." >> "$GITHUB_STEP_SUMMARY"
+            # Tests run one at a time (maxParallelForks=1), so after a timeout the last STARTED line is the
+            # test that was running. The test events come from -Pmimir.ci.logTestEvents=true.
+            started="$(grep -E ' STARTED$' "$RUNNER_TEMP/gradle-test.log" 2>/dev/null | tail -n 20 || true)"
+            if [ -n "$started" ]; then
+              echo "::warning title=Last test started::$(printf '%s\n' "$started" | tail -n 1)"
+              echo "::group::The last 20 tests started"
+              printf '%s\n' "$started"
+              echo "::endgroup::"
+              {
+                echo
+                echo "<details><summary>The last 20 tests started (the last one was running when the step ended)</summary>"
+                echo
+                printf '%s\n' "$started" | sed 's/^/    /'
+                echo
+                echo "</details>"
+              } >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
+          # Assertion failures remain report-only; incomplete/infrastructure runs fail this job.
+          verify_args=(--log "$RUNNER_TEMP/gradle-test.log" --completion "$RUNNER_TEMP/gradle-test.exit-code")
+          verify_args+=(--expect ":app:testDebugUnitTest=app/build/test-results/testDebugUnitTest")
+          python3 tools/ci/verify_test_run.py "${verify_args[@]}"
+
+      - name: Upload the JUnit XML
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: app-unit-junit-xml-${{ matrix.shard }}
+          path: app/build/test-results/**/*.xml
+          if-no-files-found: ignore
+          retention-days: 7
+
+  app-unit-slow:
+    name: Unit tests, :app, slow classes
+    needs: changes
+    if: needs.changes.outputs.slow == 'true'
+    runs-on: ubuntu-latest
+    # The step limit leaves the summary and upload steps time to run when the classes still overrun.
+    timeout-minutes: 120
+    # A newer slow run for the same pull request or branch cancels the older one, whichever workflow run it
+    # belongs to (the label's own run, or a later push), so two of these 110-minute jobs never run side by side.
+    # A dispatch is never cancelled.
+    concurrency:
+      group: >-
+        app-unit-slow-${{
+        github.event.pull_request.number && format('pr-{0}', github.event.pull_request.number) ||
+        github.event_name == 'workflow_dispatch' && format('dispatch-{0}', github.run_id) ||
+        github.ref
+        }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0 ndk;${{ env.NDK_VERSION }} cmake;3.22.1"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+      - name: Pin the NDK the native helper requires
+        run: |
+          echo "ANDROID_NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          echo "ANDROID_NDK_ROOT=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          ls "${ANDROID_HOME}/ndk/${NDK_VERSION}/source.properties"
+
+      # Report-only like unit and app-unit (UNIT_TESTS_GATE): a red step does not fail the job, and the summary
+      # step warns about every failure and the last test started, then fails the job itself if the tests did
+      # not build or run. An empty SLOW_APP_TESTS runs nothing: without a --tests filter this would run every
+      # :app test.
+      - name: Run the slow :app unit tests
+        id: gradle
+        continue-on-error: ${{ env.UNIT_TESTS_GATE == 'report-only' }}
+        timeout-minutes: 110
+        run: |
+          set -o pipefail
+          rm -f -- "$RUNNER_TEMP/gradle-test.exit-code" "$RUNNER_TEMP/gradle-test.log"
+          rm -rf -- app/build/test-results/testDebugUnitTest
+          if [ -z "$SLOW_APP_TESTS" ]; then
+            echo "SLOW_APP_TESTS is empty: nothing to run"
+            echo "nothing=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          tests=()
+          for slow_class in $SLOW_APP_TESTS; do tests+=(--tests "$slow_class"); done
+          set +e
+          ./gradlew :app:testDebugUnitTest -Pmimir.ci.maxParallelForks=1 -Pmimir.ci.logTestEvents=true "${tests[@]}" --console=plain --no-daemon --continue --stacktrace 2>&1 | tee "$RUNNER_TEMP/gradle-test.log"
+          pipeline_status=("${PIPESTATUS[@]}")
+          set -e
+          # Written only after Gradle AND tee return; a killed/timed-out step leaves no record.
+          printf '%s %s\n' "${pipeline_status[0]}" "${pipeline_status[1]}" > "$RUNNER_TEMP/gradle-test.exit-code"
+          if [ "${pipeline_status[1]}" -ne 0 ]; then exit "${pipeline_status[1]}"; fi
+          exit "${pipeline_status[0]}"
+
+      - name: Summarise the results
+        if: always() && steps.gradle.outputs.nothing != 'true'
+        env:
+          GRADLE_OUTCOME: ${{ steps.gradle.outcome }}
+        run: |
+          python3 tools/ci/junit_summary.py --annotate --title "Unit tests: :app, slow classes" app
+          if [ "$GRADLE_OUTCOME" = "failure" ] || [ "$GRADLE_OUTCOME" = "cancelled" ]; then
+            echo "::warning title=Test step did not pass::Gradle ended as $GRADLE_OUTCOME: failing tests are annotated above; a build error or a timeout is in the step log"
+            echo "**The Gradle step ended as $GRADLE_OUTCOME** (a failing test, a build error or a timeout; a build error or timeout is in the step log, not above)." >> "$GITHUB_STEP_SUMMARY"
+            # Tests run one at a time (maxParallelForks=1), so after a timeout the last STARTED line is the
+            # test that was running. The test events come from -Pmimir.ci.logTestEvents=true.
+            started="$(grep -E ' STARTED$' "$RUNNER_TEMP/gradle-test.log" 2>/dev/null | tail -n 20 || true)"
+            if [ -n "$started" ]; then
+              echo "::warning title=Last test started::$(printf '%s\n' "$started" | tail -n 1)"
+              echo "::group::The last 20 tests started"
+              printf '%s\n' "$started"
+              echo "::endgroup::"
+              {
+                echo
+                echo "<details><summary>The last 20 tests started (the last one was running when the step ended)</summary>"
+                echo
+                printf '%s\n' "$started" | sed 's/^/    /'
+                echo
+                echo "</details>"
+              } >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
+          # Assertion failures remain report-only; incomplete/infrastructure runs fail this job.
+          verify_args=(--log "$RUNNER_TEMP/gradle-test.log" --completion "$RUNNER_TEMP/gradle-test.exit-code")
+          verify_args+=(--expect ":app:testDebugUnitTest=app/build/test-results/testDebugUnitTest")
+          python3 tools/ci/verify_test_run.py "${verify_args[@]}"
+
+      - name: Upload the JUnit XML
+        if: always() && steps.gradle.outputs.nothing != 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: app-unit-slow-junit-xml
+          path: app/build/test-results/**/*.xml
+          if-no-files-found: ignore
+          retention-days: 7
+
+  tweaker:
+    name: Tweaker unit tests
+    needs: changes
+    if: needs.changes.outputs.tweaker == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+        with:
+          cache-read-only: ${{ github.event_name == 'pull_request' }}
+
+      # The Tweaker suites canonicalise Linux /sys paths, so they only mean something on Linux. Gating.
+      - name: Tweaker unit suites (safe, lab, production)
+        timeout-minutes: 35
+        run: ./gradlew -p mimir-tweaker :app:testSafeDebugUnitTest :app:testLabDebugUnitTest :app:testProductionDebugUnitTest --no-daemon --continue --stacktrace
+
+      - name: Summarise the results
+        if: always()
+        run: python3 tools/ci/junit_summary.py --title "Tweaker unit tests (safe, lab, production)" mimir-tweaker/app/build/test-results
+
+      - name: Upload the JUnit XML
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: tweaker-junit-xml
+          path: mimir-tweaker/app/build/test-results/**/*.xml
+          if-no-files-found: ignore
+          retention-days: 7
+
+  tweaker-unit-tests:
+    # Alpha host evidence. The Tweaker suites canonicalise Linux /sys paths, so they
+    # fail environmentally on the Windows workstation; this runs them on Linux at an exact, verified commit.
+    name: Tweaker unit tests at a pinned commit
+    if: github.event_name == 'workflow_dispatch' && inputs.tweaker_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      WANT_SHA: ${{ inputs.tweaker_sha }}
+    steps:
+      - name: Refuse anything but a full commit id
+        run: |
+          printf '%s' "$WANT_SHA" | grep -Eq '^[0-9a-f]{40}$' || { echo "tweaker_sha must be 40 lowercase hex"; exit 1; }
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ inputs.tweaker_sha }}
+
+      - name: Prove the checked-out commit
+        run: |
+          got="$(git rev-parse HEAD)"
+          echo "checked out $got"
+          test "$got" = "$WANT_SHA"
+          printf '%s\n' "$got" > checked-out-sha.txt
+
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0"
+
+      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
+
+      - name: Tweaker unit suites (safe, lab, production)
+        run: |
+          set +e
+          ./gradlew -p mimir-tweaker :app:testSafeDebugUnitTest :app:testLabDebugUnitTest :app:testProductionDebugUnitTest --no-daemon --continue --stacktrace 2>&1 | tee tweaker-unit-tests.log
+          rc=${PIPESTATUS[0]}
+          echo "gradle exit=$rc" | tee -a tweaker-unit-tests.log
+          exit $rc
+
+      # If the artifact storage quota blocks the XML upload, the per-class
+      # results, a digest of the XML and every failing test are printed into the job log from the JUnit XML itself.
+      - name: Print the Tweaker results from the JUnit XML
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import glob, hashlib, os, xml.etree.ElementTree as ET
+          base = "mimir-tweaker/app/build/test-results"
+          tasks = sorted(os.listdir(base)) if os.path.isdir(base) else []
+          print(f"test-result tasks: {tasks}")
+          for task in tasks:
+              files = sorted(glob.glob(os.path.join(base, task, "TEST-*.xml")))
+              keys = ("tests", "failures", "errors", "skipped")
+              total = dict.fromkeys(keys, 0)
+              digest = hashlib.sha256()
+              failed = []
+              print(f"== {task}: {len(files)} XML files")
+              print("class | tests | failures | errors | skipped")
+              for path in files:
+                  raw = open(path, "rb").read()
+                  digest.update(os.path.basename(path).encode() + b"\0" + raw)
+                  suite = ET.fromstring(raw)
+                  row = {k: int(suite.get(k, 0)) for k in keys}
+                  for k in keys:
+                      total[k] += row[k]
+                  print(f"{suite.get('name')} | {row['tests']} | {row['failures']} | {row['errors']} | {row['skipped']}")
+                  for case in suite.iter("testcase"):
+                      for kind in ("failure", "error"):
+                          node = case.find(kind)
+                          if node is not None:
+                              message = (node.get("message") or "").strip().splitlines()
+                              failed.append(f"{kind.upper()} {case.get('classname')} > {case.get('name')} :: {message[0][:200] if message else ''}")
+              print(f"TOTAL {task} | {total['tests']} | {total['failures']} | {total['errors']} | {total['skipped']} | xml-sha256 {digest.hexdigest()}")
+              for line in failed:
+                  print(line)
+          PY
+
+      - name: Upload the Tweaker test results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: tweaker-unit-test-results
+          path: |
+            checked-out-sha.txt
+            tweaker-unit-tests.log
+            mimir-tweaker/app/build/test-results
+          if-no-files-found: warn
+          retention-days: 30
+
+  emulator-smoke:
+    name: Emulator install and cold start
+    # Dispatch only, and only when asked: never on a pull request or a push.
+    if: github.event_name == 'workflow_dispatch' && inputs.run_emulator && inputs.tweaker_sha == ''
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    # Report-only emulator checks: the job still runs for evidence but
+    # cannot fail the workflow until its boot problem on hosted runners is solved. It is not in the
+    # verdict's needs for the same reason: the verdict does not wait for it.
+    continue-on-error: true
+    steps:
+      - name: Enable KVM for the emulator
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      # The emulator refuses to start with < 7.4 GB free for its userdata image and the hosted runner's
+      # home volume sits at ~4 GB; drop toolchains this job never uses and keep the AVD disk small.
+      - name: Free runner disk for the emulator
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL \
+            /usr/local/lib/android/sdk/ndk /usr/local/share/powershell /usr/share/swift || true
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          df -h / /home 2>/dev/null || df -h
+
+      # Only the smoke script: the runner's `script:` gives each line a shell of its own, so the steps live in a file.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+          sparse-checkout: tools/ci-emulator-smoke.sh
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: mimir-debug-apk
+          path: apk
+
+      - name: Install, launch and capture
+        uses: reactivecircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2.38.0
+        with:
+          api-level: 33
+          arch: x86_64
+          target: google_apis
+          profile: pixel_6
+          disk-size: 2048M
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: bash tools/ci-emulator-smoke.sh
+
+      - name: Upload smoke evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        continue-on-error: true
+        with:
+          name: emulator-smoke
+          path: smoke
+          if-no-files-found: ignore
+          retention-days: 7
+
+  verdict:
+    # Supplemental label/draft/pinned runs must not replace the required full check.
+    name: >-
+      ${{ ((github.event_name != 'pull_request' ||
+      (github.event.action != 'labeled' &&
+      (!github.event.pull_request.draft || contains(github.event.pull_request.labels.*.name, 'ci:run-draft'))) ||
+      (github.event.action == 'labeled' && github.event.pull_request.draft && github.event.label.name == 'ci:run-draft')) &&
+      !(github.event_name == 'workflow_dispatch' && inputs.tweaker_sha != '')) &&
+      'CI verdict' || 'Supplemental CI verdict' }}
+    needs: [changes, build, unit, app-unit, app-unit-slow, tweaker, tweaker-unit-tests]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+      - name: Test verdict policies
+        run: python3 -m unittest discover -s tools/ci -p 'test_verify_*.py'
+      - name: Decide
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        run: python3 tools/ci/verify_workflow_jobs.py
