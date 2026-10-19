@@ -245,6 +245,32 @@ class PServerClientTest {
     }
 
     @Test
+    fun `checked GPU max-frequency write fits the envelope at maximal generated counter`() {
+        assertTrue(PServerClient.nextNonce().matches(Regex("n[0-9a-z]{1,13}_[0-9a-f]{8}")))
+        val nonce = "n${ULong.MAX_VALUE.toString(36)}_abcdef12"
+        val command = "echo 1100000000 > /sys/devices/platform/soc/3d00000.qcom,kgsl-3d0/devfreq/3d00000.qcom,kgsl-3d0/max_freq"
+        var sent: String? = null
+        val client = PServerClient(
+            transport = PServerBinderTransport { wrapped, _ ->
+                sent = wrapped
+                PServerTransactResult(
+                    accepted = true,
+                    output = "${PServerClient.EXIT_MARKER_PREFIX}$nonce:0:0:",
+                )
+            },
+        )
+
+        val result = client.executeChecked(command, nonce = nonce)
+
+        assertEquals(CheckedCommandStatus.CONFIRMED, result.status)
+        assertTrue("the maximum-counter GPU write must be sent", sent != null)
+        assertTrue(
+            "the checked envelope remains capped at ${PServerClient.MAX_CHECKED_COMMAND_BYTES} bytes",
+            sent!!.toByteArray(Charsets.UTF_8).size <= PServerClient.MAX_CHECKED_COMMAND_BYTES,
+        )
+    }
+
+    @Test
     fun `executeChecked resolver unavailable then live without auto-replay`() {
         var resolves = 0
         val alive = AtomicBoolean(false)
