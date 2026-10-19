@@ -35,8 +35,8 @@ android {
         applicationId = "com.gruning.mimir.tweaker"
         minSdk = 30
         targetSdk = 35
-        versionCode = 12
-        versionName = "0.4.4-tw12"
+        versionCode = 13
+        versionName = "0.4.5-tw13"
         // 11: the game audio-focus hold; 10: the discovered-CEILING family,
         // written by the daemon. Kept in
         // step with MimirTweakerService.API_VERSION -- the manifest publishes it as meta-data, so the

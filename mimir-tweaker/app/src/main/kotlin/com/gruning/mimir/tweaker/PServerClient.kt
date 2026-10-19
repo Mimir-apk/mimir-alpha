@@ -537,11 +537,11 @@ internal open class PServerClient(
         private val EXIT_NONCE_PATTERN = Regex("[A-Za-z0-9_-]{8,64}")
         private val nonceCounter = AtomicLong(0)
 
-        fun nextNonce(): String = "n${nonceCounter.incrementAndGet()}_${UUID.randomUUID().toString().take(8)}"
+        fun nextNonce(): String = "n${nonceCounter.incrementAndGet().toULong().toString(36)}_${UUID.randomUUID().toString().take(8)}"
 
         /** The one spelling of the checked envelope, shared by the write and the bounded read. */
         internal fun wrapChecked(command: String, nonce: String): String =
-            "b=\$( ( $command ) 2>/dev/null);s=\$?;printf '${EXIT_MARKER_PREFIX}$nonce:%s:%s:%s\\n' \"\$s\" \"\${#b}\" \"\$b\""
+            "b=\$( ( $command ) 2>/dev/null);printf '${EXIT_MARKER_PREFIX}$nonce:%s:%s:%s\\n' \$? \${#b} \"\$b\""
 
         /**
          * The payload of a frame [parseExitMarker] CONFIRMED, or null for anything it did not confirm (a missing,
